@@ -1,0 +1,949 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Shop name - Thanh toán đơn hàng" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href='asset/css/bootstrap.min.css' rel='stylesheet' type='text/css' />
+    <link href='asset/css/nprogress.css' rel='stylesheet' type='text/css' />
+    <link href='asset/css/checkout.css' rel='stylesheet' type='text/css' />
+    
+    <title>shop thời trang dv - Thanh toán đơn hàng</title>
+    <script type="text/javascript">
+        function addDOMLoadedEvent(func) {
+            if (document.readyState === 'complete') {
+                func();
+            } else {
+                if (document.addEventListener) {
+                    document.addEventListener("DOMContentLoaded", func, false);
+                }
+                else {
+                    document.attachEvent("onDOMContentLoaded", func);
+                }
+            }
+        }
+    </script>
+</head>
+<body class="body--custom-background-color">
+    
+    <form method="post" action="" data-toggle="validator">
+        <div context="checkout" define="{checkout: new Bizweb.Checkout(this,{})}" class="container">
+            <div class="header">
+                <div class="wrap">
+                    <div class="shop  logo--left">
+                        
+                        <h1 class="shop__name">
+                            <a href="http://shop-thoi-trang-dv.bizwebvietnam.net//">
+                                shop thời trang dv
+                            </a>
+                        </h1>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="wrap clearfix">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div define="{billing_address: {},billing_expand:true}" class="form-group m0">
+                                <h2>
+                                    <label class="control-label">THÔNG TIN MUA HÀNG</label>
+                                </h2>
+                            </div>
+                            
+                            <div class="form-group">
+                                <a href="http://shop-thoi-trang-dv.bizwebvietnam.net//account/register">Đăng ký tài khoản mua hàng</a>
+                                |
+                                <a href="http://shop-thoi-trang-dv.bizwebvietnam.net//account/login">Đăng nhập </a>
+                            </div>
+                            
+                            <hr class="divider">
+                            
+                            
+                            <div class="form-group">
+                                <input data-error="Vui lòng nhập email"  required name="Email"  value=""  type="email" class="form-control" placeholder="Email" />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            
+                            <div class="billing">
+                                <div class="form-group">
+                                    <a class="underline-none" bind-show="!otherAddress" href="http://shop-thoi-trang-dv.bizwebvietnam.net/javascript:void(0)">
+                                        Thông tin thanh toán và nhận hàng
+                                    </a>
+                                    <a class="underline-none" bind-event-click="billing_expand = !billing_expand" bind-show="otherAddress" href="http://shop-thoi-trang-dv.bizwebvietnam.net/javascript:void(0)">
+                                        Thông tin thanh toán và nhận hàng <span bind-show="!billing_expand">+</span><span bind-show="billing_expand">-</span>
+                                    </a>
+                                </div>
+                                <div bind-show="billing_expand">
+                                    <div class="form-group">
+                                        <input data-error="Vui lòng nhập họ tên" required bind="billing_address.full_name" name="BillingAddress.LastName" class="form-control" placeholder="Họ và tên" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input  bind="billing_address.phone" name="BillingAddress.Phone" class="form-control" placeholder="Số điện thoại" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <input  bind="billing_address.address1" name="BillingAddress.Address1" class="form-control" placeholder="Địa chỉ" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <select bind-event-change="billingProviceChange()" bind="BillingProvinceId" name="BillingProvinceId" class="form-control">
+                                            
+
+                                            <option  value="1">Hà Nội</option>
+
+                                            
+
+                                            <option  value="2">TP Hồ Chí Minh</option>
+
+                                            
+
+                                            <option  value="3">An Giang</option>
+
+                                            
+
+                                            <option  value="4">Bà Rịa-Vũng Tàu</option>
+
+                                            
+
+                                            <option  value="5">Bắc Giang</option>
+
+                                            
+
+                                            <option  value="6">Bắc Kạn</option>
+
+                                            
+
+                                            <option  value="7">Bạc Liêu</option>
+
+                                            
+
+                                            <option  value="8">Bắc Ninh</option>
+
+                                            
+
+                                            <option  value="9">Bến Tre</option>
+
+                                            
+
+                                            <option  value="10">Bình Định</option>
+
+                                            
+
+                                            <option  value="11">Bình Dương</option>
+
+                                            
+
+                                            <option  value="12">Bình Phước</option>
+
+                                            
+
+                                            <option  value="13">Bình Thuận</option>
+
+                                            
+
+                                            <option  value="14">Cà Mau</option>
+
+                                            
+
+                                            <option  value="15">Cần Thơ</option>
+
+                                            
+
+                                            <option  value="16">Cao Bằng</option>
+
+                                            
+
+                                            <option  value="17">Đà Nẵng</option>
+
+                                            
+
+                                            <option  value="18">Đắk Lắk</option>
+
+                                            
+
+                                            <option  value="19">Đắk Nông</option>
+
+                                            
+
+                                            <option  value="20">Điện Biên</option>
+
+                                            
+
+                                            <option  value="21">Đồng Nai</option>
+
+                                            
+
+                                            <option  value="22">Đồng Tháp</option>
+
+                                            
+
+                                            <option  value="23">Gia Lai</option>
+
+                                            
+
+                                            <option  value="24">Hà Giang</option>
+
+                                            
+
+                                            <option  value="25">Hà Nam</option>
+
+                                            
+
+                                            <option  value="26">Hà Tĩnh</option>
+
+                                            
+
+                                            <option  value="27">Hải Dương</option>
+
+                                            
+
+                                            <option  value="28">Hải Phòng</option>
+
+                                            
+
+                                            <option  value="29">Hậu Giang</option>
+
+                                            
+
+                                            <option  value="30">Hòa Bình</option>
+
+                                            
+
+                                            <option  value="31">Hưng Yên</option>
+
+                                            
+
+                                            <option  value="32">Khánh Hòa</option>
+
+                                            
+
+                                            <option  value="33">Kiên Giang</option>
+
+                                            
+
+                                            <option  value="34">Kon Tum</option>
+
+                                            
+
+                                            <option  value="35">Lai Châu</option>
+
+                                            
+
+                                            <option  value="36">Lâm Đồng</option>
+
+                                            
+
+                                            <option  value="37">Lạng Sơn</option>
+
+                                            
+
+                                            <option  value="38">Lào Cai</option>
+
+                                            
+
+                                            <option  value="39">Long An</option>
+
+                                            
+
+                                            <option  value="40">Nam Định</option>
+
+                                            
+
+                                            <option  value="41">Nghệ An</option>
+
+                                            
+
+                                            <option  value="42">Ninh Bình</option>
+
+                                            
+
+                                            <option  value="43">Ninh Thuận</option>
+
+                                            
+
+                                            <option  value="44">Phú Thọ</option>
+
+                                            
+
+                                            <option  value="45">Phú Yên</option>
+
+                                            
+
+                                            <option  value="46">Quảng Bình</option>
+
+                                            
+
+                                            <option  value="47">Quảng Nam</option>
+
+                                            
+
+                                            <option  value="48">Quảng Ngãi</option>
+
+                                            
+
+                                            <option  value="49">Quảng Ninh</option>
+
+                                            
+
+                                            <option  value="50">Quảng Trị</option>
+
+                                            
+
+                                            <option  value="51">Sóc Trăng</option>
+
+                                            
+
+                                            <option  value="52">Sơn La</option>
+
+                                            
+
+                                            <option  value="53">Tây Ninh</option>
+
+                                            
+
+                                            <option  value="54">Thái Bình</option>
+
+                                            
+
+                                            <option  value="55">Thái Nguyên</option>
+
+                                            
+
+                                            <option  value="56">Thanh Hóa</option>
+
+                                            
+
+                                            <option  value="57">Thừa Thiên Huế</option>
+
+                                            
+
+                                            <option  value="58">Tiền Giang</option>
+
+                                            
+
+                                            <option  value="59">Trà Vinh</option>
+
+                                            
+
+                                            <option  value="60">Tuyên Quang</option>
+
+                                            
+
+                                            <option  value="61">Vĩnh Long</option>
+
+                                            
+
+                                            <option  value="62">Vĩnh Phúc</option>
+
+                                            
+
+                                            <option  value="63">Yên Bái</option>
+
+                                            
+                                        </select>
+                                    </div>
+                                    
+                                    <div bind-show="!otherAddress" class="form-group">
+                                        <select bind="BillingDistrictId" bind-event-change="billingDistrictChange()" name="BillingDistrictId" class="form-control"></select>
+                                    </div>
+                                    
+                                    <div bind-show="!otherAddress" class="form-group">
+                                        <div class="error hide" bind-show="requiresShipping && shippingMethods.length == 0">
+                                            <label>Khu vực này không hỗ trợ vận chuyển</label>
+                                        </div>
+                                    </div>
+                                    <hr class="divider" />
+                                </div>
+                            </div>
+                            <div bind-show="otherAddress" define="{shipping_address: {}, shipping_expand:true,show_district:  true }" class="shipping">
+                                <div class="form-group">
+                                    <a class="underline-none" bind-event-click="shipping_expand = !shipping_expand" href="http://shop-thoi-trang-dv.bizwebvietnam.net/javascript:void(0)">
+                                        Thông tin nhận hàng<span bind-show="!shipping_expand">+</span><span bind-show="shipping_expand">-</span>
+                                    </a>
+                                </div>
+                                <div bind-show="shipping_expand || !otherAddress">
+                                    <div class="form-group">
+                                        <input data-error="Vui lòng nhập họ tên" required bind="shipping_address.full_name" name="ShippingAddress.LastName" class="form-control" placeholder="Họ và tên" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input  bind="shipping_address.phone" name="ShippingAddress.Phone" class="form-control" placeholder="Số điện thoại" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <input  bind="shipping_address.address1" name="ShippingAddress.Address1" class="form-control" placeholder="Địa chỉ" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <select bind="ShippingProvinceId" bind-event-change="shippingProviceChange()" name="ShippingProvinceId" class="form-control">
+                                            
+                                            <option value="1">Hà Nội</option>
+                                            
+                                            <option value="2">TP Hồ Chí Minh</option>
+                                            
+                                            <option value="3">An Giang</option>
+                                            
+                                            <option value="4">Bà Rịa-Vũng Tàu</option>
+                                            
+                                            <option value="5">Bắc Giang</option>
+                                            
+                                            <option value="6">Bắc Kạn</option>
+                                            
+                                            <option value="7">Bạc Liêu</option>
+                                            
+                                            <option value="8">Bắc Ninh</option>
+                                            
+                                            <option value="9">Bến Tre</option>
+                                            
+                                            <option value="10">Bình Định</option>
+                                            
+                                            <option value="11">Bình Dương</option>
+                                            
+                                            <option value="12">Bình Phước</option>
+                                            
+                                            <option value="13">Bình Thuận</option>
+                                            
+                                            <option value="14">Cà Mau</option>
+                                            
+                                            <option value="15">Cần Thơ</option>
+                                            
+                                            <option value="16">Cao Bằng</option>
+                                            
+                                            <option value="17">Đà Nẵng</option>
+                                            
+                                            <option value="18">Đắk Lắk</option>
+                                            
+                                            <option value="19">Đắk Nông</option>
+                                            
+                                            <option value="20">Điện Biên</option>
+                                            
+                                            <option value="21">Đồng Nai</option>
+                                            
+                                            <option value="22">Đồng Tháp</option>
+                                            
+                                            <option value="23">Gia Lai</option>
+                                            
+                                            <option value="24">Hà Giang</option>
+                                            
+                                            <option value="25">Hà Nam</option>
+                                            
+                                            <option value="26">Hà Tĩnh</option>
+                                            
+                                            <option value="27">Hải Dương</option>
+                                            
+                                            <option value="28">Hải Phòng</option>
+                                            
+                                            <option value="29">Hậu Giang</option>
+                                            
+                                            <option value="30">Hòa Bình</option>
+                                            
+                                            <option value="31">Hưng Yên</option>
+                                            
+                                            <option value="32">Khánh Hòa</option>
+                                            
+                                            <option value="33">Kiên Giang</option>
+                                            
+                                            <option value="34">Kon Tum</option>
+                                            
+                                            <option value="35">Lai Châu</option>
+                                            
+                                            <option value="36">Lâm Đồng</option>
+                                            
+                                            <option value="37">Lạng Sơn</option>
+                                            
+                                            <option value="38">Lào Cai</option>
+                                            
+                                            <option value="39">Long An</option>
+                                            
+                                            <option value="40">Nam Định</option>
+                                            
+                                            <option value="41">Nghệ An</option>
+                                            
+                                            <option value="42">Ninh Bình</option>
+                                            
+                                            <option value="43">Ninh Thuận</option>
+                                            
+                                            <option value="44">Phú Thọ</option>
+                                            
+                                            <option value="45">Phú Yên</option>
+                                            
+                                            <option value="46">Quảng Bình</option>
+                                            
+                                            <option value="47">Quảng Nam</option>
+                                            
+                                            <option value="48">Quảng Ngãi</option>
+                                            
+                                            <option value="49">Quảng Ninh</option>
+                                            
+                                            <option value="50">Quảng Trị</option>
+                                            
+                                            <option value="51">Sóc Trăng</option>
+                                            
+                                            <option value="52">Sơn La</option>
+                                            
+                                            <option value="53">Tây Ninh</option>
+                                            
+                                            <option value="54">Thái Bình</option>
+                                            
+                                            <option value="55">Thái Nguyên</option>
+                                            
+                                            <option value="56">Thanh Hóa</option>
+                                            
+                                            <option value="57">Thừa Thiên Huế</option>
+                                            
+                                            <option value="58">Tiền Giang</option>
+                                            
+                                            <option value="59">Trà Vinh</option>
+                                            
+                                            <option value="60">Tuyên Quang</option>
+                                            
+                                            <option value="61">Vĩnh Long</option>
+                                            
+                                            <option value="62">Vĩnh Phúc</option>
+                                            
+                                            <option value="63">Yên Bái</option>
+                                            
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <select bind="ShippingDistrictId" bind-event-change="shippingDistrictChange()" name="ShippingDistrictId" class="form-control"></select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="error hide" bind-show="requiresShipping && shippingMethods.length == 0">
+                                            <label>Khu vực này không hỗ trợ vận chuyển</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="note" value="" class="form-control" placeholder="Ghi chú"></textarea>
+                            </div>
+                            <div class="form-group" bind-show="requiresShipping">
+                                <div class="checkbox">
+                                    <label>
+                                        <div bind-class="{'checked' : otherAddress}" class="icheckbox_square" style="position: relative;">
+                                            <input bind-event-change="changeOtherAddress(this)" bind="otherAddress" type="checkbox" name="otherAddress"  value="false"  class="icheck square" style="position: absolute; opacity: 0;" />
+                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% rgb(255, 255, 255); border: 0px none; opacity: 0;"></ins>
+                                        </div>
+                                        Giao hàng đến địa chỉ khác
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="shipping-method" bind-show="shippingMethods.length > 0">
+                                <div class="form-group">
+                                    <h2>
+                                        <label class="control-label">VẬN CHUYỂN</label>
+                                    </h2>
+                                </div>
+                                <div class="form-group">
+                                    <select bind-event-change="changeShippingMethod()" name="ShippingMethod" bind="shippingMethod" class="form-control"></select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <h2>
+                                    <label class="control-label">THANH TOÁN</label>
+                                </h2>
+                            </div>
+                            <div class="form-group payment-method-list">
+                                
+                                <div class="radio">
+                                    <label class="">
+                                        <div bind-class="{'checked' : payment_method_id == 37342}" class="iradio_square" style="position: relative;">
+                                            
+                                            <input checked="checked" bind="payment_method_id" value="37342" type="radio" class="icheck square" name="PaymentMethodId" style="position: absolute; opacity: 0;" />
+                                            
+                                            <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% rgb(255, 255, 255); border: 0px none; opacity: 0;"></ins>
+                                        </div>
+                                        Thanh toán khi giao hàng (COD)
+                                    </label>
+                                    
+                                    <div bind-class="{'slidedown-visible' : payment_method_id == 37342}" class="payment-method-description slidedown-hidden">
+                                        <p>cod</p>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="order-summary order-summary--custom-background-color">
+                                <div class="order-summary-header">
+                                    <h2>
+                                        <label class="control-label">ĐƠN HÀNG</label>
+                                    </h2>
+                                </div>
+                                <div class="summary-body  summary-section">
+                                    <div class="summary-product-list">
+                                        <ul class="product-list">
+                                            
+                                            <li class="product product-has-image clearfix">
+                                                
+                                                <img src='http://shop-thoi-trang-dv.bizwebvietnam.net///bizweb.dktcdn.net/thumb/thumb/100/035/016/products/cosabella%20(1).jpg?v=1448205980570' alt='Quần lót ren Cosabella - Đen' class='pull-left product-image' />
+                                                
+                                                <div class="product-info pull-left">
+                                                    <span class="product-info-name">
+                                                        <strong>Quần lót ren Cosabella - Đen</strong> x 1
+                                                    </span>
+                                                    
+                                                    <span class="product-info-description">
+                                                        Đen
+                                                    </span>
+                                                    
+                                                    
+                                                </div>
+                                                <strong class="product-price pull-right">
+                                                    740.000&#8363;
+                                                </strong>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div define="{showDiscountTextBox: false}" class="summary-section">
+                                    <a bind-event-click="showDiscountTextBox =!showDiscountTextBox" bind-show="!showDiscountTextBox && (!existCode ||code == null || !code.length)" class="more" href="http://shop-thoi-trang-dv.bizwebvietnam.net/javascript:void(0)">Nhập mã giảm giá</a>
+                                    <div bind-show="showDiscountTextBox && (!existCode ||code == null || !code.length)" class="form-group m0 hide">
+                                        <div class="input-group">
+                                            <input bind="code" name="code" type="text" class="form-control" placeholder="Nhập mã giảm giá" />
+                                            <span class="input-group-btn">
+                                                <button bind-event-click="caculateShippingFee()" class="btn btn-primary event-voucher-apply" type="button">Áp dụng</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div bind-class="{'warning' : existCode && !freeShipping && discount == 0,'success' : existCode && ( freeShipping || discount >0 )}" class="clearfix hide" bind-show="code!= null && code.length && existCode">
+                                        <div class="pull-left">
+                                            <i class="applied-discount-status"></i>
+                                        </div>
+                                        <div bind="code" class="pull-left applied-discount-code">
+                                            
+                                        </div>
+                                        <div bind="(discountShipping && freeShipping) ? 'Miễn phí vận chuyển' : money(discount,'{{amount_no_decimals_with_comma_separator}}&#8363;')" class="pull-right">
+                                            
+                                            0&#8363;
+                                            
+                                        </div>
+                                        <input bind-event-click="removeCode()" class="btn btn-delete" type="button" value="×" name="commit">
+                                    </div>
+                                    <div class="error mt10 hide" bind-show="inValidCode">
+                                        Mã khuyễn mãi không hợp lệ
+                                    </div>
+                                </div>
+                                <div class="summary-section">
+                                    <div class="total-line total-line-subtotal clearfix">
+                                        <span class="total-line-name pull-left">
+                                            Tạm tính
+                                        </span>
+                                        <span bind="money(totalOrderItemPrice - discount,'{{amount_no_decimals_with_comma_separator}}&#8363;')" class="total-line-subprice pull-right">
+                                            0&#8363;
+                                        </span>
+                                    </div>
+                                    <div class="total-line total-line-shipping clearfix" bind-show="requiresShipping">
+                                        <span class="total-line-name pull-left">
+                                            Phí ship
+                                        </span>
+                                        <span bind="shippingFee >  0 ? money(shippingFee,'{{amount_no_decimals_with_comma_separator}}&#8363;') : ((requiresShipping && shippingMethods.length == 0) ? 'Khu vực này không hỗ trợ vận chuyển': 'Miễn phí vận chuyển')" class="total-line-shipping pull-right">
+                                            
+                                            Miễn phí vận chuyển
+                                            
+                                        </span>
+                                    </div>
+                                    <div class="total-line total-line-total">
+                                        <span class="total-line-name pull-left">
+                                            Tổng cộng
+                                        </span>
+                                        <span bind="money(totalOrderItemPrice + (isNaN(shippingFee) ? 0 : shippingFee) - discount,'{{amount_no_decimals_with_comma_separator}}&#8363;')" class="total-line-price pull-right">
+                                            740.000&#8363;
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group clearfix">
+                                <button class="btn btn-primary col-md-12 mt10" type="submit">ĐẶT HÀNG</button>
+                            </div>
+                            <div class="form-group has-error">
+                                <div class="help-block">
+                                    <ul class="list-unstyled">
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <script src='asset/js/jquery-2.1.3.min.js' type='text/javascript'></script>
+                <script src='asset/js/twine.min.js' type='text/javascript'></script>
+                <script src='asset/js/validator.min.js' type='text/javascript'></script>
+                <script src='asset/js/nprogress.js' type='text/javascript'></script>
+                <script src='asset/js/money-helper.js' type='text/javascript'></script>
+                <script type="text/javascript">
+                    $(document).ajaxStart(function () {
+                        NProgress.start();
+                    });
+                    $(document).ajaxComplete(function () {
+                        NProgress.done();
+                    });
+                    context = {}
+                    $(function () {
+                        Twine.reset(context).bind().refresh();
+                    });
+                    $(document).ready(function () {
+                        
+                        $("#customer-address").trigger("change");
+                        
+
+                        $("select[name='BillingProvinceId']").trigger("change");
+                        $("select[name='ShippingProvinceId']").trigger("change");
+                    });
+
+                    window.Bizweb || (window.Bizweb = {});
+                    (function () {
+                        Bizweb.Utility = {
+                            getParameter: function (name) {
+                                name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+                                var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                                    results = regex.exec(location.search);
+                                return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+                            }
+                        }
+                        Bizweb.Checkout = function () {
+                            function r(e, b) {
+                                if (b) {
+                                    var property;
+                                    for (property in b) this[property] = b[property];
+                                }
+                                this.ele = e;
+                                this.existCode= "false";
+                                this.totalOrderItemPrice = 740000.0000;
+                                this.discount = 0;
+                                this.shippingFee = 0;
+                                this.freeShipping = false;
+                                this.requiresShipping = true;
+                                this.code = "";
+                                this.inValidCode = false;
+                                this.discountShipping = false;
+                                this.shippingMethods = [];
+                                var that = this;
+
+                                $("[name='code']").keyup(function(event){
+                                    if(event.keyCode == 13){
+                                        that.caculateShippingFee();
+                                        event.preventDefault();
+                                        return false;
+                                    }
+                                });
+
+                                var coupon = Bizweb.Utility.getParameter("coupon");
+                                if(coupon)
+                                {
+                                    this.code = coupon;
+                                }
+                            };
+
+                            r.prototype.changeOtherAddress = function(element){
+                                element.value = this.otherAddress;
+                                if(this.otherAddress){
+                                    $("select[name='ShippingProvinceId']").trigger("change");
+                                }else{
+                                    $("select[name='BillingProvinceId']").trigger("change");
+                                }
+                            }
+
+                            r.prototype.shippingProviceChange = function(){
+                                if(this.otherAddress)
+                                {
+                                    var that = this;
+                                    if(this.show_district)
+                                    {
+                                        this.showShippingDistrict();
+                                    }
+                                    else {
+                                        this.caculateShippingFee();
+                                    }
+                                }else{
+                                    var initDistrict = $("select[name='ShippingDistrictId'] >option").length > 0 ? false : true;
+                                    if(initDistrict){
+                                        if(this.show_district)
+                                        {
+                                            this.showShippingDistrict();
+                                        }
+                                    }
+                                }
+                            }
+
+                            r.prototype.showShippingDistrict = function(){
+                                var that = this;
+                                $.ajax({
+                                    url:"/checkout/getdistricts?provinceId=" + that.ShippingProvinceId,
+                                    async: false,
+                                    success:function(data)
+                                    {
+                                        var html = "";
+                                        
+                                        html = "<option value='0'>Chọn quận huyện</option>";
+                                        
+                                        for(var index in data)
+                                        {
+                                            var district = data[index];
+                                            html += "<option value='" + district.id + "'>" + district.name + "</option>"
+                                        }
+                                        $("select[name='ShippingDistrictId']").empty().html(html);
+                                        $("select[name='ShippingDistrictId']").trigger("change");
+                                    }
+                                });
+
+                            }
+
+                            r.prototype.billingProviceChange = function(){
+                                if(!this.otherAddress)
+                                {
+                                    var that = this;
+                                    if(this.show_district)
+                                    {
+                                        $.ajax({
+                                            url:"/checkout/getdistricts?provinceId=" + that.BillingProvinceId,
+                                            async: false,
+                                            success:function(data)
+                                            {
+                                                var html = "";
+                                                
+                                                html = "<option value='0'>Chọn quận huyện</option>";
+                                                
+                                                for(var index in data)
+                                                {
+                                                    var district = data[index];
+                                                    html += "<option value='" + district.id + "'>" + district.name + "</option>"
+                                                }
+                                                $("select[name='BillingDistrictId']").empty().html(html);
+                                                $("select[name='BillingDistrictId']").trigger("change");
+                                            }
+                                        });
+                                    }
+                                    else {
+                                        this.caculateShippingFee();
+                                    }
+                                }
+                            }
+
+                            r.prototype.shippingDistrictChange = function(){
+                                if(this.otherAddress)
+                                {
+                                    this.caculateShippingFee();
+                                }
+                            }
+
+                            r.prototype.billingDistrictChange = function(){
+                                if(!this.otherAddress)
+                                {
+                                    this.caculateShippingFee();
+                                }
+                            }
+
+                            r.prototype.changeShippingMethod = function(){
+                                var shippingFee = parseFloat( $("[name='ShippingMethod'] option:selected").attr("fee"));
+                                if(this.discountShipping){
+                                    if(shippingFee <= 0){
+                                        this.freeShipping = true;
+                                        this.discount = shippingFee;
+                                    }else{
+                                        this.freeShipping = false;
+                                        this.discount = 0;
+                                    }
+                                }else{
+                                    if(shippingFee <= 0){
+                                        this.freeShipping = true;
+                                    }else{
+                                        this.freeShipping = false;
+                                    }
+                                }
+                                this.shippingFee = shippingFee;
+                            }
+                            r.prototype.removeCode = function(){
+                                this.code = "";
+                                this.caculateShippingFee();
+                            }
+                            r.prototype.caculateShippingFee = function(){
+                                var that = this;
+                                
+                                var provinceId = that.otherAddress ? that.ShippingProvinceId : that.BillingProvinceId;
+                                var districtId = that.otherAddress ? that.ShippingDistrictId : that.BillingDistrictId;
+                                var shippingMethod = $("[name='ShippingMethod'] option:selected").val();
+
+                                $.ajax({
+                                    url:"/checkout/getshipping",
+                                    type:"POST",
+                                    data:{
+                                        provinceId: provinceId,
+                                        districtId: districtId,
+                                        code: that.code,
+                                        shippingMethod: shippingMethod
+                                    },
+                                    success:function(data)
+                                    {
+                                        if(data.error)
+                                        {
+                                            //Lỗi
+                                            that.shippingMethods = [];
+                                            Twine.refreshImmediately();
+                                        }
+                                        else{
+                                            that.existCode = data.exist_code;
+                                            if(that.code && !that.existCode)
+                                            {
+                                                that.inValidCode = !that.existCode;
+                                            }
+                                            else{
+                                                that.inValidCode = false;
+                                            }
+                                            that.freeShipping = data.free_shipping;
+                                            that.code= data.code;
+                                            that.discount = data.discount;
+                                            that.totalOrderItemPrice = data.total_line_item_price;
+                                            if(that.requiresShipping)
+                                                that.shippingMethods = data.shipping_methods;
+                                            that.discountShipping = data.discount_shipping;
+                                            Twine.refreshImmediately();
+                                            var html = "";
+                                            for(var index in that.shippingMethods)
+                                            {
+                                                var shippingMethod = that.shippingMethods[index];
+                                                html += "<option fee=" + shippingMethod.fee + " value=" + shippingMethod.value + ">" + shippingMethod.name + " - " +( shippingMethod.fee > 0 ? money(shippingMethod.fee,"{{amount_no_decimals_with_comma_separator}}&#8363;") : "Miễn phí" )  +  "</option>"
+                                            }
+                                            $("select[name='ShippingMethod']").empty().html(html);
+                                            $("select[name='ShippingMethod']").val(data.shipping_method);
+                                            $("select[name='ShippingMethod']").trigger("change");
+                                        }
+                                    }
+                                });
+                                return false;
+                            }
+
+                            return r;
+                        }();
+                    }).call(this)
+                </script>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+#form_user_create .btn-file-image{
+    width: 17% !important;
+    
+}
+#form_user_create .field-user-avatar .file-preview{
+    width: 30% !important;
+}
+.txt_user , .txt_email , .txt_gender , .txt_password{
+    width : 30% !important;
+}
