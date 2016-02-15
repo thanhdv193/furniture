@@ -3,5 +3,5 @@
 use yii\helpers;
 use app\widgets\HotDealWidget;
 
-$this->title = 'Trang mua bán online';
+$this->title = 'Trang mua';
 ?>

@@ -18,28 +18,31 @@ class AppAssetBackend extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/backend/layout/styles.css',
-        'css/backend/fonts/font-awesome/css/font-awesome.min.css',
-        
-        
+        'lib/Hover/hover.css',
+        'lib/fontawesome/css/font-awesome.css',
+        'lib/weather-icons/css/weather-icons.css',
+        'lib/ionicons/css/ionicons.css',
+        'lib/jquery-toggles/toggles-full.css',
+        'lib/morrisjs/morris.css',
+        'css/backend/backend.css',
+                
     ];
-    public $js = [
-        'js/main.js',
-        'lib/bootstrap/js/bootstrap.min.js',
-        'js/backend/plugins/jquery-slimscroll/jquery.slimscroll.js',
-        'js/backend/plugins/sparklines/jquery.sparklines.min.js',
-        'js/backend/plugins/jstree/dist/jstree.min.js',
-        'js/backend/plugins/codeprettifier/prettify.js',
-        'js/backend/plugins/bootstrap-switch/bootstrap-switch.js',
-        'js/backend/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js',
-        'js/backend/plugins/iCheck/icheck.min.js',
-        'js/backend/enquire.min.js',
-        'js/backend/plugins/bootbox/bootbox.js',
-        'js/backend/application.js',
-        'js/backend/demo.js',
-        'js/backend/demo-switcher.js',
-        'js/backend/plugins/simpleWeather/jquery.simpleWeather.min.js',
-//        'js/translate-price/translatePrice.js'
+    public $js = [        
+        'lib/jquery-ui/jquery-ui.js',
+        'lib/modernizr/modernizr.js',
+        'lib/bootstrap/js/bootstrap.js',
+        'lib/jquery-toggles/toggles.js',
+        'lib/morrisjs/morris.js',
+        'lib/raphael/raphael.js',
+        'lib/flot/jquery.flot.js',
+        'lib/flot/jquery.flot.resize.js',
+        'lib/flot-spline/jquery.flot.spline.js',
+        'lib/jquery-knob/jquery.knob.js',
+        'js/index.js',
+        'js/dashboard.js',
+        
+        
+        
         
     ];
     public $depends = [
