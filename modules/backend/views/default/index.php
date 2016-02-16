@@ -23,39 +23,11 @@
                 <p class="nomargin">Past 30 Days — Last Updated July 14, 2015</p>
             </div>
             <div class="panel-body">
-                <div class="row">
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="pull-left">
-                            <div class="icon icon ion-stats-bars"></div>
-                        </div>
-                        <div class="pull-left">
-                            <h4 class="panel-title">Bounce Rate</h4>
-                            <h3>23.30%</h3>
-                            <h5 class="text-success">2.00% increased</h5>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="pull-left">
-                            <div class="icon icon ion-eye"></div>
-                        </div>
-                        <h4 class="panel-title">Pageviews / Visitor</h4>
-                        <h3>38.10</h3>
-                        <h5 class="text-danger">5.70% decreased</h5>
-                    </div>
-                    <div class="col-xs-6 col-sm-4">
-                        <div class="pull-left">
-                            <div class="icon icon ion-clock"></div>
-                        </div>
-                        <h4 class="panel-title">Time on Site</h4>
-                        <h3>4:45</h3>
-                        <h5 class="text-success">5.00% increased</h5>
-                    </div>
-                </div><!-- row -->
-
-                <div class="mb20"></div>
-
-                <div id="basicflot" style="height: 263px"></div>
-
+                <form action="http://themepixels.com/demo/webpage/quirk/templates/files" class="dropzone">
+                <div class="fallback">
+                  <input name="file" type="file" multiple />
+                </div>
+              </form>
             </div><!-- panel-body -->            
 
         </div><!-- panel -->

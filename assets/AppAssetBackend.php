@@ -25,6 +25,7 @@ class AppAssetBackend extends AssetBundle
         'lib/jquery-toggles/toggles-full.css',
         'lib/morrisjs/morris.css',
         'css/backend/backend.css',
+        'lib/dropzone/dropzone.css',
                 
     ];
     public $js = [        
@@ -38,6 +39,7 @@ class AppAssetBackend extends AssetBundle
         'lib/flot/jquery.flot.resize.js',
         'lib/flot-spline/jquery.flot.spline.js',
         'lib/jquery-knob/jquery.knob.js',
+        'lib/dropzone/dropzone.js',
         'js/index.js',
         'js/dashboard.js',
         

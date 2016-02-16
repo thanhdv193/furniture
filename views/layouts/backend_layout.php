@@ -278,24 +278,24 @@ AppAssetBackend::register($this);
                         <div class="tab-pane active" id="mainmenu">
                             <h5 class="sidebar-title">Favorites</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
-                                <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                                <li><a href="widgets.html"><span class="badge pull-right">10+</span><i class="fa fa-cube"></i> <span>Widgets</span></a></li>
-                                <li><a href="maps.html"><i class="fa fa-map-marker"></i> <span>Maps</span></a></li>
+                                <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
+                                <li><a href="#"><span class="badge pull-right"></span><i class="fa fa-cube"></i> <span>Đơn hàng</span></a></li>
+                                
                             </ul>
 
                             <h5 class="sidebar-title">Main Menu</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Forms</span></a>
+                                    <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý sản phẩm</span></a>
                                     <ul class="children">
-                                        <li><a href="general-forms.html">Form Elements</a></li>
-                                        <li><a href="form-validation.html">Form Validation</a></li>
-                                        <li><a href="form-wizards.html">Form Wizards</a></li>
+                                        <li><a href="#">Sản phẩm</a></li>
+                                        <li><a href="#">Danh mục sản phẩm</a></li>
+                                        <li><a href="#">Nhóm sảm phẩm</a></li>
                                         <li><a href="wysiwyg.html">Text Editor</a></li>
                                     </ul>
                                 </li>
                                  <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Forms</span></a>
+                                    <a href="#"><i class="fa fa-check-square"></i> <span>Báo cáo</span></a>
                                     <ul class="children">
                                         <li><a href="general-forms.html">Form Elements</a></li>
                                         <li><a href="form-validation.html">Form Validation</a></li>
