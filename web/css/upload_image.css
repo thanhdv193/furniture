@@ -1,0 +1,200 @@
+.xoaanh
+{
+    text-align: center;
+    width: 15px;
+    position: absolute;
+    z-index: 1;
+    background-color: white;
+    color: red;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 2px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.1),0 0 6px rgba(0,0,0,.3);
+    opacity: 0.8;
+    right: 0px;
+    top: 0px;
+    height: 15px;
+}
+.xoaanh::before{
+    
+}
+.dangcho
+{
+    display: none;
+}
+.dangload
+{
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 50% 50%;
+    background-image: url('/images/dangload.gif');
+}
+
+.image-item
+{
+    position: relative;
+    padding: 5px;
+    height: 150px;
+    margin-left:10px;
+    margin-top:10px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    display: block;
+    width: 20%;
+    float: left;
+}
+.boximg
+{
+
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+
+.box-select-img
+{
+    border: 2px dashed #dcdee3;
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v2/yZ/r/aiJlV3s0C9s.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 50% 50%;
+
+}
+.box-select-img:hover
+{
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v2/yZ/r/aiJlV3s0C9s.png');
+    border: 2px dashed #B9C2D9;
+
+}
+.box-select-img input
+{
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    opacity: 0;
+}
+@media screen and (max-width: 480px) {
+    .image-item
+    {
+        width: 45%;
+    }
+}
+
+
+
+/*! UIkit 2.24.3 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+/* ========================================================================
+   Component: Progress
+ ========================================================================== */
+/*
+ * 1. Clearing
+ * 2. Vertical alignment if text is used
+ */
+.uk-progress {
+  box-sizing: border-box;
+  height: 20px;
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  /* 1 */
+  overflow: hidden;
+  /* 2 */
+  line-height: 20px;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.07), inset 0 2px 2px rgba(0, 0, 0, 0.07);
+  border-radius: 4px;
+}
+/*
+ * Add margin if adjacent element
+ */
+* + .uk-progress {
+  margin-top: 15px;
+}
+/* Sub-object: `uk-progress-bar`
+ ========================================================================== */
+/*
+ * 1. Transition
+ * 2. Needed for text
+ */
+.uk-progress-bar {
+  width: 0;
+  height: 100%;
+  background: #009dd8;
+  float: left;
+  /* 1 */
+  -webkit-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+  /* 2 */
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  background-image: -webkit-linear-gradient(top, #00b4f5, #008dc5);
+  background-image: linear-gradient(to bottom, #00b4f5, #008dc5);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+/* Size modifiers
+ ========================================================================== */
+/* Mini */
+.uk-progress-mini {
+  height: 6px;
+}
+/* Small */
+.uk-progress-small {
+  height: 12px;
+}
+/* Color modifiers
+ ========================================================================== */
+.uk-progress-success .uk-progress-bar {
+  background-color: #82bb42;
+  background-image: -webkit-linear-gradient(top, #9fd256, #6fac34);
+  background-image: linear-gradient(to bottom, #9fd256, #6fac34);
+}
+.uk-progress-warning .uk-progress-bar {
+  background-color: #f9a124;
+  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+  background-image: linear-gradient(to bottom, #fbb450, #f89406);
+}
+.uk-progress-danger .uk-progress-bar {
+  background-color: #d32c46;
+  background-image: -webkit-linear-gradient(top, #ee465a, #c11a39);
+  background-image: linear-gradient(to bottom, #ee465a, #c11a39);
+}
+/* Modifier: `uk-progress-striped`
+ ========================================================================== */
+.uk-progress-striped .uk-progress-bar {
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+}
+/*
+ * Animation
+ */
+.uk-progress-striped.uk-active .uk-progress-bar {
+  -webkit-animation: uk-progress-bar-stripes 2s linear infinite;
+  animation: uk-progress-bar-stripes 2s linear infinite;
+}
+@-webkit-keyframes uk-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+@keyframes uk-progress-bar-stripes {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 0;
+  }
+}
+/* Size modifiers
+     ========================================================================== */
+.uk-progress-mini,
+.uk-progress-small {
+  border-radius: 500px;
+}

@@ -26,6 +26,7 @@ class AppAssetBackend extends AssetBundle
         'lib/morrisjs/morris.css',
         'css/backend/backend.css',
         'lib/dropzone/dropzone.css',
+         'css/upload_image.css',
                 
     ];
     public $js = [        
@@ -33,15 +34,16 @@ class AppAssetBackend extends AssetBundle
         'lib/modernizr/modernizr.js',
         'lib/bootstrap/js/bootstrap.js',
         'lib/jquery-toggles/toggles.js',
-        'lib/morrisjs/morris.js',
+        //'lib/morrisjs/morris.js',
         'lib/raphael/raphael.js',
-        'lib/flot/jquery.flot.js',
-        'lib/flot/jquery.flot.resize.js',
-        'lib/flot-spline/jquery.flot.spline.js',
+        //'lib/flot/jquery.flot.js',
+        //'lib/flot/jquery.flot.resize.js',
+        //'lib/flot-spline/jquery.flot.spline.js',
         'lib/jquery-knob/jquery.knob.js',
         'lib/dropzone/dropzone.js',
         'js/index.js',
-        'js/dashboard.js',
+        //'js/dashboard.js',
+        'js/upload_img.js',
         
         
         

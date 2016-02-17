@@ -9,8 +9,51 @@
                 <h4 class="panel-title">Latest Announcement</h4>
             </div>
             <div class="panel-body">
-                <h2>A new admin template has been released by <span class="text-primary">ThemePixels</span> with a name <span class="text-success">Quirk</span> is now live and available for purchase!</h2>
-                <h4>Explore this new template and see the beauty of Quirk! <a href="#">Take a Tour!</a></h4>
+                <ul class="listimage" >
+                    <li data-id="630" class="image-item">
+                        <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
+                            <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
+                            </div></a>
+                        <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
+                    </li>
+                    <li data-id="630" class="image-item">
+                        <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
+                            <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
+                            </div></a>
+                        <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
+                    </li>
+                    <li data-id="630" class="image-item">
+                        <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
+                            <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
+                            </div></a>
+                        <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
+                    </li>
+                    <li data-id="630" class="image-item">
+                        <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
+                            <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
+                            </div></a>
+                        <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
+                    </li>
+                    <li data-id="630" class="image-item">
+                        <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
+                            <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
+                            </div></a>
+                        <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
+                    </li>
+                    <li data-id="630" class="image-item">
+                        <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
+                            <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
+                            </div></a>
+                        <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
+                    </li>
+                    <li data-id="-1" class="image-item box-select-img">
+<!--                        <form id="uploadimage" action="" method="post" enctype="multipart/form-data">-->
+                            <input type="file"  id="upload"> 
+<!--                        </form>-->
+                        
+                    </li>
+
+                </ul> 
             </div>
         </div><!-- panel -->
 
