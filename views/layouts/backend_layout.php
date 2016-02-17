@@ -278,8 +278,8 @@ AppAssetBackend::register($this);
                         <div class="tab-pane active" id="mainmenu">
                             <h5 class="sidebar-title">Favorites</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
-                                <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
-                                <li><a href="#"><span class="badge pull-right"></span><i class="fa fa-cube"></i> <span>Đơn hàng</span></a></li>
+                                <li class="active"><a href="backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
+                                <li><a href="backend/default/index-1"><span class="badge pull-right"></span><i class="fa fa-cube"></i> <span>Đơn hàng</span></a></li>
                                 
                             </ul>
 

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+    $(document).ready(function(){
 
 	'use strict';
 
@@ -47,56 +47,56 @@ $(document).ready(function(){
 	var retCust = [[0, 20], [0.5, 35], [1,20], [1.5, 25], [2, 17], [2.5, 10], [3,15], [3.5,28],
 		[4,15], [4.5,20], [5,35], [5.5,30], [6,32]];
 
-	var plot = $.plot($('#basicflot'),[{
-		data: newCust,
-		label: 'New Visitors',
-		color: '#cfd3da'
-	},
-	{
-		data: retCust,
-		label: 'Returning Visitors',
-		color: '#06b5cf',
-	}],
-	{
-		series: {
-			lines: {
-				show: false,
-			},
-
-			splines: {
-				show: true,
-				tension: 0.3,
-				lineWidth: 2,
-				fill: .50
-			},
-
-			shadowSize: 0
-		},
-
-		points: { show: true },
-
-		legend: {
-			container: '#basicFlotLegend',
-			noColumns: 0
-		},
-
-		grid: {
-			hoverable: true,
-			clickable: true,
-			borderColor: '#f3f5f7',
-			borderWidth: 0,
-			labelMargin: 5
-		},
-
-		yaxis: {
-			min: 0,
-			max: 100,
-			color: '#f3f5f7'
-		},
-
-		xaxis: { color: '#f3f5f7' }
-
-	});
+//	var plot = $.plot($('#basicflot'),[{
+//		data: newCust,
+//		label: 'New Visitors',
+//		color: '#cfd3da'
+//	},
+//	{
+//		data: retCust,
+//		label: 'Returning Visitors',
+//		color: '#06b5cf',
+//	}],
+//	{
+//		series: {
+//			lines: {
+//				show: false,
+//			},
+//
+//			splines: {
+//				show: true,
+//				tension: 0.3,
+//				lineWidth: 2,
+//				fill: .50
+//			},
+//
+//			shadowSize: 0
+//		},
+//
+//		points: { show: true },
+//
+//		legend: {
+//			container: '#basicFlotLegend',
+//			noColumns: 0
+//		},
+//
+//		grid: {
+//			hoverable: true,
+//			clickable: true,
+//			borderColor: '#f3f5f7',
+//			borderWidth: 0,
+//			labelMargin: 5
+//		},
+//
+//		yaxis: {
+//			min: 0,
+//			max: 100,
+//			color: '#f3f5f7'
+//		},
+//
+//		xaxis: { color: '#f3f5f7' }
+//
+//	});
 
 	var previousPoint = null;
 

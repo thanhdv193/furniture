@@ -19,7 +19,7 @@ class DefaultController extends Controller
         {
             
         }
-        
+        var_dump($_FILES['file']);
         $url ="http://cantholink.com/menu/upload/vi-toi-dep-trai--14556095307851.jpg";
         return json_encode($url);
     }
