@@ -12,11 +12,18 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 
 $this->registerJsFile(Url::base('') . '/js/upload_img.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Url::base('').'/ckeditor/ckeditor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Url::base('').'/js/backend/editor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+
 ?>
 
 <div class="product-form">
 
     <?php $form = ActiveForm::begin(); ?>
+      <?php if(isset($temp_hash)) { ?>
+        <input type="hidden" name="tem_hash" value="<?php echo $temp_hash ?>">
+    <?php }?>
+    
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
     
     <?php //$form->field($model, 'product_group_id')->textInput() ?>
@@ -64,9 +71,9 @@ $this->registerJsFile(Url::base('') . '/js/upload_img.js', ['depends' => [\yii\w
 
     <?php //$form->field($model, 'olink2')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'description')->textarea(['id'=>'summary2','rows' => '6']) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->textArea(['id'=>'summary','rows' => '6']) ?>
 
     <?php //$form->field($model, 'photo')->textInput(['maxlength' => true]) ?>
         

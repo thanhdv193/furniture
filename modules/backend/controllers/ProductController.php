@@ -6,6 +6,7 @@ use Yii;
 use app\models\Product;
 use app\models\ProductSearch;
 use yii\web\Controller;
+use app\models\ProductPhoto;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -62,7 +63,25 @@ class ProductController extends Controller
     {
         $model = new Product();
         $hash = md5(uniqid('', true));
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) ) {
+
+            $tem_hash = $_POST['tem_hash'];
+            $model->create_date = time();
+            $model->photo = $tem_hash;
+            if($model->save())
+            {
+                $imageUpload = ProductPhoto::find()->where(['temp_hash' => $tem_hash])->all();                
+                if ($imageUpload != null)
+                {
+                    foreach ($imageUpload as $value)
+                    {
+                        $value->product_id = $model->id;
+                        $value->save();
+                    }
+                }
+                die("xxx");
+            }
+            
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
