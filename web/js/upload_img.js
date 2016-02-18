@@ -57,8 +57,12 @@ function uploadanh(file,curren){
      curren.before(html);                    
      var dangcho=curren.prev();
      var progwith=dangcho.children('.uk-progress');             
-     var formData = new FormData(file[0]);
-     formData.append('file', file[0]);  
+     var formData = new FormData();
+     var hash = $("[name='tem_hash']").val();
+          
+     formData.append('file', file[0]);     
+     formData.append('tem_hash', hash);
+     
         $.ajax({
             type: "POST",
             url: '/backend/default/upload',
@@ -66,16 +70,16 @@ function uploadanh(file,curren){
             dataType: 'json',
             cache: false,
             processData:false,
-            data:formData,
+            data:formData,            
             success: function (result)
-            { 
+            {  console.log(result);
                 dangcho.removeClass('dangload');
                 progwith.remove();
                 dangcho.children().children().css('background-image', 'url('+result+')');
                 html = '<a alt="ảnh" class="uk-icon-remove xoaanh"></a>';
                 dangcho.append(html);
                 dangcho.attr('data-id', 1);
-                dangcho.children().attr('href', "upload/" + result);
+                dangcho.children().attr('href',result);
 
             }
         });

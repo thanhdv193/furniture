@@ -10,4 +10,7 @@
 //var_dump(Email::find()->where(['email_id'=>18])->one()); die;
 return [
     'adminEmail' => 'admin@example.com',
+    'urlSite' => [
+        'site' => 'http://localhost/',
+    ],
 ];

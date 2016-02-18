@@ -43,7 +43,7 @@ class AppAssetBackend extends AssetBundle
         'lib/dropzone/dropzone.js',
         'js/index.js',
         'js/dashboard.js',
-        'js/upload_img.js',
+        //'js/upload_img.js',
         
         
         

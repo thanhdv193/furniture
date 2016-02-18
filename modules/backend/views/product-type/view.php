@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\ProductGroup */
+/* @var $model app\models\ProductType */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Product Groups', 'url' => ['index']];
+$this->title = $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Product Types', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="product-group-view">
+<div class="product-type-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->product_group_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->product_group_id], [
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -28,14 +28,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'product_group_id',
-            'name',
+            'id',
+            'parent_id',
             'title',
-            'h1',
-            'meta_description',
-            'sort_order',
-            'active',
+            'description:ntext',
+            'link',
+            'z_index',
+            'is_menu',
+            'olink',
             'create_date',
+            'active',
         ],
     ]) ?>
 

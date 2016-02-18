@@ -137,7 +137,7 @@ $config = [
             //'admin/*',
             //'backend/*',
             //'user/*',
-            //'gii/*',
+            'gii/*',
             'fontend/*',
             'backend/*',
         ],

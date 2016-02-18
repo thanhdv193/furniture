@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\ProductCategory;
+use app\models\ProductType;
 
 /**
- * ProductCategorySearch represents the model behind the search form about `app\models\ProductCategory`.
+ * ProductTypeSearch represents the model behind the search form about `app\models\ProductType`.
  */
-class ProductCategorySearch extends ProductCategory
+class ProductTypeSearch extends ProductType
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ProductCategorySearch extends ProductCategory
     public function rules()
     {
         return [
-            [['product_category_id', 'sort_order', 'active', 'create_date', 'product_node_id'], 'integer'],
-            [['name', 'title', 'h1', 'meta_description'], 'safe'],
+            [['id', 'parent_id', 'z_index', 'is_menu', 'create_date', 'active'], 'integer'],
+            [['title', 'description', 'link', 'olink'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class ProductCategorySearch extends ProductCategory
      */
     public function search($params)
     {
-        $query = ProductCategory::find();
+        $query = ProductType::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,17 +56,18 @@ class ProductCategorySearch extends ProductCategory
         }
 
         $query->andFilterWhere([
-            'product_category_id' => $this->product_category_id,
-            'sort_order' => $this->sort_order,
-            'active' => $this->active,
+            'id' => $this->id,
+            'parent_id' => $this->parent_id,
+            'z_index' => $this->z_index,
+            'is_menu' => $this->is_menu,
             'create_date' => $this->create_date,
-            'product_node_id' => $this->product_node_id,
+            'active' => $this->active,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'h1', $this->h1])
-            ->andFilterWhere(['like', 'meta_description', $this->meta_description]);
+        $query->andFilterWhere(['like', 'title', $this->title])
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['like', 'link', $this->link])
+            ->andFilterWhere(['like', 'olink', $this->olink]);
 
         return $dataProvider;
     }

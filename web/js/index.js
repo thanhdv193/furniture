@@ -66,7 +66,7 @@ $(document).ready(function() {
   $('#todayDate').text(getDateToday());
 
    // Toggle Left Menu
-   $('.nav-parent > a').on('click', function() { alert("xxxx");
+   $('.nav-parent > a').on('click', function() { 
 
      var gran = $(this).closest('.nav');
      var parent = $(this).parent();

@@ -3,16 +3,16 @@
 namespace app\modules\backend\controllers;
 
 use Yii;
-use app\models\Contact;
-use app\models\ContactSearch;
+use app\models\ProductType;
+use app\models\ProductTypeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ContactController implements the CRUD actions for Contact model.
+ * ProductTypeController implements the CRUD actions for ProductType model.
  */
-class ContactController extends Controller
+class ProductTypeController extends Controller
 {
     public function behaviors()
     {
@@ -27,12 +27,12 @@ class ContactController extends Controller
     }
 
     /**
-     * Lists all Contact models.
+     * Lists all ProductType models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ContactSearch();
+        $searchModel = new ProductTypeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -42,8 +42,8 @@ class ContactController extends Controller
     }
 
     /**
-     * Displays a single Contact model.
-     * @param string $id
+     * Displays a single ProductType model.
+     * @param integer $id
      * @return mixed
      */
     public function actionView($id)
@@ -54,27 +54,35 @@ class ContactController extends Controller
     }
 
     /**
-     * Creates a new Contact model.
+     * Creates a new ProductType model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Contact();
+        $model = new ProductType();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->contact_id]);
-        } else {
+        if ($model->load(Yii::$app->request->post()))
+        {
+            if ($model->parent_id == null)
+            {
+                $model->parent_id = 0;
+            }
+            $model->create_date = time();            
+            $model->save();
+            return $this->redirect(['view', 'id' => $model->id]);
+        } else
+        {
             return $this->render('create', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
 
     /**
-     * Updates an existing Contact model.
+     * Updates an existing ProductType model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
+     * @param integer $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -82,7 +90,7 @@ class ContactController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->contact_id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -91,9 +99,9 @@ class ContactController extends Controller
     }
 
     /**
-     * Deletes an existing Contact model.
+     * Deletes an existing ProductType model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
+     * @param integer $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -104,15 +112,15 @@ class ContactController extends Controller
     }
 
     /**
-     * Finds the Contact model based on its primary key value.
+     * Finds the ProductType model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $id
-     * @return Contact the loaded model
+     * @param integer $id
+     * @return ProductType the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Contact::findOne($id)) !== null) {
+        if (($model = ProductType::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
