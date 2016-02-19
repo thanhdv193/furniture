@@ -63,7 +63,7 @@ class ProductTypeSearch extends ProductType
             'create_date' => $this->create_date,
             'active' => $this->active,
         ]);
-
+       //echo'<pre>'; var_dump($query); die;
         $query->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'link', $this->link])

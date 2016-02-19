@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   'use strict';
 
+  
   /***** SHOW / HIDE LEFT MENU *****/
 
   $('#menuToggle').click(function() {

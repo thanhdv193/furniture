@@ -8,6 +8,7 @@ use app\assets\AppAssetBackend;
 use app\widgets\BackendMenuWidget;
 use yii\helpers\Url;
 
+
 AppAssetBackend::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -320,21 +321,7 @@ AppAssetBackend::register($this);
                                         <li><a href="#">Thông tin giới thiệu</a></li>   
                                         <li><a href="#">Thông tin liên hệ</a></li>    
                                     </ul>
-                                </li>
-                                <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Tin tức</span></a>
-                                    <ul class="children">
-                                        <li><a href="#">Danh mục bài viết</a></li>  
-                                        <li><a href="#">Bài viết</a></li>  
-                                    </ul>
-                                </li>
-                                <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Showrooms</span></a>
-                                    <ul class="children">
-                                        <li><a href="#">Vùng miền</a></li>  
-                                        <li><a href="#">Danh sách showroms</a></li>  
-                                    </ul>
-                                </li>
+                                </li>                                
                                  <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Báo cáo</span></a>
                                     <ul class="children">
@@ -546,6 +533,11 @@ AppAssetBackend::register($this);
                 </div>-->
 
                 <div class="contentpanel">
+                    <?=
+                        Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ])
+                    ?>
                     <?= $content ?>
                 </div><!-- contentpanel -->
 

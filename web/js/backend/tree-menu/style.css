@@ -1,0 +1,66 @@
+.menu_tree ul {
+    padding: 0em;
+}
+
+.menu_tree ul li,.menu_tree ul li ul li {
+    position:relative;
+    top:0;
+    bottom:0;
+    padding-bottom: 25px;
+    padding-top: 5px;
+
+}
+
+.menu_tree ul li ul {
+    margin-left: 4em;
+}
+
+.menu_tree li {
+    list-style-type: none;
+}
+
+.menu_tree li a {
+    padding:0 0 0 10px;
+    position: relative;
+    top:1em;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    padding: 10px 11px;
+}
+
+.menu_tree li a:hover {
+    text-decoration: none;
+}
+
+.menu_tree a.addBorderBefore:before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 28px;
+    position: absolute;
+    left: -47px;
+    top:-16px;
+    border-left: 1px solid gray;
+}
+
+.menu_tree li:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 0;
+    position: relative;
+    left: 0em;
+    top:1em;
+    border-top: 1px solid gray;
+}
+
+.menu_tree ul li ul li:last-child:after,.menu_tree ul li:last-child:after {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    background: #fff;
+    top: 7px;
+    left: 0px;
+}
