@@ -10,8 +10,8 @@ class Menu
     {       
         // Biến lưu menu lặp ở bước đệ quy này
         $menu_tmp = array();
-
-        foreach ($menus as $key => &$item)
+        //$menus1 = array();
+        foreach ($menus as $key => $item)
         {
             // Nếu có parent_id bằng với parrent id hiện tại
             if ((int) $item['parent_id'] == (int) $id_parent)
@@ -20,27 +20,35 @@ class Menu
                 
                 // Sau khi thêm vào biên lưu trữ menu ở bước lặp
                 // thì unset nó ra khỏi danh sách menu ở các bước tiếp theo
-                unset($menus[$key]);
+                unset($menus[$key]); 
+                //$menus1 = $menus;
             }
           
         }  
-        
+        if((int) $id_parent == 125){
+           
+        }
+        //echo'<pre>';        var_dump($id_parent); die;
         // Điều kiện dừng của đệ quy là cho tới khi menu không còn nữa
         if ($menu_tmp)
-        {
-            echo '<ul class="items">';
+        { 
+            echo '<ul>';
             foreach ($menu_tmp as $item)
             {             
-                echo '<li class="cl_li node_'.$item['id'].'">';
-                            
-                echo '<a href="'.$item['route'].'">'.$item['name'].'</a>';                                                                 
+                echo '<li id="'.$item['id'].'">';                                                                                                    
                 // Gọi lại đệ quy
-                // Truyền vào danh sách menu chưa lặp và id parent của menu hiện tại
+                // Truyền vào danh sách menu chưa lặp và id parent của menu hiện tại     
+                echo '<div id="'.$item['id'].'" style="display:none">';      
+                    echo '<a href="/index.php/backend/product-type/update?id=125" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a>'; 
+                    echo '<a href="/index.php/backend/product-type/delete?id=125" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a>';
+                echo '</div>';
+                echo '<a href="'.$item['id'].'">'.$item['title'].'</a>';         
+                
                 self::menu($menus, $item['id']);
                 echo '</li>';
-            }            
+            }         
             echo '</ul>';
-        }
+        }       
     }
 
 }

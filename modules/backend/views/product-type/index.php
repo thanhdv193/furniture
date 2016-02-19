@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
+use app\components\helpers\Menu;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ProductTypeSearch */
@@ -23,14 +24,19 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/styl
     </div>
     <div class="panel-body">
         <div class="menu_tree">
+            <?php echo Menu::menu($menu) ?>
             <ul>
-                <li><a href="#">(10) Manchester</a>
+                <li><a href="/index.php/backend/product-type/update?id=125" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a><a href="/index.php/backend/product-type/delete?id=125" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a><a href="#">(10) Manchester</a>
                     <ul>
-                        <li><a href="#">Spiral Scratch</a></li>
-                        <li><a href="#">Spiral Scratch</a></li>
-                        <li><a href="#">Spiral Scratch</a></li>
-                        <li><a href="#">Spiral Scratch</a></li>
-                        <li><a href="#">Spiral Scratch</a></li>                       
+                        <li>
+                            <a href="/index.php/backend/product-type/update?id=125" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="/index.php/backend/product-type/delete?id=125" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a>
+                            <a href="#">Spiral Scratch</a>
+                        </li>
+                        <li><a href="#">Spiral Scratch</a><a>Sửa</a><a>Xóa</a></li>
+                        <li><a href="#">Spiral Scratch</a><a>Sửa</a><a>Xóa</a></li>
+                        <li><a href="#">Spiral Scratch</a><a>Sửa</a><a>Xóa</a></li>
+                        <li><a href="#">Spiral Scratch</a><a>Sửa</a><a>Xóa</a></li>                       
                     </ul>
                 </li>
                 <li><a href="#">Manchester</a>

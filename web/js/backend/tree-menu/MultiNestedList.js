@@ -1,5 +1,5 @@
 // Select the main list and add the class "hasSubmenu" in each LI that contains an UL
-$('ul').each(function(){
+$('.menu_tree > ul').each(function(){
   $this = $(this);
   $this.find("li").has("ul").addClass("hasSubmenu");
 });

@@ -34,10 +34,12 @@ class ProductTypeController extends Controller
     {
         $searchModel = new ProductTypeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        $menu = ProductType::find()->where(['active' => 1])->asArray()->all();
+        //echo'<pre>'; var_dump($menu); die;
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'menu' =>$menu,
         ]);
     }
 
