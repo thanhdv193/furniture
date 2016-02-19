@@ -9,7 +9,7 @@ use yii\helpers\Url;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Product Types';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = "Danh mục sản phẩm";
 
 $this->registerJsFile(Url::base('').'/js/backend/tree-menu/MultiNestedList.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/style.css');

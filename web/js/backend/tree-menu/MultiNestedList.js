@@ -22,7 +22,7 @@ $('li:last-child').each(function(){
   };
 });
 // Add bold in li and levels above
-$('ul li').each(function(){
+$(' ul li').each(function(){
   $this = $(this);
   $this.mouseenter(function(){
     $( this ).children("a").css({"font-weight":"bold","color":"#336b9b"});
@@ -32,7 +32,7 @@ $('ul li').each(function(){
   });
 });
 // Add button to expand and condense - Using FontAwesome
-$('ul li.hasSubmenu').each(function(){
+$(' ul li.hasSubmenu').each(function(){
   $this = $(this);
   $this.prepend("<a href='#'><i class='fa fa-minus-circle'></i><i style='display:none;' class='fa fa-plus-circle'></i></a>");
   $this.children("a").not(":last").removeClass().addClass("toogle");
