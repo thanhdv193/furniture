@@ -1,3 +1,6 @@
+.display{
+    display:block !important;
+}
 .menu_tree ul {
     padding: 0em;
 }

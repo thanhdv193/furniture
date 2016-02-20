@@ -35,15 +35,12 @@ class Menu
             echo '<ul>';
             foreach ($menu_tmp as $item)
             {             
-                echo '<li id="'.$item['id'].'">';                                                                                                    
+                echo '<li data-id="'.$item['id'].'">';                                                                                                    
                 // Gọi lại đệ quy
-                // Truyền vào danh sách menu chưa lặp và id parent của menu hiện tại     
-                echo '<div id="'.$item['id'].'" style="display:none">';      
-                    echo '<a href="/index.php/backend/product-type/update?id=125" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a>'; 
-                    echo '<a href="/index.php/backend/product-type/delete?id=125" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a>';
-                echo '</div>';
-                echo '<a href="'.$item['id'].'">'.$item['title'].'</a>';         
-                
+                // Truyền vào danh sách menu chưa lặp và id parent của menu hiện tại    
+                echo '<a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/update?id=120" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a>';
+                echo '<a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/delete?id=120" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a>';
+                echo '<a href="#" data-id="'.$item['id'].'">'.$item['title'].'</a>';                         
                 self::menu($menus, $item['id']);
                 echo '</li>';
             }         
