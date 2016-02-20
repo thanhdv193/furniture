@@ -9,11 +9,11 @@ use app\components\helpers\Menu;
 /* @var $searchModel app\models\ProductTypeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Product Types';
+$this->title = 'Danh mục sản phẩm';
 $this->params['breadcrumbs'][] = "Danh mục sản phẩm";
 
-$this->registerJsFile(Url::base('').'/js/backend/tree-menu/MultiNestedList.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
-$this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/style.css');
+$this->registerJsFile(Url::base('').'/js/backend/tree-menu/MultiNestedList_1.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/style_1.css');
 ?>   
 <div class="panel">
     <div class="panel-heading">
@@ -23,8 +23,66 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/styl
         </p>
     </div>
     <div class="panel-body">
-        <div class="menu_tree">
-            <?php echo Menu::menu($menu) ?>                       
+        <div class="tree well">
+            <?php echo Menu::menu($menu) ?>  
+            <div class="tree well">
+    <ul>
+        <li>
+            <span><i class="icon-folder-open"></i> Parent</span> <a href="">Goes somewhere</a>
+            <ul>
+                <li>
+                	<span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
+                    <ul>
+                        <li>
+	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                	<span><i class="icon-minus-sign"></i> Child</span> <a href="">Goes somewhere</a>
+                    <ul>
+                        <li>
+	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                        </li>
+                        <li>
+                        	<span><i class="icon-minus-sign"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                            <ul>
+                                <li>
+	                                <span><i class="icon-minus-sign"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
+		                            <ul>
+		                                <li>
+			                                <span><i class="icon-leaf"></i> Great great Grand Child</span> <a href="">Goes somewhere</a>
+		                                </li>
+		                                <li>
+			                                <span><i class="icon-leaf"></i> Great great Grand Child</span> <a href="">Goes somewhere</a>
+		                                </li>
+		                             </ul>
+                                </li>
+                                <li>
+	                                <span><i class="icon-leaf"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
+                                </li>
+                                <li>
+	                                <span><i class="icon-leaf"></i> Great Grand Child</span> <a href="">Goes somewhere</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+	                        <span><i class="icon-leaf"></i> Grand Child</span> <a href="">Goes somewhere</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span><i class="icon-folder-open"></i> Parent2</span> <a href="">Goes somewhere</a>
+            <ul>
+                <li>
+                	<span><i class="icon-leaf"></i> Child</span> <a href="">Goes somewhere</a>
+		        </li>
+		    </ul>
+        </li>
+    </ul>
+</div>
         <?=
         GridView::widget([
             'dataProvider' => $dataProvider,
@@ -63,4 +121,4 @@ $this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/styl
     </div>
 
 </div>
-
+</div>

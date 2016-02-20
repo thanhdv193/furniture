@@ -90,9 +90,9 @@ class Product extends \yii\db\ActiveRecord
             'is_hethang' => 'Tình trạng',
             'is_new' => 'Is New',
             'is_top' => 'Is Top',
-            'create_date' => 'Create Date',
+            'create_date' => 'Ngày tạo',
             'is_active' => 'Trạng thái',
-            'discount' => 'Discount',
+            'discount' => 'Giảm giá',
             'discount_bonus' => 'Discount Bonus',
             'price' => 'Giá',
             'time_left' => 'Time Left',
@@ -103,7 +103,29 @@ class Product extends \yii\db\ActiveRecord
             'tags' => 'Tags',
             'old_price' => 'Giá cũ',
             'quantity_current' => 'Số lượng',
-            'view_count' => 'View Count',
+            'view_count' => 'Lượt xem',
+            'productType' => Yii::t('app', 'Danh mục '),
+            'productGroup' => Yii::t('app', 'Nhóm sản phẩm')
         ];
+    }         
+         /* ActiveRelation */
+    public function getProduct_type()
+    {
+        return $this->hasOne(ProductType::className(), ['id' => 'product_type_id']);
     }
+
+    /* Getter for country name */
+    public function getProductType() {
+        return $this->product_type->title;
+    }
+    public function getProduct_group()
+    {
+        return $this->hasOne(ProductGroup::className(), ['id' => 'product_group_id']);
+    }
+
+    /* Getter for country name */
+    public function getProductGroup() {
+        return $this->product_group->title;
+    }
+
 }

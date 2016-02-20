@@ -18,7 +18,7 @@ class ProductGroupSearch extends ProductGroup
     public function rules()
     {
         return [
-            [['id', 'z_index', 'create_date', 'active'], 'integer'],
+            [['id', 'z_index', 'active'], 'integer'],
             [['title'], 'safe'],
         ];
     }

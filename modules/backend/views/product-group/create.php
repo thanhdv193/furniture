@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ProductGroup */
 
-$this->title = 'Create Product Group';
-$this->params['breadcrumbs'][] = ['label' => 'Product Groups', 'url' => ['index']];
+$this->title = 'Thêm mới nhóm sản phẩm';
+$this->params['breadcrumbs'][] = ['label' => 'Nhóm sản phẩm', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-group-create">

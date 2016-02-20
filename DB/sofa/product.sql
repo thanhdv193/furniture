@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : Home
-Source Server Version : 50626
+Source Server         : home
+Source Server Version : 50611
 Source Host           : localhost:3306
 Source Database       : furniture
 
 Target Server Type    : MYSQL
-Target Server Version : 50626
+Target Server Version : 50611
 File Encoding         : 65001
 
-Date: 2016-02-18 13:36:49
+Date: 2016-02-20 19:25:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,7 +38,7 @@ CREATE TABLE `product` (
   `is_hethang` tinyint(1) DEFAULT '0',
   `is_new` tinyint(1) DEFAULT '0',
   `is_top` tinyint(1) DEFAULT '0',
-  `create_date` date NOT NULL,
+  `create_date` int(10) NOT NULL,
   `is_active` tinyint(1) NOT NULL DEFAULT '0',
   `discount` float DEFAULT '0',
   `discount_bonus` varchar(250) DEFAULT NULL,
@@ -53,4 +53,4 @@ CREATE TABLE `product` (
   `quantity_current` int(10) DEFAULT NULL,
   `view_count` int(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3722 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3725 DEFAULT CHARSET=utf8;

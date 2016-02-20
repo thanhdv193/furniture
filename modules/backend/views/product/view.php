@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Product */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Sản phẩm', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-view">
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Sửa', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Xóa', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -33,9 +33,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'product_type_id',
             'product_category_id',
             'title',
-            'link',
-            'olink',
-            'olink2',
+            //'link',
+            //'olink',
+            //'olink2',
             'description:ntext',
             'content:ntext',
             'photo',
@@ -44,18 +44,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'seo_description',
             'seo_photo_alt',
             'is_hethang',
-            'is_new',
-            'is_top',
+            //'is_new',
+            //'is_top',
             'create_date',
             'is_active',
             'discount',
             'discount_bonus',
             'price',
-            'time_left',
-            'z_index',
-            'code_product',
+            //'time_left',
+            //'z_index',
+            //'code_product',
             'size',
-            'origin',
+            //'origin',
             'tags:ntext',
             'old_price',
             'quantity_current',

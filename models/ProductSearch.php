@@ -12,6 +12,8 @@ use app\models\Product;
  */
 class ProductSearch extends Product
 {
+    public $productType;
+    public $productGroup;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,7 @@ class ProductSearch extends Product
     {
         return [
             [['id', 'product_group_id', 'product_type_id', 'product_category_id', 'is_hethang', 'is_new', 'is_top', 'is_active', 'time_left', 'z_index', 'quantity_current', 'view_count'], 'integer'],
-            [['title', 'link', 'olink', 'olink2', 'description', 'content', 'photo', 'seo_title', 'seo_keyword', 'seo_description', 'seo_photo_alt', 'create_date', 'discount_bonus', 'code_product', 'size', 'origin', 'tags'], 'safe'],
+            [['productGroup','productType','title', 'link', 'olink', 'olink2', 'description', 'content', 'seo_title', 'seo_keyword', 'seo_description', 'seo_photo_alt', 'create_date', 'discount_bonus', 'code_product', 'size', 'origin', 'tags'], 'safe'],
             [['discount', 'price', 'old_price'], 'number'],
         ];
     }
@@ -53,9 +55,26 @@ class ProductSearch extends Product
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
+            $query->joinWith(['product_type','product_group']);            
             return $dataProvider;
         }
-
+        
+        //$this->addCondition($query, 'product_type_id');
+        //$query->joinWith('product_group');
+        if($this->productType != null)
+        {
+            $query->joinWith(['product_type' => function ($q) {
+                $q->where('product_type.title LIKE "%' . $this->productType . '%"');
+            }]);
+        }
+        
+        if($this->productGroup != null)
+        {
+            $query->joinWith(['product_group' => function ($q) {
+                $q->where('product_group.title LIKE "%' . $this->productGroup . '%"');
+            }]);            
+        }
+       
         $query->andFilterWhere([
             'id' => $this->id,
             'product_group_id' => $this->product_group_id,
@@ -75,7 +94,7 @@ class ProductSearch extends Product
             'view_count' => $this->view_count,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
+        $query->andFilterWhere(['like', 'product.title', $this->title])
             ->andFilterWhere(['like', 'link', $this->link])
             ->andFilterWhere(['like', 'olink', $this->olink])
             ->andFilterWhere(['like', 'olink2', $this->olink2])
@@ -91,7 +110,7 @@ class ProductSearch extends Product
             ->andFilterWhere(['like', 'size', $this->size])
             ->andFilterWhere(['like', 'origin', $this->origin])
             ->andFilterWhere(['like', 'tags', $this->tags]);
-
+        
         return $dataProvider;
     }
 }

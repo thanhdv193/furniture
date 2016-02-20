@@ -35,11 +35,12 @@ class Menu
             echo '<ul>';
             foreach ($menu_tmp as $item)
             {             
-                echo '<li data-id="'.$item['id'].'">';                                                                                                    
+                echo '<li class="parent_li" data-id="'.$item['id'].'">';  
+                echo '<span><i class="icon-minus-sign"></i> <a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/update?id='.$item['id'].'" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a><a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/delete?id='.$item['id'].'" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></span>';
                 // Gọi lại đệ quy
                 // Truyền vào danh sách menu chưa lặp và id parent của menu hiện tại    
-                echo '<a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/update?id=120" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a>';
-                echo '<a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/delete?id=120" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a>';
+                //echo '<a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/update?id='.$item['id'].'" title="Sửa" aria-label="Sửa" data-pjax="0"><span class="glyphicon glyphicon-pencil"></span></a>';
+                //echo '<a class="item data-item-'.$item['id'].'" href="/index.php/backend/product-type/delete?id='.$item['id'].'" title="Xóa" aria-label="Xóa" data-confirm="Bạn có chắc là sẽ xóa mục này không?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a>';
                 echo '<a href="#" data-id="'.$item['id'].'">'.$item['title'].'</a>';                         
                 self::menu($menus, $item['id']);
                 echo '</li>';

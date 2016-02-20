@@ -193,7 +193,7 @@ AppAssetBackend::register($this);
                                 <li>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-logged" data-toggle="dropdown">
-                                            <img src="../images/loggeduser.png" alt="" />
+                                            <img src="<?php Yii::$app->request->baseUrl ?>/images/loggeduser.png" alt="" />
                                             Elen Adarna
                                             <span class="caret"></span>
                                         </button>
@@ -224,7 +224,7 @@ AppAssetBackend::register($this);
                     <div class="media leftpanel-profile">
                         <div class="media-left">
                             <a href="#">
-                                <img src="../images/loggeduser.png" alt="" class="media-object img-circle">
+                                <img src="<?php Yii::$app->request->baseUrl ?>/images/loggeduser.png" alt="" class="media-object img-circle">
                             </a>
                         </div>
                         <div class="media-body">
@@ -371,7 +371,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user1.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user1.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Christina R. Hill</h4>
@@ -382,7 +382,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user2.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user2.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Floyd M. Romero</h4>
@@ -393,7 +393,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user3.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user3.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Jennie S. Gray</h4>
@@ -404,7 +404,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user4.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user4.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Alia J. Locher</h4>
@@ -415,7 +415,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user5.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user5.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Nicholas T. Hinkle</h4>
@@ -426,7 +426,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user6.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user6.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Jamie W. Bradford</h4>
@@ -437,7 +437,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user7.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user7.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Pamela J. Stump</h4>
@@ -448,7 +448,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user8.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user8.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Refugio C. Burgess</h4>
@@ -459,7 +459,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user9.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user9.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Ashley T. Brewington</h4>
@@ -470,7 +470,7 @@ AppAssetBackend::register($this);
                                 <li class="media">
                                     <a href="#">
                                         <div class="media-left">
-                                            <img class="media-object img-circle" src="../images/user10.png" alt="">
+                                            <img class="media-object img-circle" src="<?php Yii::$app->request->baseUrl ?>/images/user10.png" alt="">
                                         </div>
                                         <div class="media-body">
                                             <h4 class="media-heading">Roberta F. Horn</h4>

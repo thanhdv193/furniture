@@ -12639,34 +12639,7 @@ fieldset[disabled] .btn-fb.active {
   padding-top: 0;
   background-color: transparent;
 }
-.or {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 11px;
-  text-align: center;
-  margin: 20px 0;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: relative;
-}
-.or:after {
-  content: '';
-  position: absolute;
-  width: 45%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-  top: 8px;
-  right: 0;
-}
-.or:before {
-  content: '';
-  position: absolute;
-  width: 45%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
-  top: 8px;
-  left: 0;
-}
+
 .bg-white {
   background-color: #fff;
 }
@@ -14504,4 +14477,7 @@ fieldset[disabled] .btn-fb.active {
 }
 .paddingtop20 {
   padding-top: 20px;
+}
+.grid-view th a{
+    color:#000;
 }

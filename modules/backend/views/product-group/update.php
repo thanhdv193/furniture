@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\ProductGroup */
 
-$this->title = 'Update Product Group: ' . ' ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Product Groups', 'url' => ['index']];
+$this->title = 'Sửa: ' . ' ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Nhóm sản phẩm', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Sửa';
 ?>
 <div class="product-group-update">
 

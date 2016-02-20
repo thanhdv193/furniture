@@ -55,8 +55,8 @@ class ProductType extends \yii\db\ActiveRecord
             'z_index' => 'Z Index',
             'is_menu' => 'Is Menu',
             'olink' => 'Olink',
-            'create_date' => 'Create Date',
-            'active' => 'Hoạt động',
+            'create_date' => 'Ngày tạo',
+            'active' => 'Tình trạng',
         ];
     }
 }

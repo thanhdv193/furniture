@@ -44,8 +44,8 @@ class ProductGroup extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Tiêu đề',
             'z_index' => 'Z Index',
-            'create_date' => 'Create Date',
-            'active' => 'Hoạt động',
+            'create_date' => 'Ngày tạo',
+            'active' => 'Trạng thái',
         ];
     }
 }

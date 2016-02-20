@@ -29,9 +29,9 @@ $('.menu_tree ul li').each(function(){
   $this = $(this);
   $this.mouseenter(function(){
     $( this ).children("a").css({"font-weight":"bold","color":"#336b9b"});
-    var a = $(this).attr("data-id");
-    $(this).children(".data-item-"+a).addClass("display");
-    console.log(a);
+//    var a = $(this).attr("data-id");
+//    $(this).children(".data-item-"+a).addClass("display");
+//    console.log(a);
   });
   $this.mouseleave(function(){
     $( this ).children("a").css({"font-weight":"normal","color":"#428bca"});
@@ -50,6 +50,6 @@ $('.menu_tree ul li.hasSubmenu a.toogle').click(function(){
   $this.children("i").toggle();
   return false;
 });
-$('.menu_tree ul li a').has("item").css("display","none");
+//$('.menu_tree ul li a').has("item").css("display","none");
 //$('ul li.hasSubmenu a.toogle').closest("li").children("ul").toggle("slow");
 //$('ul li.hasSubmenu a.toogle').children("i").toggle();
