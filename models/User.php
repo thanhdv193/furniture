@@ -7,18 +7,15 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use yii\web\UploadedFile;
 
 class User extends ActiveRecord implements IdentityInterface {
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
     const ROLE_USER = 10;
-
     public $password_repeat;
-
     public static function tableName() {
-        return 'user';
+        return '{{%user}}';
     }
 
     public function behaviors() {
@@ -33,52 +30,15 @@ class User extends ActiveRecord implements IdentityInterface {
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['username', 'string', 'min' => 2, 'max' => 255],
-            ['email', 'filter', 'filter' => 'trim'],            
+            ['email', 'filter', 'filter' => 'trim'],
+            ['email', 'required'],
             ['email', 'email'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
             [['password_hash', 'password_repeat'], 'required'],
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
-            ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'Mật khẩu không khớp!')],
-            [['last_name', 'name', 'gender', 'birthday', 'address'], 'required'],
-            //[['avatar'], 'file','extensions' => 'PNG,JPG,png,jpg'],
-            [['updated_at','created_at','role','group', 'birthday', 'active'], 'integer'],
-            [['password_reset_token','avatar','gender'], 'string']
-            //[['avatar'], 'file', 'skipOnEmpty' => FALSE, 'extensions' => 'PNG,JPG,png,jpg'],
+            ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'theashes!')],
         ];
-    }
-
-    public function attributeLabels() {
-        return [
-            'username' => 'Tên tài khoản',
-            'email' => 'email',
-            'password_hash' => 'Mật khẩu',
-            'password_repeat' => 'Xác nhận',
-            'gender' => 'Giới tính',
-            'group' => 'Nhóm quyền',
-            'avatar' => 'Ảnh đại diện',
-            'birthday' => 'Ngày sinh',
-            'address' => 'Địa chỉ',
-            'last_name' => 'Họ tên đệm',
-            'updated_at'=>'Ngày sửa',
-            'created_at'=>'Ngày tạo',
-            'name' => 'Tên',
-            'active'=>'Trạng thái'
-        ];
-    }
-
-    public function upload() {
-        if ($this->avatar) {
-            $this->avatar->saveAs('upload/image/avatar/' . time() . '-avatar-' . $this->avatar->baseName . '.' . $this->avatar->extension);
-            var_dump($this->avatar); die;
-            return time() . '-avatar-' . $this->avatar->baseName . '.' . $this->avatar->extension;
-        } else {
-            return false;
-        }
-    }
-
-    public function getImageurl() {
-        return \Yii::$app->request->BaseUrl . '/<path to image>/' . $this->avatar;
     }
 
     /**
@@ -171,5 +131,4 @@ class User extends ActiveRecord implements IdentityInterface {
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
     }
-
 }
