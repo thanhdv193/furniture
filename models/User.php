@@ -8,16 +8,17 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use yii\web\UploadedFile;
-use app\components\helpers\SystemHelper;
 
 class User extends ActiveRecord implements IdentityInterface {
 
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
     const ROLE_USER = 10;
+
     public $password_repeat;
+
     public static function tableName() {
-        return '{{%user}}';
+        return 'user';
     }
 
     public function behaviors() {
@@ -28,35 +29,56 @@ class User extends ActiveRecord implements IdentityInterface {
 
     public function rules() {
         return[
-            
             ['username', 'filter', 'filter' => 'trim'],
-            ['username', 'required','message' => 'Tên tài khoản không được để trống.'],
+            ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['username', 'string', 'min' => 2, 'max' => 255],
-            [['Avatar'], 'file','extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
-            ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required','message'=>'email không được để trống.'],
-            ['email', 'email','message'=>'email không đúng định dạng.'],
+            ['email', 'filter', 'filter' => 'trim'],            
+            ['email', 'email'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
-            ['gender', 'required'],            
-            ['gender', 'string', 'min' => 2, 'max' => 255],
-            [['password_hash', 'password_repeat'], 'required','message'=>'Password không được để trống.'],
+            [['password_hash', 'password_repeat'], 'required'],
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
-            ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'theashes!')],
+            ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'Mật khẩu không khớp!')],
+            [['last_name', 'name', 'gender', 'birthday', 'address'], 'required'],
+            //[['avatar'], 'file','extensions' => 'PNG,JPG,png,jpg'],
+            [['updated_at','created_at','role','group', 'birthday', 'active'], 'integer'],
+            [['password_reset_token','avatar','gender'], 'string']
+            //[['avatar'], 'file', 'skipOnEmpty' => FALSE, 'extensions' => 'PNG,JPG,png,jpg'],
         ];
     }
-    public function attributeLabels()
-    {
+
+    public function attributeLabels() {
         return [
-            'id' => 'Mã',
             'username' => 'Tên tài khoản',
-            'email' => 'Email',
-            'Avatar' => 'Ảnh đại diện',
-            'gender' => 'giới tính',
-            'created_at'=> 'Ngày tạo',
-            'updated_at' =>'Ngày sửa',            
+            'email' => 'email',
+            'password_hash' => 'Mật khẩu',
+            'password_repeat' => 'Xác nhận',
+            'gender' => 'Giới tính',
+            'group' => 'Nhóm quyền',
+            'avatar' => 'Ảnh đại diện',
+            'birthday' => 'Ngày sinh',
+            'address' => 'Địa chỉ',
+            'last_name' => 'Họ tên đệm',
+            'updated_at'=>'Ngày sửa',
+            'created_at'=>'Ngày tạo',
+            'name' => 'Tên',
+            'active'=>'Trạng thái'
         ];
+    }
+
+    public function upload() {
+        if ($this->avatar) {
+            $this->avatar->saveAs('upload/image/avatar/' . time() . '-avatar-' . $this->avatar->baseName . '.' . $this->avatar->extension);
+            var_dump($this->avatar); die;
+            return time() . '-avatar-' . $this->avatar->baseName . '.' . $this->avatar->extension;
+        } else {
+            return false;
+        }
+    }
+
+    public function getImageurl() {
+        return \Yii::$app->request->BaseUrl . '/<path to image>/' . $this->avatar;
     }
 
     /**
@@ -149,14 +171,5 @@ class User extends ActiveRecord implements IdentityInterface {
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
     }
-    public function upload($user_name) {
-       
-        if ($this->Avatar) {      
-            $baseName = SystemHelper::convertMaTV($this->Avatar->baseName);            
-            $this->Avatar->saveAs('upload/User/Avatar/' . time() .'_'. $user_name .'_'.$baseName. '.' . $this->Avatar->extension);
-            return time() .'_'. $user_name .'_'.$baseName. '.' . $this->Avatar->extension;
-        } else {
-            return false;
-        }
-    }
+
 }

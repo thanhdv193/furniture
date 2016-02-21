@@ -45,11 +45,14 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'formatter' => [
-            'dateFormat' => 'dd.MM.yyyy',
+        'formatter' => [            
             'decimalSeparator' => ',',
             'thousandSeparator' => ' ',
             'currencyCode' => 'EUR',
+            'dateFormat' => 'php:d-m-Y',
+            'datetimeFormat' => 'php:d-m-Y H:i a',
+            'timeFormat' => 'php:H:i A',
+            'timeZone' => 'Asia/Ho_Chi_Minh',
         ],
 //        'mailer' => [
 //            'class' => 'yii\swiftmailer\Mailer',           

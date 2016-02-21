@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\ProductSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Sản phẩm';
+$this->title = 'Danh sách sản phẩm';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">

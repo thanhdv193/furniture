@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Product */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Sản phẩm', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Danh sách sản phẩm', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-view">
@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'product_group_id',
-            'product_type_id',
-            'product_category_id',
+            'productGroup',
+            'productType',
+            //'product_category_id',
             'title',
             //'link',
             //'olink',
@@ -45,8 +45,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'seo_photo_alt',
             'is_hethang',
             //'is_new',
-            //'is_top',
-            'create_date',
+            //'is_top',            
+            [
+             'attribute' => 'create_date',
+             'format'=>'raw',
+             'value' =>Yii::$app->formatter->asDatetime($model->create_date, 'php:h:i:s d/m/Y'),
+            ],
             'is_active',
             'discount',
             'discount_bonus',
@@ -58,8 +62,12 @@ $this->params['breadcrumbs'][] = $this->title;
             //'origin',
             'tags:ntext',
             'old_price',
-            'quantity_current',
-            'view_count',
+            'quantity_current',            
+            [
+             'attribute' => 'view_count',
+             'format'=>'raw',
+             'value' => $model->view_count == 0 ? 0 : $model->view_count
+            ],
         ],
     ]) ?>
 
