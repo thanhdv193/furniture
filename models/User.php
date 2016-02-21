@@ -38,8 +38,30 @@ class User extends ActiveRecord implements IdentityInterface {
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
             ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'theashes!')],
+            [['group', 'birthday','active'], 'integer'],
+            [['gender', 'avatar', 'last_name', 'name','address'], 'string', 'max' => 250]
         ];
     }
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Tên tài khoản',
+            'password_hash' => 'Mật khẩu',
+            'email' => 'Email',
+            'created_at' => 'Ngày tạo',
+            'updated_at' => 'Ngày cập nhật',
+            'role' => 'Role',
+            'group' => 'Nhóm',
+            'gender' => 'Giới tính',
+            'birthday' => 'Ngày sinh',
+            'avatar' => 'Ảnh đại diện',
+            'last_name' => 'Tên đệm',
+            'name' => 'Tên',
+            'address' => 'Địa chỉ',
+            'active' => 'Trạng thái',
+        ];
+    }
+    
 
     /**
      * @inheritdoc
