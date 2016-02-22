@@ -14,10 +14,20 @@ class DefaultController extends Controller
 {
     public function actionIndex()
     {        
-        return $this->render('index');
+        if (Yii::$app->user->isGuest)
+        {
+            //return $this->redirect('/backend/default/login');
+             return $this->render('index');
+        }else{
+            return $this->render('index');
+        }
+        
     }
-    
-    public function actionUpload()
+    public function actionLogin(){
+        return $this->render('login-admin');
+    }
+
+public function actionUpload()
     {
         $post = Yii::$app->request->post();
         

@@ -304,8 +304,8 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý người dùng</span></a>
                                     <ul class="children">
-                                        <li><a href="#">Danh sách người dùng</a></li>  
-                                        <li><a href="#">Thêm mới người dùng</a></li>  
+                                        <li><a href="<?php Url::base('') ?>/backend/user/">Danh sách người dùng</a></li>  
+                                        <li><a href="<?php Url::base('') ?>/backend/user/create">Thêm mới người dùng</a></li>  
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
@@ -324,7 +324,7 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý sản phẩm</span></a>
                                     <ul class="children">
-                                        <li><a href="#">Sản phẩm</a></li>                                                                            
+                                        <li><a href="<?php Url::base('') ?>/backend/product/">Sản phẩm</a></li>                                                                            
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
