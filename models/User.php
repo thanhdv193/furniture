@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use app\components\helpers\SystemHelper;
 
 class User extends ActiveRecord implements IdentityInterface {
 
@@ -37,9 +38,10 @@ class User extends ActiveRecord implements IdentityInterface {
             [['password_hash', 'password_repeat'], 'required'],
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
-            ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'theashes!')],
-            [['group', 'birthday','active'], 'integer'],
-            [['gender', 'avatar', 'last_name', 'name','address'], 'string', 'max' => 250]
+            ['password_repeat', 'compare', 'compareAttribute' => 'password_hash', 'message' => Yii::t('app', 'Mật khẩu không khớp!')],
+            [['active'], 'integer'],
+            [['birthday','group', 'gender', 'last_name', 'name','address'], 'string', 'max' => 250],
+            [[ 'avatar'], 'file', 'extensions' => 'PNG,JPG,png,jpg', 'maxFiles' => 4],
         ];
     }
     public function attributeLabels()
@@ -51,7 +53,7 @@ class User extends ActiveRecord implements IdentityInterface {
             'created_at' => 'Ngày tạo',
             'updated_at' => 'Ngày cập nhật',
             'role' => 'Role',
-            'group' => 'Nhóm',
+            'group' => 'Nhóm quyền',
             'gender' => 'Giới tính',
             'birthday' => 'Ngày sinh',
             'avatar' => 'Ảnh đại diện',
@@ -59,7 +61,25 @@ class User extends ActiveRecord implements IdentityInterface {
             'name' => 'Tên',
             'address' => 'Địa chỉ',
             'active' => 'Trạng thái',
+            'password_repeat'=>"Mật khẩu",
         ];
+    }
+    
+    public function upload($type)
+    {
+
+        if ($this->avatar)
+        {
+            $baseName = SystemHelper::convertMaTV($this->avatar->baseName);            
+            $this->avatar->saveAs('upload/'.$type.'/' . time() . '_' . $baseName . '.' . $this->avatar->extension);
+            return array(
+                'filename' => time() . '_' . $baseName . '.' . $this->avatar->extension,
+                'patch' => 'upload/'.$type.'/'
+            );
+        } else
+        {
+            return false;
+        }
     }
     
 

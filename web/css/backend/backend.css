@@ -14481,3 +14481,57 @@ fieldset[disabled] .btn-fb.active {
 .grid-view th a{
     color:#000;
 }
+.avatar {
+    //float: left;
+    border: dashed 1px #ccc;
+    width: 150px;
+    height: 146px;
+    margin: auto;
+}
+.avatar .fileupload input[type="file"]{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    width: 205px;
+    min-height: 100%;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: 0;
+    background: #fff;
+    cursor: inherit;
+    display: block;
+}
+.avatar .thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+.avatar .help-block{
+    margin: 0px;
+}
+.avatar .thumbnail  img{
+    max-height: 144px;
+    max-width: 100%;
+}
+.avatar .btn-file{
+    position: relative;
+    overflow: hidden;
+}
+.panel-body .user-create, .panel-body .user-update{
+    width:50%;
+}
+.row-submit {
+    text-align: center;
+}
+.text-required {
+    color:red;
+}

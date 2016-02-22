@@ -1,7 +1,7 @@
 
 
 $(document).ready(function() {
-
+    $("#user-birthday").mask("99/99/9999");
   'use strict';
 
   

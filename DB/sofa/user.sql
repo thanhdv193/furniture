@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : home
-Source Server Version : 50611
+Source Server         : Home
+Source Server Version : 50626
 Source Host           : localhost:3306
 Source Database       : furniture
 
 Target Server Type    : MYSQL
-Target Server Version : 50611
+Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-02-21 22:55:31
+Date: 2016-02-22 13:25:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,13 +30,13 @@ CREATE TABLE `user` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   `role` smallint(6) NOT NULL DEFAULT '10',
-  `group` tinyint(4) DEFAULT NULL,
+  `group` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `gender` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `birthday` int(11) DEFAULT NULL,
-  `avatar` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `avatar` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_name` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `address` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
   `active` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

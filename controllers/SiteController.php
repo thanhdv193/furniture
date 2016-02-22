@@ -262,6 +262,10 @@ class SiteController extends Controller
 
     public function actionTest()
     {
+        $date = '02/02/1993';
+        $dateInt = strtotime($date);
+        $date2= date("Y/m/d H:i:s", 728607600);
+        var_dump($date2); die;
         $amount = 123456789;
         if ($amount <= 0)
         {

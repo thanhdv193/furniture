@@ -10,12 +10,20 @@ $this->params['breadcrumbs'][] = ['label' => 'Danh sách người dùng', 'url' 
 $this->params['breadcrumbs'][] = ['label' => $model->username, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Sửa';
 ?>
-<div class="user-update">
+<div class="panel">
+    <div class="panel-heading">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div> 
+    <div class="panel-body">
+        <div class="user-update">  
 
-    <h1><?= Html::encode($this->title) ?></h1>
+            <?=
+            $this->render('_form', [
+                'model' => $model,
+            ])
+            ?>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+        </div>
+    </div>
 </div>
+

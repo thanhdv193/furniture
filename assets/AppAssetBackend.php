@@ -41,6 +41,8 @@ class AppAssetBackend extends AssetBundle
 //       'lib/flot-spline/jquery.flot.spline.js',
         'lib/jquery-knob/jquery.knob.js',
         'lib/dropzone/dropzone.js',
+        //'lib/timepicker/jquery.timepicker.js',
+        'lib/jquery-maskedinput/jquery.maskedinput.js',
         'js/index.js',
         'js/dashboard.js',
         //'js/upload_img.js',

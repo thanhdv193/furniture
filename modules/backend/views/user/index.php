@@ -36,8 +36,22 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
             ],
             'last_name',
-            'name',                
-            'avatar',                
+            'name',                                
+            [
+                'attribute' => 'avatar',
+                 'headerOptions' => ['width' => '100', 'text-align' => 'center'],
+                    'format' => 'html',                    
+                    'value' => function ($model)
+                    {                        
+                        if($model['avatar'] == null)
+                        {
+                            return "Không có ảnh";
+                        }else{
+                            return Html::img('@web/' . $model['avatar'], ['width' => '50px', 'height' => '50px']);
+                        }
+                        
+                    },
+            ],                
             //'auth_key',
             //'password_hash',
             //'password_reset_token',
