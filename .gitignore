@@ -24,3 +24,4 @@ phpunit.phar
 /phpunit.xml
 /vendor
 /web/upload/product
+/web/upload/avatar
