@@ -44,23 +44,24 @@ class AppAsset extends AssetBundle
         
         
     ];
-    public $js = [
-        'lib/jquery-ui/jquery-ui.min.js',
-        'js/main.js',
-        'lib/bootstrap/js/bootstrap.min.js',
-        'lib/select2/js/select2.min.js',        
-        'js/jquery.actual.min.js',
-        'lib/countdown/jquery.plugin.js',
-        'lib/countdown/jquery.countdown.min.js',        
-        'lib/owl.carousel/owl.carousel.min.js',
-        'lib/jquery.bxslider/jquery.bxslider.min.js',
-        'lib/fancyBox/jquery.fancybox.js',
-        'js/theme-script.js',
-        'js/Countdown.timer.js',
-         'js/register/popup.js',
-//        'js/tour/hopscotch.js',
-//        'js/tour/demo_tour.js',
-//        'https://www.google.com/recaptcha/api.js'
+    public $js = [        
+        'js/lib/jquery.lazyload.min.js',
+        'js/lib/owl.carousel.js',
+        'js/lib/ios-orientationchange-fix.js',
+        'js/lib/jquery.hoverIntent.js',
+        'js/lib/selectUl.js',
+        'js/lib/jquery.ba-throttle-debounce.js',
+        'js/lib/em0131.js',
+        'js/lib/megamenu.js',
+        'js/lib/jquery.custom.responsiveTabs.js',
+        'js/lib/jquery.fancybox.js',
+        'js/lib/custom.js',
+       
+        
+        
+        
+        
+        
         
         
     ];
