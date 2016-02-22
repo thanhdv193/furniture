@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'username',                                    
             [
                 'attribute' => 'avatar',
-                'value' => '@web/'.$model->avatar,
+                'value' => $model->avatar == null ? '@web/upload/avatar/no-avatar.png' : '@web/'.$model->avatar,
                 'format' => ['image', ['width' => '100', 'height' => '100']],
             ],
             'last_name',

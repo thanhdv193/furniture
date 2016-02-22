@@ -119,6 +119,7 @@ class UserController extends Controller
         if ($model->load(Yii::$app->request->post()) ) {
             $model->password_hash=Yii::$app->security->generatePasswordHash($model->password_hash);
             $model->avatar = UploadedFile::getInstance($model, 'avatar');
+            $model->birthday = strtotime($model->birthday); 
             if($model->avatar == null)
                            {
                                 if ($model->save(false))

@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     {                        
                         if($model['avatar'] == null)
                         {
-                            return "Không có ảnh";
+                            return Html::img('@web/' . 'upload/avatar/no-avatar.png', ['width' => '50px', 'height' => '50px']);
                         }else{
                             return Html::img('@web/' . $model['avatar'], ['width' => '50px', 'height' => '50px']);
                         }
