@@ -19,18 +19,29 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',        
-        'css/layout/style.css',
-        'lib/bootstrap/css/bootstrap.min.css',
-        'css/layout/reset.css',
-        'css/layout/option3.css',
-        'css/layout/animate.css',
-        'css/layout/responsive.css',
-        'lib/jquery-ui/jquery-ui.css',
-        'lib/owl.carousel/owl.carousel.css',
-        'lib/jquery.bxslider/jquery.bxslider.css',
-        'lib/select2/css/select2.min.css',
-        'lib/font-awesome/css/font-awesome.min.css',
-        'js/tour/hopscotch.css'
+        //menu css
+        'css/lib/menu.css',
+        'css/lib/megamenu.css',
+        //default css
+        'css/lib/styles.css',
+        'css/lib/font-awesome.css',
+        'css/lib/owl.carousel.css',
+        'css/lib/responsive.css',
+        'css/lib/bootstrap.css',
+        //Product Labels CSS        
+        'css/lib/em_productlabels.css',
+        // Fancybox CSS -->
+        'css/lib/jquery.fancybox.css',
+        'css/lib/responsive-tabs.css',
+        'css/lib/print.css',
+        'css/lib/style_fashion.css',
+        'css/lib/color1.css',
+      
+        
+        
+        
+        
+        
         
     ];
     public $js = [
