@@ -52,15 +52,11 @@ class AppAsset extends AssetBundle
         'js/lib/megamenu.js',
         'js/lib/jquery.custom.responsiveTabs.js',
         'js/lib/jquery.fancybox.js',
+        'js/lib/cloud-zoom.js',
+        '/js/lib/em_product_view.js',
+        '/js/lib/lightbox.min.js',
+        '/js/product-detail.js',
         'js/lib/custom.js',
-       
-        
-        
-        
-        
-        
-        
-        
     ];
     public $depends = [
         'yii\web\YiiAsset',

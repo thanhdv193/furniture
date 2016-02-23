@@ -574,13 +574,8 @@ AppAsset::register($this);
                                                 </div>
                                             </div><!-- /.em-wrapper-banners -->
                                         </div>
-                                        <?= $content ?>
-                                      
-
-                                        
-
-                                        
-                                    </div><!-- /.em-col-main -->
+                                        <?= $content ?>                                                                                                                    
+                                        </div><!-- /.em-col-main -->
                                     
                                     <div class="col-sm-6 col-sm-pull-18 em-col-left em-sidebar">
                                         <?=  MenuLeftWidget::widget() ?>

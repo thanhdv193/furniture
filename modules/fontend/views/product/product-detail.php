@@ -4,6 +4,12 @@ use yii\helpers\Url;
 use yii\helpers;
 
 $this->title = 'Chi tiết sản phẩm';
+
+//$this->registerCssFile(Url::base('') . '/css/lib/em_cloudzoom.css');
+//$this->registerJsFile(Url::base('') . '/js/lib/em_product_view.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+//$this->registerJsFile(Url::base('') . '/js/lib/lightbox.min.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+//$this->registerJsFile(Url::base('') . '/js/product-detail.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+
 ?>
 
 <div class="wrapper-breadcrums">
@@ -45,19 +51,19 @@ $this->title = 'Chi tiết sản phẩm';
                                                 <div class="product-img-box">
                                                     <div class="media-left">
                                                         <p class="product-image">
-                                                            <a class="cloud-zoom" id="image_zoom" rel="zoomWidth: 500,zoomHeight: 500,position: 'inside'" href="images/product/1000x1000/5_1.jpg"> <img class="em-product-main-img" src="<?php Url::base('') ?>/upload/images/product/800x800/5_1.jpg" alt='' title="WIASSI Version 1" /> </a> <a id="zoom-btn" rel="lightbox[em_lightbox]" href="images/product/1000x1000/5_1.jpg" title="WIASSI Version 1">Zoom</a>
+                                                            <a class="cloud-zoom" id="image_zoom" rel="zoomWidth: 500,zoomHeight: 500,position: 'inside'" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg"> <img class="em-product-main-img" src="<?php Url::base('') ?>/upload/images/product/800x800/5_1.jpg" alt='' title="WIASSI Version 1" /> </a> <a id="zoom-btn" rel="lightbox[em_lightbox]" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg" title="WIASSI Version 1">Zoom</a>
                                                         </p>
                                                     </div><!-- /.media-left -->
                                                     <div class="more-views">
                                                         <ul class="em-moreviews-slider ">
                                                             <li class="item">
-                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'images/product/800x800/4_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/4_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/4_1.jpg" alt="" /> </a> <a class="no-display" href="images/product/1000x1000/4_1.jpg" rel="lightbox[em_lightbox]">lightbox moreview</a>
+                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'/upload/images/product/800x800/4_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/4_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/4_1.jpg" alt="" /> </a> <a class="no-display" href="<?php Url::base('') ?>/upload/images/product/1000x1000/4_1.jpg" rel="lightbox[em_lightbox]">lightbox moreview</a>
                                                             </li>
                                                             <li class="item">
-                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'images/product/800x800/6_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/6_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/6_1.jpg" alt="" /> </a> <a class="no-display" href="images/product/1000x1000/6_1.jpg" rel="lightbox[em_lightbox]">lightbox moreview</a>
+                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'/upload/images/product/800x800/6_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/6_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/6_1.jpg" alt="" /> </a> <a class="no-display" href="<?php Url::base('') ?>/upload/images/product/1000x1000/6_1.jpg" rel="lightbox[em_lightbox]">lightbox moreview</a>
                                                             </li>
                                                             <li class="item">
-                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'images/product/800x800/5_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/5_1.jpg" alt="" /> </a> <a class="no-display" href="images/product/1000x1000/5_1.jpg" rel="">lightbox moreview</a>
+                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'/upload/images/product/800x800/5_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/5_1.jpg" alt="" /> </a> <a class="no-display" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg" rel="">lightbox moreview</a>
                                                             </li>
                                                         </ul>
                                                     </div><!-- /.more-views -->
