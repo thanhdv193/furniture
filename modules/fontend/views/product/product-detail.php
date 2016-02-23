@@ -225,7 +225,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                             </div>
                                                             <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-185-related"> <span class="price">$1,200.00</span> </span>
                                                             </div>
-                                                            <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox185" name="related_products[]" value="185" /> <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                             <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -252,7 +252,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                                 <p class="special-price"> <span class="price-label">Special Price</span> <span class="price" content="52" id="product-price-176-related"> $52.00 </span>
                                                                 </p>
                                                             </div>
-                                                            <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox176" name="related_products[]" value="176" /> <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -269,7 +269,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                             </div>
                                                             <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-166-related"> <span class="price">$750.00</span> </span>
                                                             </div>
-                                                            <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox166" name="related_products[]" value="166" /> <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -286,7 +286,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                             </div>
                                                             <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-177-related"> <span class="price">$120.00</span> </span>
                                                             </div>
-                                                            <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox177" name="related_products[]" value="177" /> <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                             <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -303,7 +303,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                             </div>
                                                             <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-168-related"> <span class="price">$1,300.00</span> </span>
                                                             </div>
-                                                            <input type="checkbox" class="checkbox related-checkbox" id="related-checkbox168" name="related_products[]" value="168" /> <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
                                                     </div>
                                                 </div>
