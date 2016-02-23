@@ -18,9 +18,9 @@ $this->title = 'Chi tiết sản phẩm';
             <div class="col-sm-24">
                 <div class="breadcrumbs">
                     <ul>
-                        <li class="Trang chủ"> <a href="index.html" title="Home"><span>Trang chủ</span></a> <span class="separator">/ </span>
+                        <li class="Trang chủ"> <a href="<?php echo Url::base('http') ?>" title="Home"><span>Trang chủ</span></a> <span class="separator">/ </span>
                         </li>
-                        <li class="category36"> <a href="category-one-column.html"><span>Chuyên mục</span></a> <span class="separator">/ </span>
+                        <li class="category36"> <a href="category-one-column.html"><span><?php echo $data['category'] ?></span></a> <span class="separator">/ </span>
                         </li>
                         <li class="product"> <strong><?php echo $data['title'] ?></strong>
                         </li>
@@ -85,7 +85,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                         </div>
                                                         <div class="short-description">
                                                             <h2>Quick Overview</h2>
-                                                            <div class="std">Morbi at ex at arcu posuere luctus. Maecenas eu nulla libero. Duis vulputate blandit hendrerit. Vestibulum mollis mattis justo nec auctor. Morbi non libero felis. Praesent porttitor blandit dui, nec mollis risus tempus ut. Fusce tincidunt</div>
+                                                            <div class="std"><?php echo $data['description'] ?></div>
                                                         </div>
                                                         <div class="em-addthis-plug"> <span>Chia sẻ</span>
                                                             <a href="#" target="_blank"><img style="width: 30px;height: 30px;" alt="Facebook" src="<?php Url::base('') ?>/upload/images/social/facebook.png" />
@@ -155,7 +155,7 @@ $this->title = 'Chi tiết sản phẩm';
                                                             <h2>Chi tiết sản phẩm</h2>
                                                         </div>
                                                         <div class="box-collateral-content">
-                                                            <div class="std"> Morbi at ex at arcu posuere luctus. Maecenas eu nulla libero. Duis vulputate blandit hendrerit. Vestibulum mollis mattis justo nec auctor. Morbi non libero felis. Praesent porttitor blandit dui, nec mollis risus tempus ut. Fusce tincidunt</div>
+                                                            <div class="std"><?php echo $data['content'] ?></div>
                                                         </div>
                                                     </div>
                                                     <div class="box-collateral box-tags em-line-01">

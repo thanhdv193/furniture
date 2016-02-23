@@ -1,691 +1,593 @@
 <?php
 
 use yii\helpers;
-use app\components\helpers\HelperLink;
-use app\components\helpers\SystemHelper;
-use yii\helpers\Html;
-use yii\widgets\LinkPager;
 use yii\helpers\Url;
-
-
-$this->registerJsFile(Url::base('').'/js/product/add_to_cart.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 $this->title = 'Danh mục';
 ?>
 
-<div class="columns-container">
-    <div class="container" id="columns">
-        <!-- breadcrumb -->
-        <div class="breadcrumb clearfix">
-            <a class="home" href="#" title="Return to Home">Trang chủ</a>
-            <span class="navigation-pipe">&nbsp;</span>
-            <span class="navigation_page">Thời trang nữ</span>
-        </div>
-        <!-- ./breadcrumb -->
-        <!-- row -->
+<div class="wrapper-breadcrums">
+    <div class="container">
         <div class="row">
-            <!-- Left colunm -->
-            <div class="column col-xs-12 col-sm-3" id="left_column">
-                <!-- block category -->
-                <div class="block left-module">
-                    <p class="title_block">Today's Deals</p>
-                    <div class="block_content">
-                        <!-- layered -->
-                        <div class="layered">
-                            <div class="layered-content">
-                                <div class="today-deals">
-                                    <ul class="deals-product-list owl-carousel" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-responsive='{"0":{"items":1},"600":{"items":3,"margin":20},"1000":{"items":1}}'>
-                                        <li>
-                                            <div class="product-conatainer">
-                                                <div class="product-thumb">
-                                                    <a href="#">
-                                                        <img src="" alt="Product">
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <div class="show-count-down">
-                                                        <span class="countdown-lastest" data-y="2015" data-m="7" data-d="1" data-h="00" data-i="00" data-s="00"></span>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#"> Jackets and coats</a>
-                                                    </h5>
-                                                    <div class="product-meta">
-                                                        <span class="price">$38,95</span>
-                                                        <span class="old-price">$52,00</span>
-                                                        <span class="star">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-conatainer">
-                                                <div class="product-thumb">
-                                                    <a href="#">
-                                                        <img src="" alt="Product">
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <div class="show-count-down">
-                                                        <span class="countdown-lastest" data-y="2015" data-m="7" data-d="1" data-h="00" data-i="00" data-s="00"></span>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#"> Jackets and coats</a>
-                                                    </h5>
-                                                    <div class="product-meta">
-                                                        <span class="price">$38,95</span>
-                                                        <span class="old-price">$52,00</span>
-                                                        <span class="star">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="product-conatainer">
-                                                <div class="product-thumb">
-                                                    <a href="#">
-                                                        <img src="" alt="Product">
-                                                    </a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <div class="show-count-down">
-                                                        <span class="countdown-lastest" data-y="2015" data-m="7" data-d="1" data-h="00" data-i="00" data-s="00"></span>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#"> Jackets and coats</a>
-                                                    </h5>
-                                                    <div class="product-meta">
-                                                        <span class="price">$38,95</span>
-                                                        <span class="old-price">$52,00</span>
-                                                        <span class="star">
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star"></i>
-                                                            <i class="fa fa-star-half-o"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ./layered -->
-                    </div>
-                </div>
-                <!-- ./block category  -->
-                <!-- block filter -->
-                <div class="block left-module">
-                    <p class="title_block">Lọc</p>
-                    <div class="block_content">
-                        <!-- layered -->
-                        <div class="layered layered-filter-price">
-                            <!-- filter categgory -->
-                            <div class="layered_subtitle">Danh mục</div>
-                            <div class="layered-content">
-                                <ul class="check-box-list">
-                                    <li>
-                                        <input type="checkbox" id="c1" name="cc" />
-                                        <label for="c1">
-                                            <span class="button"></span>
-                                            Áo <span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c2" name="cc" />
-                                        <label for="c2">
-                                            <span class="button"></span>
-                                            Váy áo<span class="count">(10)</span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="c3" name="cc" />
-                                        <label for="c3">
-                                            <span class="button"></span>
-                                            Giày<span class="count">(10)</span>
-                                        </label>
-                                    </li>                                    
-                                </ul>
-                            </div> 
-                            <!-- ./filter categgory -->
-                            <!-- filter price -->
-                            <div class="layered_subtitle">Giá</div>
-                            <div class="layered-content slider-range">
-
-                                <div data-label-reasult="Giá từ :" data-min="0" data-max="10000000" data-unit=" đ" class="slider-range-price" data-value-min="50" data-value-max="1000000"></div>
-                                <div class="amount-range-price">Giá từ : 0đ - 100đ</div>
-                                <ul class="check-box-list">
-                                    <li>
-                                        <input type="checkbox" id="p1" name="cc" />
-                                        <label for="p1">
-                                            <span class="button"></span>
-                                            20 - 50<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="p2" name="cc" />
-                                        <label for="p2">
-                                            <span class="button"></span>
-                                            50 - 100<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="p3" name="cc" />
-                                        <label for="p3">
-                                            <span class="button"></span>
-                                            100 - 250<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- ./filter price -->
-                            <!-- filter color -->
-                            <!--                            <div class="layered_subtitle">Color</div>
-                                                        <div class="layered-content filter-color">
-                                                            <ul class="check-box-list">
-                                                                <li>
-                                                                    <input type="checkbox" id="color1" name="cc" />
-                                                                    <label style=" background:#aab2bd;" for="color1"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color2" name="cc" />
-                                                                    <label style=" background:#cfc4a6;" for="color2"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color3" name="cc" />
-                                                                    <label style=" background:#aab2bd;" for="color3"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color4" name="cc" />
-                                                                    <label style=" background:#fccacd;" for="color4"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color5" name="cc" />
-                                                                    <label style="background:#964b00;" for="color5"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color6" name="cc" />
-                                                                    <label style=" background:#faebd7;" for="color6"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color7" name="cc" />
-                                                                    <label style=" background:#e84c3d;" for="color7"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color8" name="cc" />
-                                                                    <label style=" background:#c19a6b;" for="color8"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color9" name="cc" />
-                                                                    <label style=" background:#f39c11;" for="color9"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color10" name="cc" />
-                                                                    <label style=" background:#5d9cec;" for="color10"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color11" name="cc" />
-                                                                    <label style=" background:#a0d468;" for="color11"><span class="button"></span></label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="color12" name="cc" />
-                                                                    <label style=" background:#f1c40f;" for="color12"><span class="button"></span></label>   
-                                                                </li>
-                            
-                                                            </ul>
-                                                        </div>-->
-                            <!-- ./filter color -->
-                            <!-- ./filter brand -->
-                            <div class="layered_subtitle">Nhãn hiệu</div>
-                            <div class="layered-content filter-brand">
-                                <ul class="check-box-list">
-                                    <li>
-                                        <input type="checkbox" id="brand1" name="cc" />
-                                        <label for="brand1">
-                                            <span class="button"></span>
-                                            Channelo<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="brand2" name="cc" />
-                                        <label for="brand2">
-                                            <span class="button"></span>
-                                            Mamypokon<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="brand3" name="cc" />
-                                        <label for="brand3">
-                                            <span class="button"></span>
-                                            Pamperson<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="brand4" name="cc" />
-                                        <label for="brand4">
-                                            <span class="button"></span>
-                                            Pumano<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" id="brand5" name="cc" />
-                                        <label for="brand5">
-                                            <span class="button"></span>
-                                            AME<span class="count">(0)</span>
-                                        </label>   
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- ./filter brand -->
-                            <!-- ./filter size -->
-                            <!--                            <div class="layered_subtitle">Size</div>
-                                                        <div class="layered-content filter-size">
-                                                            <ul class="check-box-list">
-                                                                <li>
-                                                                    <input type="checkbox" id="size1" name="cc" />
-                                                                    <label for="size1">
-                                                                        <span class="button"></span>X
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size2" name="cc" />
-                                                                    <label for="size2">
-                                                                        <span class="button"></span>XXL
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size3" name="cc" />
-                                                                    <label for="size3">
-                                                                        <span class="button"></span>XL
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size4" name="cc" />
-                                                                    <label for="size4">
-                                                                        <span class="button"></span>XXL
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size5" name="cc" />
-                                                                    <label for="size5">
-                                                                        <span class="button"></span>M
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size6" name="cc" />
-                                                                    <label for="size6">
-                                                                        <span class="button"></span>XXS
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size7" name="cc" />
-                                                                    <label for="size7">
-                                                                        <span class="button"></span>S
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size8" name="cc" />
-                                                                    <label for="size8">
-                                                                        <span class="button"></span>XS
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size9" name="cc" />
-                                                                    <label for="size9">
-                                                                        <span class="button"></span>34
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size10" name="cc" />
-                                                                    <label for="size10">
-                                                                        <span class="button"></span>36
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size11" name="cc" />
-                                                                    <label for="size11">
-                                                                        <span class="button"></span>35
-                                                                    </label>   
-                                                                </li>
-                                                                <li>
-                                                                    <input type="checkbox" id="size12" name="cc" />
-                                                                    <label for="size12">
-                                                                        <span class="button"></span>37
-                                                                    </label>   
-                                                                </li>
-                                                            </ul>
-                                                        </div>-->
-                            <!-- ./filter size -->
-                        </div>
-                        <!-- ./layered -->
-
-                    </div>
-                </div>
-                <!-- ./block filter  -->
-
-                <!-- left silide -->
-                <div class="col-left-slide left-module">
-                    <ul class="owl-carousel owl-style2" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
-                        <li><a href="#"><img src="" alt="slide-left"></a></li>
-                        <li><a href="#"><img src="" alt="slide-left"></a></li>
-                        <li><a href="#"><img src="" alt="slide-left"></a></li>
-                    </ul>
-
-                </div>
-                <!--./left silde-->
-                <!-- SPECIAL -->
-                <div class="block left-module">
-                    <p class="title_block">Sản phẩm đặc biệt</p>
-                    <div class="block_content">
-                        <ul class="products-block">
-                            <li>
-                                <div class="products-block-left">
-                                    <a href="#">
-                                        <img src="" alt="SPECIAL PRODUCTS">
-                                    </a>
-                                </div>
-                                <div class="products-block-right">
-                                    <p class="product-name">
-                                        <a href="#">Woman Within Plus Size Flared</a>
-                                    </p>
-                                    <p class="product-price">$38,95</p>
-                                    <p class="product-star">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="products-block">
-                            <div class="products-block-bottom">
-                                <a class="link-all" href="#">All Products</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./SPECIAL -->
-                <!-- TAGS -->
-                <div class="block left-module">
-                    <p class="title_block">TAGS</p>
-                    <div class="block_content">
-                        <div class="tags">
-                            <a href="#"><span class="level1">actual</span></a>
-                            <a href="#"><span class="level2">adorable</span></a>
-                            <a href="#"><span class="level3">change</span></a>
-                            <a href="#"><span class="level4">consider</span></a>
-                            <a href="#"><span class="level3">phenomenon</span></a>
-                            <a href="#"><span class="level4">span</span></a>
-                            <a href="#"><span class="level1">spanegs</span></a>
-                            <a href="#"><span class="level5">spanegs</span></a>
-                            <a href="#"><span class="level1">actual</span></a>
-                            <a href="#"><span class="level2">adorable</span></a>
-                            <a href="#"><span class="level3">change</span></a>
-                            <a href="#"><span class="level4">consider</span></a>
-                            <a href="#"><span class="level2">gives</span></a>
-                            <a href="#"><span class="level3">change</span></a>
-                            <a href="#"><span class="level2">gives</span></a>
-                            <a href="#"><span class="level1">good</span></a>
-                            <a href="#"><span class="level3">phenomenon</span></a>
-                            <a href="#"><span class="level4">span</span></a>
-                            <a href="#"><span class="level1">spanegs</span></a>
-                            <a href="#"><span class="level5">spanegs</span></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- ./TAGS -->
-                <!-- Testimonials -->
-                <div class="block left-module">
-                    <p class="title_block">Quà tặng</p>
-                    <div class="block_content">
-                        <ul class="testimonials owl-carousel" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplay="true" data-autoplayHoverPause = "true" data-items="1">
-                            <li>
-                                <div class="client-mane">Roverto & Maria</div>
-                                <div class="client-avarta">
-                                    <img src="" alt="client-avarta">
-                                </div>
-                                <div class="testimonial">
-                                    "Your product needs to improve more. To suit the needs and update your image up"
-                                </div>
-                            </li>
-                            <li>
-                                <div class="client-mane">Roverto & Maria</div>
-                                <div class="client-avarta">
-                                    <img src="" alt="client-avarta">
-                                </div>
-                                <div class="testimonial">
-                                    "Your product needs to improve more. To suit the needs and update your image up"
-                                </div>
-                            </li>
-                            <li>
-                                <div class="client-mane">Roverto & Maria</div>
-                                <div class="client-avarta">
-                                    <img src="" alt="client-avarta">
-                                </div>
-                                <div class="testimonial">
-                                    "Your product needs to improve more. To suit the needs and update your image up"
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- ./Testimonials -->
-            </div>
-            <!-- ./left colunm -->
-            <!-- Center colunm-->
-            <div class="center_column col-xs-12 col-sm-9" id="center_column">
-                <!-- category-slider -->
-                <!--                <div class="category-slider">
-                                    <ul class="owl-carousel owl-style2" data-dots="false" data-loop="true" data-nav = "true" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1">
-                                        <li>
-                                            <img src="assets/data/category-slide.jpg" alt="category-slider">
-                                        </li>
-                                        <li>
-                                            <img src="assets/data/slide-cart2.jpg" alt="category-slider">
-                                        </li>
-                                    </ul>
-                                </div>-->
-                <!-- ./category-slider -->
-
-                <!-- category short-description -->
-                <!--                <div class="cat-short-desc">
-                                    <div class="desc-text text-left">
-                                        <p>
-                                            Mauris accumsan nulla vel diam. Sed in lacus ut enim adipiscing aliquet. Nulla venenatis. In pede mi, aliquet sit amet, euismod in, auctor ut, ligula. Aliquam dapibus tincidunt metus. Praesent justo dolor, lobortis quis, lobortis dignissim, pulvinar ac, lorem. Vestibulum sed ante. Donec sagittis euismod purus. Sed ut perspiciatis sit voluptatem accusantim doloremque laudantim.
-                                        </p>
-                                    </div>
-                                    <div class="cat-short-desc-products">
-                                        <ul class="row">
-                                            <li class="col-sm-3">
-                                                <div class="product-container">
-                                                    <div class="product-thumb">
-                                                        <a href="#"><img src="assets/data/sub-cat1.jpg" alt="Product"></a>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#">Sub category 1</a>
-                                                        <span>(90)</span>
-                                                    </h5>
-                                                </div>
-                                            </li>
-                                            <li class="col-sm-3">
-                                                <div class="product-container">
-                                                    <div class="product-thumb">
-                                                        <a href="#"><img src="assets/data/sub-cat2.jpg" alt="Product"></a>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#">Sub category 2</a>
-                                                        <span>(55)</span>
-                                                    </h5>
-                                                </div>
-                                            </li>
-                                            <li class="col-sm-3">
-                                                <div class="product-container">
-                                                    <div class="product-thumb">
-                                                        <a href="#"><img src="assets/data/sub-cat3.jpg" alt="Product"></a>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#">Sub category 3</a>
-                                                        <span>(100)</span>
-                                                    </h5>
-                                                </div>
-                                            </li>
-                                            <li class="col-sm-3">
-                                                <div class="product-container">
-                                                    <div class="product-thumb">
-                                                        <a href="#"><img src="assets/data/sub-cat4.jpg" alt="Product"></a>
-                                                    </div>
-                                                    <h5 class="product-name">
-                                                        <a href="#">Sub category 4</a>
-                                                        <span>(70)</span>
-                                                    </h5>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>-->
-                <!-- ./category short-description -->
-                <!-- view-product-list-->
-                <div id="view-product-list" class="view-product-list">
-                    <h2 class="page-heading">
-                        <span class="page-heading-title">Thời trang nữ</span>
-                    </h2>
-                    <ul class="display-product-option">
-                        <li class="view-as-grid selected">
-                            <span>grid</span>
+            <div class="col-sm-24">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li class="home"> <a href="index.html" title="Home"><span>Home</span></a> <span class="separator">/ </span>
                         </li>
-                        <li class="view-as-list">
-                            <span>list</span>
+                        <li class="contact"> <strong> Shoes</strong>
                         </li>
                     </ul>
-                    <!-- PRODUCT LIST -->
-                    <ul class="row product-list style2 grid">
-                        <!-- foreach -->
-                        <?php foreach ($data as $value) { ?>
-
-
-                            <li class="col-sx-12 col-sm-4">
-                                <div class="product-container">
-                                    <div class="left-block">
-                                        <a href="#">
-                                            <img class="img-responsive" alt="product" src="<?php $array = app\models\Image::find()->where(['object_id' => $value['product_id'],'object_type'=>'product'])->one();?><?php echo '/'.$array['image_path']. '' .$array['filename'] ?>" />
-                                        </a>
-                                        <div class="quick-view">
-                                            <a title="Add to my wishlist" class="heart" href="#"></a>
-                                            <a title="Add to compare" class="compare" href="#"></a>
-                                            <a title="Quick view" class="search" href="#"></a>
-                                        </div>
-                                    </div>
-                                    <div class="right-block">
-                                        <h5 class="product-name"><a href="<?php echo HelperLink::rewriteUrllink(1,$value['name'], 'san-pham') ?>"><?php echo $value['name'] ?></a></h5>
-                                        <div class="product-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star-half-o"></i>
-                                        </div>
-                                        <div class="content_price">
-                                            <span class="price product-price"><?php echo SystemHelper::product_price($value['price']) ?>
-                                                <label style="
-                                                       position: absolute;
-                                                       top: 0;
-                                                       right: -9px;
-                                                       font-size: 12px;
-                                                       ">đ</label>
-                                            </span>
-                                            <span class="price old-price"><?php echo SystemHelper::product_price($value['old_price']) ?>
-                                                <label style="
-                                                       position: absolute;
-                                                       top: 0;
-                                                       right: -9px;
-                                                       font-size: 12px;
-                                                       ">đ</label>
-                                            </span>
-                                        </div>
-                                        <div class="info-orther">
-                                            <p>Item Code: #453217907</p>
-                                            <p class="availability">Availability: <span>In stock</span></p>
-                                            <div class="product-desc">
-                                                <?php echo $value['content'] ?>
-                                            </div>
-                                        </div>
-                                        <div class="add-to-cart">
-                                            <a title="Mua hàng" data-value="<?php echo $value['product_id'] ?>" class="add-cart" href="#add"><span></span>Mua hàng</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>     
-                        <?php } ?>
-                        <!-- end foreach -->
-                    </ul>
-                    <!-- ./PRODUCT LIST -->
-                </div>
-                
-               <?php
-    echo LinkPager::widget([
-        'pagination' => $pages,
-        'prevPageLabel' => '<<',
-        'nextPageLabel' => '>>',
-        'lastPageLabel'=>'LAST',
-        'firstPageLabel'=>'FIRST',
-        'maxButtonCount'=>10
- 
-    ]);
-    ?>
-                <!-- ./view-product-list-->
-                <div class="sortPagiBar">
-<!--                    <div class="bottom-pagination">
-                        <nav>
-                            <ul class="pagination">
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li>
-                                    <a href="#" aria-label="Next">
-                                        <span aria-hidden="true">Next &raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>-->
-                    <div class="show-product-item">
-                        <select name="">
-                            <option value="">Show 18</option>
-                            <option value="">Show 20</option>
-                            <option value="">Show 50</option>
-                            <option value="">Show 100</option>
-                        </select>
-                    </div>
-                    <div class="sort-product">
-                        <select>
-                            <option value="">Product Name</option>
-                            <option value="">Price</option>
-                        </select>
-                        <div class="sort-product-icon">
-                            <i class="fa fa-sort-alpha-asc"></i>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <!-- ./ Center colunm -->
         </div>
-        <!-- ./row-->
     </div>
-</div>
+</div><!-- /.wrapper-breadcrums -->
+<div class="em-wrapper-main">
+    <div class="container container-main">
+        <div class="em-inner-main">
+            <div class="em-wrapper-area02"></div>
+            <div class="em-wrapper-area03"></div>
+            <div class="em-wrapper-area04"></div>
+            <div class="em-main-container em-col1-layout">
+                <div class="row">
+                    <div class="em-col-main col-sm-24">
+                        <div class="page-title category-title">
+                            <h1>Shoes</h1>
+                        </div>
+                        <div class="category-products">
+                            <div class="toolbar-top">
+                                <div class="toolbar">
+                                    <div class="pager">
+                                        <p class="amount"> Items 1 to 12 of 20 total</p>
+                                        <div class="pages">
+                                            <ol>
+                                                <li class="current">1</li>
+                                                <li><a href="#">2</a>
+                                                </li>
+                                                <li>
+                                                    <a class="next i-next" href="#" title="Next"> <img src="<?php Url::base('') ?>/upload/images/pager_arrow_right.gif" alt="Next" class="v-middle" /> </a>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div><!-- /.pager -->
+                                    <div class="sorter">
+                                        <p class="view-mode">
+                                            <label>View as:</label> <strong title="Grid" class="grid">Grid</strong> <a href="category-one-column-list.html" title="List" class="list">List</a>
+                                        </p>
+                                        <div class="sort-by toolbar-switch">
+                                            <div class="toolbar-title">
+                                                <label>Sort By</label>
+                                                <select class="sortby" name="sortby">
+                                                    <option value="position" selected="selected"> Position</option>
+                                                    <option value="name"> Name</option>
+                                                    <option value="price"> Price</option>
+                                                </select>
+                                            </div>
+                                            <a href="#" title="Set Descending Direction"><img src="<?php Url::base('') ?>/upload/images/i_asc_arrow.png" alt="Set Descending Direction" class="v-middle" />
+                                            </a>
+                                        </div>
+                                        <div class="limiter toolbar-switch">
+                                            <div class="toolbar-title">
+                                                <label>Show</label>
+                                                <select class="toolbar-show">
+                                                    <option value="12" selected="selected"> 12</option>
+                                                    <option value="24"> 24</option>
+                                                    <option value="36"> 36</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.sorter -->
+                                </div>
+                            </div><!-- /.toolbar-top -->
+                            <div id="em-grid-mode">
+                                <ul class="emcatalog-grid-mode products-grid emcatalog-disable-hover-below-mobile">
+                                    <li class="item first">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="product-detail.html" title="WIASSI Version 1" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/5_1.jpg" width="220" height="220" alt="WIASSI Version 1" /> <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/4_1.jpg" width="220" height="220" alt="WIASSI Version 1" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="206"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#206" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#206" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="product-detail.html" title="WIASSI Version 1"> WIASSI Version 1 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="206">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">$750.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> Morbi at ex at arcu posuere luctus. Maecenas eu nu...</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="product-detail.html" title="WIASSI Version 12" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp12_1.jpg" width="220" height="220" alt="WIASSI Version 12" /> <img id="product-collection-image-217" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp12_2.jpg" width="220" height="220" alt="WIASSI Version 12" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="217"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#217" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#217" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="product-detail.html" title="WIASSI Version 12"> WIASSI Version 12 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="217">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-217"> <span class="price"  content="1200">$1,200.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 13" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp13_1.jpg" width="220" height="220" alt="WIASSI Version 13" /> <img id="product-collection-image-218" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp13_2.jpg" width="220" height="220" alt="WIASSI Version 13" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="218"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#218" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#218" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 13"> WIASSI Version 13 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="218">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-218"> <span class="price"  content="860">$860.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 14" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp14_1.jpg" width="220" height="220" alt="WIASSI Version 14" /> <img id="product-collection-image-219" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp14_2.jpg" width="220" height="220" alt="WIASSI Version 14" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="219"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#219" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#219" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 14"> WIASSI Version 14 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="219">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-219"> <span class="price"  content="900">$900.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 15" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp15_1.jpg" width="220" height="220" alt="WIASSI Version 15" /> <img id="product-collection-image-220" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp15_2.jpg" width="220" height="220" alt="WIASSI Version 15" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="220"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#220" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#220" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 15"> WIASSI Version 15 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="220">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-220"> <span class="price"  content="1100">$1,100.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 16" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp16_1.jpg" width="220" height="220" alt="WIASSI Version 16" /> <img id="product-collection-image-221" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp16_2.jpg" width="220" height="220" alt="WIASSI Version 16" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="221"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#221" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#221" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 16"> WIASSI Version 16 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="221">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-221"> <span class="price"  content="1750">$1,750.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 17" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp17_1.jpg" width="220" height="220" alt="WIASSI Version 17" /> <img id="product-collection-image-222" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp17_2.jpg" width="220" height="220" alt="WIASSI Version 17" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="222"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#222" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#222" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 17"> WIASSI Version 17 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="222">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-222"> <span class="price"  content="750">$750.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 18" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp18_1.jpg" width="220" height="220" alt="WIASSI Version 18" /> <img id="product-collection-image-223" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp18_2.jpg" width="220" height="220" alt="WIASSI Version 18" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="223"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#223" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#223" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#18" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 18"> WIASSI Version 18 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="223">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-223"> <span class="price"  content="1500">$1,500.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="product-detail.html" title="WIASSI Version 19" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp19_1.jpg" width="220" height="220" alt="WIASSI Version 19" /> <img id="product-collection-image-224" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp19_2.jpg" width="220" height="220" alt="WIASSI Version 19" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="224"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#224" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#224" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#19" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="product-detail.html" title="WIASSI Version 19"> WIASSI Version 19 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="224">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-224"> <span class="price"  content="1300">$1,300.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="product-detail.html" title="WIASSI Version 11" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp11_1.jpg" width="220" height="220" alt="WIASSI Version 11" /> <img id="product-collection-image-216" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp11_2.jpg" width="220" height="220" alt="WIASSI Version 11" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="216"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#216" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#216" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#11" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="product-detail.html" title="WIASSI Version 11"> WIASSI Version 11 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="216">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-216"> <span class="price"  content="1300">$1,300.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="product-detail.html" title="WIASSI Version 10" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/3_1.jpg" width="220" height="220" alt="WIASSI Version 10" /> <img id="product-collection-image-215" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/1_1.jpg" width="220" height="220" alt="WIASSI Version 10" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="215"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#215" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#215" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#10" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="product-detail.html" title="WIASSI Version 10"> WIASSI Version 10 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="215">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-215"> <span class="price"  content="1500">$1,500.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                    <li class="item last">
+                                        <div class="product-item">
+                                            <div class="product-shop-top">
+                                                <a href="#" title="WIASSI Version 2" class="product-image"> <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp2_1.jpg" width="220" height="220" alt="WIASSI Version 2" /> <img id="product-collection-image-207" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/shoe_sp2_2.jpg" width="220" height="220" alt="WIASSI Version 2" /><span class="bkg-hover"></span> </a>
+                                                <div class="bottom">
+                                                    <div class="em-btn-addto text-center ">
+                                                        <button type="button" title="Add to Cart" class="button btn-cart" onclick="207"><span><span>Add to Cart</span></span>
+                                                        </button>
+                                                        <ul class="add-to-links">
+                                                            <li><a href="#207" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
+                                                            </li>
+                                                            <li><a href="#207" class="link-compare" title="Add to Compare">Add to Compare</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="quickshop-link-container"> <a href="#2" class="quickshop-link" title="Quickshop">Quickshop</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product-shop">
+                                                <div class="f-fix">
+                                                    <h2 class="product-name text-center  "><a href="#" title="WIASSI Version 2"> WIASSI Version 2 </a></h2>
+                                                    <div class=" text-center">
+                                                        <div class="ratings">
+                                                            <div class="rating-box">
+                                                                <div class="rating" style="width:1%"></div>
+                                                            </div> <span class="amount"><a href="#" onclick="207">(0)</a></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-center ">
+                                                        <div class="price-box"> <span class="regular-price" id="product-price-207"> <span class="price"  content="1500">$1,500.00</span> </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="desc std text-center em-element-display-hover"> By popular demand, we've added half sizes to make your feet even happier.</div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.product-item -->
+                                    </li>
+                                </ul>
+                            </div><!-- /.em-grid-mode -->
+
+                            <div class="toolbar-bottom em-box-03">
+                                <div class="toolbar">
+                                    <div class="pager">
+                                        <p class="amount"> Items 1 to 12 of 20 total</p>
+                                        <div class="pages">
+                                            <ol>
+                                                <li class="current">1</li>
+                                                <li><a href="#">2</a>
+                                                </li>
+                                                <li>
+                                                    <a class="next i-next" href="#" title="Next"> <img src="<?php Url::base('') ?>/upload/images/pager_arrow_right.gif" alt="Next" class="v-middle" /> </a>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    </div><!-- /.pager -->
+                                    <div class="sorter">
+                                        <p class="view-mode">
+                                            <label>View as:</label> <strong title="Grid" class="grid">Grid</strong> <a href="category-one-column-list.html" title="List" class="list">List</a>
+                                        </p>
+                                        <div class="sort-by toolbar-switch">
+                                            <div class="toolbar-title">
+                                                <label>Sort By</label>
+                                                <select class="sortby" name="sortby">
+                                                    <option value="position" selected="selected"> Position</option>
+                                                    <option value="name"> Name</option>
+                                                    <option value="price"> Price</option>
+                                                </select>
+                                            </div>
+                                            <a href="#" title="Set Descending Direction"><img src="<?php Url::base('') ?>/upload/images/i_asc_arrow.png" alt="Set Descending Direction" class="v-middle" />
+                                            </a>
+                                        </div>
+                                        <div class="limiter toolbar-switch">
+                                            <div class="toolbar-title">
+                                                <label>Show</label>
+                                                <select class="toolbar-show">
+                                                    <option value="12" selected="selected"> 12</option>
+                                                    <option value="24"> 24</option>
+                                                    <option value="36"> 36</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.sorter -->
+                                </div>
+                            </div><!-- /.toolbar-bottom -->
+                        </div><!-- /.category-products -->
+                    </div>
+                </div>
+            </div><!-- /.em-main-container -->
+        </div>
+    </div>
+</div><!-- /.em-wrapper-main -->                

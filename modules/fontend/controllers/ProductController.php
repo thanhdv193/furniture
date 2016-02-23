@@ -18,22 +18,28 @@ class ProductController extends Controller
 
     public function actionProductDetail($id = 0)
     {
-        $product = Product::find()->where(['id' => $id, 'is_active' => 1])->asArray()->one();
+        $product = Product::find()
+                ->select(['product_type.id as product_type_id','product_type.title as category','product.*'])
+                ->innerJoin('product_type', 'product.product_type_id = product_type.id')
+                ->where(['product.id' => $id, 'product.is_active' => 1])->asArray()->one();
         //$imageProduct = Image::find()->where(['object_id' => $id, 'object_type' => 'product'])->all();
        // $product['list-image'] = $imageProduct;
-       // echo'<pre>'; var_dump($product); die;
+        //echo'<pre>'; var_dump($product); die;
         return $this->render('product-detail', ['data' => $product]);
     }
 
     public function actionProductCategory($id)
     {
-        $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
-        $count = $query->count();
-        $pagination = new Pagination(['totalCount' => $count,'defaultPageSize' => 5]);
-        $product = $query->offset($pagination->offset)
-                ->limit($pagination->limit)
-                ->all();
+//        $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
+//        $count = $query->count();
+//        $pagination = new Pagination(['totalCount' => $count,'defaultPageSize' => 5]);
+//        $product = $query->offset($pagination->offset)
+//                ->limit($pagination->limit)
+//                ->all();
         //echo'<pre>'; var_dump($pagination); die;
+        $product= null;
+        $pagination =null;
+        
         return $this->render('product-category', ['data' => $product,'pages'=>$pagination]);
     }
     public function actionProductTest($id = 2)
