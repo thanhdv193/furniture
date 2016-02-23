@@ -18,9 +18,9 @@ class ProductController extends Controller
 
     public function actionProductDetail($id)
     {
-        $product = Product::find()->where(['product_id' => $id, 'active' => 1])->asArray()->one();
-        $imageProduct = Image::find()->where(['object_id' => $id, 'object_type' => 'product'])->all();
-        $product['list-image'] = $imageProduct;
+        $product = Product::find()->where(['id' => $id, 'is_active' => 1])->asArray()->one();
+        //$imageProduct = Image::find()->where(['object_id' => $id, 'object_type' => 'product'])->all();
+       // $product['list-image'] = $imageProduct;
         return $this->render('product-detail', ['data' => $product]);
     }
 

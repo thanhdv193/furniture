@@ -1,0 +1,25 @@
+<?php
+
+namespace app\widgets;
+
+use yii\base\Widget;
+use app\models\Banner;
+
+
+class BlogWidget extends Widget
+{
+
+    public function init()
+    {
+        parent::init();
+    }
+
+    public function run()
+    {
+        //$slide = Banner::find()->joinWith('image')->where(['active'=>1])->asArray()->all();
+        //echo '<pre>'; var_dump($slide); die;
+        $slide ="";
+        return $this->render('Blog',['data'=>$slide]);
+    }
+
+}

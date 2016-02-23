@@ -13354,7 +13354,7 @@ align-content: flex-start;	*/
     font-size: 11px;
 }
 .wrapper-breadcrums {
-    background-image: url("../images/bkg-breadcrums.png");
+    background-image: url("/upload/images/bkg-breadcrums.png");
     background-position: 0 0;
     background-repeat: repeat;
 }
