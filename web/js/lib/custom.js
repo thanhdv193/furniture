@@ -1,4 +1,20 @@
 (function($) {
+    
+    $(".menu-left :first").addClass("vnav em-menu-icon effect-menu em-menu-long");
+    $(".menu-left ul li").addClass("menu-item-link menu-item-depth-0 fa fa-video-camera menu-item-parent");
+    $(".menu-left ul li ul").each(function(i)
+    {
+        $(this).addClass("menu-container");
+    });
+    $(".menu-left .menu-container li").removeClass("menu-item-link menu-item-depth-0 fa fa-video-camera menu-item-parent").addClass("menu-item-link menu-item-depth-1");
+    //$(".menu-left .menu-container li a").removeClass("arrow");
+    $('.menu-left .menu-container li .arrow').each(function () {
+        $this = $(this);
+        $(this).css('display','none');
+    });
+    $('.menu-left .menu-container li .em-menu-link').css('padding','15px');
+    $('.menu-left .menu-container').css('padding','5px');
+    
     "use strict";
 
     function toogleMenuPro_7_5505() {

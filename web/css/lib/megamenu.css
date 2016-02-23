@@ -146,7 +146,7 @@ ul ul, ul ol, ol ol, ol ul { font-size:100% }
 .menu-item-hbox > .menu-container { white-space:nowrap }
 .menu-item-hbox > .menu-container > li { display:inline-block; white-space:normal; vertical-align:top; /*float:none*/ }
 .adapt-0 .menu-item-hbox > .menu-container > li { display: block; margin-left: 0;}
-.menu-item-link > .menu-container { min-width:160px; background:#fff; box-shadow:0 2px 7px #ccc }
+.menu-item-link > .menu-container { min-width:200px; max-width:300px; background:#fff; box-shadow:0 2px 7px #ccc }
 
 .menu-item-depth-0 .menu-item-link { position:relative }
 .menu-item-depth-0 .menu-item-link > .menu-container { position:absolute; top:0; left:-9999px; z-index:9999 }

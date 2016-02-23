@@ -1248,14 +1248,14 @@ tr.summary-details-excluded {
 .rating-box .rating {
     float: left;
     height: 11px;
-    background: url(../images/bkg_rating.png) 0 100% repeat-x;
+    background: url(/upload/images/bkg_rating.png) 0 100% repeat-x;
 }
 .rating-box {
     width: 60px;
     height: 11px;
     font-size: 0;
     line-height: 0;
-    background: url(../images/bkg_rating.png) 0 0 repeat-x;
+    background: url(/upload/images/bkg_rating.png) 0 0 repeat-x;
     text-indent: -999em;
     overflow: hidden;
 }
@@ -1511,7 +1511,7 @@ tr.summary-details-excluded {
     top: 8px;
     width: 15px;
     height: 15px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: 0 0;
     background-repeat: no-repeat;
     -webkit-box-shadow: 0 0 3px #999999;
@@ -1520,7 +1520,7 @@ tr.summary-details-excluded {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    background: url(../images/btn_window_close.html) no-repeat;
+    background: url(/upload/images/btn_window_close.html) no-repeat;
 }
 .map-popup-content {
     border-top: 1px solid #eee;
@@ -1569,7 +1569,7 @@ tr.summary-details-excluded {
 /* RSS */
 
 .rss-title h1 {
-    background: url(../images/i_rss-big.html) 0 4px no-repeat;
+    background: url(/upload/images/i_rss-big.html) 0 4px no-repeat;
     padding-left: 27px;
 }
 .rss-table .link-rss {
@@ -4189,7 +4189,7 @@ margin-top:-6px;*/
     border-radius: 5px !important;
 }
 .popup-content {
-    background: url(../images/popup_banner.jpg) right bottom no-repeat #f5f4f2;
+    background: url(/upload/images/popup_banner.jpg) right bottom no-repeat #f5f4f2;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -8366,56 +8366,56 @@ div.desc {
 .em-font-family span.architectsdaughter {
     width: 70px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -4px -458px;
     background-repeat: no-repeat;
 }
 .em-font-family span.arvo {
     width: 36px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -89px -458px;
     background-repeat: no-repeat;
 }
 .em-font-family span.dancingscript {
     width: 78px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -146px -456px;
     background-repeat: no-repeat;
 }
 .em-font-family span.lato {
     width: 38px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -243px -457px;
     background-repeat: no-repeat;
 }
 .em-font-family span.novasquare {
     width: 83px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -298px -457px;
     background-repeat: no-repeat;
 }
 .em-font-family span.opensans {
     width: 72px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -402px -456px;
     background-repeat: no-repeat;
 }
 .em-font-family span.adventpro {
     width: 64px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -491px -457px;
     background-repeat: no-repeat;
 }
 .em-font-family span.raleway {
     width: 57px;
     height: 40px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -572px -457px;
     background-repeat: no-repeat;
 }
@@ -8494,7 +8494,9 @@ div.desc {
 .em-wrapper-variation-store::-moz-scrollbar {
     width: 0px;
 }
-@-moz-document url-prefix(http: //),url-prefix(https://) { .em-wrapper-variation-store[orient="vertical"] { width: 0px !important; }
+@-moz-document url-prefix(http: //),
+url-prefix(https://) 
+{ .em-wrapper-variation-store[orient="vertical"] { width: 0px !important; }
 .em-wrapper-variation-store[orient="horizontal"] {
     width: 0px !important;
 }
@@ -11611,35 +11613,35 @@ border-top-color: transparent;*/
 .em-payment-icon.em-visa {
     width: 40px;
     height: 22px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: 0 -38px;
     background-repeat: no-repeat;
 }
 .em-payment-icon.em-master {
     width: 28px;
     height: 22px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -54px -38px;
     background-repeat: no-repeat;
 }
 .em-payment-icon.em-paypal {
     width: 57px;
     height: 22px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -122px -38px;
     background-repeat: no-repeat;
 }
 .em-payment-icon.em-express {
     width: 16px;
     height: 22px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -93px -38px;
     background-repeat: no-repeat;
 }
 .em-payment-icon.em-other {
     width: 49px;
     height: 22px;
-    background-image: url("../images/icons.png");
+    background-image: url("/upload/images/icons.png");
     background-position: -192px -38px;
     background-repeat: no-repeat;
 }

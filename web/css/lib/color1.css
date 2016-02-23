@@ -1677,7 +1677,7 @@ a.arrow:before {
 /* line 1276, theme.less */
 .wrapper.em-box-custom {
   background-color: #ffffff;
-  background-image: url("../../../../../../../demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
+  background-image: url("http://demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
   background-position: 0 0;
   background-repeat: repeat;
   background-attachment: fixed;
@@ -1685,7 +1685,7 @@ a.arrow:before {
 /* line 1279, theme.less */
 .em-wrapper-header {
   background-color: #ec6a54;
-  background-image: url("../../../../../../../demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
+  background-image: url("http://demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
   background-position: 0 0;
   background-repeat: repeat;
 }
@@ -1709,7 +1709,7 @@ a.arrow:before {
 .em-wrapper-main,
 .em-wrapper-slideshow {
   background-color: #ffffff;
-  background-image: url("../../../../../../../demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
+  background-image: url("http://demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
   background-position: 0 0;
   background-repeat: repeat;
 }
@@ -1729,7 +1729,7 @@ a.arrow:before {
 /* line 1301, theme.less */
 .em-wrapper-footer {
   background-color: #f1f1f1;
-  background-image: url("../../../../../../../demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
+  background-image: url("http://demo.emthemes.com/everything/media/em_themeframework/background/stripes/blank.gif");
   background-position: 0 0;
   background-repeat: repeat;
 }

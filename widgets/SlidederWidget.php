@@ -16,8 +16,9 @@ class SlidederWidget extends Widget
 
     public function run()
     {
-        $slide = Banner::find()->joinWith('image')->where(['active'=>1])->asArray()->all();
+        //$slide = Banner::find()->joinWith('image')->where(['active'=>1])->asArray()->all();
         //echo '<pre>'; var_dump($slide); die;
+        $slide ="";
         return $this->render('Slideder',['data'=>$slide]);
     }
 

@@ -36,13 +36,10 @@ class AppAsset extends AssetBundle
         'css/lib/print.css',
         'css/lib/style_fashion.css',
         'css/lib/color1.css',
-      
-        
-        
-        
-        
-        
-        
+        'http://fonts.googleapis.com/css?family=Lato:200,300,400,500,600,700,800&amp;subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext',
+        'http://fonts.googleapis.com/css?family=Lora:200,300,400,500,600,700,800&amp;subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext',
+        'http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800&amp;subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext',
+                                                 
     ];
     public $js = [        
         'js/lib/jquery.lazyload.min.js',
