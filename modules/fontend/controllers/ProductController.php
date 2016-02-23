@@ -13,14 +13,15 @@ class ProductController extends Controller
     public function actionIndex()
     {
 
-        return $this->render('index');
+        //return $this->render('index');
     }
 
-    public function actionProductDetail($id)
+    public function actionProductDetail($id = 0)
     {
         $product = Product::find()->where(['id' => $id, 'is_active' => 1])->asArray()->one();
         //$imageProduct = Image::find()->where(['object_id' => $id, 'object_type' => 'product'])->all();
        // $product['list-image'] = $imageProduct;
+       // echo'<pre>'; var_dump($product); die;
         return $this->render('product-detail', ['data' => $product]);
     }
 

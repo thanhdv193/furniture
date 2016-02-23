@@ -7295,7 +7295,7 @@ div.desc {
 .product-view-detail .product-shop .add-to-cart .button_addto {
     display: inline-block;
     width: 100%;
-    padding-top: 0.3rem;
+    padding-top: 10px;
 }
 .product-view-detail .qty_cart {
     clear: both;
@@ -7320,7 +7320,7 @@ div.desc {
     margin: 0;
 }
 .product-view-detail button.button {
-    width: 49%;
+    width: 100%;
     margin-right: 2%;
     text-align: center;
 }
