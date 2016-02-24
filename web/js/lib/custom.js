@@ -110,12 +110,25 @@
                     sLogin.slideToggle();
                 });
             } else {
-                sDivLink.mouseover(function() {
+                sDivLink.on('click', function (e) {
+                    e.preventDefault();
                     showlink(sLogin);
-                });
-                sDivLink.mouseout(function() {
-                    hidelink(sLogin);
-                });
+                    }
+                );
+//                sDivLink.mouseover(function() {
+//                    showlink(sLogin);
+//                });
+
+//                $('body').click(function (e) {
+//                    var target = $(e.target);
+//                    console.log(target);
+//                    if (!target.is('#link-login') && !target.is('.em-menu-link')) {
+//                        hidelink(sLogin);
+//                    }                   
+//                });
+//                sDivLink.mouseout(function() {
+//                    hidelink(sLogin);
+//                });
             }
             // Popup Login Form
         }

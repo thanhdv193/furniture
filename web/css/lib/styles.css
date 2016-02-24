@@ -8851,6 +8851,24 @@ url-prefix(https://)
 /* ============================================ * Dropdown Login ============================================ */
 /*dropdown login*/
 
+#em-login-link .user-account {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    padding: 14px 20px;
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+    margin-left: -1px;
+    min-height: 50px;
+}
+.account-link a.user-account {
+/*    display: inline-block;
+    clear: none;
+    position: relative;*/
+}
 .account-link {
     position: relative;
     padding-bottom: 20px;
@@ -9260,6 +9278,18 @@ url-prefix(https://)
 .em-header-style08 .link-account,
 .em-header-style08 .em-logout-link {
     position: relative;
+}
+#em-login-link .user-account:before{
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f007";
+    font-size: 100%;
+    margin-right: 10px;
 }
 .em-header-style08 .link-account:before,
 .em-header-style08 .em-logout-link:before {

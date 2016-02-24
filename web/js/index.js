@@ -1,6 +1,23 @@
 
 
 $(document).ready(function() {
+    
+    $('#login-form input[type=submit]').on('click', function (e) {  
+        e.preventDefault();
+        alert("xxx");
+        var value = $('#tags').val();
+        var data = tinyMCE.activeEditor.getContent();     
+        if (data == '') {
+            e.preventDefault();
+            $('.content-empty').text("Nội dụng gửi thư không được để trống").show();            
+            return false;
+        }else{  
+            $('.content-empty').hide();
+        }
+      
+        
+    });
+    
     $("#user-birthday").mask("99/99/9999");
   'use strict';
 

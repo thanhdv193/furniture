@@ -3,8 +3,24 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 ?>
-<?php
-$form = ActiveForm::begin(['id' => 'login-form',]);?>        
+
+<?php if($isGuest == false){ ?>
+    <a href="#" class="user-account" id="link-login" title="<?php echo $model['username'] ?>"><?php echo $model['username'] ?></a>
+    <div class="em-account" id="em-account-login-form" style="display: none;">
+        <div class="block-content">
+            <ul class="form-list">
+                <li>
+                    <a href="/site/logout" data-method="post">Đăng xuất (<?php echo $model['username'] ?>)</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+<?php } else {?>        
+    <a href="login.html" class="link-account" id="link-login" title="Đăng nhập">Đăng nhập</a>
+    <div id="form-login">
+        <div class="em-account" id="em-account-login-form" style="display: none;">
+        <?php $form = ActiveForm::begin(['action' =>['/site/login'],'id' => 'login-form']);?>        
         <div class="block-content">
             <ul class="form-list">
                 <li>
@@ -25,7 +41,7 @@ $form = ActiveForm::begin(['id' => 'login-form',]);?>
                 <li>
                     <div class="form-group">
                         <div class="col-lg-offset-1 col-lg-11">
-                            <?= Html::submitButton('Đăng nhập', ['class' => ' button btn btn-primary', 'name' => 'login-button']) ?>
+                            <?= Html::submitButton('Đăng nhập', ['class' => 'login button btn btn-primary', 'name' => 'login-button']) ?>
                         </div>
                     </div>
                 </li>
@@ -38,7 +54,9 @@ $form = ActiveForm::begin(['id' => 'login-form',]);?>
                     </p>
                 </div>                
             </div>    
-
-
         </div>        
-<?php ActiveForm::end(); ?>
+    <?php ActiveForm::end(); ?>
+    </div>
+    </div>
+    
+<?php }?>

@@ -18,22 +18,26 @@ class FormLogInWidget extends Widget
     {
         if (!\Yii::$app->user->isGuest)
         {
-            $model = new LoginForm();
-            return $this->render('FormLogIn',['model' => $model]);
+            //$model = new LoginForm();
+            $model = array('username'=>Yii::$app->user->identity->username);
+            return $this->render('FormLogIn',['isGuest'=>false,'model' => $model]);
             
             return $this->goHome();
-        }
+        }else{
+                    $model = new LoginForm();
+                    if ($model->load(Yii::$app->request->post()) && $model->login())
+                    {
+                        //return $this->redirect($_SERVER['HTTP_REFERER']);
+                        //return $this->goBack();
+                    } else
+                    {
+                        return $this->render('FormLogIn',['isGuest'=>true,'model' => $model]);
+                    }
             $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login())
-        { 
-            //return $this->redirect($_SERVER['HTTP_REFERER']);
-            //return $this->goBack();
+            return $this->render('FormLogIn',['isGuest'=>true,'model' => $model]);
             
-        } else
-        {   
-            return $this->render('FormLogIn',['model' => $model]);
-            return $this->render('login', ['model' => $model]);
         }
+       
         //return $this->render('FormLogIn', ['category' => $category]);
     }
 

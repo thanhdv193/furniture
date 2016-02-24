@@ -420,12 +420,9 @@ AppAsset::register($this);
                                                 <ul class="list-inline f-right">
                                                     <li><a class="em-register-link" href="register.html" title="Đăng ký">Đăng ký</a></li>
                                                 </ul>
-                                                <div id="em-login-link" class="account-link f-right em-non-login"> 
-                                                    <a href="login.html" class="link-account" id="link-login" title="Đăng nhập">Đăng nhập</a>
-                                                    <div class="em-account" id="em-account-login-form" style="display: none;">
+                                                <div id="em-login-link" class="account-link f-right em-non-login">                                                     
                                                             <?= FormLogInWidget::widget() ?>
-                                                            <!--/#top-login-form -->
-                                                    </div><!-- /#em-account-login-form -->
+                                                            <!--/#top-login-form -->                                                   
                                                 </div><!-- /#em-login-link -->
                                             </div><!-- /.em-top-links -->
                                         </div>

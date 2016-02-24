@@ -59,6 +59,7 @@ class AppAsset extends AssetBundle
         'js/product-detail.js',
         'js/product-category.js',
         'js/lib/custom.js',
+        'js/lib/index.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

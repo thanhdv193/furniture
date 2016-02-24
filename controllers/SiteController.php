@@ -224,39 +224,67 @@ class SiteController extends Controller
     }
 
     public function actionLoginAjax()
-    {
-        if (!\Yii::$app->user->isGuest)
-        {
-            return 'successful';
-        }
-        $model = new LoginForm();
-//        if ($model->load(Yii::$app->request->post())) {
-        $data = array();
+    { 
         $post = Yii::$app->request->post();
-        if ($post['username'] == null)
+        if ($post)
         {
-            return 'user_name_null';
-        }
-        if ($post['password'] == null)
-        {
-            return 'password_name_null';
-        }
-        $model->username = $post['username'];
-        $model->password = $post['password'];
-        $model->rememberMe = false;
-        $user = User::findByUsername($model->username);
-
-        if ($user == null)
-        {
-            return 'user_not_exist';
-        } else
-        {
-            if ($model->login())
+            if (!\Yii::$app->user->isGuest)
             {
-                return 'successful';
+                $result = array(
+                    'status' => true,
+                );
+                return json_encode($result);
+            }
+            $model = new LoginForm();
+//        if ($model->load(Yii::$app->request->post())) {
+            $data = array();
+
+            if ($post['LoginForm']['username'] == null)
+            {
+                $result = array(
+                    'status' => false,
+                    'error' => 'user_name_null'
+                );
+                return json_encode($result);
+            }
+            if ($post['LoginForm']['password'] == null)
+            {
+                $result = array(
+                    'status' => false,
+                    'error' => 'password_null'
+                );
+                return json_encode($result);
+            }
+            $model->username = $post['LoginForm']['username'];
+            $model->password = $post['LoginForm']['password'];
+            $model->rememberMe = false;
+            $user = User::findByUsername($model->username);
+
+            if ($user == null)
+            {
+                $result = array(
+                    'status' => false,
+                    'error' => 'user_not_exist'
+                );
+                return json_encode($result);
+                
             } else
             {
-                return 'password_exist';
+                if ($model->login())
+                {
+                    $result = array(
+                        'status' => false,
+                        'error' => 'successful'
+                    );
+                    return json_encode($result);                    
+                } else
+                {
+                    $result = array(
+                        'status' => false,
+                        'error' => 'password_exist'
+                    );
+                    return json_encode($result);                    
+                }
             }
         }
     }
