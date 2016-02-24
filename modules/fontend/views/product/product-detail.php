@@ -3,7 +3,7 @@
 use yii\helpers\Url;
 use yii\helpers;
 
-$this->title = 'Chi tiết sản phẩm';
+$this->title = $data['title'];
 
 //$this->registerCssFile(Url::base('') . '/css/lib/em_cloudzoom.css');
 //$this->registerJsFile(Url::base('') . '/js/lib/em_product_view.js', ['depends' => [\yii\web\JqueryAsset::className()]]);

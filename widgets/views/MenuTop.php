@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+use app\components\helpers\HelperLink;
+?>
 <div id="em-main-megamenu">
     <div class="em-menu">
         <div class="megamenu-wrapper wrapper-4_7164">
@@ -23,7 +25,7 @@
                                             <div>
                                                 <ul class="menu-container">
                                                     <?php foreach($category as $value){ ?>
-                                                        <li class="menu-item-link menu-item-depth-1 "> <a class="em-menu-link" href="typography.html"><span><?php echo $value['title'] ?></span> </a>
+                                                    <li class="menu-item-link menu-item-depth-1 "> <a class="em-menu-link" href="<?php echo HelperLink::rewriteUrlMulti(array($value['id'],0), $value['title'], Yii::$app->params['urlSite']['category']) ?>"><span><?php echo $value['title'] ?></span> </a>
                                                         </li>                                                                                                        
                                                     <?php }?>                                                    
                                                 </ul><!-- /.menu-container -->

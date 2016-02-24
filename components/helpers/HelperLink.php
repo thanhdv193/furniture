@@ -7,7 +7,7 @@ use Yii;
 class HelperLink {
    public static function rewriteUrl($id,$title,$action){
        
-		$link = Yii::getAlias('@web').'-'. $action.'-'.UrlTransliterate::cleanString($title).'-'.$id.'.html';		
+		$link = Yii::getAlias('@web').'/'. $action.'/'.UrlTransliterate::cleanString($title).'-'.$id.'.html';		
                 return urldecode($link);
 	}
         
@@ -38,6 +38,7 @@ class HelperLink {
 	}
 	public static function rewriteUrlMulti($params,$title,$action){
 		$link = Yii::getAlias('@web').'/'. $action.'/'.UrlTransliterate::cleanString($title).'-'.implode('-', $params).'.html';
+                
 		return urldecode($link);
 	}
 

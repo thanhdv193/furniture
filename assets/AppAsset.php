@@ -33,7 +33,7 @@ class AppAsset extends AssetBundle
         // Fancybox CSS -->
         'css/lib/jquery.fancybox.css',
         'css/lib/responsive-tabs.css',
-        'css/lib/print.css',
+        //'css/lib/print.css',
         'css/lib/style_fashion.css',
         'css/lib/color1.css',
         'http://fonts.googleapis.com/css?family=Lato:200,300,400,500,600,700,800&amp;subset=latin,cyrillic-ext,cyrillic,greek-ext,greek,vietnamese,latin-ext',
@@ -54,8 +54,10 @@ class AppAsset extends AssetBundle
         'js/lib/jquery.fancybox.js',
         'js/lib/cloud-zoom.js',
         'js/lib/em_product_view.js',
+        'js/lib/em_category.js',
         'js/lib/lightbox.min.js',
         'js/product-detail.js',
+        'js/product-category.js',
         'js/lib/custom.js',
     ];
     public $depends = [

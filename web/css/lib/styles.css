@@ -159,7 +159,7 @@ table {
     border-spacing: 0;
     empty-cells: show;
     font-size: 100%;
-    scrollbar-face-color: expression(runtimeStyle.scrollbarFaceColor '#fff', cellSpacing 0);
+//    scrollbar-face-color: expression(runtimeStyle.scrollbarFaceColor '#fff', cellSpacing 0);
 }
 /* Content */
 
@@ -3910,6 +3910,27 @@ margin-top:-6px;*/
     margin-bottom: 0;
     width: 100%;
 }
+.pagination .prev span{
+    margin: 0px 5px;
+}
+.pagination .prev span , .pagination .next a,.pagination .next span{
+    border-radius: 0px !important;
+    //margin: 0px 5px;
+}
+.pagination .active a{
+    color: #ffffff;
+    background-color: #ec6a54 !important;
+    border-color: #ec6a54 !important;
+}
+.pagination li a{
+    border-radius: 0px !important;
+    margin: 0px 5px;
+}
+.pagination li a:hover{
+    background-color: #ec6a54 !important;
+    color: #ffffff !important;
+    border-color: #ec6a54 !important;
+}
 /*=============Tab Slider Product============*/
 
 .em-details-tabs.r-tabs,
@@ -6754,7 +6775,7 @@ div.desc {
     backface-visibility: hidden;
     height: 0;
     opacity: 0 !important;
-    filter: alpha(opacity=0 !important);
+ //   filter: alpha(opacity=0 !important);
 }
 .emcatalog-enable-hover.products-grid li.item .product-item:hover .em-element-display-hover {
     -moz-transition: all 500ms ease;
@@ -6769,7 +6790,7 @@ div.desc {
     -webkit-transform: scale(1, 1);
     height: 100%;
     opacity: 1 !important;
-    filter: alpha(opacity=100 !important);
+ //   filter: alpha(opacity=100 !important);
 }
 /*Effect Show Button Add Cart - Wishlist - Compare*/
 
@@ -8494,13 +8515,13 @@ div.desc {
 .em-wrapper-variation-store::-moz-scrollbar {
     width: 0px;
 }
-@-moz-document url-prefix(http: //),
+/*@-moz-document url-prefix(http: //),
 url-prefix(https://) 
 { .em-wrapper-variation-store[orient="vertical"] { width: 0px !important; }
 .em-wrapper-variation-store[orient="horizontal"] {
     width: 0px !important;
 }
-}
+}*/
 /*right to left*/
 
 .em-rtl .em-variation {
@@ -13669,6 +13690,9 @@ align-content: flex-start;	*/
     /*margin-right:-10px;*/
     
     margin: 0 -10px;
+}
+.category-products .emcatalog-desktop-5 .item{
+    width: 25%;
 }
 .emcatalog-desktop-5 .item,
 .emcatalog-desktop-small-5 .item,
