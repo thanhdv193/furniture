@@ -52,7 +52,7 @@ $this->title = 'Trang mua';
                                                                     <div class="em-element-display-hover bottom">
                                                                         <div class="em-btn-addto">
                                                                             <!--product add to cart-->
-                                                                            <button type="button" title="Mua hàng" class="button btn-cart" ><span><span>Mua hàng</span></span>
+                                                                            <button type="button" title="Mua hàng" data-button="<?php echo $value['id'] ?>" class="button btn-cart" ><span><span>Mua hàng</span></span>
                                                                             </button>
                                                                             <!--product add to compare-wishlist-->
                                                                             <ul class="add-to-links">

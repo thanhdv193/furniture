@@ -1,6 +1,13 @@
 
 
 $(document).ready(function() {
+    
+    $('.em-btn-addto .btn-cart').on('click',function(e){
+        $id = $(this).data('button');
+        
+    });
+    
+    
     var stopped = false;
     var is_busy = false;
     $('#login-form .login').on('click', function (e) {  
@@ -27,6 +34,16 @@ $(document).ready(function() {
                     {
                         $('.field-loginform-username .help-block-error').text('Sai tên tài khoản');
                         $('.field-loginform-password .help-block-error').text('');
+                    }
+                    if(result.error == "username_null")
+                    {
+                        $('.field-loginform-username .help-block-error').text('Tên đăng nhập không được để trống');
+                        $('.field-loginform-password .help-block-error').text('');
+                    }
+                    if(result.error == "password_null")
+                    {
+                        $('.field-loginform-username .help-block-error').text('');
+                        $('.field-loginform-password .help-block-error').text('Mật khẩu không được để trông');
                     }
                     if(result.error == "password_exist")
                     {

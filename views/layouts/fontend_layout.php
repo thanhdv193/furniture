@@ -435,10 +435,10 @@ AppAsset::register($this);
                             <div class="container em-menu-fix-pos">
                                 <div class="row">
                                     <div class="col-sm-24">
-                                        <div class="em-logo f-left"><a href="index.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img class="retina-img" src="<?php Url::base('') ?>/upload/images/logo.png" alt="Fashion Commerce" /></a>
+                                        <div class="em-logo f-left"><a href="index.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img class="retina-img" src="<?php Url::base('http') ?>/upload/images/logo.png" alt="Fashion Commerce" /></a>
                                         </div>
                                         <div class="em-logo-sticky f-left">
-                                            <a href="index.html" title="Fashion Commerce" class="logo"><img src="<?php Url::base('') ?>/upload/images/logo_small.png" alt="Fashion Commerce" />
+                                            <a href="index.html" title="Fashion Commerce" class="logo"><img src="<?php Url::base('http') ?>/upload/images/logo_small.png" alt="Fashion Commerce" />
                                             </a>
                                         </div>
                                         <div class="em-search em-search-sticky f-right">
@@ -523,14 +523,14 @@ AppAsset::register($this);
                                             <div class="em-wrapper-banners">
                                                 <div class="col-sm-8  text-center">
                                                     <div class="img-banner">
-                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_06.jpg" /> </a>
-                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_text_01.png" /> </a>
+                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php Url::base('http') ?>/upload/images/wysiwyg/em_ads_06.jpg" /> </a>
+                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php Url::base('http') ?>/upload/images/wysiwyg/em_ads_text_01.png" /> </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-8  img-banner text-center">
                                                     <div class="effect-hover-text4">
-                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_07.jpg" /> </a>
-                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_text_02.png" /> </a>
+                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php Url::base('http') ?>/upload/images/wysiwyg/em_ads_07.jpg" /> </a>
+                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php Url::base('http') ?>/upload/images/wysiwyg/em_ads_text_02.png" /> </a>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-8 text-center">

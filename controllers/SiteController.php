@@ -243,7 +243,7 @@ class SiteController extends Controller
             {
                 $result = array(
                     'status' => false,
-                    'error' => 'user_name_null'
+                    'error' => 'username_null'
                 );
                 return json_encode($result);
             }
