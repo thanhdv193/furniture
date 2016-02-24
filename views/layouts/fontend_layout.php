@@ -9,6 +9,7 @@ use app\widgets\SlidederWidget;
 use app\widgets\BlogWidget;
 use app\widgets\MenuTopWidget;
 use yii\helpers\Url;
+use app\widgets\FormLogInWidget;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -422,39 +423,8 @@ AppAsset::register($this);
                                                 <div id="em-login-link" class="account-link f-right em-non-login"> 
                                                     <a href="login.html" class="link-account" id="link-login" title="Đăng nhập">Đăng nhập</a>
                                                     <div class="em-account" id="em-account-login-form" style="display: none;">
-                                                        <form method="post" id="top-login-form">
-                                                            <input name="form_key" type="hidden" value="LqnwQyvcDpOju7G3" />
-                                                            <div class="block-content">
-                                                                <p class="login-title h6 primary">Login</p>
-                                                                <p class="login-desc">If you have an account with us, please log in.</p>
-                                                                <ul class="form-list">
-                                                                    <li>
-                                                                        <label for="mini-login">Tên tài khoản<em>*</em>
-                                                                        </label>
-                                                                        <input type="text" name="login[username]" id="mini-login" class="input-text required-entry validate-email" />
-                                                                    </li>
-                                                                    <li>
-                                                                        <label for="mini-password">Mật khẩu<em>*</em>
-                                                                        </label>
-                                                                        <input type="password" name="login[password]" id="mini-password" class="input-text required-entry validate-password" />
-                                                                    </li>
-                                                                    <li><span class="required">* Required Fields</span>
-                                                                    </li>
-                                                                </ul>
-                                                                <div class="action-forgot">
-                                                                    <div class="login_forgotpassword">
-                                                                        <p><a href="#">Quên mật khẩu?</a>
-                                                                        </p>
-                                                                        <p><span>Don't have an account?</span><a class="create-account-link-wishlist" href="h.html#" title="Sign Up">Sign Up</a>
-                                                                        </p>
-                                                                    </div>
-                                                                    <div class="actions">
-                                                                        <button type="submit" class="button"><span><span>Login</span></span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form><!-- /#top-login-form -->
+                                                            <?= FormLogInWidget::widget() ?>
+                                                            <!--/#top-login-form -->
                                                     </div><!-- /#em-account-login-form -->
                                                 </div><!-- /#em-login-link -->
                                             </div><!-- /.em-top-links -->

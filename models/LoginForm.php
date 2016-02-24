@@ -31,6 +31,16 @@ class LoginForm extends Model
             ['password', 'validatePassword'],
         ];
     }
+    public function attributeLabels()
+    {
+        return [
+            'username' => 'Tên tài khoản',
+            'password' => 'Mật khẩu',
+            'rememberMe' => 'Nhớ mật khẩu',
+            
+        ];
+    }
+    
 
     /**
      * Validates the password.
