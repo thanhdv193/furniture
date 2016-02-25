@@ -1,6 +1,6 @@
 <?php
 
-namespace common\components\utils;
+namespace app\components\utils;
 
 use Exception;
 use IntlCalendar;

@@ -15,4 +15,5 @@ return [
         'detail' => 'san-pham',
         'category' => 'chuyen-muc',        
     ],
+    'cart'=>'user_guest_cart',
 ];

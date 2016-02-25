@@ -23,7 +23,7 @@ class CookieHelper
         $cookies = Yii::$app->request->cookies;
         if ($cookies->has($name))
         {
-            $cookieValue = $cookies->getValue('user_guest_pc', null);
+            $cookieValue = $cookies->getValue($name, null);
             if($cookieValue == null)
             {
                 return false;

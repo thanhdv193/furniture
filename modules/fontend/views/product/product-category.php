@@ -95,7 +95,7 @@ $this->title = $category['title'];
                                                     </a>
                                                     <div class="bottom">
                                                         <div class="em-btn-addto text-center ">
-                                                            <button type="button" title="Mua hàng" class="button btn-cart" onclick="206"><span><span>Mua hàng</span></span>
+                                                            <button type="button" title="Mua hàng" class="button btn-cart" data-button="<?php echo $value['id'] ?>" onclick="206"><span><span>Mua hàng</span></span>
                                                             </button>
                                                             <ul class="add-to-links">
                                                                 <li><a href="#206" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>

@@ -90,6 +90,7 @@ $config = [
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
                 'san-pham/<title>-<id:\d+>.html' => 'fontend/product/product-detail',
                 'mua-hang/<title>-<id:\d+>' => 'fontend/cart/add',
+                'gio-hang.html' => 'fontend/cart/index',
 //                'danh-muc/<title>-<id:\d+>_<page:\d+>' => 'fontend/product/product-category',
                 'chuyen-muc/<title>-<id:\d+>-<page:\d+>.html' => 'fontend/product/product-category',
                 'lien-he.html' => 'fontend/contact/create',

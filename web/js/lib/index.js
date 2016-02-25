@@ -2,9 +2,28 @@
 
 $(document).ready(function() {
     
-    $('.em-btn-addto .btn-cart').on('click',function(e){
-        $id = $(this).data('button');
-        
+    $('.em-btn-addto .btn-cart').on('click', function (e) {
+        var id = $(this).data('button');        
+        $.ajax({
+            type: "POST",
+            url: baseUrl+'/fontend/cart/add',
+            cache: false,
+            data: {id:id},  
+            dataType: 'json',
+            success: function (result)
+            { 
+                if (result.status == 'ok') {
+                    console.log('mua hang thanh cong');
+                }
+                if (result.status == false)
+                {
+
+                }
+            }
+        }).always(function ()
+        {
+            //is_busy = false;
+        });
     });
     
     
