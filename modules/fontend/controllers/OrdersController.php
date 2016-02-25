@@ -32,13 +32,37 @@ class OrdersController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new OrdersSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+         $model = new Orders();
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        if ($model->load(Yii::$app->request->post())) {
+            
+            $model = new Orders();
+            $model->create_date = time();
+            $model->user_id = 0;
+            $model->cust_note = 1;
+            $model->is_process = Orders::is_process;
+            echo'<pre>'; var_dump($model); die;
+            $model->save();
+            //return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+            return $this->render('index', [
+                'model' => $model,
+            ]);
+        }
+        
+    }
+    
+    public function actionAdd()
+    { 
+        if (Yii::$app->user->isGuest == false)
+        { // user ->save db
+            echo Yii::$app->user->identity->username;
+            die();
+        } else
+        {
+            
+            
+        }
     }
 
     /**

@@ -19,6 +19,9 @@ use Yii;
  */
 class Orders extends \yii\db\ActiveRecord
 {
+    
+    const is_process = 0;
+    const is_proceed = 1;
     /**
      * @inheritdoc
      */
@@ -33,7 +36,7 @@ class Orders extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'name', 'address', 'email', 'phone', 'create_date', 'cust_note', 'is_process'], 'required'],
+            [['user_id', 'name', 'address', 'phone', 'create_date', 'cust_note', 'is_process'], 'required'],
             [['user_id', 'is_process'], 'integer'],
             [['create_date'], 'safe'],
             [['name', 'address', 'email', 'phone', 'cust_note'], 'string', 'max' => 250]
@@ -48,11 +51,11 @@ class Orders extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'user_id' => 'User ID',
-            'name' => 'Name',
-            'address' => 'Address',
+            'name' => 'Họ tên',
+            'address' => 'Địa chỉ',
             'email' => 'Email',
-            'phone' => 'Phone',
-            'create_date' => 'Create Date',
+            'phone' => 'Số điện thoại',
+            'create_date' => 'Ngày tạo',
             'cust_note' => 'Cust Note',
             'is_process' => 'Is Process',
         ];
