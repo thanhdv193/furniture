@@ -32,7 +32,9 @@ class CartController extends Controller
 
             if ($getCookies == false)
             {
-                //ko co gio hang trong cookie
+                $listProduct = null;
+                return $this->render('index', ['dataCart' => $listProduct,'status'=>true]);
+                
             } else
             {
                 $product = unserialize($getCookies);
@@ -59,7 +61,7 @@ class CartController extends Controller
                 }
                 }
               //  echo'<pre>'; var_dump($listProduct); die;
-            return $this->render('index', ['dataCart' => $listProduct]);
+            return $this->render('index', ['dataCart' => $listProduct,'status'=>true]);
         }
     }
 

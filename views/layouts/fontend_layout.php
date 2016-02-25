@@ -74,33 +74,6 @@ AppAsset::register($this);
                             <div id="em-mheader-wrapper-menu"> <span class="visible-xs fa fa-bars" id="em-mheader-menu-icon"></span>
                                 <div id="em-mheader-menu-content" style="display: none;">
                                     <div class="em-wrapper-top">
-<!--                                        <div class="em-language-currency row">
-                                            <div class="col-sm-24">
-                                                <div class="form-language em-language-style-mobile">
-                                                    <ul>
-                                                        <li class="selected">
-                                                            <a href="#" title="English"> <img alt="english" src="<?php Url::base('') ?>/upload/images/language/english.png" /> </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#" title="French"> <img alt="french" src="<?php Url::base('') ?>/upload/images/language/french.png" /> </a>
-                                                        </li>
-                                                        <li class="">
-                                                            <a href="#" title="German"> <img alt="german" src="upload/images/language/german.png" /> </a>
-                                                        </li>
-                                                    </ul>
-                                                </div> /.form-language 
-                                                <div class="em-currency-style-mobile">
-                                                    <ul class="list-inline">
-                                                        <li class=""> <a href="#"> AUD </a>
-                                                        </li>
-                                                        <li class=""> <a href="#"> EUR </a>
-                                                        </li>
-                                                        <li class=" selected"> <a href="#"> USD </a>
-                                                        </li>
-                                                    </ul>
-                                                </div> /.em-currency-style-mobile 
-                                            </div>
-                                        </div> /.em-language-currency -->
                                         <div class="em-top-links row">
                                             <div class="">
                                                 <ul class="top-header-link links">
@@ -438,7 +411,7 @@ AppAsset::register($this);
                                         <div class="em-logo f-left"><a href="index.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img class="retina-img" src="<?php echo Url::base('http') ?>/upload/images/logo.png" alt="Fashion Commerce" /></a>
                                         </div>
                                         <div class="em-logo-sticky f-left">
-                                            <a href="index.html" title="Fashion Commerce" class="logo"><img src="<?php echo Url::base('http') ?>/upload/images/logo_small.png" alt="Fashion Commerce" />
+                                            <a href="<?php echo Url::base('http') ?>/home.html" title="Fashion Commerce" class="logo"><img src="<?php echo Url::base('http') ?>/upload/images/logo_small.png" alt="Fashion Commerce" />
                                             </a>
                                         </div>
                                         <div class="em-search em-search-sticky f-right">

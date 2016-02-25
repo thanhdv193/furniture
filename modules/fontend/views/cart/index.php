@@ -152,7 +152,11 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div><!-- /.em-wrapper-main -->
-<?php  } ?>
+<?php  } else { ?>
+        <div class="page-title title-buttons">
+        <h1>Bạn không có sản phẩm nào trong giỏ hàng</h1>        
+    </div>
+<?php }?>
 <script type="text/javascript">
             function qtyDown(id) { 
                 var qty_el = document.getElementById('cart-' + id + '-qty');
