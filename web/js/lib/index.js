@@ -14,6 +14,7 @@ $(document).ready(function() {
             { 
                 if (result.status == 'ok') {
                     console.log('mua hang thanh cong');
+                    window.location.href = baseUrl+"/gio-hang.html";
                 }
                 if (result.status == false)
                 {

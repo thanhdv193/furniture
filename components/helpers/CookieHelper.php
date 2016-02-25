@@ -35,5 +35,11 @@ class CookieHelper
             return false;
         }
     }
+    public static function deleCookie($name)
+    {
+        $cookies = Yii::$app->response->cookies;
+        $cookies->remove($name);
+        unset($cookies[$name]);
+    }
 
 }
