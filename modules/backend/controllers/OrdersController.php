@@ -31,16 +31,17 @@ class OrdersController extends Controller
      * Lists all Orders models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
         $searchModel = new OrdersSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+        
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams,$id);        
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'id'=>$id,
         ]);
-    }
+    }    
 
     /**
      * Displays a single Orders model.
@@ -49,15 +50,29 @@ class OrdersController extends Controller
      */
     public function actionView($id)
     {
-        $orderDetail = OrderDetail::find()                       
-                       ->where(['order_id' => $id])
+        $totalMoney = 0;
+        $orderDetail = OrderDetail::find()                          
+                        ->select(['product.title as product_name','order_detail.*','product_photo.product_id as product_img_id','product_photo.*'])
+                        ->innerJoin('product', 'order_detail.product_id = product.id')
+                        ->innerJoin('product_photo', 'order_detail.product_id = product_photo.product_id')
+                       ->where(['order_detail.order_id' => $id])
                        ->asArray()
                        ->all();
+        foreach($orderDetail as &$value)
+            {
+                $allPrice = (float)$value['price'] * (int)$value['quantity'];
+                $value['allPrice'] = $allPrice;
+                $totalMoney = $totalMoney + $allPrice;
+                
+            }
+        //var_dump($totalMoney);     echo'<pre>'; var_dump($orderDetail);
+            //die;
         $model = $this->findModel($id);
         //echo'<pre>'; var_dump($model); die;
         return $this->render('view', [
             'model' => $model,
             'orderDetail' =>$orderDetail,
+            'totalMoney'=>$totalMoney,
         ]);
     }
 

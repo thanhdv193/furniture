@@ -193,27 +193,34 @@ AppAssetBackend::register($this);
                                 <li>
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-logged" data-toggle="dropdown">
-                                            <?php if (Yii::$app->user->identity->avatar == null)
-                                                {
-                                                ?>
-                                                <img src="<?php Url::base('') ?>/upload/avatar/no-avatar.png" alt="">
-                                            <?php } else
-                                                {
-                                                ?>
-                                                <img src="<?php echo Url::base('http') ?>/<?php echo Yii::$app->user->identity->avatar ?>" alt="">
-                                            <?php } ?>
                                             <?php if (Yii::$app->user->isGuest == false)
-                                                { ?>
-                                            <?php echo Yii::$app->user->identity->username ?>
-                                            <?php } ?>
+                                            { ?>
+                                                <?php
+                                                if (Yii::$app->user->identity->avatar == null)
+                                                {
+                                                    ?>
+                                                    <img src="<?php Url::base('') ?>/upload/avatar/no-avatar.png" alt="">
+                                                <?php
+                                                } else
+                                                {
+                                                    ?>
+                                                    <img src="<?php echo Url::base('http') ?>/<?php echo Yii::$app->user->identity->avatar ?>" alt="">
+                                                <?php } ?>
+                                                <?php if (Yii::$app->user->isGuest == false)
+                                                {
+                                                    ?>
+                                                <?php echo Yii::$app->user->identity->username ?>
+                                                <?php } ?>
+                                                <?php } ?>
                                             <span class="caret"></span>
                                         </button>
                                         <ul class="dropdown-menu pull-right">
+                                            <?php if (Yii::$app->user->isGuest == false) {?>
                                             <li><a href="<?php echo Url::base('http') ?>/backend/user/view?id=<?php echo Yii::$app->user->identity->id ?>"><i class="glyphicon glyphicon-user"></i> Trang cá nhân</a></li>
                                             <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Account Settings</a></li>
                                             <li><a href="#"><i class="glyphicon glyphicon-question-sign"></i> Trợ giúp</a></li>
                                             <li><a href="<?php echo Url::base('http') ?>/site/logout" data-method="post"><i class="glyphicon glyphicon-log-out"></i> Đăng xuất (<?php echo Yii::$app->user->identity->username ?>)</a></li>
-                                            
+                                            <?php }?>
                                         </ul>
                                     </div>
                                 </li>
@@ -237,13 +244,14 @@ AppAssetBackend::register($this);
                         <div class="media-left">
                             
                             <a href="#">
+                                <?php if(Yii::$app->user->isGuest == false) { ?>
                                 <?php if(Yii::$app->user->identity->avatar == null) { ?>
                                     <img src="<?php Url::base('') ?>/upload/avatar/no-avatar.png" alt="" class="media-object img-circle">
                                 <?php }else {?>
                                     <img src="<?php echo Url::base('http') ?>/<?php echo Yii::$app->user->identity->avatar?>" alt="" class="media-object img-circle">
                                 <?php } ?>
                                 
-                               
+                                <?php } ?>
                             </a>
                         </div>
                         <div class="media-body">
@@ -255,9 +263,12 @@ AppAssetBackend::register($this);
                     </div><!-- leftpanel-profile -->
 
                     <div class="leftpanel-userinfo collapse" id="loguserinfo">
+                        <?php if (Yii::$app->user->isGuest == false) {?>
                         <h5 class="sidebar-title">Địa chỉ</h5>
                         <address>
+                            
                             <?php echo Yii::$app->user->identity->address ?>
+                           
                         </address>
                         <h5 class="sidebar-title">Liên hệ</h5>
                         <ul class="list-group">
@@ -282,6 +293,7 @@ AppAssetBackend::register($this);
                                 </div>
                             </li>
                         </ul>
+                         <?php }?>
                     </div><!-- leftpanel-userinfo -->
 
                     <ul class="nav nav-tabs nav-justified nav-sidebar">

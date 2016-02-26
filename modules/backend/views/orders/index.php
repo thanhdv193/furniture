@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\Orders;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\OrdersSearch */
@@ -58,16 +59,16 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'is_process',
                     'headerOptions' => ['width' => '100', 'text-align' => 'center'],
                     'value' => function ($model)
-                        {
-                            if ($model['is_process'] == 0)
+                        { 
+                            if ($model['is_process'] == Orders::order_process)
                             {
                                 return "Chưa xử lý";
                             }
-                            if ($model['is_process'] == 1)
+                            if ($model['is_process'] == Orders::order_process_done)
                             {
                                 return "Đã xử lý";
                             }
-                            if ($model['is_process'] == 2)
+                            if ($model['is_process'] == Orders::order_process_watting)
                             {
                                 return "Đang chờ";
                             }

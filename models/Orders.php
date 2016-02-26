@@ -25,6 +25,11 @@ class Orders extends \yii\db\ActiveRecord
     const is_watting = 2;
     const order_success = 1;
     const order_false = 0;
+    
+    const order_process = 0; // chưa xử lý
+    const order_process_watting = 1; // đang đợi
+    const order_process_done = 2; // đã xử lý
+    const order_all = 3; // tất cả
     /**
      * @inheritdoc
      */
