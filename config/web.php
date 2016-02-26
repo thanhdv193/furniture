@@ -92,6 +92,7 @@ $config = [
                 'mua-hang/<title>-<id:\d+>' => 'fontend/cart/add',
                 'gio-hang.html' => 'fontend/cart/index',
                 'don-hang.html' => 'fontend/orders/index',
+                'thong-bao-don-hang.html' => 'fontend/orders/index',
 //                'danh-muc/<title>-<id:\d+>_<page:\d+>' => 'fontend/product/product-category',
                 'chuyen-muc/<title>-<id:\d+>-<page:\d+>.html' => 'fontend/product/product-category',
                 'lien-he.html' => 'fontend/contact/create',

@@ -13,7 +13,7 @@ $this->title = 'Đơn hàng';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wrapper-breadcrums">
-    <div class="container">
+    <div class="col-sm-24">
         <div class="row">
             <div class="col-sm-24">
                 <div class="breadcrumbs">

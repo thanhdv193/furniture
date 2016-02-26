@@ -22,6 +22,9 @@ class Orders extends \yii\db\ActiveRecord
     
     const is_process = 0;
     const is_proceed = 1;
+    const is_watting = 2;
+    const order_success = 1;
+    const order_false = 0;
     /**
      * @inheritdoc
      */
@@ -37,9 +40,11 @@ class Orders extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'name', 'address', 'phone', 'create_date', 'cust_note', 'is_process'], 'required'],
-            [['user_id', 'is_process'], 'integer'],
-            [['create_date'], 'safe'],
-            [['name', 'address', 'email', 'phone', 'cust_note'], 'string', 'max' => 250]
+            [['create_date','user_id', 'is_process'], 'integer'],            
+            ['email', 'filter', 'filter' => 'trim'],            
+            ['email', 'email'],
+            ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
+            [['name', 'address', 'phone', 'cust_note'], 'string', 'max' => 250]
         ];
     }
 
@@ -49,15 +54,15 @@ class Orders extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'user_id' => 'User ID',
+            'id' => 'Mã đơn hàng',
+            'user_id' => 'Loại khách hàng',
             'name' => 'Họ tên',
             'address' => 'Địa chỉ',
             'email' => 'Email',
             'phone' => 'Số điện thoại',
             'create_date' => 'Ngày tạo',
             'cust_note' => 'Cust Note',
-            'is_process' => 'Is Process',
+            'is_process' => 'Tình trạng',
         ];
     }
 }

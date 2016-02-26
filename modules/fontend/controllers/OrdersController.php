@@ -8,6 +8,9 @@ use app\models\OrdersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Product;
+use app\models\OrderDetail;
+use app\components\helpers\CookieHelper;
 
 /**
  * OrdersController implements the CRUD actions for Orders model.
@@ -36,14 +39,69 @@ class OrdersController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             
-            $model = new Orders();
-            $model->create_date = time();
-            $model->user_id = 0;
-            $model->cust_note = 1;
-            $model->is_process = Orders::is_process;
-            echo'<pre>'; var_dump($model); die;
-            $model->save();
-            //return $this->redirect(['view', 'id' => $model->id]);
+            if (Yii::$app->user->isGuest == false)
+            { // user ->save db
+                echo Yii::$app->user->identity->username;
+                die();
+            } else
+            {
+                $product_sl = array();
+                $product_id = array();
+                $cart = Yii::$app->params['cart'];                
+                
+                $getCookies = CookieHelper::getCookie($cart);
+                if ($getCookies == false)
+                { die("khong thanh cong");
+                    //$listProduct = null;
+                    //return $this->render('index', ['dataCart' => $listProduct, 'status' => true]);
+                } else
+                {
+                    $product = unserialize($getCookies);
+                    
+                }
+                foreach ($product as $value)
+                    {
+                        $product_sl[$value['id']] = $value;
+                        $product_id[] = $value['id'];
+                    }                
+                $listProduct = Product::find()
+                        ->select(['product.*'])
+                        ->where(['product.id' => $product_id, 'product.is_active' => Product::is_active])                       
+                        ->asArray()
+                        ->all();
+                   
+                    $model->create_date = time();
+                    $model->user_id = 0;
+                    $model->cust_note = '1';
+                    $model->is_process = Orders::is_process;
+                    if ($model->email == null)
+                    {
+                        $model->email = '123@gmail.com';
+                    }
+                    $model->save();   
+                    
+                    foreach($listProduct as $value)
+                    {
+                        $orderDetali = new OrderDetail();
+                        $orderDetali->order_id = $model->id;
+                        $orderDetali->product_id = $value['id'];
+                        $orderDetali->price = $value['price'];
+                        $orderDetali->quantity = $product_sl[$value['id']]['sl'];
+                        $orderDetali->discount = 1;
+                        $orderDetali->size = '0';
+                        $orderDetali->is_timegold = '0';
+                        $orderDetali->product_type_id = $value['product_type_id'];    
+                        $orderDetali->save();
+//                        if($orderDetali->save()){
+//                                                  
+//                        }else{
+//                            return $this->redirect(['orders-done', 'status' => Orders::order_false]);                        
+//                        }
+                        
+                    }
+                    CookieHelper::deleCookie($cart);
+                    return $this->render('orders-done',['status' => Orders::order_success]);                  
+            }                        
         } else {
             return $this->render('index', [
                 'model' => $model,
