@@ -4,6 +4,7 @@ namespace app\components\helpers;
 
 use Yii;
 use app\models\ProductPhoto;
+use yii\helpers\Url;
 
 class ImageProduct
 {

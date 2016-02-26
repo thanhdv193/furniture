@@ -73,7 +73,7 @@ class OrdersController extends Controller
                     $model->create_date = time();
                     $model->user_id = 0;
                     $model->cust_note = '1';
-                    $model->is_process = Orders::is_process;
+                    $model->is_process = Orders::order_process;
                     if ($model->email == null)
                     {
                         $model->email = '123@gmail.com';

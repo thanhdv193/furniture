@@ -51,8 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'format' => 'raw',
                     'value' => Yii::$app->formatter->asDatetime($model->create_date, 'php:h:i:s d/m/Y'),
                 ],
-                //'cust_note',
-                'is_process',
+                //'cust_note',                
                 [
                     'attribute' => 'is_process',
                     'format' => 'raw',

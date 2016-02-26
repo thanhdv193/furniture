@@ -7,6 +7,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAssetBackend;
 use app\widgets\BackendMenuWidget;
 use yii\helpers\Url;
+use app\models\Orders;
 
 
 AppAssetBackend::register($this);
@@ -316,16 +317,18 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý người dùng</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('') ?>/backend/user/">Danh sách người dùng</a></li>  
-                                        <li><a href="<?php Url::base('') ?>/backend/user/create">Thêm mới người dùng</a></li>  
+                                        <li><a href="<?php Url::base('http') ?>/backend/user/">Danh sách người dùng</a></li>  
+                                        <li><a href="<?php Url::base('http') ?>/backend/user/create">Thêm mới người dùng</a></li>  
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Đơn hàng</span></a>
                                     <ul class="children">
-                                        <li><a href="#">Danh sách đơn hàng</a></li>  
-                                        <li><a href="#">Đơn hàng đang chờ</a></li>  
-                                        <li><a href="#">Đơn hàng trả lại</a></li>
+                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_all ?>">Tất cả đơn hàng</a></li>  
+                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process ?>">Đơn hàng chưa xử lý</a></li>
+                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_watting ?>">Đơn hàng đang chờ</a></li>  
+                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_done ?>">Đơn hàng đã thanh toán</a></li>
+                                        
                                     </ul>
                                 </li>
                                 <li><a href="backend/default/index-1"><span class="badge pull-right"></span><i class="fa fa-cube"></i> <span>Đơn hàng</span></a></li>
