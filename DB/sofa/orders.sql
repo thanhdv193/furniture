@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50626
 File Encoding         : 65001
 
-Date: 2016-02-23 17:21:25
+Date: 2016-02-26 17:07:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,10 +24,10 @@ CREATE TABLE `orders` (
   `user_id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `address` varchar(250) NOT NULL,
-  `email` varchar(250) NOT NULL,
+  `email` varchar(250) DEFAULT NULL,
   `phone` varchar(250) NOT NULL,
-  `create_date` datetime NOT NULL,
+  `create_date` int(11) NOT NULL,
   `cust_note` varchar(250) NOT NULL,
   `is_process` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=216 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=228 DEFAULT CHARSET=utf8;

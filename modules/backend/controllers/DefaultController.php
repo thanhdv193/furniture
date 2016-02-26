@@ -7,6 +7,7 @@ use Yii;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\UploadedFile;
+use app\models\Orders;
 
 
 
@@ -16,13 +17,31 @@ class DefaultController extends Controller
     {        
         if (Yii::$app->user->isGuest)
         {
-            //return $this->redirect('/backend/default/login');
-             return $this->render('index');
+            //get all order
+            $listOrder = Orders::find()                        
+                        ->count();
+            $listOrderWatting = Orders::find()
+                        ->where(['is_process'=>  Orders::order_process_watting])
+                        ->count();
+            $listOrderProcess = Orders::find()
+                        ->where(['is_process'=>  Orders::order_process])
+                        ->count();
+            $listOrderDone = Orders::find()
+                        ->where(['is_process'=>  Orders::order_process_done])
+                        ->count();
+            $inforOrder = array(
+                'Watting'=>$listOrderWatting,
+                'OrderDone'=>$listOrderDone,
+                'OrderProcess'=>$listOrderProcess,
+                'all'=>$listOrder,
+            );            
+             return $this->render('index',['inforOrder'=>$inforOrder]);
+             
         }else{
             return $this->render('index');
         }
         
-    }
+    }    
     public function actionLogin(){
         return $this->render('login-admin');
     }
