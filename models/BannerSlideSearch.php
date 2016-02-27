@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Contact;
+use app\models\BannerSlide;
 
 /**
- * ContactSearch represents the model behind the search form about `app\models\Contact`.
+ * BannerSlideSearch represents the model behind the search form about `app\models\BannerSlide`.
  */
-class ContactSearch extends Contact
+class BannerSlideSearch extends BannerSlide
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class ContactSearch extends Contact
     public function rules()
     {
         return [
-            [['contact_id', 'user_id', 'create_date'], 'integer'],
-            [['name', 'phone', 'email', 'description'], 'safe'],
+            [['banner_id', 'create_date', 'sort_order', 'user_id', 'active'], 'integer'],
+           
         ];
     }
 
@@ -41,7 +41,7 @@ class ContactSearch extends Contact
      */
     public function search($params)
     {
-        $query = Contact::find();
+        $query = BannerSlide::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -56,15 +56,14 @@ class ContactSearch extends Contact
         }
 
         $query->andFilterWhere([
-            'contact_id' => $this->contact_id,
-            'user_id' => $this->user_id,
+            'banner_id' => $this->banner_id,
             'create_date' => $this->create_date,
+            'sort_order' => $this->sort_order,
+            'user_id' => $this->user_id,
+            'active' => $this->active,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'phone', $this->phone])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'image', $this->image]);
 
         return $dataProvider;
     }

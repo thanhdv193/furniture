@@ -330,8 +330,7 @@ AppAssetBackend::register($this);
                                         <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_done ?>">Đơn hàng đã thanh toán</a></li>
                                         
                                     </ul>
-                                </li>
-                                <li><a href="backend/default/index-1"><span class="badge pull-right"></span><i class="fa fa-cube"></i> <span>Đơn hàng</span></a></li>
+                                </li>                               
                             </ul>
 
                             <h5 class="sidebar-title">Main Menu</h5>
@@ -339,24 +338,31 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý sản phẩm</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('') ?>/backend/product/">Sản phẩm</a></li>                                                                            
+                                        <li><a href="<?php Url::base('http') ?>/backend/product/">Sản phẩm</a></li>                                                                            
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Danh mục sản phẩm</span></a>
                                     <ul class="children">
                                         <li><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-type">Danh mục sản phẩm</a></li>
-                                        <li><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-group">Nhóm sản phẩm</a></li>
-                                        
+                                        <li><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-group">Nhóm sản phẩm</a></li>                                        
                                     </ul>
                                 </li>                               
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý thông tin</span></a>
                                     <ul class="children">
                                         <li><a href="#">Thông tin giới thiệu</a></li>   
-                                        <li><a href="#">Thông tin liên hệ</a></li>    
+                                        <li><a href="<?php Url::base('http') ?>/backend/contact/index">Thông tin liên hệ</a></li>    
                                     </ul>
-                                </li>                                
+                                </li> 
+                                <li class="nav-parent">
+                                    <a href="#"><i class="fa fa-check-square"></i> <span>Banner</span></a>
+                                    <ul class="children">
+                                        <li><a href="<?php Url::base('http') ?>/backend/banner-slide/create">Thêm banner</a></li>
+                                        <li><a href="<?php Url::base('http') ?>/backend/banner-slide/index">Danh sách banner</a></li>
+                                        
+                                    </ul>
+                                </li>  
                                  <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Báo cáo</span></a>
                                     <ul class="children">

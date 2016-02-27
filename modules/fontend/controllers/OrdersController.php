@@ -138,8 +138,9 @@ class OrdersController extends Controller
             { 
                 
                 $model->name = Yii::$app->user->identity->last_name.' '.Yii::$app->user->identity->name ;
-                $model->address = Yii::$app->user->identity->address;               
-                //echo'<pre>'; var_dump($model); die;
+                $model->address = Yii::$app->user->identity->address;    
+                //$model->email = (string)Yii::$app->user->identity->email;
+                //echo'<pre>'; var_dump(Yii::$app->user->identity->email); die;
             }
             return $this->render('index', [
                 'model' => $model,

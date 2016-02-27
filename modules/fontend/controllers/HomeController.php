@@ -15,4 +15,8 @@ class HomeController extends Controller
         //echo'<pre>'; var_dump($listProduct); die;
         return $this->render('index',['listProduct'=>$listProduct]);
     }
+    public function actionContact()
+    {    	       
+        return $this->render('contact',['data'=>null]);
+    }
 }

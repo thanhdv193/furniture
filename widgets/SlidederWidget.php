@@ -3,7 +3,7 @@
 namespace app\widgets;
 
 use yii\base\Widget;
-use app\models\Banner;
+use app\models\BannerSlide;
 
 
 class SlidederWidget extends Widget
@@ -16,10 +16,15 @@ class SlidederWidget extends Widget
 
     public function run()
     {
-        //$slide = Banner::find()->joinWith('image')->where(['active'=>1])->asArray()->all();
-        //echo '<pre>'; var_dump($slide); die;
-        $slide ="";
-        return $this->render('Slideder',['data'=>$slide]);
+       $slide =  BannerSlide::find()
+                ->where(['active'=>BannerSlide::is_active])
+               ->orderBy('sort_order DESC')
+               ->all();
+       if($slide != null)
+       {
+           return $this->render('Slideder',['data'=>$slide]);
+       }
+        
     }
 
 }
