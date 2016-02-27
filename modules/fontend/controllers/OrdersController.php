@@ -4,6 +4,7 @@ namespace app\modules\fontend\controllers;
 
 use Yii;
 use app\models\Orders;
+use app\models\Cart;
 use app\models\OrdersSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -35,14 +36,58 @@ class OrdersController extends Controller
      */
     public function actionIndex()
     {
-         $model = new Orders();
-
+         $model = new Orders();                     
         if ($model->load(Yii::$app->request->post())) {
             
             if (Yii::$app->user->isGuest == false)
-            { // user ->save db
-                echo Yii::$app->user->identity->username;
-                die();
+            {   
+                $user_id = Yii::$app->user->id;
+                $name = $model->name ;
+                $address = $model->address;
+                
+                if ($model->email == null)
+                {
+                    $email = '123@gmail.com';
+                } else
+                {
+                    $email = $model->email;
+                }              
+                $phone= $model->phone;
+                
+                $orderModel = new Orders();
+                $orderModel->user_id = Yii::$app->user->id;
+                $orderModel->name = $name;
+                $orderModel->address = $address;
+                $orderModel->email = $email;
+                $orderModel->phone = $phone;
+                $orderModel->create_date = time();
+                $orderModel->cust_note = '1';
+                $orderModel->is_process = Orders::order_process;
+                
+                //$orderModel->save();              
+                echo'<pre>'; var_dump($orderModel->save()); die;
+                $cart = Cart::find()
+                        ->select(['cart.quantity as cart_quantity', 'cart.product_id as cart_product_id','product.*'])
+                        ->innerJoin('product', 'cart.product_id = product.id')
+                        ->where(['cart.user_id'=>Yii::$app->user->id])
+                        ->asArray()
+                        ->all();
+                foreach($cart as $value)
+                    {
+                        $orderDetali = new OrderDetail();
+                        $orderDetali->order_id = $model->id;
+                        $orderDetali->product_id = $value['id'];
+                        $orderDetali->price = $value['price'];
+                        $orderDetali->quantity = $value['cart_quantity'];
+                        $orderDetali->discount = 1;
+                        $orderDetali->size = '0';
+                        $orderDetali->is_timegold = '0';
+                        $orderDetali->product_type_id = $value['product_type_id'];    
+                        if($orderDetali->save()){
+                            return $this->render('orders-done',['status' => Orders::order_success]);   
+                        }
+                    }                
+                
             } else
             {
                 $product_sl = array();
@@ -103,6 +148,14 @@ class OrdersController extends Controller
                     return $this->render('orders-done',['status' => Orders::order_success]);                  
             }                        
         } else {
+            if (Yii::$app->user->isGuest == false)
+            { 
+                
+                $model->name = Yii::$app->user->identity->last_name.' '.Yii::$app->user->identity->name ;
+                $model->address = Yii::$app->user->identity->address;
+                $model->email = Yii::$app->user->identity->email;
+                //echo'<pre>'; var_dump($model); die;
+            }
             return $this->render('index', [
                 'model' => $model,
             ]);
