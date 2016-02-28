@@ -121,6 +121,7 @@ class CartController extends Controller
             } else
             {
                 // guest -> save cookie
+                $cart = Yii::$app->params['cart'];
                 $getCookies = CookieHelper::getCookie($cart);
                 if ($getCookies == false)
                 {

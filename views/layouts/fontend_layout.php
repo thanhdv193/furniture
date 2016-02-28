@@ -442,7 +442,7 @@ AppAsset::register($this);
                                                         <div class="topcart-popup-content">
                                                             <p class="em-block-subtitle">Giỏ hàng</p>
                                                             <div class="topcart-content">
-                                                                <p class="amount-content "> Bạn có 1 sản phẩm trong giỏ hàng.</p>
+                                                                <p class="amount-content "> Bạn có <span class="em-topcart-qty">1</span> sản phẩm trong giỏ hàng.</p>
                                                             </div>
                                                         </div>
                                                     </div>

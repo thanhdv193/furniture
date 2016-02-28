@@ -1,6 +1,21 @@
-
-
 $(document).ready(function() {
+    
+    
+    $.ajax({
+            type: "POST",
+            url: baseUrl+'/fontend/home/check-cart',
+            cache: false,              
+            dataType: 'json',
+            success: function (result)
+            { 
+                
+                    $('.em-summary-topcart .em-topcart-qty').text(result.count);
+                    $('.topcart-popup .em-topcart-qty').text(result.count);                
+            }
+        }).always(function ()
+        {
+            //is_busy = false;
+        });
     
     $('.em-btn-addto .btn-cart').on('click', function (e) {
         var id = $(this).data('button');        
