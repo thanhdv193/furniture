@@ -42,6 +42,7 @@ class AppAsset extends AssetBundle
                                                  
     ];
     public $js = [        
+        'js/lib/jquery.cookie.js',
         'js/lib/jquery.lazyload.min.js',
         'js/lib/owl.carousel.js',
         'js/lib/ios-orientationchange-fix.js',

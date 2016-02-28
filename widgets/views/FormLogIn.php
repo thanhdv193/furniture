@@ -29,7 +29,7 @@ use yii\bootstrap\ActiveForm;
                 </li>
                 <li>
                     <label for="mini-password">Mật khẩu<em>*</em></label>
-                    <?= $form->field($model, 'password')->passwordInput()->textInput(['maxlength' => 255, 'class' => 'input-text required-entry validate-password'])->label(false) ?>
+                    <?= $form->field($model, 'password')->passwordInput(['maxlength' => 255, 'class' => 'input-text required-entry validate-password'])->label(false) ?>
                 </li>
                 <li>
                     <?=

@@ -440,13 +440,18 @@ var $hideFormLogin = function $hideFormLogin() {
 
     /* Newsletter */
     function showPopUpLogin() {
-        if ($('#em-popup').length > 0) {
-            $.fancybox.open('#em-popup', {
-                width: 'auto',
-                height: 'auto',
-                openEffect: 'elastic',
-                closeEffect: 'elastic'
-            });
+        var check = loadBox = $.cookie("__showPopup");
+        if (check !== '1') {
+            if ($('#em-popup').length > 0) {
+                $.fancybox.open('#em-popup', {
+                    width: 'auto',
+                    height: 'auto',
+                    openEffect: 'elastic',
+                    closeEffect: 'elastic'
+                });
+                $.cookie("__showPopup", 1, {path: "/", expires: 10});
+
+            }
         }
     }
 
