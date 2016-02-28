@@ -436,13 +436,13 @@ AppAsset::register($this);
                                             <div class="em-wrapper-js-topcart em-wrapper-topcart em-no-quickshop">
                                                 <div class="em-container-topcart">
                                                     <div class="em-summary-topcart">
-                                                        <a class="em-amount-js-topcart em-amount-topcart" title="Giỏ hàng" href="cart.html"> <span class="em-topcart-text">My Cart:</span> <span class="em-topcart-qty">1</span> </a>
+                                                        <a class="em-amount-js-topcart em-amount-topcart" title="Giỏ hàng" href="cart.html"> <span class="em-topcart-text">My Cart:</span> <span class="em-topcart-qty">0</span> </a>
                                                     </div>
                                                     <div class="em-container-js-topcart topcart-popup" style="display:none">
                                                         <div class="topcart-popup-content">
                                                             <p class="em-block-subtitle">Giỏ hàng</p>
                                                             <div class="topcart-content">
-                                                                <p class="amount-content "> Bạn có <span class="em-topcart-qty">1</span> sản phẩm trong giỏ hàng.</p>
+                                                                <p class="amount-content "> Bạn có <span class="em-topcart-qty">0</span> sản phẩm trong giỏ hàng.</p>
                                                             </div>
                                                         </div>
                                                     </div>

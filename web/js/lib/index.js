@@ -4,7 +4,8 @@ $(document).ready(function() {
     $.ajax({
             type: "POST",
             url: baseUrl+'/fontend/home/check-cart',
-            cache: false,              
+            cache: false,       
+            data: {id:1},
             dataType: 'json',
             success: function (result)
             { 

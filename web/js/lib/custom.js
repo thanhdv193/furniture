@@ -1,3 +1,9 @@
+var $hideFormLogin = function $hideFormLogin() {
+    init: function init() {
+        
+    }
+};
+
 (function($) {
     
     $(".menu-left :first").addClass("vnav em-menu-icon effect-menu em-menu-long");
@@ -100,8 +106,10 @@
 
     function effectLoginForm() {
         var sLogin = $('#em-account-login-form');
+        
         var sLink = $('#link-login');
         var sDivLink = $('#em-login-link');
+                
         if (sLogin.length > 0) {
             //hover login form
             if (isMobile) {
@@ -112,20 +120,20 @@
             } else {
                 sDivLink.on('click', function (e) {
                     e.preventDefault();
-                    showlink(sLogin);
+                    showlink(sLogin);                    
                     }
                 );
 //                sDivLink.mouseover(function() {
 //                    showlink(sLogin);
 //                });
 
-//                $('body').click(function (e) {
-//                    var target = $(e.target);
-//                    console.log(target);
-//                    if (!target.is('#link-login') && !target.is('.em-menu-link')) {
-//                        hidelink(sLogin);
-//                    }                   
-//                });
+                $(document).click(function (e) {
+                    var target = $(e.target);                                        
+                    if (!target.closest('div#em-login-link').length) {
+                        hidelink(sLogin);                                                
+                    }else{                       
+                    }                   
+                });
 //                sDivLink.mouseout(function() {
 //                    hidelink(sLogin);
 //                });

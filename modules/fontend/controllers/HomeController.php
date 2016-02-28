@@ -23,34 +23,37 @@ class HomeController extends Controller
         return $this->render('contact',['data'=>null]);
     }
     public function actionCheckCart()
-    {
-        if (Yii::$app->user->isGuest == false)
+    {         
+        if (Yii::$app->request->post())
         {
-             $countCart = Cart::find()
-                     ->where(['user_id'=>Yii::$app->user->id])
-                     ->count();
-             
-             return json_encode(array(
-                        'count' => $countCart,
-                    ));
-        }else{
-            $cart = Yii::$app->params['cart'];
-            $getCookies = CookieHelper::getCookie($cart);
-            if ($getCookies == false)
+            if (Yii::$app->user->isGuest == false)
             {
-                //cart null
+                $countCart = Cart::find()
+                        ->where(['user_id' => Yii::$app->user->id])
+                        ->count();
+
                 return json_encode(array(
+                    'count' => $countCart,
+                ));
+            } else
+            {
+                $cart = Yii::$app->params['cart'];
+                $getCookies = CookieHelper::getCookie($cart);
+                if ($getCookies == false)
+                {
+                    //cart null
+                    return json_encode(array(
                         'count' => 0,
                     ));
-                
-            }else{
-                $product = unserialize($getCookies);
-                $countCart = count($product);
-                return json_encode(array(
+                } else
+                {
+                    $product = unserialize($getCookies);
+                    $countCart = count($product);
+                    return json_encode(array(
                         'count' => $countCart,
-                    ));       
-                
-            } 
+                    ));
+                }
+            }
         }
     }
 }
