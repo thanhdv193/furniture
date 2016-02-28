@@ -11,7 +11,7 @@ use yii\helpers\Url;
 /* @var $model app\models\Product */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJsFile(Url::base('') . '/js/upload_img.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Url::base('') . '/js/upload.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Url::base('').'/ckeditor/ckeditor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Url::base('').'/js/backend/editor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 

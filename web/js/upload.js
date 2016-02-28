@@ -157,6 +157,7 @@
   $(document).on('click.fileupload.data-api', '[data-provides="fileupload"]', function (e) {
     var $this = $(this)
     if ($this.data('fileupload')) return
+    
     $this.fileupload($this.data())
       
     var $target = $(e.target).closest('[data-dismiss="fileupload"],[data-trigger="fileupload"]');
