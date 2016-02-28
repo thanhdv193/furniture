@@ -2206,8 +2206,8 @@ dl.item-options dd .price {
     content: "\f077";
     font-size: 12px;
     position: absolute;
-    top: 5px;
-    left: 18px;
+    top: 17px;
+    left: 19px;
 }
 #bg_fade {
     z-index: 999;

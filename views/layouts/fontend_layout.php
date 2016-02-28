@@ -436,7 +436,7 @@ AppAsset::register($this);
                                             <div class="em-wrapper-js-topcart em-wrapper-topcart em-no-quickshop">
                                                 <div class="em-container-topcart">
                                                     <div class="em-summary-topcart">
-                                                        <a class="em-amount-js-topcart em-amount-topcart" title="Giỏ hàng" href="cart.html"> <span class="em-topcart-text">My Cart:</span> <span class="em-topcart-qty">0</span> </a>
+                                                        <a class="em-amount-js-topcart em-amount-topcart" title="Giỏ hàng" href="<?php echo Url::base('http') ?>/gio-hang.html"> <span class="em-topcart-text">My Cart:</span> <span class="em-topcart-qty">0</span> </a>
                                                     </div>
                                                     <div class="em-container-js-topcart topcart-popup" style="display:none">
                                                         <div class="topcart-popup-content">
@@ -832,7 +832,7 @@ AppAsset::register($this);
                                             <div class="em-payment f-right"><a class="em-payment-icon em-visa" title="em-sample-title" href="#">visa</a> <a class="em-payment-icon em-master" title="em-sample-title" href="#">master</a> <a class="em-payment-icon em-express " title="em-sample-title" href="#">express</a><a class="em-payment-icon em-paypal" title="em-sample-title" href="#">paypal</a> <a class="em-payment-icon em-other " title="em-sample-title" href="#">other</a>
                                             </div>
                                         </div>
-                                        <div class="em-footer-address"> <address class="f-left">&copy; 2015 EM0131 Everything Demo Store. All Rights Reserved.<span>HTML Templates by <a href="#" title="Responsive HTML Themes &amp; Responsive HTML Templates">htmlcooker.com</a></span></address>
+                                        <div class="em-footer-address"> <address class="f-left">&copy; 2015 EM0131 Everything Demo Store. All Rights Reserved.<span></span></address>
                                         </div>
                                     </div>
                                 </div>
@@ -841,7 +841,7 @@ AppAsset::register($this);
                     </div><!-- /.em-footer-style09 -->
                 </div><!-- /.em-wrapper-footer -->
                 
-                <p id="back-top" style="display: none;"><a title="Top" href="#top">Top</a></p>
+                <p id="back-top" style="display: none;"><a title="Lên đầu trang" href="#top"></a></p>
 
 
                 <div class="popup-content" id="em-popup" style="display: none;">
