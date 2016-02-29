@@ -43,12 +43,12 @@ class AuthGroup extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'group_name' => 'Group Name',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'status' => 'Status',
-            'description' => 'Description',
+            'id' => 'Mã',
+            'group_name' => 'Tên nhóm quyền',
+            'created_at' => 'Ngày tạo',
+            'updated_at' => 'Ngày cập nhật',
+            'status' => 'Trạng thái',
+            'description' => 'Mô tả',
             'alias' => 'Alias',
         ];
     }

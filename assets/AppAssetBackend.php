@@ -45,6 +45,7 @@ class AppAssetBackend extends AssetBundle
         'lib/jquery-maskedinput/jquery.maskedinput.js',
         'js/index.js',
         'js/dashboard.js',
+        'js/backend/administrator.js'
         //'js/upload_img.js',
         
         

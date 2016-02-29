@@ -8,6 +8,8 @@ use app\models\AuthGroupSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\utils\FileUtils;
+use app\components\helpers\FunctionService;
 
 /**
  * AuthGroupController implements the CRUD actions for AuthGroup model.
@@ -40,7 +42,15 @@ class AuthGroupController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
-
+    public function actionPermission()
+    {
+         $list = FunctionService::getServices();
+        $group = AuthGroup::find()
+                ->asArray()
+                ->all();
+       // echo'<pre>'; var_dump($list); die;
+        return $this->render('permission',['data'=>$list,'group'=>$group]);
+    }
     /**
      * Displays a single AuthGroup model.
      * @param integer $id
@@ -62,7 +72,13 @@ class AuthGroupController extends Controller
     {
         $model = new AuthGroup();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) ) {
+            
+            $model->created_at = time();
+            $model->updated_at = time();
+            
+            //echo'<pre>'; var_dump($model); die;
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [

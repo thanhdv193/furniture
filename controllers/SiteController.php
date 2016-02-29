@@ -133,7 +133,7 @@ class SiteController extends Controller
 //            {
 //              
 //            }
-        echo'<pre>'; var_dump($list); die;
+        //echo'<pre>'; var_dump($list); die;
         
         return $this->render('about',['data'=>$list,'group'=>$group]);
     }
