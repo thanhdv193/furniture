@@ -136,18 +136,19 @@ $config = [
             'class' => 'app\modules\fontend\Fontend',
         ],
     ],
-    'as access' => [
-        'class' => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            'site/*',
-            //'admin/*',
-            //'backend/*',
-            //'user/*',
-            'gii/*',
-            'fontend/*',
-            'backend/*',
-        ],
-    ],
+//    'as access' => [
+//        'class' => 'mdm\admin\components\AccessControl',
+//        'allowActions' => [
+//            'site/*',
+//            'admin/*',
+//            //'backend/*',
+//            //'user/*',
+//            'gii/*',
+//            'fontend/*',
+//            //'backend/*',
+//        ],
+//    ],
+    
     'aliases' => [
         '@mdm/admin' => 'app/vendor/mdmsoft',
     ],

@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * AboutController implements the CRUD actions for About model.
  */
-class AboutController extends Controller
+class AboutController extends \app\components\BaseController
 {
     public function behaviors()
     {
@@ -32,6 +32,7 @@ class AboutController extends Controller
      */
     public function actionIndex()
     {
+        
         $searchModel = new AboutSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

@@ -9,6 +9,12 @@ use app\models\LogHistory;
 class BaseController extends Controller
 {
     public function beforeAction($action) {
+        
+        if (!in_array($action->controller->id, ["error", "auth", "home"]) && !Yii::$app->user->can($action->controller->id . "_" . $action->id)) {
+            print_r('Chú làm éo có quyền mà vào đây');
+            die;
+        }
+        echo'<pre>'; var_dump($action); die;
         $model = new LogHistory();       
         if(Yii::$app->user->id == null)
         {

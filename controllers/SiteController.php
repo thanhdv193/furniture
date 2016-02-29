@@ -22,6 +22,8 @@ use app\models\Product;
 use yii\web\Cookie;
 use app\components\helpers\EmailHelper;
 use app\models\Location;
+use app\components\utils\FileUtils;
+use app\models\AuthGroup;
 
 class SiteController extends Controller
 {
@@ -123,7 +125,17 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-        return $this->render('about');
+        $list = FunctionService::getServices();
+        $group = AuthGroup::find()
+                ->asArray()
+                ->all();
+//        foreach($list as $key => $value)
+//            {
+//              
+//            }
+        echo'<pre>'; var_dump($list); die;
+        
+        return $this->render('about',['data'=>$list,'group'=>$group]);
     }
 
     public function actionSignup()
