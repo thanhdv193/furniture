@@ -8,6 +8,8 @@ use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 use app\models\Orders;
+use app\models\AuthGroup;
+use app\models\AuthItem;
 
 
 
@@ -92,5 +94,18 @@ public function actionUpload()
                 }
             }       
         
+    }
+    public function actionPermissionUser()
+    {
+        $group = AuthGroup::find()
+                ->where(['status'=>1])
+                ->all();
+        $item = AuthItem::find()
+                ->select(['auth_group.*','auth_item.*'])
+                ->innerJoin('auth_group','auth_item.group_id = auth_group.id' )
+                ->groupBy('auth_group.group_name')
+                ->asArray()
+                ->all();
+        echo'<pre>'; var_dump($item); die;
     }
 }
