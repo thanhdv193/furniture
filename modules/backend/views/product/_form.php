@@ -6,12 +6,14 @@ use app\models\ProductType;
 use yii\helpers\ArrayHelper;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
+use app\models\ProductPhoto;
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Product */
 /* @var $form yii\widgets\ActiveForm */
 
-$this->registerJsFile(Url::base('') . '/js/upload.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
+$this->registerJsFile(Url::base('') . '/js/upload_demo.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Url::base('').'/ckeditor/ckeditor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 $this->registerJsFile(Url::base('').'/js/backend/editor.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
@@ -19,7 +21,7 @@ $this->registerJsFile(Url::base('').'/js/backend/editor.js', ['depends' => [\yii
 
 <div class="product-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data', 'accept-charset' => "UTF-8"]]); ?>
       <?php if(isset($temp_hash)) { ?>
         <input type="hidden" name="tem_hash" value="<?php echo $temp_hash ?>">
     <?php }?>
@@ -48,17 +50,17 @@ $this->registerJsFile(Url::base('').'/js/backend/editor.js', ['depends' => [\yii
             <h4 class="panel-title">Ảnh sản phẩm</h4>
         </div>
         <div class="panel-body">
-            <ul class="listimage" >
-                <li data-id="630" class="image-item">
-                    <a class="itemview" href="upload/vi-toi-dep-trai--14556094937656.jpg">
-                        <div class="boximg" style="background-image: url('http://cantholink.com/menu/upload/vi-toi-dep-trai--14556094937656.jpg')">
-                        </div></a>
-                    <a alt="vi-toi-dep-trai--14556094937656.jpg" class="uk-icon-remove xoaanh"></a>
-                </li>                
-                <li data-id="-1" class="image-item box-select-img">
-                    <input type="file"  id="upload">                         
-                </li>
-
+            <ul class="listimage" >   
+                <?php if($model['id'] != null){ ?>
+                <?php foreach($image as $value){ ?>
+                    <li class="uk-grid-margin image-item product-update">
+                        <a class="itemview" href="#">
+                            <div class="boximg" style="background-image: url(<?php echo Url::base('http') ?>/<?php echo $value['image_path'].$value['filename'] ?>)"></div>
+                        </a>
+                        <a alt="ảnh" title="xóa ảnh này" data-value="<?php echo $value['id'] ?>" class="fa fa-close xoaanh" href="#"></a>
+                    </li>                
+                <?php }?>   
+                <?php }?>    
             </ul> 
         </div>
     </div><!-- panel -->    

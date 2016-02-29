@@ -4,6 +4,7 @@ $(document).ready(function (e) {
         chonfile=file;
          var fileIn = file[0];
         if (fileIn.files === undefined || fileIn.files.length == 0) {
+            alert("1");
             
             alert("Không có ảnh nào được chọn");
             chonfile.val(null);
@@ -11,7 +12,7 @@ $(document).ready(function (e) {
         return false;
     }
     else
-      { 
+      { alert("2");
           var file = fileIn.files[0];
           type=file.type; 
           size=file.size;

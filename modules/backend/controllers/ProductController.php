@@ -10,6 +10,7 @@ use app\models\ProductPhoto;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use yii\helpers\Url;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -46,11 +47,55 @@ class ProductController extends Controller
     public function actionDemo()
     {
         if (Yii::$app->request->post() ) {
+          
+          $file_name = array();      
+          //echo'<pre>'; var_dump($_FILES['image']); die;
+            foreach ($_FILES['image']['tmp_name'] as $key => $tmp_name)
+                { 
+                if($tmp_name == null){
+                    break;   
+                }
+                $file_name[] =array(
+                    'tmp_name'=>$tmp_name,
+                    'name'=>$_FILES['image']['name'][$key],
+                    'type'=>$_FILES['image']['type'][$key],
+                    'tmp_name'=>$_FILES['image']['tmp_name'][$key],
+                    'error'=>$_FILES['image']['error'][$key],
+                    'size'=>$_FILES['image']['size'][$key],                  
+                );                
+                }
+                echo'<pre>'; var_dump($file_name); die;
+            $model  = UploadedFile::getInstance($_FILES['image']);   
             
-            
-            //$model  = UploadedFile::getInstance($_file['image']);          
         }else {
             return $this->render('demo');
+        }
+    }
+     /**
+      * action delete image ajax.
+      */
+     public function actionDeleteImage()
+    {
+        $post = Yii::$app->request->post();
+        if ($post)
+        {
+            $id = $post['img_id'];
+            $model = ProductPhoto::findOne($id);
+            $url = $model['image_path'] . $model['filename'];
+            if (unlink($url))
+            {
+                if ($model->delete())
+                {
+                    return json_encode(array(
+                        'status' => 'ok',
+                    ));
+                }
+            } else
+            {
+                return json_encode(array(
+                    'status' => 'false',
+                ));
+            }
         }
     }
 
@@ -75,30 +120,68 @@ class ProductController extends Controller
     {
         $model = new Product();
         $hash = md5(uniqid('', true));
-        if ($model->load(Yii::$app->request->post()) ) {
-
-            $tem_hash = $_POST['tem_hash'];
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $hash = $_POST['tem_hash'];
+            foreach ($_FILES['image']['tmp_name'] as $key => $tmp_name)
+                {
+                if ($tmp_name == null)
+                {
+                    break;
+                }
+                $file_name[] = array(
+                    'tmp_name' => $tmp_name,
+                    'name' => $_FILES['image']['name'][$key],
+                    'type' => $_FILES['image']['type'][$key],
+                    'tmp_name' => $_FILES['image']['tmp_name'][$key],
+                    'error' => $_FILES['image']['error'][$key],
+                    'size' => $_FILES['image']['size'][$key],
+                );
+                }
+            foreach ($file_name as $value)
+                {
+                $photoModel = new ProductPhoto();
+                $objecFile = new UploadedFile();
+                $objecFile->name = $value['name'];
+                $objecFile->tempName = $value['tmp_name'];
+                $objecFile->type = $value['type'];
+                $objecFile->size = $value['size'];
+                $objecFile->error = $value['error'];
+                $photoModel->filename = $objecFile;
+                $upload = $photoModel->upload('product');
+                if ($upload)
+                {
+                    $photoModel->product_id = 0;
+                    $photoModel->photo = 'product';
+                    $photoModel->create_date = time();
+                    $photoModel->image_path = $upload['patch'];
+                    $photoModel->z_index = 0;
+                    $photoModel->is_avatar = 0;
+                    $photoModel->filename = $upload['filename'];
+                    $photoModel->temp_hash = $hash;
+                    $photoModel->save();
+                }
+                }
             $model->create_date = time();
-            $model->photo = $tem_hash;
-            if($model->save())
+            $model->photo = $hash;
+            if ($model->save())
             {
-                $imageUpload = ProductPhoto::find()->where(['temp_hash' => $tem_hash])->all();                
+                $imageUpload = ProductPhoto::find()->where(['temp_hash' => $hash])->all();
                 if ($imageUpload != null)
                 {
                     foreach ($imageUpload as $value)
-                    {
+                        {
                         $value->product_id = $model->id;
                         $value->save();
-                    }
+                        }
                 }
-                die("xxx");
             }
-            
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        } else
+        {
             return $this->render('create', [
-                'model' => $model,
-                'temp_hash'=>$hash,
+                        'model' => $model,
+                        'temp_hash' => $hash,
             ]);
         }
     }
@@ -112,12 +195,16 @@ class ProductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
+        $image = ProductPhoto::find()
+                 ->where(['product_id'=>$id])
+                ->asArray()
+                ->all();        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'image'=>$image,
             ]);
         }
     }

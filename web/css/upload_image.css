@@ -198,3 +198,6 @@
 .uk-progress-small {
   border-radius: 500px;
 }
+/*.uk-icon-remove:before{
+  content: "\f00d";
+}*/

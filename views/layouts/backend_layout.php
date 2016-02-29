@@ -200,7 +200,7 @@ AppAssetBackend::register($this);
                                                 if (Yii::$app->user->identity->avatar == null)
                                                 {
                                                     ?>
-                                                    <img src="<?php Url::base('') ?>/upload/avatar/no-avatar.png" alt="">
+                                                    <img src="<?php echo Url::base('http') ?>/upload/avatar/no-avatar.png" alt="">
                                                 <?php
                                                 } else
                                                 {
@@ -587,6 +587,9 @@ AppAssetBackend::register($this);
         </section>
                 
         <?php $this->endBody() ?>
+        <script>
+            var baseUrl = "<?php echo Url::base('http') ?>";            
+        </script>
     </body>
 </html>
 <?php $this->endPage() ?>

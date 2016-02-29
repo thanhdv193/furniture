@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = 'Sửa';
             <?=
             $this->render('_form', [
                 'model' => $model,
+                
             ])
             ?>
 

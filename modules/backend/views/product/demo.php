@@ -15,17 +15,26 @@ $this->registerJsFile(Url::base('') . '/js/upload_demo.js', ['depends' => [\yii\
 ?>
 
 <div class="lessoncup">
- 
- 
-<h1>jQuery Thumbnail Preview of Image</h1>
- 
-<form action="" method="post" enctype="multipart/form-data" id="imageuploadFrom">
- <input type="hidden" name="_csrf" value="ME1rdXJyWU1FYAMABApoBnYYXDQaLRp8eS49IDpfH39RGx5NQwcheQ==">
-<input name="image1" type="file" class="image" id="image" multiple>
-<input name="image2" type="file" class="image" id="image" multiple>
- <button type="submit" class="btn btn-success">Lưu</button>
- 
-</form>
+   
+    <form action="" method="post" enctype="multipart/form-data" id="imageuploadFrom">
+        <input type="hidden" name="_csrf" value="ME1rdXJyWU1FYAMABApoBnYYXDQaLRp8eS49IDpfH39RGx5NQwcheQ==">
+        <div class="panel panel-announcement">     
+        <div class="panel-heading">
+            <h4 class="panel-title">Ảnh sản phẩm</h4>
+        </div>
+        <div class="panel-body">
+            <ul class="listimage" >                
+<!--                <input type='file' name='image[]' multiple />-->
+<!--                <li data-id="-1" class="image-item box-select-img">
+                    <input type="file"  class="upload">                         
+                </li>-->
+                
+            </ul> 
+        </div>
+    </div><!-- panel --> 
+        <button type="submit" class="btn btn-success">Lưu</button>
+
+    </form>
  
 <img class="prevImg" src="">
  
