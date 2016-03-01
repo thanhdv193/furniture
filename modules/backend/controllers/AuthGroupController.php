@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\utils\FileUtils;
 use app\components\helpers\FunctionService;
+use app\models\AuthItem;
 
 /**
  * AuthGroupController implements the CRUD actions for AuthGroup model.
@@ -45,10 +46,14 @@ class AuthGroupController extends Controller
     public function actionPermission()
     {
          $list = FunctionService::getServices();
-        $group = AuthGroup::find()
+         $group = AuthGroup::find()
                 ->asArray()
                 ->all();
-       // echo'<pre>'; var_dump($list); die;
+//        $authItem = AuthItem::find()
+//                ->asArray()
+//                ->all();
+//        //echo'<pre>'; var_dump($authItem); die;
+                
         return $this->render('permission',['data'=>$list,'group'=>$group]);
     }
     /**

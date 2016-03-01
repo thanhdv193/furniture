@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use app\models\AuthItem;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AuthGroupSearch */
@@ -26,12 +27,25 @@ $this->params['breadcrumbs'][] = $this->title;
             <tr auth-id="<?php echo $key ?>">
                 <td class="vertical-middle bold-text"><i class="fa fa-users"></i> <span auth-name="newscategory"><?php echo $key ?></span></td>
                 <td class="vertical-middle">
-                    <input name="alias" type="text" class="form-control" value="" placeholder="Định nghĩa quyền của bạn">
+                        <?php $value_permission = AuthItem::find()                                
+                                ->where(['name' => $key])
+                                ->asArray()
+                                ->one();?>
+                    <?php if($value_permission != null) { ?>
+                        <input name="alias" type="text" class="form-control" value="<?php echo $value_permission['alias'] ?>" placeholder="Định nghĩa quyền của bạn">
+                    <?php }else { ?>
+                        <input name="alias" type="text" class="form-control" value="" placeholder="Định nghĩa quyền của bạn">
+                    <?php } ?>
                 </td>
                 <td class="vertical-middle">
                     <select name="group_id" class="form-control">
-                        <?php foreach($group as $value_group){ ?>
-                        <option value="<?php echo $value_group['id'] ?>"><?php echo $value_group['group_name'] ?></option>                        
+                                <option value="">Chọn nhóm quyền ...</option>
+                        <?php foreach($group as $value_group){ ?>                              
+                            <?php if($value_group['id'] == $value_permission['group_id']){ ?>  
+                                 <option selected="selected" value="<?php echo $value_group['id'] ?>"><?php echo $value_group['group_name'] ?></option>                            
+                            <?php }else {?>
+                                  <option value="<?php echo $value_group['id'] ?>"><?php echo $value_group['group_name'] ?></option>                        
+                            <?php } ?>
                         <?php } ?>
                     </select>
                 </td>
@@ -42,7 +56,14 @@ $this->params['breadcrumbs'][] = $this->title;
               <?php foreach($value as $value2){ ?>
                 <tr auth-id="<?php echo $value2 ?>">
                     <td style="padding-left: 50px;" class="align-center-mg vertical-middle"><span auth-name="newscategory_index"><?php echo $value2 ?></span></td>
-                    <td><input name="alias" type="text" class="form-control" value="" placeholder="Định nghĩa quyền của bạn"></td>
+                    <td>
+                        <?php $value_permission = AuthItem::find()->where(['name'=>$value2])->one();?>
+                        <?php if($value_permission != null) { ?>
+                        <input name="alias" type="text" class="form-control" value="<?php echo $value_permission['alias'] ?>" placeholder="Định nghĩa quyền của bạn">
+                    <?php }else { ?>
+                        <input name="alias" type="text" class="form-control" value="" placeholder="Định nghĩa quyền của bạn">
+                    <?php } ?>
+                    </td>
                     <td></td>
                     <td class="text-center"><button type="button" onclick="administrator.define('<?php echo $value2 ?>', 2);" class="btn btn-success"><i class="fa fa-cogs"></i> Cập nhật</button></td>
                 </tr>

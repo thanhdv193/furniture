@@ -106,6 +106,6 @@ public function actionUpload()
                 ->groupBy('auth_group.group_name')
                 ->asArray()
                 ->all();
-        echo'<pre>'; var_dump($item); die;
+        return $this->render('permission-user',['group'=>$group]);        
     }
 }
