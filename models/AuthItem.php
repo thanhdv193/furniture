@@ -21,6 +21,8 @@ use Yii;
  */
 class AuthItem extends \yii\db\ActiveRecord
 {
+    const role = 1;
+    const permission = 2;
     /**
      * @inheritdoc
      */

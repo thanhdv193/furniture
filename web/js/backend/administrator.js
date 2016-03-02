@@ -1,3 +1,36 @@
+$(document).ready(function() {
+    $('#assign-item').on('click', function () {
+        var checkboxValues = [];
+        $("input[name='check_name_item[]']").each(function () {
+            // console.log($(this).val());
+        });
+        $("input[name='check_name_item[]']:checked").map(function () {
+            checkboxValues.push($(this).val());
+        });
+        $.ajax({
+            type: "POST",
+            url: baseUrl + '/backend/permission/permission-user',
+            cache: false,
+            data: {data: checkboxValues},
+            dataType: 'json',
+            success: function (result)
+            {
+                if (result.status == 'ok') {
+                    alert("Cập nhật thành công.");
+                } else {
+                    alert("Cập nhật không thành công, vui lòng thử lại sau.");
+                }
+            }
+        }).always(function ()
+        {
+            //is_busy = false;
+        });
+        console.log(checkboxValues);
+//        var a = $('input[name="check_name_item"]:checked');
+//        console.log(a);
+    });
+});
+
 var administrator = {};
 
 administrator.init = function () {

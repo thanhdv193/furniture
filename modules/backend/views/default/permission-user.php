@@ -30,14 +30,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <?php
                         $listItem = AuthItem::find()
-                                ->where(['group_id' => $value['id']])
+                                ->where(['group_id' => $value['id'],'type'=>AuthItem::permission])
                                 ->asArray()
                                 ->all();
                         ?>
     <?php foreach ($listItem as $value2)
     { ?>                
                             <tr>
-                                <td class="text-center"><input type="checkbox" value="<?php echo $value2['name'] ?>" name="check_name_item[]" checked="checked"></td>
+                                <td class="text-center"><input type="checkbox" value="<?php echo $value2['name'] ?>" name="check_name_item[]"></td>
                                 <td style="text-align: justify; padding-left: 15px;"><?php echo $value2['alias'] ?></td>
                             </tr>
             <?php } ?>
@@ -45,6 +45,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 </table>
             </div>
 <?php } ?>
-    <button type="button" class="btn btn btn-success" id="popup-cmd-assign-popup-1"><span data-rel="btn"><i class="fa fa-cog"></i> Cấp quyền<span></span></span></button>
+    <button type="button" class="btn btn btn-success" id="assign-item"><span data-rel="btn"><i class="fa fa-cog"></i> Cấp quyền<span></span></span></button>
     </div>   
 </div>

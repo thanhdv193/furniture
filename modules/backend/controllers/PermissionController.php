@@ -9,6 +9,9 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\AuthItem;
+use yii\rbac\DbManager;
+use app\models\AuthAssignment;
+
 
 /**
  * ContactController implements the CRUD actions for Contact model.
@@ -80,6 +83,49 @@ class PermissionController extends Controller
             die;
         }
     }
-
     
+    public function actionPermissionUser()
+    {
+        $post = Yii::$app->request->post();
+        if($post)
+        {
+            $dbManager = new DbManager();
+            $dbManager->init();
+            AuthAssignment::deleteAll(['user_id'=>9]);            
+            foreach ($post['data'] as $role)
+                {
+                    $assignment = $dbManager->getAssignment($role, 9);
+                    if ($assignment == null)
+                    {
+                        $dbManager->assign($dbManager->getPermission($role), 9);
+                    }
+                }
+                return json_encode(array(
+                        'status' => 'ok',
+                    ));
+        }
+    }
+    public function actionAssigndata()
+    {
+        $params = \Yii::$app->request->post();
+        if (!empty($params))
+        {
+            self::removeAssignmentByUserId($params['id']);
+            if (!empty($params['data']))
+            {
+                $dbManager = new DbManager();
+                $dbManager->init();
+                foreach ($params['data'] as $role)
+                    {
+                    $assignment = $dbManager->getAssignment($role, $params['id']);
+                    if ($assignment == null)
+                    {
+                        $dbManager->assign($dbManager->getPermission($role), $params['id']);
+                    }
+                    }
+            }
+            return $this->response(new Response(true, "Cấp quyền cho tài khoản thành công", []));
+        }
+    }
+
 }
