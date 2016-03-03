@@ -1,17 +1,16 @@
 $(document).ready(function() {
     $('#assign-item').on('click', function () {
-        var checkboxValues = [];
-        $("input[name='check_name_item[]']").each(function () {
-            // console.log($(this).val());
-        });
+        var checkboxValues = [];        
         $("input[name='check_name_item[]']:checked").map(function () {
             checkboxValues.push($(this).val());
         });
+        var user_id = $("input[name='user_id']").val();
+        
         $.ajax({
             type: "POST",
             url: baseUrl + '/backend/permission/permission-user',
             cache: false,
-            data: {data: checkboxValues},
+            data: {data: checkboxValues,user_id:user_id},
             dataType: 'json',
             success: function (result)
             {
@@ -29,6 +28,16 @@ $(document).ready(function() {
 //        var a = $('input[name="check_name_item"]:checked');
 //        console.log(a);
     });
+    
+        $('#checkAll').change(function () {
+            var checkboxes = $(this).closest('.panel-body').find(':checkbox');
+            if ($(this).is(':checked')) {
+                checkboxes.prop('checked', true);
+            } else {
+                checkboxes.prop('checked', false);
+            }
+        });
+
 });
 
 var administrator = {};

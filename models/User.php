@@ -14,6 +14,9 @@ class User extends ActiveRecord implements IdentityInterface {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 10;
     const ROLE_USER = 10;
+    const User_Admin = 1;
+    const User_gust = 0;
+    
     public $password_repeat;
     public static function tableName() {
         return '{{%user}}';

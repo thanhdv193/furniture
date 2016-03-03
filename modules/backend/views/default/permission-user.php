@@ -12,14 +12,22 @@ $this->title = 'Phân quyền người dùng';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">
+    <?php if($user == null){ ?>
+        <div class="panel-heading">
+            <h1>Không tồn tại người dùng.</h1>                 
+        </div>
+    <?php }else{?>
     <div class="panel-heading">
-        <h1>Người dùng : abc</h1>      
+        <h1>Người dùng : <?php echo $user['username'] ?></h1>      
+        <input type="hidden" value="<?php echo $user['id'] ?>" name="user_id">
     </div>
     <div class="panel-body">
+        <label><input type="checkbox" id="checkAll"/> Chọn tất cả</label>
         <?php foreach ($group as $value)
         { ?>
             <div class="box-body">
                 <div class="split_group">
+                    
                 </div>
                 <table class="table table-bordered">
                     <tbody>
@@ -34,8 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ->asArray()
                                 ->all();
                         ?>
-    <?php foreach ($listItem as $value2)
-    { ?>                
+            <?php foreach ($listItem as $value2)
+            { ?>                
                             <tr>
                                 <td class="text-center"><input type="checkbox" value="<?php echo $value2['name'] ?>" name="check_name_item[]"></td>
                                 <td style="text-align: justify; padding-left: 15px;"><?php echo $value2['alias'] ?></td>
@@ -47,4 +55,5 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php } ?>
     <button type="button" class="btn btn btn-success" id="assign-item"><span data-rel="btn"><i class="fa fa-cog"></i> Cấp quyền<span></span></span></button>
     </div>   
+    <?php }?>
 </div>

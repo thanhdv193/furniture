@@ -89,17 +89,20 @@ class PermissionController extends Controller
         $post = Yii::$app->request->post();
         if($post)
         {
+            $user_id = $post['user_id'];
             $dbManager = new DbManager();
             $dbManager->init();
-            AuthAssignment::deleteAll(['user_id'=>9]);            
-            foreach ($post['data'] as $role)
+            AuthAssignment::deleteAll(['user_id'=>$user_id]);  
+            if(isset($post['data'])){
+                foreach ($post['data'] as $role)
                 {
-                    $assignment = $dbManager->getAssignment($role, 9);
+                    $assignment = $dbManager->getAssignment($role, $user_id);
                     if ($assignment == null)
                     {
-                        $dbManager->assign($dbManager->getPermission($role), 9);
+                        $dbManager->assign($dbManager->getPermission($role), $user_id);
                     }
                 }
+            }            
                 return json_encode(array(
                         'status' => 'ok',
                     ));

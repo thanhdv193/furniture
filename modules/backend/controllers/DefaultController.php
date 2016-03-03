@@ -10,6 +10,7 @@ use yii\web\UploadedFile;
 use app\models\Orders;
 use app\models\AuthGroup;
 use app\models\AuthItem;
+use app\models\User;
 
 
 
@@ -95,17 +96,22 @@ public function actionUpload()
             }       
         
     }
-    public function actionPermissionUser()
-    {
+    public function actionPermissionUser($id)
+    {        
+        $user = User::find()
+                ->where(['id'=>$id])
+                ->asArray()
+                ->one();
+        
         $group = AuthGroup::find()
                 ->where(['status'=>1])
                 ->all();
-        $item = AuthItem::find()
-                ->select(['auth_group.*','auth_item.*'])
-                ->innerJoin('auth_group','auth_item.group_id = auth_group.id' )
-                ->groupBy('auth_group.group_name')
-                ->asArray()
-                ->all();
-        return $this->render('permission-user',['group'=>$group]);        
+//        $item = AuthItem::find()
+//                ->select(['auth_group.*','auth_item.*'])
+//                ->innerJoin('auth_group','auth_item.group_id = auth_group.id' )
+//                ->groupBy('auth_group.group_name')
+//                ->asArray()
+//                ->all();
+        return $this->render('permission-user',['group'=>$group,'user'=>$user]);        
     }
 }
