@@ -1,3 +1,9 @@
+<?php
+
+
+$this->title = 'Trang quản trị';
+$this->params['breadcrumbs'][] ='';
+?>
 <div class="row">
     <div class="col-md-9 col-lg-8 dash-left">        
         <div class="row panel-quick-page">

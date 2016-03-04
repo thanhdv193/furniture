@@ -18,9 +18,14 @@ use app\models\AuthAssignment;
 class DefaultController extends Controller
 {
     public function actionIndex()
-    {        
+    {   
         if (Yii::$app->user->isGuest)
-        {
+        {      
+             return $this->redirect('dang-nhap-quan-tri.html');
+             //return $this->render('index',['inforOrder'=>$inforOrder]);
+             
+        }else{
+            
             //get all order
             $listOrder = Orders::find()                        
                         ->count();
@@ -38,10 +43,7 @@ class DefaultController extends Controller
                 'OrderDone'=>$listOrderDone,
                 'OrderProcess'=>$listOrderProcess,
                 'all'=>$listOrder,
-            );            
-             return $this->render('index',['inforOrder'=>$inforOrder]);
-             
-        }else{
+            );  
             return $this->render('index');
         }
         

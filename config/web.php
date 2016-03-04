@@ -88,6 +88,7 @@ $config = [
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
+                'dang-nhap-quan-tri.html' =>'site/login-admin',
                 'san-pham/<title>-<id:\d+>.html' => 'fontend/product/product-detail',
                 'mua-hang/<title>-<id:\d+>' => 'fontend/cart/add',
                 'gio-hang.html' => 'fontend/cart/index',

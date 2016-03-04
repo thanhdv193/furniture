@@ -99,6 +99,28 @@ class SiteController extends Controller
             ]);
         }
     }
+    
+    public function actionLoginAdmin()
+    {
+        $this->layout ='main_extend';
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->goHome();
+        }
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()))
+        {
+            die("xxxxxx");
+            $model->login();
+            return $this->redirect($_SERVER['HTTP_REFERER']);
+            return $this->goBack();
+        } else
+        {
+            return $this->render('login_admin', [
+                        'model' => $model,
+            ]);
+        }
+    }
 
     public function actionLogout()
     {

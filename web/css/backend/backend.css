@@ -263,8 +263,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('/../fonts/glyphicons-halflings-regular.eot');
+  src: url('/../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('/../fonts/glyphicons-halflings-regular.woff') format('woff'), url('/../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -12642,7 +12642,34 @@ fieldset[disabled] .btn-fb.active {
   padding-top: 0;
   background-color: transparent;
 }
-
+.or-css {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  text-align: center;
+  margin: 20px 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+.or-css:after {
+  content: '';
+  position: absolute;
+  width: 45%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  top: 8px;
+  right: 0;
+}
+.or-css:before {
+  content: '';
+  position: absolute;
+  width: 45%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  top: 8px;
+  left: 0;
+}
 .bg-white {
   background-color: #fff;
 }
@@ -13933,7 +13960,7 @@ fieldset[disabled] .btn-fb.active {
 }
 /***** SIGN IN/UP *****/
 .signwrapper {
-  background-image: url(../images/photos/bg.jpg);
+  background-image: url(/../images/bg.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -13990,7 +14017,7 @@ fieldset[disabled] .btn-fb.active {
   color: rgba(255, 255, 255, 0.7);
 }
 .sign-overlay {
-  background-image: url(../images/dot.png);
+  background-image: url(/../images/dot.png);
   position: fixed;
   top: 0;
   right: 0;

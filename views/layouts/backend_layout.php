@@ -236,8 +236,7 @@ AppAssetBackend::register($this);
                     </div><!-- headerbar -->
                 </div><!-- header-->
             </header>
-        <section>
-
+        <section>            
             <div class="leftpanel">
                 <div class="leftpanelinner">
                     
@@ -312,7 +311,7 @@ AppAssetBackend::register($this);
                         <div class="tab-pane active" id="mainmenu">
                             <h5 class="sidebar-title">Favorites</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
-                                <li><a href="backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
+                                <li><a href="<?php Url::base('http') ?>/backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
                                 
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý người dùng</span></a>
