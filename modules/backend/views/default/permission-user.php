@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\AuthItem;
+use app\models\AuthAssignment;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\AuthGroupSearch */
@@ -36,16 +37,18 @@ $this->params['breadcrumbs'][] = $this->title;
                             <th style="font-size: 13px; padding-left: 15px; text-transform: uppercase"><?php echo $value['group_name'] ?></th>
                         </tr>
 
-                        <?php
-                        $listItem = AuthItem::find()
-                                ->where(['group_id' => $value['id'],'type'=>AuthItem::permission])
+                        <?php                        
+                        $list = AuthAssignment::find()
+                                ->select('*')
+                                ->rightJoin('auth_item','auth_assignment.item_name = auth_item.name')
+                                ->where(['auth_item.group_id' => $value['id'],'auth_item.type'=>AuthItem::permission])
                                 ->asArray()
                                 ->all();
                         ?>
-            <?php foreach ($listItem as $value2)
+            <?php foreach ($list as $value2)
             { ?>                
                             <tr>
-                                <td class="text-center"><input type="checkbox" value="<?php echo $value2['name'] ?>" name="check_name_item[]"></td>
+                                <td class="text-center"><input  type="checkbox" value="<?php echo $value2['name'] ?>" name="check_name_item[]" <?php if($value2['user_id'] != null){?> checked="checked" <?php }  ?>></td>
                                 <td style="text-align: justify; padding-left: 15px;"><?php echo $value2['alias'] ?></td>
                             </tr>
             <?php } ?>

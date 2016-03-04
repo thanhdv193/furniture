@@ -11,6 +11,7 @@ use app\models\Orders;
 use app\models\AuthGroup;
 use app\models\AuthItem;
 use app\models\User;
+use app\models\AuthAssignment;
 
 
 
@@ -106,6 +107,12 @@ public function actionUpload()
         $group = AuthGroup::find()
                 ->where(['status'=>1])
                 ->all();
+//        $list = AuthAssignment::find()
+//                                ->select('*')
+//                                ->rightJoin('auth_item','auth_assignment.item_name = auth_item.name')
+//                                ->asArray()
+//                                ->all();
+//        echo'<pre>';    var_dump($list); die;
 //        $item = AuthItem::find()
 //                ->select(['auth_group.*','auth_item.*'])
 //                ->innerJoin('auth_group','auth_item.group_id = auth_group.id' )

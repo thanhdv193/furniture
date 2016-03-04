@@ -16,6 +16,7 @@ $this->registerJsFile(Url::base('').'/js/backend/tree-menu/MultiNestedList_1.js'
 $this->registerCssFile(Yii::$app->request->baseUrl . '/js/backend/tree-menu/style_1.css');
 ?>   
 <div class="panel">
+    <input type="hidden" value="product_type_index" name="index-nav-menu-left" />    
     <div class="panel-heading">
         <h1><?= Html::encode($this->title) ?></h1>
         <p>

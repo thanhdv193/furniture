@@ -10326,6 +10326,7 @@ blockquote {
 }
 .user-list .media-object {
   width: 42px;
+  height: 42px;
   padding: 2px;
   border: 2px solid #dbdfe6;
 }

@@ -312,7 +312,7 @@ AppAssetBackend::register($this);
                         <div class="tab-pane active" id="mainmenu">
                             <h5 class="sidebar-title">Favorites</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
-                                <li class="active"><a href="backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
+                                <li><a href="backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
                                 
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý người dùng</span></a>
@@ -338,14 +338,14 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý sản phẩm</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('http') ?>/backend/product/">Sản phẩm</a></li>                                                                            
+                                        <li class="product_index"><a href="<?php Url::base('http') ?>/backend/product/">Sản phẩm</a></li>                                                                            
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Danh mục sản phẩm</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-type">Danh mục sản phẩm</a></li>
-                                        <li><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-group">Nhóm sản phẩm</a></li>                                        
+                                        <li class="product_type_index"><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-type">Danh mục sản phẩm</a></li>
+                                        <li class="product_group_index"><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-group">Nhóm sản phẩm</a></li>                                        
                                     </ul>
                                 </li>                               
                                 <li class="nav-parent">

@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">        
     <div class="panel-body">  
-        <div class="col-sm-5 col-md-12 col-lg-6">
+        <div class="col-sm-5 col-md-12">
         <div class="panel panel-inverse">
             <div class="panel-heading">
                 <h4 class="panel-title">Danh sách quản trị</h4>

@@ -1,7 +1,16 @@
 
 
 $(document).ready(function() {
-    
+    var index_menu = $("input[name='index-nav-menu-left']").val();
+    $('.nav-quirk .nav-parent').each(function() {
+         var $this = $(this);          
+         $this.find('.'+index_menu).addClass('active');
+         
+         if($this.find('li').hasClass(index_menu))
+         {
+             $this.addClass('active');
+         }         
+      });    
     $('#login-form input[type=submit]').on('click', function (e) {  
         e.preventDefault();
         alert("xxx");
