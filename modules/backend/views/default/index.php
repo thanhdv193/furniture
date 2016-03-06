@@ -5,6 +5,7 @@ $this->title = 'Trang quản trị';
 $this->params['breadcrumbs'][] ='';
 ?>
 <div class="row">
+    <input type="hidden" value="default_index" name="index-nav-menu-left" />
     <div class="col-md-9 col-lg-8 dash-left">        
         <div class="row panel-quick-page">
             <div class="col-xs-4 col-sm-5 col-md-4 page-user">

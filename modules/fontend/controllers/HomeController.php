@@ -14,7 +14,10 @@ class HomeController extends Controller
 {
     public function actionIndex()
     {    	
-        $listProduct = Product::find()->where(['product_group_id'=>11,'is_active'=>1])->asArray()->all();
+        $listProduct = Product::find()
+                ->select('*')
+                ->innerJoin('product_photo','product_photo.product_id = product.id')
+                ->where(['product.product_group_id'=>11,'product.is_active'=>  Product::is_active])->asArray()->all();
         //ImageProduct::Image(3723, 0, 2);
         //echo'<pre>'; var_dump($listProduct); die;
         return $this->render('index',['listProduct'=>$listProduct]);

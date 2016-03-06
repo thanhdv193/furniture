@@ -311,13 +311,13 @@ AppAssetBackend::register($this);
                         <div class="tab-pane active" id="mainmenu">
                             <h5 class="sidebar-title">Favorites</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
-                                <li><a href="<?php Url::base('http') ?>/backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
+                                <li class="default_index"><a href="<?php Url::base('http') ?>/backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
                                 
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý người dùng</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('http') ?>/backend/user/">Danh sách người dùng</a></li>  
-                                        <li><a href="<?php Url::base('http') ?>/backend/user/create">Thêm mới người dùng</a></li>  
+                                        <li class="user_index"><a href="<?php Url::base('http') ?>/backend/user/">Danh sách người dùng</a></li>  
+                                        <li class="user_create"><a href="<?php Url::base('http') ?>/backend/user/create">Thêm mới người dùng</a></li>  
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
@@ -330,10 +330,10 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Đơn hàng</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_all ?>">Tất cả đơn hàng</a></li>  
-                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process ?>">Đơn hàng chưa xử lý</a></li>
-                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_watting ?>">Đơn hàng đang chờ</a></li>  
-                                        <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_done ?>">Đơn hàng đã thanh toán</a></li>
+                                        <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_all ?>">Tất cả đơn hàng</a></li>  
+                                        <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process ?>">Đơn hàng chưa xử lý</a></li>
+                                        <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_watting ?>">Đơn hàng đang chờ</a></li>  
+                                        <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_done ?>">Đơn hàng đã thanh toán</a></li>
                                         
                                     </ul>
                                 </li>                               
@@ -364,8 +364,8 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Banner</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('http') ?>/backend/banner-slide/create">Thêm banner</a></li>
-                                        <li><a href="<?php Url::base('http') ?>/backend/banner-slide/index">Danh sách banner</a></li>
+                                        <li class="banner_create"><a href="<?php Url::base('http') ?>/backend/banner-slide/create">Thêm banner</a></li>
+                                        <li class="banner_index"><a href="<?php Url::base('http') ?>/backend/banner-slide/index">Danh sách banner</a></li>
                                         
                                     </ul>
                                 </li>  

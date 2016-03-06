@@ -11,6 +11,7 @@ $this->title = 'Danh sách người dùng';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">
+    <input type="hidden" value="user_index" name="index-nav-menu-left" />
     <div class="panel-heading">
             <h1><?= Html::encode($this->title) ?></h1>
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

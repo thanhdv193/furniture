@@ -13,7 +13,7 @@ use app\components\BaseController;
 /**
  * ProductTypeController implements the CRUD actions for ProductType model.
  */
-class ProductTypeController extends BaseController
+class ProductTypeController extends Controller
 {
     public function behaviors()
     {

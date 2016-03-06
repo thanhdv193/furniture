@@ -11,7 +11,7 @@ $this->title = 'Banner Slides';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">
-
+    <input type="hidden" value="banner_index" name="index-nav-menu-left" />    
     <div class="panel-heading">
         <h1><?= Html::encode($this->title) ?></h1>
         <p>

@@ -1,12 +1,14 @@
 <?php
 
 use yii\helpers;
-use app\widgets\HotDealWidget;
-use app\components\helpers\ImageProduct;
+
 use app\widgets\WrapperBannersWidget;
 use app\widgets\SlidederWidget;
+use yii\helpers\Url;
+use app\components\helpers\HelperLink;
+use app\components\utils\TextUtils;
 
-$this->title = 'Trang mua';
+$this->title = 'Fashion Everything';
 ?>
 <?= SlidederWidget::widget() ?>
 <?= WrapperBannersWidget::widget() ?>
@@ -49,14 +51,15 @@ $this->title = 'Trang mua';
                                                             <div class="item first">
                                                             <div class="product-item">
                                                                 <div class="product-shop-top">
-                                                                    <a href="#" title=" Embellished Mirror Pastel" class="product-image">
-                                                                        <?php ImageProduct::Image($value['id'], 0, 2) ?>
+                                                                    <a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>" class="product-image">
+                                                                        <?php //ImageProduct::Image($value['id'], 0, 2) ?>
+                                                                        <img class="em-img-lazy img-responsive" src="<?php echo $value['image_path'].$value['filename'] ?> " width="350px" height="350px" alt="<?php echo $value['title'] ?>">
 <!--                                                                        <img class="img-responsive em-alt-org em-lazy-loaded" src="upload/images/product/350x350/clothing_sp5_1.jpg" data-original="upload/images/product/350x350/clothing_sp5_1.jpg" alt=" Embellished Mirror Pastel" height="350" width="350">-->
                                                                     </a>
                                                                     <div class="em-element-display-hover bottom">
                                                                         <div class="em-btn-addto">
                                                                             <!--product add to cart-->
-                                                                            <button type="button" title="Mua hàng" data-button="<?php echo $value['id'] ?>" class="button btn-cart" ><span><span>Mua hàng</span></span>
+                                                                            <button type="button" title="Mua hàng" data-button="<?php echo Url::base('http').'/'.$value['id'] ?>" class="button btn-cart" ><span><span>Mua hàng</span></span>
                                                                             </button>
                                                                             <!--product add to compare-wishlist-->
                                                                             <ul class="add-to-links">
@@ -72,16 +75,16 @@ $this->title = 'Trang mua';
                                                                 <div class="product-shop">
                                                                     <div class="f-fix">
                                                                         <!--product name-->
-                                                                        <h3 style="min-height: 19px;" class="product-name"><a href="#" title="<?php echo $value['title'] ?>"> <?php echo $value['title'] ?></a></h3><div class="ratings">
+                                                                        <h3 style="min-height: 19px;" class="product-name"><a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>"> <?php echo $value['title'] ?></a></h3><div class="ratings">
                                                                             <div class="rating-box">
-                                                                                <div class="rating" style="width:0%"></div>
+                                                                                <div class="rating" style="width:10%"></div>
                                                                             </div>
                                                                             <span class="amount"><a href="#">(0)</a></span>
                                                                         </div>
                                                                         <!--product price-->
                                                                         <div class="price-box">
                                                                             <span class="regular-price" id="product-price-170-emprice-2fd1cdd203d2809e7354d43dcdbdb613">
-                                                                                <span class="price"><?php echo $value['price'] ?></span> </span>
+                                                                                <span class="price"><?= TextUtils::numberFormat($value['price']) ?>đ</span> </span>
 
                                                                         </div>
 

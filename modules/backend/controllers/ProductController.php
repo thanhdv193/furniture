@@ -16,7 +16,7 @@ use app\components\BaseController;
 /**
  * ProductController implements the CRUD actions for Product model.
  */
-class ProductController extends BaseController
+class ProductController extends Controller
 {
     public function behaviors()
     {
