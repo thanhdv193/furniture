@@ -8,6 +8,7 @@ use app\models\Product;
 use app\components\helpers\ImageProduct;
 use app\models\Cart;
 use app\components\helpers\CookieHelper;
+use app\models\About;
 
 class HomeController extends Controller
 {
@@ -19,8 +20,16 @@ class HomeController extends Controller
         return $this->render('index',['listProduct'=>$listProduct]);
     }
     public function actionContact()
-    {    	       
+    {    	     
         return $this->render('contact',['data'=>null]);
+    }
+    public function actionAbout()
+    {    	     
+        $about = About::find()
+                ->asArray()
+                ->one();
+        //echo'<pre>'; var_dump($about); die;
+        return $this->render('about',['data'=>$about]);
     }
     public function actionCheckCart()
     {         

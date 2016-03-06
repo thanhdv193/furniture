@@ -3,7 +3,7 @@
 $params = require(__DIR__ . '/params.php');
 
 use \yii\web\Request;
-$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
+$baseUrl = str_replace('/web', '', (new Request)->getBaseUrl());
 $config = [
     'id' => 'shop',
     'basePath' => dirname(__DIR__),
@@ -34,8 +34,10 @@ $config = [
         ],
         //the end login facebook google
         'request' => [
+             'baseUrl' => $baseUrl,
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'akZEZqxGC6T0wByyllGkBJza8bx9o0jp',
+            
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -99,6 +101,7 @@ $config = [
 //                'danh-muc/<title>-<id:\d+>_<page:\d+>' => 'fontend/product/product-category',
                 'chuyen-muc/<title>-<id:\d+>-<page:\d+>.html' => 'fontend/product/product-category',
                 'lien-he.html' => 'fontend/home/contact',
+                'gioi-thieu.html' => 'fontend/home/about',
                 'home.html' => 'fontend/home/index',
                 '<alias:login|logout|register>' => 'account/<alias>',
                 '<alias:about>' => 'site/<alias>',
