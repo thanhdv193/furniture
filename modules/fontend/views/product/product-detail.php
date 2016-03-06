@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use yii\helpers;
+use app\widgets\WrapperBannersWidget;
 
 $this->title = $data['title'];
 
@@ -30,6 +31,7 @@ $this->title = $data['title'];
         </div>
     </div>
 </div><!-- /.wrapper-breadcrums -->
+<?= WrapperBannersWidget::widget() ?>
 <div class="em-wrapper-main">
     <div class="container-fluid container-main">
         <div class="em-inner-main">

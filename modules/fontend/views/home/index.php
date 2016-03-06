@@ -3,9 +3,13 @@
 use yii\helpers;
 use app\widgets\HotDealWidget;
 use app\components\helpers\ImageProduct;
+use app\widgets\WrapperBannersWidget;
+use app\widgets\SlidederWidget;
 
 $this->title = 'Trang mua';
 ?>
+<?= SlidederWidget::widget() ?>
+<?= WrapperBannersWidget::widget() ?>
 <div class="em-wrapper-new-arrivals-tabs">
     <div class="em-new-arrivals-tabs em-line-01">
         <div class="emtabs-ajaxblock-loaded">

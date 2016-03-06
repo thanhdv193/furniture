@@ -1,9 +1,12 @@
 .em-main-container .em-wrapper-banners,
-.em-main-container .img-banner,
 .em-main-container .em-wrapper-ads-15,
 .em-main-container .em-wrapper-ads-10 .em-blog-item {
   margin-bottom: 20px;
 }
+.em-main-container .img-banner{
+  margin: 10px 0px;
+}
+
 .em-main-container .em-line-01.em-new-arrivals-tabs {
   margin-bottom: 0;
 }

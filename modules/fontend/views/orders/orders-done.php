@@ -5,6 +5,7 @@ use yii\grid\GridView;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 use app\models\Orders;
+use app\widgets\WrapperBannersWidget;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\OrdersSearch */
@@ -29,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+<?= WrapperBannersWidget::widget() ?>
 <div class="em-wrapper-main">
     <div class="container-main">
         <div class="em-inner-main">

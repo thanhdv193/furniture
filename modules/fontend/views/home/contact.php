@@ -2,6 +2,7 @@
 
 use yii\helpers;
 use yii\helpers\Url;
+use app\widgets\WrapperBannersWidget;
 
 $this->title = 'Thông tin liên hệ';
 ?>
@@ -21,6 +22,7 @@ $this->title = 'Thông tin liên hệ';
         </div>
     </div>
 </div>
+<?= WrapperBannersWidget::widget() ?>
 <div class="em-wrapper-main">
     <div class="container-fluid container-main">
         <div class="em-inner-main">

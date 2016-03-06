@@ -4,6 +4,7 @@ use yii\helpers;
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use app\components\helpers\HelperLink;
+use app\widgets\WrapperBannersWidget;
 
 $this->title = $category['title'];
 ?>
@@ -24,6 +25,7 @@ $this->title = $category['title'];
         </div>
     </div>
 </div><!-- /.wrapper-breadcrums -->
+<?= WrapperBannersWidget::widget() ?>
 <div class="em-wrapper-main">
     <div class="container-main">
         <div class="em-inner-main">

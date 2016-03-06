@@ -5,7 +5,6 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use app\widgets\MenuLeftWidget;
-use app\widgets\SlidederWidget;
 use app\widgets\BlogWidget;
 use app\widgets\MenuTopWidget;
 use yii\helpers\Url;
@@ -488,34 +487,9 @@ AppAsset::register($this);
 
                             <div class="em-main-container em-col2-left-layout">
                                 <div class="row">
-                                    <div class="col-sm-18 col-sm-push-6 em-col-main">
-                                        <?= SlidederWidget::widget() ?>
-                                        <!-- /.em-wrapper-area03 -->
-                                        <div class="std"></div>
-                                        <div class="row hidden-xs">
-                                            <div class="em-wrapper-banners">
-                                                <div class="col-sm-8  text-center">
-                                                    <div class="img-banner">
-                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_06.jpg" /> </a>
-                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_text_01.png" /> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-8  img-banner text-center">
-                                                    <div class="effect-hover-text4">
-                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_07.jpg" /> </a>
-                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_text_02.png" /> </a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-8 text-center">
-                                                    <div class="img-banner">
-                                                        <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php echo Url::base('') ?>/upload/images/wysiwyg/em_ads_08.jpg" /> </a>
-                                                        <a class="banner-text effect-line" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php echo Url::base('') ?>/upload/images/wysiwyg/em_ads_text_03.png" /> </a>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.em-wrapper-banners -->
-                                        </div>
+                                    <div class="col-sm-18 col-sm-push-6 em-col-main">                                        
                                         <?= $content ?>                                                                                                                    
-                                        </div><!-- /.em-col-main -->
+                                    </div><!-- /.em-col-main -->
                                     
                                     <div class="col-sm-6 col-sm-pull-18 em-col-left em-sidebar">
                                         <?=  MenuLeftWidget::widget() ?>
