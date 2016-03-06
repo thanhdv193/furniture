@@ -3,6 +3,7 @@
 use yii\helpers\Url;
 use yii\helpers;
 use app\widgets\WrapperBannersWidget;
+use app\components\utils\TextUtils;
 
 $this->title = $data['title'];
 
@@ -108,7 +109,7 @@ $this->title = $data['title'];
                                                             <p class="availability in-stock">Availability: <span>In stock</span>
                                                             </p>
 
-                                                            <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">Giá : <?php echo $data['price'] ?></span> </span>
+                                                            <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750">Giá : <?= TextUtils::numberFormat($data['price']) ?>đ</span> </span>
                                                             </div>
                                                         </div>
                                                         <div class="add-to-box">

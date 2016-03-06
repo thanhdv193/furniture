@@ -91,8 +91,8 @@ $this->title = $category['title'];
                                             <div class="product-item">
                                                 <div class="product-shop-top">
                                                     <a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>" class="product-image">
-                                                        <img class="em-img-lazy img-responsive em-alt-hover" src="<?php Url::base('') ?>/upload/images/product/220x220/5_1.jpg" width="220" height="220" alt="WIASSI Version 1" />
-                                                        <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="<?php Url::base('') ?>/upload/images/product/220x220/4_1.jpg" width="220" height="220" alt="WIASSI Version 1" />
+                                                        <img class="em-img-lazy img-responsive em-alt-hover" src="<?php echo Url::base('http') ?>/<?php echo $value['image_path'].$value['filename'] ?>" width="220" height="220" alt="WIASSI Version 1" />
+                                                        <img id="product-collection-image-206" class="em-img-lazy img-responsive em-alt-org" src="<?php echo Url::base('http') ?>/<?php echo $value['image_path'].$value['filename'] ?>" width="220" height="220" alt="WIASSI Version 1" />
                                                         <span class="bkg-hover"></span> 
                                                     </a>
                                                     <div class="bottom">

@@ -17,14 +17,12 @@ class ProductController extends Controller
     }
 
     public function actionProductDetail($id = 0)
-    {
+    { 
         $product = Product::find()
                 ->select(['product_type.id as product_type_id','product_type.title as category','product.*'])
                 ->innerJoin('product_type', 'product.product_type_id = product_type.id')
                 ->where(['product.id' => $id, 'product.is_active' => 1])->asArray()->one();
-        //$imageProduct = Image::find()->where(['object_id' => $id, 'object_type' => 'product'])->all();
-       // $product['list-image'] = $imageProduct;
-        //echo'<pre>'; var_dump($product); die;
+        
         if ($product == null)
             {
             throw new \yii\web\NotFoundHttpException();
@@ -43,32 +41,20 @@ class ProductController extends Controller
             } else
             {
             $query = Product::find()
-                    ->select(['product_type.id as product_type_id', 'product_type.title as category', 'product.*'])
+                    ->select(['product_photo.id as photo_id','product_type.id as product_type_id', 'product_type.title as category', 'product_photo.*','product.*'])
+                    ->innerJoin('product_photo','product_photo.product_id = product.id')
                     ->innerJoin('product_type', 'product.product_type_id = product_type.id')
-                    ->where(['product_type.id' => $id, 'product_type.active' => 1]);
-            //echo'<pre>'; var_dump($query); die;
+                    ->where(['product_type.id' => $id, 'product_type.active' => 1]);    
+            
             $count = $query->count();
-            $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 1]);
+            $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 5]);
             $product = $query->offset($pagination->offset)
-                    ->limit($pagination->limit)
-                    ->all();
-            //echo'<pre>'; var_dump($pagination); die;
-            //$product= null;
-            //$pagination =null;
-
+                    ->limit($pagination->limit)     
+                    ->asArray()
+                    ->all();            
             return $this->render('product-category', ['category'=>$category,'data' => $product, 'pages' => $pagination]);
             }
         }
 
-    public function actionProductTest($id = 2)
-    {
-        $query = Product::find()->where(['product_category_id' => $id, 'active' => 1]);
-        $count = $query->count();
-        $pagination = new Pagination(['totalCount' => $count]);
-        $product = $query->offset($pagination->offset)
-                ->limit(5)
-                ->all();
-        //echo'<pre>'; var_dump($pagination); die;
-        return $this->render('product-category', ['data' => $product,'pages'=>$pagination]);
-    }
+    
 }
