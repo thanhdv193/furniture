@@ -321,6 +321,13 @@ AppAssetBackend::register($this);
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
+                                    <a href="#"><i class="fa fa-check-square"></i> <span>Phân quyền quản trị</span></a>
+                                    <ul class="children">
+                                        <li><a href="<?php Url::base('http') ?>/backend/auth-group/permission">Định nghĩa quyền quản trị</a></li>  
+                                        <li><a href="<?php Url::base('http') ?>/backend/user/get-user-admin">Phân quyền</a></li>  
+                                    </ul>
+                                </li>
+                                <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Đơn hàng</span></a>
                                     <ul class="children">
                                         <li><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_all ?>">Tất cả đơn hàng</a></li>  

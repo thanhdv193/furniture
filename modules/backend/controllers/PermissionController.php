@@ -17,7 +17,7 @@ use app\components\BaseController;
 /**
  * ContactController implements the CRUD actions for Contact model.
  */
-class PermissionController extends BaseController
+class PermissionController extends Controller
 {
     public function behaviors()
     {

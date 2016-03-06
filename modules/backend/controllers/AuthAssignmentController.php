@@ -8,11 +8,12 @@ use app\models\AuthAssignmentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\BaseController;
 
 /**
  * AuthAssignmentController implements the CRUD actions for AuthAssignment model.
  */
-class AuthAssignmentController extends Controller
+class AuthAssignmentController extends BaseController
 {
     public function behaviors()
     {
