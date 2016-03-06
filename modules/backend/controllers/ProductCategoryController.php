@@ -8,11 +8,12 @@ use app\models\ProductCategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\BaseController;
 
 /**
  * ProductCategoryController implements the CRUD actions for ProductCategory model.
  */
-class ProductCategoryController extends Controller
+class ProductCategoryController extends BaseController
 {
     public function behaviors()
     {

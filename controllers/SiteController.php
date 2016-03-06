@@ -99,6 +99,13 @@ class SiteController extends Controller
             ]);
         }
     }
+    public function actionNotPermission()
+    {
+        $this->layout ='main_extend';    
+       // $url = $_SERVER['HTTP_REFERER'];
+        $url = Url::base('http');
+        return $this->render('not-permission',['url'=>$url]);        
+    }
     
     public function actionLoginAdmin()
     {
@@ -109,11 +116,14 @@ class SiteController extends Controller
         }
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()))
-        {
-            die("xxxxxx");
-            $model->login();
-            return $this->redirect($_SERVER['HTTP_REFERER']);
-            return $this->goBack();
+        {            
+            
+            if($model->login())
+            {
+                return $this->redirect(Url::base('http').'/backend/');
+            }
+            
+            
         } else
         {
             return $this->render('login_admin', [

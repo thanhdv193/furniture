@@ -10,11 +10,12 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\AuthAssignment;
 use yii\web\UploadedFile;
+use app\components\BaseController;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
-class UserController extends Controller
+class UserController extends BaseController
 {
     public function behaviors()
     {

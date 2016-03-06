@@ -10,11 +10,12 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\helpers\Url;
+use app\components\BaseController;
 
 /**
  * BackendMenuController implements the CRUD actions for BackendMenu model.
  */
-class BackendMenuController extends Controller
+class BackendMenuController extends BaseController
 {
 
     public function behaviors()

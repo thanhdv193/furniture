@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use app\components\BaseController;
 
 /**
  * BannerSlideController implements the CRUD actions for BannerSlide model.

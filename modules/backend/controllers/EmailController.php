@@ -8,11 +8,12 @@ use app\models\EmailSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\BaseController;
 
 /**
  * EmailController implements the CRUD actions for Email model.
  */
-class EmailController extends Controller
+class EmailController extends BaseController
 {
     public function behaviors()
     {

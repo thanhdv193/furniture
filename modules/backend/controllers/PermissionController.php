@@ -11,12 +11,13 @@ use yii\filters\VerbFilter;
 use app\models\AuthItem;
 use yii\rbac\DbManager;
 use app\models\AuthAssignment;
+use app\components\BaseController;
 
 
 /**
  * ContactController implements the CRUD actions for Contact model.
  */
-class PermissionController extends Controller
+class PermissionController extends BaseController
 {
     public function behaviors()
     {

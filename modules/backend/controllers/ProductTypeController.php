@@ -8,11 +8,12 @@ use app\models\ProductTypeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\BaseController;
 
 /**
  * ProductTypeController implements the CRUD actions for ProductType model.
  */
-class ProductTypeController extends Controller
+class ProductTypeController extends BaseController
 {
     public function behaviors()
     {

@@ -9,11 +9,12 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\models\OrderDetail;
+use app\components\BaseController;
 
 /**
  * OrdersController implements the CRUD actions for Orders model.
  */
-class OrdersController extends Controller
+class OrdersController extends BaseController
 {
     public function behaviors()
     {

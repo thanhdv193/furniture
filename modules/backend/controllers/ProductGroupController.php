@@ -8,11 +8,12 @@ use app\models\ProductGroupSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\components\BaseController;
 
 /**
  * ProductGroupController implements the CRUD actions for ProductGroup model.
  */
-class ProductGroupController extends Controller
+class ProductGroupController extends BaseController
 {
     public function behaviors()
     {
