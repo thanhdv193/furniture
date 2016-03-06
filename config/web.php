@@ -2,6 +2,8 @@
 
 $params = require(__DIR__ . '/params.php');
 
+use \yii\web\Request;
+$baseUrl = str_replace('/frontend/web', '', (new Request)->getBaseUrl());
 $config = [
     'id' => 'shop',
     'basePath' => dirname(__DIR__),
