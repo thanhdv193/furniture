@@ -50,7 +50,7 @@ $this->title = $category['title'];
                                                 <li><a href="#">2</a>
                                                 </li>
                                                 <li>
-                                                    <a class="next i-next" href="#" title="Next"> <img src="<?php Url::base('') ?>/upload/images/pager_arrow_right.gif" alt="Next" class="v-middle" /> </a>
+                                                    <a class="next i-next" href="#" title="Next"> <img src="<?php echo Url::base('http') ?>/upload/images/pager_arrow_right.gif" alt="Next" class="v-middle" /> </a>
                                                 </li>
                                             </ol>
                                         </div>

@@ -67,10 +67,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <tfoot>
                                             <tr>
                                                 <td colspan="7" class="a-right">
-                                                    <button type="button" title="Tiếp tục mua hàng" class="button btn-continue"><span><span>Tiếp tục mua hàng</span></span>
-                                                    </button>                                                    
-                                                    <button type="submit" name="update_cart_action" value="empty_cart" title="Clear Shopping Cart" class="button btn-empty" id="empty_cart_button"><span><span>Thanh toán</span></span>
-                                                    </button>
+                                                    <a href="<?php echo $url ?>" class=" cart-order button btn-empty"><span>Tiếp tục mua hàng</span></a>                                                                                                     
+                                                    <a href="<?php echo Url::base('http') ?>/don-hang.html" class=" cart-order button btn-empty"><span>Thanh toán</span></a>                                                    
                                                 </td>
                                             </tr>
                                         </tfoot>

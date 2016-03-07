@@ -2669,6 +2669,19 @@ table colgroup,
 .data-table tr td button.button {
     white-space: nowrap;
 }
+.data-table tr td a.cart-order:hover{
+    color: #ec6a54;
+    border-color: #ec6a54;
+    background-color: #ffffff;
+}
+.data-table tr td a.cart-order{
+    color: #ffffff;
+    border-color: #ec6a54;
+    background-color: #ec6a54;
+    border-radius: 5px;
+    padding: 10px 10px;
+    border:1px solid #ec6a54;
+}
 .data-table thead th {
     border-width: 1px;
     border-style: solid;
