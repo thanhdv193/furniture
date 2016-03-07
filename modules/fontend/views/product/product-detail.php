@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use yii\helpers;
 use app\widgets\WrapperBannersWidget;
 use app\components\utils\TextUtils;
+use app\components\helpers\HelperLink;
 
 $this->title = $data['title'];
 
@@ -22,7 +23,7 @@ $this->title = $data['title'];
                     <ul>
                         <li class="Trang chủ"> <a href="<?php echo Url::base('http') ?>" title="Home"><span>Trang chủ</span></a> <span class="separator">/ </span>
                         </li>
-                        <li class="category36"> <a href="category-one-column.html"><span><?php echo $data['category'] ?></span></a> <span class="separator">/ </span>
+                        <li class="category36"> <a href="<?php echo HelperLink::rewriteUrlMulti(array($data['product_type_id'],0), $data['category'], Yii::$app->params['urlSite']['category']) ?>"><span><?php echo $data['category'] ?></span></a> <span class="separator">/ </span>
                         </li>
                         <li class="product"> <strong><?php echo $data['title'] ?></strong>
                         </li>

@@ -17,7 +17,7 @@ $this->title = 'Fashion Everything';
         <div class="emtabs-ajaxblock-loaded">
             <div class="em-tabs-widget tabs-widget ">
                 <div class="widget-title em-widget-title">
-                    <h3><span>New Arrivals</span></h3>
+                    <h3><span>Sản phẩm mới</span></h3>
                 </div>
                 <div id="emtabs_1" class="em-tabs emtabs r-tabs">
                     <ul class="em-tabs-control tabs-control r-tabs-nav">

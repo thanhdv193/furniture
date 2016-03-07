@@ -48,7 +48,7 @@ class ProductController extends Controller
                     ->where(['product_type.id' => $id, 'product_type.active' => 1]);    
             
             $count = $query->count();
-            $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 5]);
+            $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 8]);
             $product = $query->offset($pagination->offset)
                     ->limit($pagination->limit)     
                     ->asArray()

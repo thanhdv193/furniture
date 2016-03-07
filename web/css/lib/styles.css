@@ -7180,6 +7180,9 @@ div.desc {
 .product-view-detail .product-shop .short-description .std {
     margin-bottom: 2rem;
 }
+.product-view-detail .product-shop .short-description .std p{
+    color:#444444;
+}
 .product-view-detail .product-shop .no-rating {
     position: relative;
 }
@@ -7382,6 +7385,9 @@ div.desc {
     margin-bottom: 0;
     border-width: 0;
     padding: 0;
+}
+.product-view .em-details-tabs.r-tabs .box-collateral-content p{
+    color:#444444;
 }
 .product-view .em-details-tabs .em-details-tabs-content {
     text-align: left;

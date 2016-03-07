@@ -17,7 +17,7 @@ class HomeController extends Controller
         $listProduct = Product::find()
                 ->select(['product_photo.id as photo_id','product_photo.*','product.*'])
                 ->innerJoin('product_photo','product_photo.product_id = product.id')
-                ->where(['product.product_group_id'=>8,'product.is_active'=>  Product::is_active])->asArray()->all();
+                ->where(['product.product_group_id'=>11,'product.is_active'=>  Product::is_active])->asArray()->all();
         //ImageProduct::Image(3723, 0, 2);
         //echo'<pre>'; var_dump($listProduct); die;
         return $this->render('index',['listProduct'=>$listProduct]);

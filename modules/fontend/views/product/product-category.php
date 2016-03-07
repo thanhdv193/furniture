@@ -5,6 +5,7 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use app\components\helpers\HelperLink;
 use app\widgets\WrapperBannersWidget;
+use app\components\utils\TextUtils;
 
 $this->title = $category['title'];
 ?>
@@ -117,10 +118,10 @@ $this->title = $category['title'];
                                                             </div>
                                                         </div>
                                                         <div class="text-center ">
-                                                            <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750"><?php echo $value['price'] ?></span> </span>
+                                                            <div class="price-box"> <span class="regular-price" id="product-price-206"> <span class="price"  content="750"><?= TextUtils::numberFormat($value['price']) ?>đ</span> </span>
                                                             </div>
                                                         </div>
-                                                        <div class="desc std text-center em-element-display-hover"> <?php echo $value['description'] ?></div>
+<!--                                                        <div class="desc std text-center em-element-display-hover"> <?php echo $value['description'] ?></div>-->
                                                     </div>
                                                 </div>
                                             </div><!-- /.product-item -->
