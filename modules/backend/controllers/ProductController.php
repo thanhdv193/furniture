@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\helpers\Url;
 use app\components\BaseController;
+use app\components\helpers\ImageHelper;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -150,8 +151,14 @@ class ProductController extends Controller
                 $objecFile->error = $value['error'];
                 $photoModel->filename = $objecFile;
                 $upload = $photoModel->upload('product');
+                
                 if ($upload)
-                {
+                {   
+                    $url1 = Yii::$app->request->baseUrl . $upload['patch'].$upload['filename'];
+                    $url2 = Yii::$app->request->baseUrl . $upload['patch'].'350x350/'.$upload['filename'];
+                    
+                    ImageHelper::resizeImage($url1, $url2, '350', '350');
+                    
                     $photoModel->product_id = 0;
                     $photoModel->photo = 'product';
                     $photoModel->create_date = time();

@@ -67,6 +67,26 @@ class SiteController extends Controller
             ],
         ];
     }
+    
+    public function actionUploadImage()
+    {
+        
+        $url1 = Yii::$app->request->baseUrl . 'upload/photos/demo1.jpg';
+        $url2 = Yii::$app->request->baseUrl . 'upload/photos/thumbs/demo1.jpg';
+        ImageHelper::resizeImage($url1, $url2, '700', '700');
+        die();
+        $sourceFile = Url::base('http').'/upload/images/em_minislideshow/1435569308_0_1.jpg';
+        $destFile =  Url::base('http').'/upload/images/demo/1435569308_0_1.jpg';
+        $width = '350';
+        $height = '350';
+//        var_dump($sourceFile);
+//        var_dump($destFile);
+//        var_dump($width);
+//        var_dump($width);
+//        die;
+        ImageHelper::resizeImage($sourceFile, $destFile, $width, $height);
+        die;
+    }
 
     public function actionIndex()
     {

@@ -19,10 +19,11 @@ class ProductController extends Controller
     public function actionProductDetail($id = 0)
     { 
         $product = Product::find()
-                ->select(['product_type.id as product_type_id','product_type.title as category','product.*'])
+                ->select(['product_photo.id as photo_id','product_type.id as product_type_id','product_type.title as category','product_photo.*','product.*'])
+                ->innerJoin('product_photo','product_photo.product_id = product.id')
                 ->innerJoin('product_type', 'product.product_type_id = product_type.id')
                 ->where(['product.id' => $id, 'product.is_active' => 1])->asArray()->one();
-        
+        //echo'<pre>'; var_dump($product); die;
         if ($product == null)
             {
             throw new \yii\web\NotFoundHttpException();

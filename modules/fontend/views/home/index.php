@@ -53,7 +53,7 @@ $this->title = 'Fashion Everything';
                                                                 <div class="product-shop-top">
                                                                     <a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>" class="product-image">
                                                                         <?php //ImageProduct::Image($value['id'], 0, 2) ?>
-                                                                        <img class="em-img-lazy img-responsive" src="<?php echo $value['image_path'].$value['filename'] ?> " width="350px" height="350px" alt="<?php echo $value['title'] ?>">
+                                                                        <img class="em-img-lazy img-responsive" src="<?php echo $value['image_path'].'350x350/'.$value['filename'] ?> " width="350px" height="350px" alt="<?php echo $value['title'] ?>">
 <!--                                                                        <img class="img-responsive em-alt-org em-lazy-loaded" src="upload/images/product/350x350/clothing_sp5_1.jpg" data-original="upload/images/product/350x350/clothing_sp5_1.jpg" alt=" Embellished Mirror Pastel" height="350" width="350">-->
                                                                     </a>
                                                                     <div class="em-element-display-hover bottom">

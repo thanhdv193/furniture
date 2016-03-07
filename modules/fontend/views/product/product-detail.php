@@ -54,8 +54,8 @@ $this->title = $data['title'];
                                                 <div class="product-img-box">
                                                     <div class="media-left">
                                                         <p class="product-image">
-                                                            <a class="cloud-zoom" id="image_zoom" rel="zoomWidth: 500,zoomHeight: 500,position: 'inside'" href="/upload/images/product/1000x1000/5_1.jpg">
-                                                                <img class="em-product-main-img" src="/upload/images/product/800x800/5_1.jpg" alt='' title="<?php echo $data['title'] ?>" />
+                                                            <a class="cloud-zoom" id="image_zoom" rel="zoomWidth: 500,zoomHeight: 500,position: 'inside'" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>">
+                                                                <img class="em-product-main-img" src="<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>" alt='' title="<?php echo $data['title'] ?>" />
                                                             </a>
                                                             <a id="zoom-btn" rel="lightbox[em_lightbox]" href="/upload/images/product/1000x1000/5_1.jpg" title="<?php echo $data['title'] ?>">Zoom</a>
                                                         </p>
@@ -63,13 +63,19 @@ $this->title = $data['title'];
                                                     <div class="more-views">
                                                         <ul class="em-moreviews-slider ">
                                                             <li class="item">
-                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'/upload/images/product/800x800/4_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/4_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/4_1.jpg" alt="" /> </a> <a class="no-display" href="<?php Url::base('') ?>/upload/images/product/1000x1000/4_1.jpg" rel="lightbox[em_lightbox]">lightbox moreview</a>
+                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>">
+                                                                    <img src="<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>" alt="" /> </a> 
+                                                                <a class="no-display" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>" rel="lightbox[em_lightbox]">lightbox moreview</a>
                                                             </li>
                                                             <li class="item">
-                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'/upload/images/product/800x800/6_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/6_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/6_1.jpg" alt="" /> </a> <a class="no-display" href="<?php Url::base('') ?>/upload/images/product/1000x1000/6_1.jpg" rel="lightbox[em_lightbox]">lightbox moreview</a>
+                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>">
+                                                                    <img src="<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>" alt="" /> </a>
+                                                                <a class="no-display" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>" rel="lightbox[em_lightbox]">lightbox moreview</a>
                                                             </li>
                                                             <li class="item">
-                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'/upload/images/product/800x800/5_1.jpg', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg"> <img src="<?php Url::base('') ?>/upload/images/product/100x100/5_1.jpg" alt="" /> </a> <a class="no-display" href="<?php Url::base('') ?>/upload/images/product/1000x1000/5_1.jpg" rel="">lightbox moreview</a>
+                                                                <a class="cloud-zoom-gallery" rel="useZoom:'image_zoom', smallImage:'<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>', adjustX:5, adjustY:-5, position:'inside'" onclick="return false" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>">
+                                                                    <img src="<?php echo Url::base('http').'/'.$data['image_path'].'350x350/'.$data['filename']?>" alt="" /> </a> 
+                                                                <a class="no-display" href="<?php echo Url::base('http').'/'.$data['image_path'].$data['filename']?>" rel="">lightbox moreview</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -82,7 +88,7 @@ $this->title = $data['title'];
                                                             <h1><?php echo $data['title'] ?></h1>
                                                         </div>                                                        
                                                         <div class="em-sku-availability">
-                                                            <p class="sku">SKU: Sho_1</p>
+<!--                                                            <p class="sku">SKU: Sho_1</p>-->
                                                             <p class="availability in-stock"> Trạng thái : <span class="value">Còn hàng</span>
                                                             </p>
                                                         </div>
