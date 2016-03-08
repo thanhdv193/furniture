@@ -70,8 +70,9 @@ class OrdersController extends Controller
                         $orderDetali->is_timegold = '0';
                         $orderDetali->product_type_id = (int)$value['product_type_id'];                            
                         $orderDetali->save();
+                        Cart::findOne($cartId)->delete();
                     }
-                    Cart::findOne($cartId)->delete();
+                    
                     return $this->render('orders-done',['status' => Orders::order_success]);  
                 
             } else
