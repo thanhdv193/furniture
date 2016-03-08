@@ -16,11 +16,11 @@ use yii\imagine\Image;
 use yii\helpers\Url;
 use app\components\helpers\ImageHelper;
 use app\components\helpers\FunctionService;
-use app\models\Menu;
 use yii\data\Pagination;
 use app\models\Product;
 use yii\web\Cookie;
 use app\components\helpers\EmailHelper;
+use app\components\helpers\Menu;
 use app\models\Location;
 use app\components\utils\FileUtils;
 use app\models\AuthGroup;
@@ -208,10 +208,33 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionSeo($parametrel = "", $parametrel2 = "")
+    public function actionSeo()
     {
-        echo $parametrel;
-        echo $parametrel2;
+       Menu::getMenu();
+        
+    }
+    protected function getMenus() {
+        $menu = CategoriesItems::getAll();
+        if (!empty($menu)) {
+            return $this->buildTree(0, $menu, []);
+        } else {
+            return [];
+        }
+    }
+    protected function buildTree($parentId, $category, $tree, $level = 0) {
+        $level++;
+        foreach ($category as $val) {
+            if ($val->parent_id == $parentId) {
+                $lvl = '';
+                for ($i = 0; $i < $level; $i++) {
+                    $lvl .= '-- ';
+                }
+                $val->category_name = $lvl . $val->category_name;
+                $tree[] = $val;
+                $tree = $this->buildTree($val->id, $category, $tree, $level);
+            }
+        }
+        return $tree;
     }
 
     public function onAuthSuccess($client)

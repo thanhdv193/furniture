@@ -51,8 +51,9 @@ class HomeController extends Controller
             $model->role = 1;
             $model->created_at = time();
             $model->updated_at = time();
-            //$model->save();
-            echo'<pre>'; var_dump($model->save()); die;
+            
+            $model->save();
+           
         }
         return $this->render('register', ['model' => $model]);
     }
