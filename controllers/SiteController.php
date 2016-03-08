@@ -24,6 +24,7 @@ use app\components\helpers\Menu;
 use app\models\Location;
 use app\components\utils\FileUtils;
 use app\models\AuthGroup;
+use app\models\ProductType;
 
 class SiteController extends Controller
 {
@@ -210,7 +211,11 @@ class SiteController extends Controller
 
     public function actionSeo()
     {
-       Menu::getMenu();
+       $list = ProductType::find()->all();
+      $a =  Menu::getMenu($list);
+       echo'<pre>';
+        var_dump($a);
+        die;
         
     }
     protected function getMenus() {
