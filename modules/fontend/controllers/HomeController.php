@@ -10,6 +10,7 @@ use app\models\Cart;
 use app\components\helpers\CookieHelper;
 use app\models\About;
 use app\models\User;
+use app\models\LoginForm;
 
 class HomeController extends Controller
 {
@@ -40,22 +41,36 @@ class HomeController extends Controller
     }
     public function actionRegister()
     {
+        if (!\Yii::$app->user->isGuest)
+        {
+            return $this->goHome();
+        }
         $model = new User();
+
         if ($model->load(Yii::$app->request->post()))
-        {            
+        {
+            $password = $model->password_hash;
             $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
             $model->birthday = strtotime($model->birthday);
-            $model->group = '0';
-            $model->active = User::is_Active;
-            $model->status = User::ROLE_USER;
-            $model->role = 1;
-            $model->created_at = time();
-            $model->updated_at = time();
+            $model->avatar = null;
             
-            $model->save();
-           
+            if($model->save(false))
+            {
+                $modelLogin = new LoginForm();
+                $modelLogin->username = $model->username;
+                $modelLogin->password = $password;
+               //echo'<pre>'; var_dump($modelLogin); die;
+                $modelLogin->login();
+                
+                return $this->goHome();
+            }
+            
+        } else
+        {
+            return $this->render('register', [
+                        'model' => $model,
+            ]);
         }
-        return $this->render('register', ['model' => $model]);
     }
 
     public function actionCheckCart()

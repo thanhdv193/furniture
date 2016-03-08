@@ -389,9 +389,12 @@ AppAsset::register($this);
                                                         <li class="first last"><a href="wishlist.html" title="Sản phẩm yêu thích">Sản phẩm yêu thích</a></li>
                                                     </ul>
                                                 </div>
-                                                <ul class="list-inline f-right">
-                                                    <li><a class="em-register-link" href="register.html" title="Đăng ký">Đăng ký</a></li>
-                                                </ul>
+                                                <?php if (Yii::$app->user->isGuest) {?>
+                                                    <ul class="list-inline f-right">
+                                                        <li><a class="em-register-link" href="<?php echo Url::base('http') ?>/dang-ky-tai-khoan.html" title="Đăng ký tài khoản">Đăng ký</a></li>
+                                                    </ul>
+                                                <?php } ?>
+                                                
                                                 <div id="em-login-link" class="account-link f-right em-non-login">                                                     
                                                             <?= FormLogInWidget::widget() ?>
                                                             <!--/#top-login-form -->                                                   

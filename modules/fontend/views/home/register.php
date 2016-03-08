@@ -9,7 +9,7 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Đăng ký tài khoản';
 ?>
 <div class="wrapper-breadcrums">
-    <div class="container">
+    <div class="col-sm-24">
         <div class="row">
             <div class="col-sm-24">
                 <div class="breadcrumbs">
