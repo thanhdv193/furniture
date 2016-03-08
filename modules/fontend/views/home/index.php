@@ -7,6 +7,7 @@ use app\widgets\SlidederWidget;
 use yii\helpers\Url;
 use app\components\helpers\HelperLink;
 use app\components\utils\TextUtils;
+use app\components\helpers\SystemHelper;
 
 $this->title = 'Fashion Everything';
 ?>
@@ -75,7 +76,7 @@ $this->title = 'Fashion Everything';
                                                                 <div class="product-shop">
                                                                     <div class="f-fix">
                                                                         <!--product name-->
-                                                                        <h3 style="min-height: 19px;" class="product-name"><a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>"> <?php echo $value['title'] ?></a></h3><div class="ratings">
+                                                                        <h3 style="min-height: 19px;" class="product-name"><a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>"> <?php echo SystemHelper::newTitle($value['title'], 37) ?></a></h3><div class="ratings">
                                                                             <div class="rating-box">
                                                                                 <div class="rating" style="width:10%"></div>
                                                                             </div>
@@ -1612,7 +1613,7 @@ $this->title = 'Fashion Everything';
                                                                 <div class="product-shop">
                                                                     <div class="f-fix">
                                                                         <!--product name-->
-                                                                        <h3 style="min-height: 19px;" class="product-name"><a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>"> <?php echo $value['title'] ?></a></h3><div class="ratings">
+                                                                        <h3 style="min-height: 19px;" class="product-name"><a href="<?php echo HelperLink::rewriteUrl($value['id'], $value['title'], Yii::$app->params['urlSite']['detail']) ?>" title="<?php echo $value['title'] ?>"><?php echo SystemHelper::newTitle($value['title'], 37) ?></a></h3><div class="ratings">
                                                                             <div class="rating-box">
                                                                                 <div class="rating" style="width:10%"></div>
                                                                             </div>

@@ -43,7 +43,7 @@ AppAsset::register($this);
                     <div id="em-mheader" class="visible-xs container">
                     <div id="em-mheader-top" class="row">
                         <div id="em-mheader-logo" class="col-xs-4">
-                            <div class="em-logo"><a href="index.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img src="<?php Url::base('') ?>/upload/images/logo_small.png" alt="Fashion Commerce" /></a>
+                            <div class="em-logo"><a href="index.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img src="<?php echo Url::base('http') ?>/upload/images/logo_small.png" alt="Fashion Commerce" /></a>
                             </div>
                         </div><!-- /#em-mheader-logo -->
                         <div class="col-xs-20">
@@ -407,7 +407,7 @@ AppAsset::register($this);
                             <div class="container em-menu-fix-pos">
                                 <div class="row">
                                     <div class="col-sm-24">
-                                        <div class="em-logo f-left"><a href="index.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img class="retina-img" src="<?php echo Url::base('http') ?>/upload/images/logo.png" alt="Fashion Commerce" /></a>
+                                        <div class="em-logo f-left"><a href="<?php echo Url::base('http') ?>/home.html" title="Fashion Commerce" class="logo"><strong>Fashion Commerce</strong><img class="retina-img" src="<?php echo Url::base('http') ?>/upload/images/logo.png" alt="Fashion Commerce" /></a>
                                         </div>
                                         <div class="em-logo-sticky f-left">
                                             <a href="<?php echo Url::base('http') ?>/home.html" title="Fashion Commerce" class="logo"><img src="<?php echo Url::base('http') ?>/upload/images/logo_small.png" alt="Fashion Commerce" />
@@ -466,19 +466,19 @@ AppAsset::register($this);
                                 <div class="row em-wrapper-ads-13 hidden-xs">
                                     <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="Tech Support 247" href="#"><em class="fa fa-fw"></em></a>
                                         <div class="em-banner-right">
-                                            <h5><a title="Tech Support 247" href="#">RETURN &amp; EXCHANGE</a></h5>
+                                            <h5><a title="Tech Support 247" href="#">Hướng dẫn mua hàng</a></h5>
                                             <p>Vintage pastel tucked t-shirt leather cami</p>
                                         </div>
                                     </div>
                                     <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="Free shipping all order" href="#"><em class="fa fa-fw"></em></a>
                                         <div class="em-banner-right">
-                                            <h5><a title="Free shipping all order" href="#">Free shipping</a></h5>
+                                            <h5><a title="Free shipping all order" href="#">Vận chuyển</a></h5>
                                             <p>Get Free Shipping on all orders</p>
                                         </div>
                                     </div>
                                     <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="30 days return" href="#"><em class="fa fa-fw"></em></a>
                                         <div class="em-banner-right">
-                                            <h5><a title="30 days return" href="#">MEMBER DISCOUNT</a></h5>
+                                            <h5><a title="30 days return" href="#">Thanh toán</a></h5>
                                             <p>The total billed is discount for member</p>
                                         </div>
                                     </div>
@@ -496,7 +496,7 @@ AppAsset::register($this);
                                         <!-- /.em-wrapper-area02 -->
                                         <div class="em-wrapper-banners hidden-xs">
                                             <div class="em-effect06">
-                                                <a class="em-eff06-04" href="#"><img class="img-responsive retina-img" alt="em_ads_01.jpg" src="<?php echo Url::base('') ?>/upload/images/wysiwyg/em_ads_01.jpg" />
+                                                <a class="em-eff06-04" href="#"><img class="img-responsive retina-img" alt="em_ads_01.jpg" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_01.jpg" />
                                                 </a>
                                             </div>
                                         </div><!--  /.em-wrapper-banners -->
@@ -506,7 +506,7 @@ AppAsset::register($this);
                                                     <div class="em-slider em-slider-category" data-emslider-pagination="true" data-emslider-items="1">
                                                         <div class="em-ads-item">
                                                             <div class="em-ads-img">
-                                                                <a href="#"><img class="img-responsive" alt="em_ads_02.png" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_02.png" />
+                                                                <a href="#"><img class="img-responsive" alt="em_ads_02.png" src="<?php Url::base('http') ?>/upload/images/wysiwyg/em_ads_02.png" />
                                                                 </a>
                                                             </div>
                                                             <div class="em-ads-content">
@@ -517,7 +517,7 @@ AppAsset::register($this);
                                                         </div><!-- /.em-ads-item -->
                                                         <div class="em-ads-item">
                                                             <div class="em-ads-img">
-                                                                <a href="#"><img class="img-responsive" alt="em_ads_02.png" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_02.png" />
+                                                                <a href="#"><img class="img-responsive" alt="em_ads_02.png" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_02.png" />
                                                                 </a>
                                                             </div>
                                                             <div class="em-ads-content">
@@ -528,7 +528,7 @@ AppAsset::register($this);
                                                         </div><!-- /.em-ads-item -->
                                                         <div class="em-ads-item">
                                                             <div class="em-ads-img">
-                                                                <a href="#"><img class="img-responsive" alt="em_ads_02.png" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_02.png" />
+                                                                <a href="#"><img class="img-responsive" alt="em_ads_02.png" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_02.png" />
                                                                 </a>
                                                             </div>
                                                             <div class="em-ads-content">
@@ -551,7 +551,7 @@ AppAsset::register($this);
                                                         <div class="em-from-our-blog">
                                                             <div class="em-blog-item em-effect-13">
                                                                 <div class="em-blog-content bkg-top">
-                                                                    <a title="em-sample-title" class="img-banner-small" href="#"> <img alt="em_blog" class="img-responsive" src="<?php Url::base('') ?>/upload/images/blog/em_ads_07_1.jpg" /> </a>
+                                                                    <a title="em-sample-title" class="img-banner-small" href="#"> <img alt="em_blog" class="img-responsive" src="<?php echo Url::base('http') ?>/upload/images/blog/em_ads_07_1.jpg" /> </a>
                                                                     <div class="em-blog-time">
                                                                         <p class="em-blog-date">21</p>
                                                                         <p class="em-blog-month">Jul</p>
@@ -567,7 +567,7 @@ AppAsset::register($this);
                                                             </div><!-- /.em-blog-item -->
                                                             <div class="em-blog-item em-effect-13">
                                                                 <div class="em-blog-content bkg-top">
-                                                                    <a title="em-sample-title" class="img-banner-small" href="http://demo.emthemes.com/everything/index.php/blog/11-emerging-jewelry-designers-you-need-to-know.html"> <img alt="em_blog" class="img-responsive" src="<?php Url::base('') ?>/upload/images/blog/em_ads_08.jpg" /> </a>
+                                                                    <a title="em-sample-title" class="img-banner-small" href="http://demo.emthemes.com/everything/index.php/blog/11-emerging-jewelry-designers-you-need-to-know.html"> <img alt="em_blog" class="img-responsive" src="<?php echo Url::base('http') ?>/upload/images/blog/em_ads_08.jpg" /> </a>
                                                                     <div class="em-blog-time">
                                                                         <p class="em-blog-date">21</p>
                                                                         <p class="em-blog-month">Jul</p>
@@ -588,8 +588,8 @@ AppAsset::register($this);
                                         </div><!-- /.row -->
                                         <div class="img-banner hidden-xs">
                                             <div class="effect-hover-text2">
-                                                <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_05.jpg" /> </a>
-                                                <a class="banner-text" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php Url::base('') ?>/upload/images/wysiwyg/em_ads_text_05.png" /> </a>
+                                                <a class="banner-img" title="em-sample-title" href="#"> <img class="img-responsive retina-img" alt="em-sample-alt" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_05.jpg" /> </a>
+                                                <a class="banner-text" title="em-sample-title" href="#"> <img class="img-responsive" alt="em-sample-alt" src="<?php echo Url::base('http') ?>/upload/images/wysiwyg/em_ads_text_05.png" /> </a>
                                             </div>
                                         </div><!-- /.img-banner -->
                                     </div><!-- /.em-sidebar -->
@@ -603,39 +603,39 @@ AppAsset::register($this);
                                     <div class=" slider-style02">
                                         <div class="em-slider em-slider-banners em-slider-navigation-icon" data-emslider-navigation="true" data-emslider-items="6" data-emslider-desktop="5" data-emslider-desktop-small="4" data-emslider-tablet="3" data-emslider-mobile="2">
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_01.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_01.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_01.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_01.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_02.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_02.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_02.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_02.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_03.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_03.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_03.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_03.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_04.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_04.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_04.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_04.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_05.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_05.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_05.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_05.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_06.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_06.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_06.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_06.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_07.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_01.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_07.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_01.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_01.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_02.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_01.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_02.png" />
                                                 </a>
                                             </div>
                                             <div class="em-banners-item">
-                                                <a href="#"><img class="img-responsive" alt="em_brand_02.jpg" src="<?php Url::base('') ?>/upload/images/brand/em_brand_03.png" />
+                                                <a href="#"><img class="img-responsive" alt="em_brand_02.jpg" src="<?php echo Url::base('http') ?>/upload/images/brand/em_brand_03.png" />
                                                 </a>
                                             </div>
                                         </div>

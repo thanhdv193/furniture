@@ -8067,6 +8067,15 @@ div.desc {
     width: 100%;
     margin-bottom: 25px;
 }
+.account-create .fieldset .row .form-control{
+    border-radius: 0px;
+}
+.account-create .fieldset .btn-submit .register{
+    padding: 10px 40px;
+}
+.account-create .fieldset .btn-submit .back{
+    padding: 10px 40px;
+}
 /* ============================================ * Catalog - Compare ============================================ */
 
 .page-popup.catalog-product-compare-index {

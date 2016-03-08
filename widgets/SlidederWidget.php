@@ -20,6 +20,7 @@ class SlidederWidget extends Widget
                 ->where(['active'=>BannerSlide::is_active])
                ->orderBy('sort_order DESC')
                ->all();
+       
        if($slide != null)
        {
            return $this->render('Slideder',['data'=>$slide]);

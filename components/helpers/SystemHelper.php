@@ -56,6 +56,13 @@ class SystemHelper
         $price = number_format($priceFloat, $decimal_place, '', $symbol_thousand);
         return $price . $symbol;
     }
+     public static function newTitle($string,$lenght = 0){
+        if(strlen($string) < $lenght)
+        {
+            return $string;
+        }
+        return substr($string, 0, $lenght) . " ...";
+    }
 
 
 }

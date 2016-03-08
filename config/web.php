@@ -102,6 +102,7 @@ $config = [
                 'chuyen-muc/<title>-<id:\d+>-<page:\d+>.html' => 'fontend/product/product-category',
                 'lien-he.html' => 'fontend/home/contact',
                 'gioi-thieu.html' => 'fontend/home/about',
+                'dang-ky-tai-khoan.html' => 'fontend/home/register',
                 'home.html' => 'fontend/home/index',
                 '<alias:login|logout|register>' => 'account/<alias>',
                 '<alias:about>' => 'site/<alias>',

@@ -9,6 +9,7 @@ use app\components\helpers\ImageProduct;
 use app\models\Cart;
 use app\components\helpers\CookieHelper;
 use app\models\About;
+use app\models\User;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,7 @@ class HomeController extends Controller
         $listProduct = Product::find()
                 ->select(['product_photo.id as photo_id','product_photo.*','product.*'])
                 ->innerJoin('product_photo','product_photo.product_id = product.id')
-                ->where(['product.product_group_id'=>11,'product.is_active'=>  Product::is_active])
+                ->where(['product.product_group_id'=>8,'product.is_active'=>  Product::is_active])
                 ->offset(0)
                 ->limit(8)
                 ->asArray()->all();
@@ -37,6 +38,25 @@ class HomeController extends Controller
         //echo'<pre>'; var_dump($about); die;
         return $this->render('about',['data'=>$about]);
     }
+    public function actionRegister()
+    {
+        $model = new User();
+        if ($model->load(Yii::$app->request->post()))
+        {            
+            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
+            $model->birthday = strtotime($model->birthday);
+            $model->group = '0';
+            $model->active = User::is_Active;
+            $model->status = User::ROLE_USER;
+            $model->role = 1;
+            $model->created_at = time();
+            $model->updated_at = time();
+            //$model->save();
+            echo'<pre>'; var_dump($model->save()); die;
+        }
+        return $this->render('register', ['model' => $model]);
+    }
+
     public function actionCheckCart()
     {         
         if (Yii::$app->request->post())
