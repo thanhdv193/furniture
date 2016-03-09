@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * AboutController implements the CRUD actions for About model.
  */
-class AboutController extends \app\components\BaseController
+class AboutController extends Controller
 {
     public function behaviors()
     {

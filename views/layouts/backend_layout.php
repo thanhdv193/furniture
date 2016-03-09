@@ -357,8 +357,8 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý thông tin</span></a>
                                     <ul class="children">
-                                        <li><a href="#">Thông tin giới thiệu</a></li>   
-                                        <li><a href="<?php Url::base('http') ?>/backend/contact/index">Thông tin liên hệ</a></li>    
+                                        <li><a href="<?php echo Url::base('http') ?>/backend/about/index">Thông tin giới thiệu</a></li>   
+                                        <li><a href="<?php echo Url::base('http') ?>/backend/contact/index">Thông tin liên hệ</a></li>    
                                     </ul>
                                 </li> 
                                 <li class="nav-parent">

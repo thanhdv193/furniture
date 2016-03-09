@@ -44,17 +44,7 @@ class UserController extends BaseController
         ]);
     }
     
-    public function actionGetUserAdmin()
-    {
-        $listUser = User::find()
-                ->where(['group'=>User::User_Admin])
-                ->asArray()
-                ->all();
-        return $this->render('user-admin', [
-            'listData' => $listUser,            
-        ]);        
-        
-    }
+    
 
     /**
      * Displays a single User model.

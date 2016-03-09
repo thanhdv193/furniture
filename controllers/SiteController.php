@@ -589,8 +589,11 @@ class SiteController extends Controller
 
     public function actionMenu()
     {
-        $menu = Menu::find()->asArray()->all();
-        return $this->render('menu', ['data' => $menu]);
+        $input = "SomePDFFile";
+
+        //$pass1 = preg_replace("/([a-z])([A-Z])/", "\\1-\\2", $input);
+        $pass2 = preg_replace("/(([a-z])([A-Z])|([A-Z])([A-Z][a-z]))/","\\2\\4-\\3\\5",$input);
+        echo $pass2;die;
     }
 
     public function actionCaptCha()

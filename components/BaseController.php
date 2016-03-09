@@ -10,6 +10,10 @@ use yii\helpers\Url;
 class BaseController extends Controller
 {
     public function beforeAction($action) {
+      
+//        if(\Yii::$app->params['auth']){
+//            return true;
+//        }
         
         if (!in_array($action->controller->id, ["error", "auth", "home",'default']) && !Yii::$app->user->can($action->controller->id . "_" . $action->id)) {
             return $this->redirect(Url::base('http').'/site/not-permission');

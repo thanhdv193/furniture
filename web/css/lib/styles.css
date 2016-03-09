@@ -8930,6 +8930,9 @@ url-prefix(https://)
     box-shadow: 0 0 5px #f6f6f6;
     overflow: hidden;
 }
+.em-account .block-content .required .help-block-error{
+    color:red;
+}
 .em-account .block-content .login-title {
     text-transform: uppercase;
     margin-bottom: 3px;

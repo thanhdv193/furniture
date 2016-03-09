@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <span>5,323</span> Followers
                             </div>
                             <div class="media-right">
-                                <a href="<?php echo Url::base('http') ?>/backend/default/permission-user?id=<?php echo $value['id'] ?>">Cấp quyền</a>
+                                <a href="<?php echo Url::base('http') ?>/backend/permission/get-permission-user?id=<?php echo $value['id'] ?>">Cấp quyền</a>
                             </div>
                         </li>                                                 
                     <?php } ?>

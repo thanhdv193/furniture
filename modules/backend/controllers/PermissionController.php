@@ -12,6 +12,8 @@ use app\models\AuthItem;
 use yii\rbac\DbManager;
 use app\models\AuthAssignment;
 use app\components\BaseController;
+use app\models\User;
+use app\models\AuthGroup;
 
 
 /**
@@ -30,7 +32,30 @@ class PermissionController extends Controller
             ],
         ];
     }
-
+    public function actionGetUserAdmin()
+    {
+        $listUser = User::find()
+                ->where(['group'=>User::User_Admin])
+                ->asArray()
+                ->all();
+        return $this->render('user-admin', [
+            'listData' => $listUser,            
+        ]);        
+        
+    }
+    public function actionGetPermissionUser($id)
+    {        
+        $user = User::find()
+                ->where(['id'=>$id])
+                ->asArray()
+                ->one();
+        
+        $group = AuthGroup::find()
+                ->where(['status'=>1])
+                ->all();
+        return $this->render('permission-user',['group'=>$group,'user'=>$user]);        
+    }
+    
     /**
      * Lists all Contact models.
      * @return mixed

@@ -87,16 +87,5 @@ public function actionUpload()
             }
         }
     }
-    public function actionPermissionUser($id)
-    {        
-        $user = User::find()
-                ->where(['id'=>$id])
-                ->asArray()
-                ->one();
-        
-        $group = AuthGroup::find()
-                ->where(['status'=>1])
-                ->all();
-        return $this->render('permission-user',['group'=>$group,'user'=>$user]);        
-    }
+    
 }

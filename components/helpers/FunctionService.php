@@ -75,10 +75,13 @@ class FunctionService
                 }
                 foreach ($class->getMethods() as $method)
                 {
-                    $method = strtolower($method->getName());
+                    //$method = strtolower($method->getName());
+                    $method = $method->getName();
                     if (preg_match('/^action/', $method) && $method != 'actions')
                     {
-                        $func[$controllerName][] = $controllerName . "_" . explode("action", $method)[1];
+                       $method = preg_replace("/(([a-z])([A-Z])|([A-Z])([A-Z][a-z]))/","\\2\\4-\\3\\5",$method);
+                       $method = strtolower($method);                       
+                       $func[$controllerName][] = $controllerName . "_" . explode("action-", $method)[1];
                     }
                 }
             }
