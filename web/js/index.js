@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
     var index_menu = $("input[name='index-nav-menu-left']").val();
+    console.log(index_menu);
     $('.nav-quirk .nav-parent').each(function() {
          var $this = $(this);          
          $this.find('.'+index_menu).addClass('active');

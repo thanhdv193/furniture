@@ -10,7 +10,8 @@ use yii\helpers\Url;
 $this->title = 'Danh sách quản trị';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="panel">        
+<div class="panel">  
+    <input type="hidden" value="premission_get_user_admin" name="index-nav-menu-left" />    
     <div class="panel-body">  
         <div class="col-sm-5 col-md-12">
         <div class="panel panel-inverse">

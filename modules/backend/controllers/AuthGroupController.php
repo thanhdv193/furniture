@@ -9,7 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\components\utils\FileUtils;
-use app\components\helpers\FunctionService;
+
 use app\models\AuthItem;
 use app\components\BaseController;
 
@@ -44,14 +44,5 @@ class AuthGroupController extends Controller
 //            'dataProvider' => $dataProvider,
 //        ]);
 //    }
-    public function actionPermission()
-    {
-         $list = FunctionService::getServices();
-         $group = AuthGroup::find()
-                ->asArray()
-                ->all();
-                
-        return $this->render('permission',['data'=>$list,'group'=>$group]);
-    }
    
 }

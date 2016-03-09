@@ -13,6 +13,7 @@ $this->title = 'Phân quyền người dùng';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">
+    <input type="hidden" value="premission_get_user_admin" name="index-nav-menu-left" />     
     <?php if($user == null){ ?>
         <div class="panel-heading">
             <h1>Không tồn tại người dùng.</h1>                 

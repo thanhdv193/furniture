@@ -12,6 +12,7 @@ $this->title = 'Quản lý quyền';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel">
+    <input type="hidden" value="define_premission" name="index-nav-menu-left" />    
     <div class="panel-heading">
         <h1><?= Html::encode($this->title) ?></h1>      
     </div>

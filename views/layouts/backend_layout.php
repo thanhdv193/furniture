@@ -323,8 +323,8 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Phân quyền quản trị</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php Url::base('http') ?>/backend/auth-group/permission">Định nghĩa quyền quản trị</a></li>  
-                                        <li><a href="<?php Url::base('http') ?>/backend/user/get-user-admin">Phân quyền</a></li>  
+                                        <li class="define_premission"><a href="<?php Url::base('http') ?>/backend/permission/permission">Định nghĩa quyền quản trị</a></li>  
+                                        <li class="premission_get_user_admin"><a href="<?php Url::base('http') ?>/backend/permission/get-user-admin">Phân quyền</a></li>  
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
@@ -357,8 +357,8 @@ AppAssetBackend::register($this);
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý thông tin</span></a>
                                     <ul class="children">
-                                        <li><a href="<?php echo Url::base('http') ?>/backend/about/index">Thông tin giới thiệu</a></li>   
-                                        <li><a href="<?php echo Url::base('http') ?>/backend/contact/index">Thông tin liên hệ</a></li>    
+                                        <li class="about_index"><a href="<?php echo Url::base('http') ?>/backend/about/index">Thông tin giới thiệu</a></li>   
+                                        <li class="contact_index"><a href="<?php echo Url::base('http') ?>/backend/contact/index">Thông tin liên hệ</a></li>    
                                     </ul>
                                 </li> 
                                 <li class="nav-parent">

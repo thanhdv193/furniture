@@ -13,6 +13,7 @@ use yii\rbac\DbManager;
 use app\models\AuthAssignment;
 use app\components\BaseController;
 use app\models\User;
+use app\components\helpers\FunctionService;
 use app\models\AuthGroup;
 
 
@@ -32,6 +33,16 @@ class PermissionController extends Controller
             ],
         ];
     }
+     public function actionPermission()
+    {
+         $list = FunctionService::getServices();
+         $group = AuthGroup::find()
+                ->asArray()
+                ->all();
+                
+        return $this->render('permission',['data'=>$list,'group'=>$group]);
+    }
+   
     public function actionGetUserAdmin()
     {
         $listUser = User::find()
