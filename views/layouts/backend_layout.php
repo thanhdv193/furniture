@@ -314,21 +314,22 @@ AppAssetBackend::register($this);
                                 <li class="default_index"><a href="<?php Url::base('http') ?>/backend/default/index"><i class="fa fa-home"></i> <span>Trang chủ</span></a></li>
                                 
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý người dùng</span></a>
+                                    <a href="#"><i class="fa fa-user"></i> <span>Quản lý người dùng</span></a>
                                     <ul class="children">
-                                        <li class="user_index"><a href="<?php Url::base('http') ?>/backend/user/">Danh sách người dùng</a></li>  
                                         <li class="user_create"><a href="<?php Url::base('http') ?>/backend/user/create">Thêm mới người dùng</a></li>  
+                                        <li class="user_index"><a href="<?php Url::base('http') ?>/backend/user/">Danh sách người dùng</a></li>  
+                                        
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Phân quyền quản trị</span></a>
+                                    <a href="#"><i class="fa fa-users"></i> <span>Phân quyền quản trị</span></a>
                                     <ul class="children">
                                         <li class="define_premission"><a href="<?php Url::base('http') ?>/backend/permission/permission">Định nghĩa quyền quản trị</a></li>  
                                         <li class="premission_get_user_admin"><a href="<?php Url::base('http') ?>/backend/permission/get-user-admin">Phân quyền</a></li>  
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Đơn hàng</span></a>
+                                    <a href="#"><i class="fa fa-shopping-cart"></i> <span>Đơn hàng</span></a>
                                     <ul class="children">
                                         <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_all ?>">Tất cả đơn hàng</a></li>  
                                         <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process ?>">Đơn hàng chưa xử lý</a></li>
@@ -342,27 +343,28 @@ AppAssetBackend::register($this);
                             <h5 class="sidebar-title">Main Menu</h5>
                             <ul class="nav nav-pills nav-stacked nav-quirk">
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý sản phẩm</span></a>
+                                    <a href="#"><i class="fa fa-suitcase"></i> <span>Quản lý sản phẩm</span></a>
                                     <ul class="children">
-                                        <li class="product_index"><a href="<?php Url::base('http') ?>/backend/product/">Sản phẩm</a></li>                                                                            
+                                        <li class="product_create"><a href="<?php Url::base('http') ?>/backend/product/create">Thêm mới sản phẩm</a></li>
+                                        <li class="product_index"><a href="<?php Url::base('http') ?>/backend/product/">Danh sách sản phẩm</a></li>  
                                     </ul>
                                 </li>
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Danh mục sản phẩm</span></a>
+                                    <a href="#"><i class="fa fa-list-ul"></i> <span>Danh mục sản phẩm</span></a>
                                     <ul class="children">
                                         <li class="product_type_index"><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-type">Danh mục sản phẩm</a></li>
                                         <li class="product_group_index"><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-group">Nhóm sản phẩm</a></li>                                        
                                     </ul>
                                 </li>                               
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Quản lý thông tin</span></a>
+                                    <a href="#"><i class="fa fa-info-circle"></i> <span>Quản lý thông tin</span></a>
                                     <ul class="children">
                                         <li class="about_index"><a href="<?php echo Url::base('http') ?>/backend/about/index">Thông tin giới thiệu</a></li>   
                                         <li class="contact_index"><a href="<?php echo Url::base('http') ?>/backend/contact/index">Thông tin liên hệ</a></li>    
                                     </ul>
                                 </li> 
                                 <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Banner</span></a>
+                                    <a href="#"><i class="fa fa-picture-o"></i> <span>Banner</span></a>
                                     <ul class="children">
                                         <li class="banner_create"><a href="<?php Url::base('http') ?>/backend/banner-slide/create">Thêm banner</a></li>
                                         <li class="banner_index"><a href="<?php Url::base('http') ?>/backend/banner-slide/index">Danh sách banner</a></li>
@@ -370,7 +372,7 @@ AppAssetBackend::register($this);
                                     </ul>
                                 </li>  
                                  <li class="nav-parent">
-                                    <a href="#"><i class="fa fa-check-square"></i> <span>Báo cáo</span></a>
+                                    <a href="#"><i class="fa fa-bar-chart"></i> <span>Báo cáo</span></a>
                                     <ul class="children">
                                         <li><a href="general-forms.html">Form Elements</a></li>
                                         <li><a href="form-validation.html">Form Validation</a></li>

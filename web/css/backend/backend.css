@@ -9811,7 +9811,7 @@ blockquote {
   font-size: 14px;
   text-align: center;
   margin-right: 7px;
-  color: #259dab;
+  color: #2a82c0;
   vertical-align: top;
   margin-top: 1.5555px;
   -webkit-transition: all 0.2s ease-out 0s;
@@ -9953,7 +9953,7 @@ blockquote {
 .nav-quirk .children > li > a:focus,
 .nav-quirk .children > li > a:active {
   text-decoration: none;
-  color: #464f63;
+  color: #2a82c0;
 }
 .nav-quirk .children > li > a:hover:before,
 .nav-quirk .children > li > a:focus:before,

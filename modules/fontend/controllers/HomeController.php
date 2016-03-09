@@ -19,7 +19,7 @@ class HomeController extends Controller
         $listProduct = Product::find()
                 ->select(['product_photo.id as photo_id','product_photo.*','product.*'])
                 ->innerJoin('product_photo','product_photo.product_id = product.id')
-                ->where(['product.product_group_id'=>8,'product.is_active'=>  Product::is_active])
+                ->where(['product.product_group_id'=>11,'product.is_active'=>  Product::is_active])
                 ->offset(0)
                 ->limit(8)
                 ->asArray()->all();

@@ -33,16 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                        return  Html::a($model['title'], [$url.'/backend/product/view?id='.$model['id']], ['class'=>'']);
                     },
             ],
-            'productGroup',
-            //'product_type_id',  
-            'productType',                                                    
-            //'product_category_id',            
-            // 'link',
-            // 'olink',
-            // 'olink2',
-            // 'description:ntext',
-            // 'content:ntext',             
-             [
+            [
                 'attribute' => 'photo',
                  'headerOptions' => ['width' => '100', 'text-align' => 'center'],
                     'format' => 'html',                    
@@ -57,14 +48,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         }
                         
                     },
-            ],
-                        // 'seo_title',
-            // 'seo_keyword',
-            // 'seo_description',
-            // 'seo_photo_alt',
-            // 'is_hethang',
-            // 'is_new',
-            // 'is_top',             
+            ],                            
+            'productGroup',            
+            'productType',                                                                
+                                 
             [
                     'attribute' => 'create_date',                                        
                     'value' => function ($model)
@@ -75,13 +62,14 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                     'attribute' => 'is_active',      
                     'headerOptions' => ['width' => '100', 'text-align' => 'center'],
+                    'format' => 'raw', 
                     'value' => function ($model)
                     {         
                         if($model['is_active']== 1)
                         {
-                            return "hoạt động";
+                            return Html::label('hoạt động', 'use',['class'=>'fa fa-check label label-success']);
                         }else{
-                            return "ẩn";
+                            return Html::label('Khóa', 'use',['class'=>'fa fa-lock label label-warning']);
                         }
                         
                     },
