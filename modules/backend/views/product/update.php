@@ -23,6 +23,7 @@ $this->params['breadcrumbs'][] = 'Sửa';
             $this->render('_form', [
                 'model' => $model,
                 'image' => $image,
+                'temp_hash' => $temp_hash
             ])
             ?>
 

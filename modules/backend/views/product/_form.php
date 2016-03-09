@@ -27,12 +27,12 @@ $this->registerJsFile(Url::base('') . '/js/backend/editor.js', ['depends' => [\y
     {
         ?>
         <input type="hidden" name="tem_hash" value="<?php echo $temp_hash ?>">
-<?php } ?>
+    <?php } ?>
     <div class="row">
         <div class="col-sm-8">
             <div class="panel">
                 <div class="panel-body">
-<?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+                    <?= $form->field($model, 'title')->textInput(['maxlength' => true,'placeholder'=>'ví dụ : Nokia Lumina , Samsung S4']) ?>
                     <div class="panel panel-announcement">     
                         <div class="panel-heading">
                             <h4 class="panel-title">Ảnh sản phẩm</h4>
@@ -53,8 +53,8 @@ $this->registerJsFile(Url::base('') . '/js/backend/editor.js', ['depends' => [\y
                                             </a>
                                             <a alt="ảnh" title="xóa ảnh này" data-value="<?php echo $value['id'] ?>" class="fa fa-close xoaanh" href="#"></a>
                                         </li>                
-    <?php } ?>   
-                    <?php } ?>    
+                                    <?php } ?>   
+                                <?php } ?>    
                             </ul> 
                         </div>
                     </div><!-- panel --> 
@@ -83,7 +83,7 @@ $this->registerJsFile(Url::base('') . '/js/backend/editor.js', ['depends' => [\y
         </div>  
         <div class="col-sm-4">
             <div class="panel">
-                <div class="panel-body">
+                <div class="panel-body">                    
                     <?php
             $productGroup = ProductGroup::find()->where(['active' => 1])->all();
             $listData = ArrayHelper::map($productGroup, 'id', 'title');
@@ -101,6 +101,8 @@ $this->registerJsFile(Url::base('') . '/js/backend/editor.js', ['depends' => [\y
             </div>    
             <div class="panel">
                 <div class="panel-body">
+                    <h2>Tối ưu SEO</h2>
+                    <label>Thiết lập các thẻ mô tả giúp khách hàng dễ dàng tìm thấy sản phẩm trên công cụ tìm kiếm như Google.</label>
                     <?= $form->field($model, 'seo_title')->textInput(['maxlength' => true]) ?>
 
                     <?= $form->field($model, 'seo_keyword')->textInput(['maxlength' => true]) ?>

@@ -125,11 +125,15 @@ class ProductController extends Controller
         if ($model->load(Yii::$app->request->post()))
         {
             $hash = $_POST['tem_hash'];
+            $check_upfile = false;
             foreach ($_FILES['image']['tmp_name'] as $key => $tmp_name)
-                {
+            {
                 if ($tmp_name == null)
                 {
                     break;
+                } else
+                {
+                    $check_upfile = true;
                 }
                 $file_name[] = array(
                     'tmp_name' => $tmp_name,
@@ -139,51 +143,58 @@ class ProductController extends Controller
                     'error' => $_FILES['image']['error'][$key],
                     'size' => $_FILES['image']['size'][$key],
                 );
-                }
-            foreach ($file_name as $value)
-                {
-                $photoModel = new ProductPhoto();
-                $objecFile = new UploadedFile();
-                $objecFile->name = $value['name'];
-                $objecFile->tempName = $value['tmp_name'];
-                $objecFile->type = $value['type'];
-                $objecFile->size = $value['size'];
-                $objecFile->error = $value['error'];
-                $photoModel->filename = $objecFile;
-                $upload = $photoModel->upload('product');
-                
-                if ($upload)
-                {   
-                    $url1 = Yii::$app->request->baseUrl . $upload['patch'].$upload['filename'];
-                    $url2 = Yii::$app->request->baseUrl . $upload['patch'].'350x350/'.$upload['filename'];
-                    
-                    ImageHelper::resizeImage($url1, $url2, '350', '350');
-                    
-                    $photoModel->product_id = 0;
-                    $photoModel->photo = 'product';
-                    $photoModel->create_date = time();
-                    $photoModel->image_path = $upload['patch'];
-                    $photoModel->z_index = 0;
-                    $photoModel->is_avatar = 0;
-                    $photoModel->filename = $upload['filename'];
-                    $photoModel->temp_hash = $hash;
-                    $photoModel->save();
-                }
-                }
+            }
             $model->create_date = time();
             $model->photo = $hash;
-            if ($model->save())
+            if ($check_upfile == true)
             {
-                $imageUpload = ProductPhoto::find()->where(['temp_hash' => $hash])->all();
-                if ($imageUpload != null)
+                foreach ($file_name as $value)
                 {
-                    foreach ($imageUpload as $value)
-                        {
-                        $value->product_id = $model->id;
-                        $value->save();
-                        }
+                    $photoModel = new ProductPhoto();
+                    $objecFile = new UploadedFile();
+                    $objecFile->name = $value['name'];
+                    $objecFile->tempName = $value['tmp_name'];
+                    $objecFile->type = $value['type'];
+                    $objecFile->size = $value['size'];
+                    $objecFile->error = $value['error'];
+                    $photoModel->filename = $objecFile;
+                    $upload = $photoModel->upload('product');
+
+                    if ($upload)
+                    {
+                        $url1 = Yii::$app->request->baseUrl . $upload['patch'] . $upload['filename'];
+                        $url2 = Yii::$app->request->baseUrl . $upload['patch'] . '350x350/' . $upload['filename'];
+
+                        ImageHelper::resizeImage($url1, $url2, '350', '350');
+
+                        $photoModel->product_id = 0;
+                        $photoModel->photo = 'product';
+                        $photoModel->create_date = time();
+                        $photoModel->image_path = $upload['patch'];
+                        $photoModel->z_index = 0;
+                        $photoModel->is_avatar = 0;
+                        $photoModel->filename = $upload['filename'];
+                        $photoModel->temp_hash = $hash;
+                        $photoModel->save();
+                    }
                 }
+                
+                if ($model->save())
+                {
+                    $imageUpload = ProductPhoto::find()->where(['temp_hash' => $hash])->all();
+                    if ($imageUpload != null)
+                    {
+                        foreach ($imageUpload as $value)
+                        {
+                            $value->product_id = $model->id;
+                            $value->save();
+                        }
+                    }
+                }
+            }else{
+                $model->save();
             }
+
             return $this->redirect(['view', 'id' => $model->id]);
         } else
         {
@@ -204,15 +215,89 @@ class ProductController extends Controller
     {
         $model = $this->findModel($id);
         $image = ProductPhoto::find()
-                 ->where(['product_id'=>$id])
+                ->where(['product_id' => $id])
                 ->asArray()
-                ->all();        
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                ->all();
+        $hash = md5(uniqid('', true));
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $hash = $_POST['tem_hash'];
+            $check_upfile = false;
+          
+            foreach ($_FILES['image']['tmp_name'] as $key => $tmp_name)
+            {
+                if ($tmp_name == null)
+                {                    
+                    break;
+                }else{
+                    $check_upfile = true;
+                }
+                $file_name[] = array(
+                    'tmp_name' => $tmp_name,
+                    'name' => $_FILES['image']['name'][$key],
+                    'type' => $_FILES['image']['type'][$key],
+                    'tmp_name' => $_FILES['image']['tmp_name'][$key],
+                    'error' => $_FILES['image']['error'][$key],
+                    'size' => $_FILES['image']['size'][$key],
+                );
+            }            
+            if ($check_upfile == true)
+            {
+                foreach ($file_name as $value)
+                {
+                    $photoModel = new ProductPhoto();
+                    $objecFile = new UploadedFile();
+                    $objecFile->name = $value['name'];
+                    $objecFile->tempName = $value['tmp_name'];
+                    $objecFile->type = $value['type'];
+                    $objecFile->size = $value['size'];
+                    $objecFile->error = $value['error'];
+                    $photoModel->filename = $objecFile;
+                    $upload = $photoModel->upload('product');
+
+                    if ($upload)
+                    {
+                        $url1 = Yii::$app->request->baseUrl . $upload['patch'] . $upload['filename'];
+                        $url2 = Yii::$app->request->baseUrl . $upload['patch'] . '350x350/' . $upload['filename'];
+
+                        ImageHelper::resizeImage($url1, $url2, '350', '350');
+
+                        $photoModel->product_id = 0;
+                        $photoModel->photo = 'product';
+                        $photoModel->create_date = time();
+                        $photoModel->image_path = $upload['patch'];
+                        $photoModel->z_index = 0;
+                        $photoModel->is_avatar = 0;
+                        $photoModel->filename = $upload['filename'];
+                        $photoModel->temp_hash = $hash;
+                        $photoModel->save();
+                    }
+                }
+                if ($model->save())
+                {
+                    $imageUpload = ProductPhoto::find()->where(['temp_hash' => $hash])->all();
+                    if ($imageUpload != null)
+                    {
+                        foreach ($imageUpload as $value)
+                        {
+                            $value->product_id = $model->id;
+                            $value->save();
+                        }
+                    }
+                }
+            } else
+            {
+                $model->save();
+            }
+
+
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        } else
+        {
             return $this->render('update', [
-                'model' => $model,
-                'image'=>$image,
+                        'model' => $model,
+                        'image' => $image,
+                        'temp_hash' => $hash,
             ]);
         }
     }
