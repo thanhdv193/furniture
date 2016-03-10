@@ -17,6 +17,7 @@ use app\components\BaseController;
  */
 class UserController extends BaseController
 {
+
     public function behaviors()
     {
         return [
@@ -37,14 +38,12 @@ class UserController extends BaseController
     {
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->pagination->pageSize=20;
+        $dataProvider->pagination->pageSize = 20;
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
         ]);
     }
-    
-    
 
     /**
      * Displays a single User model.
@@ -54,7 +53,7 @@ class UserController extends BaseController
     public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+                    'model' => $this->findModel($id),
         ]);
     }
 
@@ -64,50 +63,50 @@ class UserController extends BaseController
      * @return mixed
      */
     public function actionCreate()
-        {
+    {
         $model = new User();
 
         if ($model->load(Yii::$app->request->post()))
-            {
+        {
             $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_hash);
             $model->avatar = UploadedFile::getInstance($model, 'avatar');
-            $model->birthday = strtotime($model->birthday); 
+            $model->birthday = strtotime($model->birthday);
             if ($model->avatar == null)
-                {
-                
+            {
+
                 if ($model->save(false))
-                    {
+                {
                     $authAssignmentModel = new AuthAssignment();
                     $authAssignmentModel->item_name = $model->group;
                     $authAssignmentModel->user_id = (string) $model->id;
                     $authAssignmentModel->created_at = time();
                     $authAssignmentModel->save();
-                    }
-                } else
-                {
-                $upload = $model->upload('avatar');                                  
+                }
+            } else
+            {
+                $upload = $model->upload('avatar');
                 if ($upload)
-                    {
-                    $model->avatar = $upload['patch'] . $upload['filename'];                    
+                {
+                    $model->avatar = $upload['patch'] . $upload['filename'];
                     if ($model->save(false))
-                        {
+                    {
                         $authAssignmentModel = new AuthAssignment();
                         $authAssignmentModel->item_name = $model->group;
                         $authAssignmentModel->user_id = (string) $model->id;
                         $authAssignmentModel->created_at = time();
                         $authAssignmentModel->save();
-                        }
                     }
                 }
+            }
 
             return $this->redirect(['view', 'id' => $model->id]);
-            } else
-            {
+        } else
+        {
             return $this->render('create', [
                         'model' => $model,
             ]);
-            }
         }
+    }
 
     /**
      * Updates an existing User model.
@@ -117,61 +116,34 @@ class UserController extends BaseController
      */
     public function actionUpdate($id)
     {
-        
+
         $model = $this->findModel($id);
-        if ($model->load(Yii::$app->request->post()) ) {
-            $model->password_hash=Yii::$app->security->generatePasswordHash($model->password_hash);
-            $model->avatar = UploadedFile::getInstance($model, 'avatar');
-            $model->birthday = strtotime($model->birthday); 
-            if($model->avatar == null)
-                           {
-                                if ($model->save(false))
-                                   {
-                                       $userId =  AuthAssignment::find()->where(['user_id'=>$id])->one();
-                                       if($userId == null)
-                                       {
-                                            $authAssignmentModel = new AuthAssignment();                                       
-                                            $authAssignmentModel->item_name = $model->group;
-                                            $authAssignmentModel->user_id = (string) $model->id;
-                                            $authAssignmentModel->created_at = time();
-                                            $authAssignmentModel->save();
-                                       }else{
-                                            $userId->item_name = $model->group;                                           
-                                            $userId->save();
-                                       }                                                                              
-                                   }
-                           } else
-                           {
-                            //   $model->avatar = UploadedFile::getInstance($model, 'avatar');
-                               $upload = $model->upload('avatar');
-                               if ($upload)
-                               {
-                                   $model->avatar = $upload['patch'] . $upload['filename'];
-                                   if ($model->save(false))
-                                   {
-                                       $userId =  AuthAssignment::find()->where(['user_id'=>$id])->one();
-                                       if($userId == null)
-                                       {
-                                            $authAssignmentModel = new AuthAssignment();                                       
-                                            $authAssignmentModel->item_name = $model->group;
-                                            $authAssignmentModel->user_id = (string) $model->id;
-                                            $authAssignmentModel->created_at = time();
-                                            $authAssignmentModel->save();
-                                       }else{
-                                            $userId->item_name = $model->group;                                           
-                                            $userId->save();
-                                       }   
-                                   }
-                               }
-                           }
-            $model->save(false);
+        if ($model->load(Yii::$app->request->post()))
+        {
+            $model->password_hash = Yii::$app->security->generatePasswordHash($model->password_reset_token);
+            $model->password_reset_token = '';
+            $model->birthday = strtotime($model->birthday);            
+            if (UploadedFile::getInstance($model, 'avatar') != null)
+            {
+                $model->avatar = UploadedFile::getInstance($model, 'avatar');
+                $upload = $model->upload('avatar');
+                if ($upload)
+                {
+                    $model->avatar = $upload['patch'] . $upload['filename'];
+                    $model->save(FALSE);
+                }
+            } else
+            {               
+               $model->avatar = $_POST['avatar_old'];
+               $model->save(FALSE);
+            }
             return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        } else
+        {            
             return $this->render('update', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
-      
     }
 
     /**
@@ -196,10 +168,13 @@ class UserController extends BaseController
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
+        if (($model = User::findOne($id)) !== null)
+        {
             return $model;
-        } else {
+        } else
+        {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }

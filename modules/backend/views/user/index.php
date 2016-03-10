@@ -26,18 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],                       
-            [
-                    'attribute' => 'username',         
-                    'format' => 'raw',                    
-                    'value' => function ($model)
-                    {        
-                       $url = Yii::$app->request->baseUrl; 
-                       return  Html::a($model['username'], [$url.'/backend/user/view?id='.$model['id']], ['class'=>'']);
-                    },
-            ],
-            'last_name',
-            'name',                                
+            ['class' => 'yii\grid\SerialColumn'],     
             [
                 'attribute' => 'avatar',
                  'headerOptions' => ['width' => '100', 'text-align' => 'center'],
@@ -52,7 +41,19 @@ $this->params['breadcrumbs'][] = $this->title;
                         }
                         
                     },
-            ],                
+            ],  
+            [
+                    'attribute' => 'username',         
+                    'format' => 'raw',                    
+                    'value' => function ($model)
+                    {        
+                       $url = Yii::$app->request->baseUrl; 
+                       return  Html::a($model['username'], [$url.'/backend/user/view?id='.$model['id']], ['class'=>'']);
+                    },
+            ],
+            'last_name',
+            'name',                                
+                          
             //'auth_key',
             //'password_hash',
             //'password_reset_token',

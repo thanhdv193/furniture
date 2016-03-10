@@ -14514,9 +14514,13 @@ fieldset[disabled] .btn-fb.active {
 .avatar {
     //float: left;
     border: dashed 1px #ccc;
-    width: 150px;
-    height: 146px;
+    width: 200px;
+    height: 200px;
     margin: auto;
+}
+.avatar .fileupload{
+    float: left;
+    width:100%;
 }
 .avatar .fileupload input[type="file"]{
     position: absolute;
@@ -14549,8 +14553,8 @@ fieldset[disabled] .btn-fb.active {
     margin: 0px;
 }
 .avatar .thumbnail  img{
-    max-height: 144px;
-    max-width: 100%;
+    max-height: 200px;
+    width: 100%;
 }
 .avatar .btn-file{
     position: relative;

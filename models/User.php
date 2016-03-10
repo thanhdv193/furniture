@@ -39,6 +39,7 @@ class User extends ActiveRecord implements IdentityInterface {
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => Yii::t('app', 'email')],
+            [['password_reset_token', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash', 'password_repeat'], 'required'],
             [['password_hash', 'password_repeat'], 'string', 'min' => 6],
             [['password_hash'], 'in', 'range' => ['password_hash', 'Password', 'Password123'], 'not' => 'true', 'message' => Yii::t('app', 'the user name can only contain letters ,nubers and dashes!')],
@@ -66,6 +67,7 @@ class User extends ActiveRecord implements IdentityInterface {
             'address' => 'Địa chỉ',
             'active' => 'Trạng thái',
             'password_repeat'=>"Mật khẩu",
+            'password_reset_token'=>'Mật khẩu'
         ];
     }
     
