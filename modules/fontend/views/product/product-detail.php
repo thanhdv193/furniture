@@ -94,7 +94,7 @@ $this->title = $data['title'];
                                                             </p>
                                                         </div>
                                                         <div class="short-description">
-                                                            <h2>Quick Overview</h2>
+                                                            <h2></h2>
                                                             <div class="std"><?php echo $data['description'] ?></div>
                                                         </div>
                                                         <div class="em-addthis-plug"> <span>Chia sẻ</span>
@@ -124,24 +124,22 @@ $this->title = $data['title'];
                                                                 <label for="qty">Qty:</label>
                                                                 <div class="qty_cart">
                                                                     <div class="qty-ctl">
-                                                                        <button title="decrease" onclick="changeQty(0);
-                                                                                                return false;" class="decrease">decrease</button>
+                                                                        <button title="Giảm số lượng" onclick="changeQty(0);return false;" class="decrease">Giảm số lượng</button>
                                                                     </div>
                                                                     <input type="text" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty" />
                                                                     <div class="qty-ctl">
-                                                                        <button title="increase" onclick="changeQty(1);
-                                                                                                return false;" class="increase">increase</button>
+                                                                        <button title="Tăng số lượng" onclick="changeQty(1);return false;" class="increase">Tăng số lượng</button>
                                                                     </div>
                                                                 </div>
                                                                 <ul class="add-to-links">
-                                                                    <li><a title="Add to Wishlist" href="#" class="link-wishlist">Add to Wishlist</a>
+                                                                    <li><a title="Yêu thích" href="#" class="link-wishlist">Yêu thích</a>
                                                                     </li>
                                                                     
                                                                 </ul>
                                                                 <div class="button_addto">
 <!--                                                                    <button type="button" title="Buy Now" id="em-buy-now" class="button btn-em-buy-now"><span><span>Buy Now</span></span>
                                                                     </button>-->
-                                                                    <button type="button" title="Mua hàng" id="product-addtocart-button" class="button btn-cart btn-cart-detail"><span><span>Mua hàng</span></span>
+                                                                    <button type="button" title="Mua hàng" data-button="<?php echo $data['id'] ?>" id="product-addtocart-button" class="button btn-cart btn-cart-detail"><span><span>Mua hàng</span></span>
                                                                     </button>
                                                                 </div>
                                                             </div>
@@ -330,3 +328,13 @@ $this->title = $data['title'];
         </div>
     </div>
 </div>
+<script type="text/javascript">
+             function changeQty(increase) {
+                var qty = parseInt($('#qty').val());
+                if (!isNaN(qty)) {
+                    console.log(qty)
+                    qty = increase ? qty + 1 : (qty > 1 ? qty - 1 : 1);
+                    $('#qty').val(qty);
+                }
+            }
+</script>

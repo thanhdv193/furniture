@@ -45,34 +45,7 @@ class ProductController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
-    
-    public function actionDemo()
-    {
-        if (Yii::$app->request->post() ) {
-          
-          $file_name = array();      
-          //echo'<pre>'; var_dump($_FILES['image']); die;
-            foreach ($_FILES['image']['tmp_name'] as $key => $tmp_name)
-                { 
-                if($tmp_name == null){
-                    break;   
-                }
-                $file_name[] =array(
-                    'tmp_name'=>$tmp_name,
-                    'name'=>$_FILES['image']['name'][$key],
-                    'type'=>$_FILES['image']['type'][$key],
-                    'tmp_name'=>$_FILES['image']['tmp_name'][$key],
-                    'error'=>$_FILES['image']['error'][$key],
-                    'size'=>$_FILES['image']['size'][$key],                  
-                );                
-                }
-                echo'<pre>'; var_dump($file_name); die;
-            $model  = UploadedFile::getInstance($_FILES['image']);   
-            
-        }else {
-            return $this->render('demo');
-        }
-    }
+   
      /**
       * action delete image ajax.
       */
@@ -150,6 +123,7 @@ class ProductController extends Controller
                 );
             }
             $model->create_date = time();
+            $model->view_count = 0;
             $model->photo = $hash;
             if ($check_upfile == true)
             {

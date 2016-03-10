@@ -1,7 +1,32 @@
-(function($) {
-            layout = '1column';
-            $('.cloud-zoom-gallery').click(function() { console.log(this.href);
+$(document).ready(function () {
+          var  layout = '1column';
+            $('.cloud-zoom-gallery').click(function() {
                 $('#zoom-btn').attr('href', this.href);
+            });
+                    $('.add-to-cart .button_addto #product-addtocart-button').on('click', function (e) {
+                var id = $(this).data('button');
+                var qty = $('.add-to-cart #qty').val();
+                $.ajax({
+                    type: "POST",
+                    url: baseUrl + '/fontend/cart/add',
+                    cache: false,
+                    data: {id: id, qty: qty},
+                    dataType: 'json',
+                    success: function (result)
+                    {
+                        if (result.status == 'ok') {
+                            console.log('mua hang thanh cong');
+                            window.location.href = baseUrl + "/gio-hang.html";
+                        }
+                        if (result.status == false)
+                        {
+
+                        }
+                    }
+                }).always(function ()
+                {
+                    //is_busy = false;
+                });
             });
             function doSliderMoreview() {
                 var owl = $("ul.em-moreviews-slider");
@@ -30,14 +55,7 @@
                 }
             }
 
-            function changeQty(increase) {
-                var qty = parseInt($('#qty').val());
-                if (!isNaN(qty)) {
-                    console.log(qty)
-                    qty = increase ? qty + 1 : (qty > 1 ? qty - 1 : 1);
-                    $('#qty').val(qty);
-                }
-            }
+           
 
             /* Related Product */
             var relatedProductsCheckFlag = false;
@@ -115,4 +133,4 @@
                         addRelatedToProduct()
                     });
                 });            
-})(jQuery);
+});

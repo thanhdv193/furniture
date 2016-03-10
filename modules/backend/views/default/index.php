@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-5 col-md-4 page-user">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Manage Users</h4>
+                        <h4 class="panel-title">Quản lý người dùng</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-person-stalker"></i></div>
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-4 col-md-4 page-products">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Manage Products</h4>
+                        <h4 class="panel-title">Quản lý sản phẩm</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="fa fa-shopping-cart"></i></div>
@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-3 col-md-2 page-events">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Events</h4>
+                        <h4 class="panel-title">Sự kiện</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-ios-calendar-outline"></i></div>
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-3 col-md-2 page-messages">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Messages</h4>
+                        <h4 class="panel-title">Tin nhắn</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-email"></i></div>
@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-5 col-md-2 page-reports">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Reports</h4>
+                        <h4 class="panel-title">Báo cáo</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-arrow-graph-up-right"></i></div>
@@ -71,7 +71,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-4 col-md-4 page-support">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Manage Support</h4>
+                        <h4 class="panel-title">Sản phẩm được quan tâm</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-help-buoy"></i></div>
@@ -81,7 +81,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-4 col-md-2 page-privacy">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Privacy</h4>
+                        <h4 class="panel-title">Phân quyền</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-android-lock"></i></div>
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-xs-4 col-sm-4 col-md-2 page-settings">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Settings</h4>
+                        <h4 class="panel-title">Cài đặt</h4>
                     </div>
                     <div class="panel-body">
                         <div class="page-icon"><i class="icon ion-gear-a"></i></div>
@@ -106,7 +106,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-sm-5 col-md-12 col-lg-6">
                 <div class="panel panel-danger panel-weather">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Weather Forecast</h4>
+                        <h4 class="panel-title">Thời tiết</h4>
                     </div>
                     <div class="panel-body inverse">
                         <div class="row mb10">
@@ -162,7 +162,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-sm-5 col-md-12 col-lg-6">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Recent User Activity</h4>
+                        <h4 class="panel-title">Khách hàng mới nhất</h4>
                     </div>
                     <div class="panel-body">
                         <ul class="media-list user-list">
@@ -234,7 +234,7 @@ $this->params['breadcrumbs'][] ='';
             <div class="col-sm-5 col-md-12 col-lg-6">
                 <div class="panel panel-inverse">
                     <div class="panel-heading">
-                        <h4 class="panel-title">Most Followed Users</h4>
+                        <h4 class="panel-title">Khách hàng tiền năng</h4>
                     </div>
                     <div class="panel-body">
                         <ul class="media-list user-list">

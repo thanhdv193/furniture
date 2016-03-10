@@ -24,7 +24,7 @@ $(document).ready(function() {
             type: "POST",
             url: baseUrl+'/fontend/cart/add',
             cache: false,
-            data: {id:id},  
+            data: {id:id,qty:1},  
             dataType: 'json',
             success: function (result)
             { 

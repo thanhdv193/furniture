@@ -23,7 +23,10 @@ class ProductController extends Controller
                 ->innerJoin('product_photo','product_photo.product_id = product.id')
                 ->innerJoin('product_type', 'product.product_type_id = product_type.id')
                 ->where(['product.id' => $id, 'product.is_active' => 1])->asArray()->one();
-        //echo'<pre>'; var_dump($product); die;
+        $modelproduct = Product::findOne($id);
+        $modelproduct->view_count = $modelproduct->view_count+1;
+        $modelproduct->save();
+        
         if ($product == null)
             {
             throw new \yii\web\NotFoundHttpException();

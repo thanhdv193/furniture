@@ -91,8 +91,9 @@ class CartController extends Controller
         if ($post)
         {
             $id = $post['id'];
+            $qty =$post['qty'];
             $product_id = array(
-                array('id' => $id, 'sl' => Cart::is_upCart)
+                array('id' => $id, 'sl' => $qty)
             );
             if (Yii::$app->user->isGuest == false)
             {
@@ -107,14 +108,14 @@ class CartController extends Controller
                     $modelCart->user_id = Yii::$app->user->id;
                     $modelCart->user_name = Yii::$app->user->identity->username;
                     $modelCart->create_date = time();
-                    $modelCart->quantity = Cart::is_upCart;
+                    $modelCart->quantity = $qty;
                     if ($modelCart->save())
                     {
                         $checkCart = true;
                     }
                 } else
                 {
-                    $cart->quantity = $cart->quantity + Cart::is_upCart;
+                    $cart->quantity = $cart->quantity + $qty;
                     if ($cart->save())
                     {
                         $checkCart = true;
@@ -154,12 +155,12 @@ class CartController extends Controller
                             if ($data['id'] == $id)
                             {
                                 $check = true;
-                                $data['sl'] = $data['sl'] + 1;
+                                $data['sl'] = $data['sl'] + $qty;
                             }
                         }
                         if ($check == false)
                         {
-                            array_push($value, array('id' => $id, 'sl' => 1));
+                            array_push($value, array('id' => $id, 'sl' => $qty));
                         }
                     }
                     CookieHelper::addCookie($cart, $value, 8600);

@@ -424,7 +424,7 @@ AppAsset::register($this);
                                                             <form id="search_mini_form_fixed_top" method="get">
                                                                 <div class="form-search">
                                                                     <label for="search">Tìm kiếm:</label>
-                                                                    <input id="search-fixed-top" type="text" name="q" value="" class="input-text" maxlength="128" placeholder="Search entire store here..." />
+                                                                    <input id="search-fixed-top" type="text" name="q" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
                                                                     <button type="submit" title="Search" class="button"><span><span>Tìm kiêm</span></span>
                                                                     </button>
                                                                 </div>
@@ -467,16 +467,16 @@ AppAsset::register($this);
                         <div class="em-inner-main">
                             <div class="em-wrapper-area01">
                                 <div class="row em-wrapper-ads-13 hidden-xs">
-                                    <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="Tech Support 247" href="#"><em class="fa fa-fw"></em></a>
+                                    <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="Hướng dẫn mua hàng" href="#"><em class="fa fa-fw"></em></a>
                                         <div class="em-banner-right">
-                                            <h5><a title="Tech Support 247" href="#">Hướng dẫn mua hàng</a></h5>
+                                            <h5><a title="Hướng dẫn mua hàng" href="#">Hướng dẫn mua hàng</a></h5>
                                             <p>Vintage pastel tucked t-shirt leather cami</p>
                                         </div>
                                     </div>
-                                    <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="Free shipping all order" href="#"><em class="fa fa-fw"></em></a>
+                                    <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="Vận chuyển" href="#"><em class="fa fa-fw"></em></a>
                                         <div class="em-banner-right">
                                             <h5><a title="Free shipping all order" href="#">Vận chuyển</a></h5>
-                                            <p>Get Free Shipping on all orders</p>
+                                            <p>Giao hàng trong 3h</p>
                                         </div>
                                     </div>
                                     <div class="text-box col-sm-8"><a class="icon-banner-left pull-left" title="30 days return" href="#"><em class="fa fa-fw"></em></a>
