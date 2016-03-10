@@ -6807,7 +6807,7 @@ button.close {
 }
 /***** BUTTONS *****/
 .btn {
-  padding: 10px 12px 9px;
+      padding: 10px 20px 10px 20px;
   -webkit-transition: all 0.2s ease-out 0s;
   -o-transition: all 0.2s ease-out 0s;
   transition: all 0.2s ease-out 0s;
@@ -14540,7 +14540,7 @@ fieldset[disabled] .btn-fb.active {
 .avatar .thumbnail {
     display: block;
     padding: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     line-height: 1.42857143;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -14548,12 +14548,13 @@ fieldset[disabled] .btn-fb.active {
     -webkit-transition: border .2s ease-in-out;
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
+    height: 197px;
 }
 .avatar .help-block{
     margin: 0px;
 }
 .avatar .thumbnail  img{
-    max-height: 200px;
+    max-height: 190px;
     width: 100%;
 }
 .avatar .btn-file{
