@@ -375,8 +375,7 @@ AppAsset::register($this);
                                                                             <label for="search">Tìm kiếm:</label>
                                                                             <input id="search" type="text" name="title" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
                                                                             <button type="submit" title="Tìm kiếm" class=" btn-search button"><span><span>Tìm kiếm</span></span>
-                                                                            </button>
-                                                                            <a class="em-menu-link" href="tim-kiem"><span>Giày Converse</span> </a>
+                                                                            </button>                                                                            
                                                                         </div>
                                                                     </div>
                                                                 </form><!-- /#search_mini_form -->
@@ -424,10 +423,10 @@ AppAsset::register($this);
                                                 <div class="em-wrapper-js-search em-search-style01">
                                                     <div class="em-wrapper-search"> <a class="em-search-icon" title="Tìm kiếm" href="javascript:void(0);"><span>Tìm kiếm</span></a>
                                                         <div class="em-container-js-search" style="display: none;">
-                                                            <form id="search_mini_form_fixed_top" method="get">
+                                                            <form  action="/tim-kiem" method="get" role="form">
                                                                 <div class="form-search">
                                                                     <label for="search">Tìm kiếm:</label>
-                                                                    <input id="search-fixed-top" type="text" name="text-search" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
+                                                                    <input id="search-fixed-top" type="text" name="title" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
                                                                     <button type="submit" title="Search" class="button"><span><span>Tìm kiêm</span></span>
                                                                     </button>
                                                                 </div>

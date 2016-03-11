@@ -17,27 +17,30 @@ use yii\data\Pagination;
 class SearchController extends Controller
 {
   
-    public function actionSearch()
-    {        
-//        if (Yii::$app->request->post())
-//        {
-            $text = $_GET['text-search'];
+   public function actionSearchAll()
+    {            
+        if (isset($_GET['title']))
+        {
+            $text = $_GET['title'];
+
             if ($text != null)
             {
                 $query = Product::find()
                         ->select(['product_photo.id as photo_id', 'product_type.id as product_type_id', 'product_type.title as category', 'product_photo.*', 'product.*'])
                         ->innerJoin('product_photo', 'product_photo.product_id = product.id')
-                        ->innerJoin('product_type', 'product.product_type_id = product_type.id')                       
-                        ->where(['like','product.title',$text]);               
+                        ->innerJoin('product_type', 'product.product_type_id = product_type.id')
+                        ->where(['like', 'product.title', $text]);
                 $count = $query->count();
                 $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 2]);
                 $product = $query->offset($pagination->offset)
                         ->limit($pagination->limit)
                         ->asArray()
                         ->all();
-            }            
-            return $this->render('search', ['model' => $product,'textSearch'=>$text,'pages' => $pagination]);          
-       // }
+            }
+            return $this->render('search', ['model' => $product, 'textSearch' => $text, 'pages' => $pagination]);
+        }else{
+            return $this->goHome();
+        }
     }
 
 }

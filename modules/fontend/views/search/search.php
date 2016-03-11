@@ -64,6 +64,9 @@ $this->title = 'Tìm kiếm : '.$textSearch ;
                                 </div>
                             </div><!-- /.toolbar-top -->
                             <div id="em-grid-mode">
+                                <?php if($model == null){ ?>
+                                <p style="color:#000">Không tìm thấy kết quả nào</p>
+                                <?php }else{ ?>
                                 <ul class="emcatalog-grid-mode products-grid emcatalog-disable-hover-below-mobile">
                                     <?php foreach($model as $value) { ?>
                                         <li class="item">
@@ -106,6 +109,7 @@ $this->title = 'Tìm kiếm : '.$textSearch ;
                                         </li>
                                     <?php } ?>                                    
                                 </ul>
+                                <?php } ?>    
                             </div><!-- /.em-grid-mode -->
 
                             <div class="toolbar-bottom em-box-03">
