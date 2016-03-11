@@ -49,7 +49,8 @@ AppAsset::register($this);
                         <div class="col-xs-20">
                             <div class="em-top-search">
                                 <div class="em-header-search-mobile">
-                                    <form method="get">
+                                     <form  action="/tim-kiem.html" method="post" role="form">
+                                        <input type="hidden" name="_csrf" value="MGFFaExPcjdJLzZdIw5KAwkbJgQBBjlnARYyDzV4Al90ERcqKCA5dQ=="> 
                                         <div class="form-search no_cate_search">
                                             <div class="text-search">
                                                 <input id="search-mobile" type="text" name="q" value="" class="input-text" maxlength="128" />
@@ -367,11 +368,12 @@ AppAsset::register($this);
                                                     <div class="em-wrapper-js-search em-search-style01">
                                                         <div class="em-wrapper-search em-no-category-search"> <a class="em-search-icon" title="Tìm kiếm" href="javascript:void(0);"><span>Tìm kiếm</span></a>
                                                             <div class="em-container-js-search" style="display: none;">
-                                                                <form id="search_mini_form" method="get">
+                                                                <form  action="/tim-kiem/-0.html" method="get" role="form">
+                                                                    <input type="hidden" name="_csrf" value="MGFFaExPcjdJLzZdIw5KAwkbJgQBBjlnARYyDzV4Al90ERcqKCA5dQ==">       
                                                                     <div class="form-search no_cate_search">
                                                                         <div class="text-search">
                                                                             <label for="search">Tìm kiếm:</label>
-                                                                            <input id="search" type="text" name="q" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
+                                                                            <input id="search" type="text" name="text-search" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
                                                                             <button type="submit" title="Tìm kiếm" class="button"><span><span>Tìm kiếm</span></span>
                                                                             </button>
                                                                         </div>
@@ -424,7 +426,7 @@ AppAsset::register($this);
                                                             <form id="search_mini_form_fixed_top" method="get">
                                                                 <div class="form-search">
                                                                     <label for="search">Tìm kiếm:</label>
-                                                                    <input id="search-fixed-top" type="text" name="q" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
+                                                                    <input id="search-fixed-top" type="text" name="text-search" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
                                                                     <button type="submit" title="Search" class="button"><span><span>Tìm kiêm</span></span>
                                                                     </button>
                                                                 </div>
