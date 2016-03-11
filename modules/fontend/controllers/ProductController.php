@@ -55,10 +55,32 @@ class ProductController extends Controller
             $product = $query->offset($pagination->offset)
                     ->limit($pagination->limit)     
                     ->asArray()
-                    ->all();            
+                    ->all();      
+           // echo'<pre>';    var_dump($pagination); die;
             return $this->render('product-category', ['category'=>$category,'data' => $product, 'pages' => $pagination]);
             }
         }
+     public function actionSearchAll()
+    {            
+            $text = $_GET['title'];
+            if ($text != null)
+            {
+                $query = Product::find()
+                        ->select(['product_photo.id as photo_id', 'product_type.id as product_type_id', 'product_type.title as category', 'product_photo.*', 'product.*'])
+                        ->innerJoin('product_photo', 'product_photo.product_id = product.id')
+                        ->innerJoin('product_type', 'product.product_type_id = product_type.id')                       
+                        ->where(['like','product.title',$text]);               
+                $count = $query->count();
+                $pagination = new Pagination(['totalCount' => $count, 'defaultPageSize' => 2]);
+                $product = $query->offset($pagination->offset)
+                        ->limit($pagination->limit)
+                        ->asArray()
+                        ->all();
+            //echo'<pre>';    var_dump($pagination); die;
+            }            
+            return $this->render('search', ['model' => $product,'textSearch'=>$text,'pages' => $pagination]);          
+       // }
+    }    
 
     
 }

@@ -1,6 +1,28 @@
+var Search = {
+    Search: function () {        
+        var title = $('input[name=text-search]').val();
+        console.log(title);
+        if (title == '') {
+            location.href = baseUrl;
+        } else {
+            if (title === '') {
+                location.href = baseUrl + '/fontend/search/search';
+            } else if (title !== '') {
+                location.href = baseUrl + '/tim-kiem.html?title=' + title;
+//                    location.href = baseUrl + 'tim-kiem/p=' + address + '.html';
+            } 
+        }
+    },
+};
 $(document).ready(function() {
-    
-    
+    $('.form-search .btn-search').on('click',function(e){
+        //e.preventDefault();
+    });
+
+    function seach(){
+        console.log("xx");
+    }
+  
     $.ajax({
             type: "POST",
             url: baseUrl+'/fontend/home/check-cart',

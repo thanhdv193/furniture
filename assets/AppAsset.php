@@ -61,6 +61,7 @@ class AppAsset extends AssetBundle
         'js/product-category.js',
         'js/lib/custom.js',
         'js/lib/index.js',
+        'js/search.js',
         'js/lib/cart-index.js',
     ];
     public $depends = [

@@ -368,14 +368,15 @@ AppAsset::register($this);
                                                     <div class="em-wrapper-js-search em-search-style01">
                                                         <div class="em-wrapper-search em-no-category-search"> <a class="em-search-icon" title="Tìm kiếm" href="javascript:void(0);"><span>Tìm kiếm</span></a>
                                                             <div class="em-container-js-search" style="display: none;">
-                                                                <form  action="/tim-kiem/-0.html" method="get" role="form">
-                                                                    <input type="hidden" name="_csrf" value="MGFFaExPcjdJLzZdIw5KAwkbJgQBBjlnARYyDzV4Al90ERcqKCA5dQ==">       
+                                                                <form  action="/tim-kiem" method="get" role="form">
+                                                                   
                                                                     <div class="form-search no_cate_search">
                                                                         <div class="text-search">
                                                                             <label for="search">Tìm kiếm:</label>
-                                                                            <input id="search" type="text" name="text-search" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
-                                                                            <button type="submit" title="Tìm kiếm" class="button"><span><span>Tìm kiếm</span></span>
+                                                                            <input id="search" type="text" name="title" value="" class="input-text" maxlength="128" placeholder="Nhập nội dung tìm kiếm..." />
+                                                                            <button type="submit" title="Tìm kiếm" class=" btn-search button"><span><span>Tìm kiếm</span></span>
                                                                             </button>
+                                                                            <a class="em-menu-link" href="tim-kiem"><span>Giày Converse</span> </a>
                                                                         </div>
                                                                     </div>
                                                                 </form><!-- /#search_mini_form -->
