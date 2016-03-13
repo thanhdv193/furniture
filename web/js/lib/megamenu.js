@@ -161,7 +161,7 @@
         $('.em_nav').each(function(i) {
             var $nav = $('.hnav, .vnav', this);
             $('.em-catalog-navigation li.parent, .menu-item-link.menu-item-parent', $nav).each(function() {
-                $(this).prepend('<a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>');
+                //$(this).prepend('<a href="javascript:void(0)" class="arrow"><span>&gt;</span></a>');
             });
             
             var sNav = $('.em-catalog-navigation').find('li').find('a').not('.arrow');            

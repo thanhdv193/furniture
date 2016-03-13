@@ -14,7 +14,7 @@ $this->title = $data['title'];
 //$this->registerJsFile(Url::base('') . '/js/product-detail.js', ['depends' => [\yii\web\JqueryAsset::className()]]);
 
 ?>
-
+<?= WrapperBannersWidget::widget() ?>
 <div class="wrapper-breadcrums">
     <div class="container">
         <div class="row">
@@ -33,7 +33,7 @@ $this->title = $data['title'];
         </div>
     </div>
 </div><!-- /.wrapper-breadcrums -->
-<?= WrapperBannersWidget::widget() ?>
+
 <div class="em-wrapper-main">
     <div class="container-fluid container-main">
         <div class="em-inner-main">
@@ -231,7 +231,7 @@ $this->title = $data['title'];
                                                                     <div class="rating"></div>
                                                                 </div> <span class="amount"><a href="#">(0)</a></span>
                                                             </div>
-                                                            <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-185-related"> <span class="price">$1,200.00</span> </span>
+                                                            <div class="price-box" itemscope itemtype=""> <span class="regular-price" id="product-price-185-related"> <span class="price">$1,200.00</span> </span>
                                                             </div>
                                                              <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
@@ -254,7 +254,7 @@ $this->title = $data['title'];
                                                                     <div class="rating" ></div>
                                                                 </div> <span class="amount"><a href="#">(0)</a></span>
                                                             </div>
-                                                            <div class="price-box" itemscope itemtype="http://schema.org/Product">
+                                                            <div class="price-box" itemscope itemtype="">
                                                                 <p class="old-price"> <span class="price-label">Regular Price:</span> <span class="price" id="old-price-176-related"> $130.00 </span>
                                                                 </p>
                                                                 <p class="special-price"> <span class="price-label">Special Price</span> <span class="price" content="52" id="product-price-176-related"> $52.00 </span>
@@ -275,7 +275,7 @@ $this->title = $data['title'];
                                                                     <div class="rating"></div>
                                                                 </div> <span class="amount"><a href="#">(0)</a></span>
                                                             </div>
-                                                            <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-166-related"> <span class="price">$750.00</span> </span>
+                                                            <div class="price-box" itemscope itemtype=""> <span class="regular-price" id="product-price-166-related"> <span class="price">$750.00</span> </span>
                                                             </div>
                                                             <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
@@ -292,7 +292,7 @@ $this->title = $data['title'];
                                                                     <div class="rating" style="width:67%"></div>
                                                                 </div> <span class="amount"><a href="#">(1)</a></span>
                                                             </div>
-                                                            <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-177-related"> <span class="price">$120.00</span> </span>
+                                                            <div class="price-box" itemscope itemtype=""> <span class="regular-price" id="product-price-177-related"> <span class="price">$120.00</span> </span>
                                                             </div>
                                                              <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>
@@ -309,7 +309,7 @@ $this->title = $data['title'];
                                                                     <div class="rating"></div>
                                                                 </div> <span class="amount"><a href="#">(0)</a></span>
                                                             </div>
-                                                            <div class="price-box" itemscope itemtype="http://schema.org/Product"> <span class="regular-price" id="product-price-168-related"> <span class="price">$1,300.00</span> </span>
+                                                            <div class="price-box" itemscope itemtype=""> <span class="regular-price" id="product-price-168-related"> <span class="price">$1,300.00</span> </span>
                                                             </div>
                                                             <a href="#" class="link-wishlist" title="Add to Wishlist">Add to Wishlist</a>
                                                         </div>

@@ -757,32 +757,7 @@ AppAsset::register($this);
                                             </div><!-- /.row -->
                                             <div class="em-footer-info-bottom">
                                                 <div class="row">
-                                                    <div class="col-sm-15 first">
-                                                        <div class="em-wrapper-newsletter">
-                                                            <div class="em-block-title" data-collapse-target="#collapse07">
-                                                                <p class="h4 em-text-upercase"><span>Sign Up For Newsletter</span>
-                                                                </p>
-                                                            </div>
-                                                            <div id="collapse07" class="em-block-content em-newsletter">
-                                                                <div class="em-newsletter-style05">
-                                                                    <div class="block block-subscribe">
-                                                                        <form method="post" id="em-newsletter-validate-detail-style03">
-                                                                            <div class="block-content">
-                                                                                <div class="form-subscribe-content">
-                                                                                    <div class="input-box">
-                                                                                        <input type="text" name="email" id="em-newsletter-style03" title="Sign up for our newsletter" class="input-text required-entry validate-email" placeholder="Sign up for your email ..." />
-                                                                                    </div>
-                                                                                    <div class="actions">
-                                                                                        <button type="submit" title="Subscribe" class="button"><span><span>Subscribe</span></span>
-                                                                                        </button>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                                            </div><!-- /#collapse07 -->
-                                                        </div>
+                                                    <div class="col-sm-15 first">                                                        
                                                     </div>
                                                     <div class="col-sm-9 last">
                                                         <div class="em-wrapper-social f-right">
@@ -791,7 +766,10 @@ AppAsset::register($this);
                                                                 </p>
                                                             </div>
                                                             <div id="collapse08" class="em-block-content">
-                                                                <p class="em-social"><a class="em-social-icon em-facebook f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a> <a class="em-social-icon em-twitter f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a> <a class="em-social-icon em-pinterest  f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a> <a class="em-social-icon em-google f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a> <a class="em-social-icon em-rss  f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a>
+                                                                <p class="em-social">
+                                                                    <a class="em-social-icon em-facebook f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a>
+                                                                    <a class="em-social-icon em-twitter f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a>                                                                    
+                                                                    <a class="em-social-icon em-google f-left" title="em-sample-title" href="#"><span class="fa fa-fw"></span></a>                                                                    
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -807,9 +785,7 @@ AppAsset::register($this);
                             <div class="container">
                                 <div class="row">
                                     <div class="col-sm-24">
-                                        <div class="em-area-footer02">
-                                            <div class="em-payment f-right"><a class="em-payment-icon em-visa" title="em-sample-title" href="#">visa</a> <a class="em-payment-icon em-master" title="em-sample-title" href="#">master</a> <a class="em-payment-icon em-express " title="em-sample-title" href="#">express</a><a class="em-payment-icon em-paypal" title="em-sample-title" href="#">paypal</a> <a class="em-payment-icon em-other " title="em-sample-title" href="#">other</a>
-                                            </div>
+                                        <div class="em-area-footer02">                                            
                                         </div>
                                         <div class="em-footer-address"> <address class="f-left">&copy; 2015 EM0131 Everything Demo Store. All Rights Reserved.<span></span></address>
                                         </div>

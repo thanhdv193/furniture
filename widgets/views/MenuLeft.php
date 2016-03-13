@@ -24,10 +24,11 @@ use app\components\helpers\MenuLeft;
                                     <?php } ?>
                                     <?php if (isset($menu[$key + 1])) { ?>
                                         <?php if ($menu[$key + 1]['id_parent'] == $value['id']){ ?>
+                                            <a href="javascript:void(0)" class="arrow"><span></span></a>
                                             <ul class="menu-container">
-                                                <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col5  fix-top menu-item-parent" style="">
+                                                <li class="menu-item-hbox menu-item-depth-1 col-menu menu_col5  fix-top menu-item-parent">
                                                     <ul class="menu-container">
-                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-24 alpha menu-item-parent" style="">
+                                                        <li class="menu-item-vbox menu-item-depth-2 col-sm-24 alpha menu-item-parent">
                                                             <ul class="menu-container">
                                                                 <li class="menu-item-text menu-item-depth-3  ">                                                        
                                                                     <ul class="menu-container">
