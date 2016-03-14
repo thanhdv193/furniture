@@ -25,6 +25,7 @@ use app\models\Location;
 use app\components\utils\FileUtils;
 use app\models\AuthGroup;
 use app\models\ProductType;
+use app\components\helpers\Search;
 
 class SiteController extends Controller
 {
@@ -69,6 +70,12 @@ class SiteController extends Controller
         ];
     }
     
+    public function actionSearch()
+    {
+        Search::Search();
+    }
+
+
     public function actionUploadImage()
     {
         
