@@ -30,7 +30,8 @@
         "iutbay/yii2-fontawesome": "*",
         "iutbay/yii2-imagecache": "*",
         "kartik-v/yii2-widget-fileinput": "@dev",
-        "mihaildev/yii2-ckeditor": "*"
+        "mihaildev/yii2-ckeditor": "*",
+        "fabpot/goutte": "^3.1@dev"
         
     },
     "require-dev": {

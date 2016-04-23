@@ -13,22 +13,22 @@ class EmailHelper
 
     public static function sendEmail($emailTo, $subject, $link, $param, $charset = 'utf-8')
     {
-        $email = Email::find()
-                ->where(['email_status' => 1])
-                ->asArray()
-                ->one();
-       Yii::$app->set('mailer', [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => $email['account_email'],
-                'password' => $email['password_email'],
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
-        ]);        
+//        $email = Email::find()
+//                ->where(['email_status' => 1])
+//                ->asArray()
+//                ->one();
+//       Yii::$app->set('mailer', [
+//            'class' => 'yii\swiftmailer\Mailer',
+//            'useFileTransport' => false,
+//            'transport' => [
+//                'class' => 'Swift_SmtpTransport',
+//                'host' => 'smtp.gmail.com',
+//                'username' => $email['account_email'],
+//                'password' => $email['password_email'],
+//                'port' => '587',
+//                'encryption' => 'tls',
+//            ],
+//        ]);        
         
         $mail = new Mailer();
         $teamplate = $mail->render($link, ['param' => $param], '/mailtemplate' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'html');
