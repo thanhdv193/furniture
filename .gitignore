@@ -22,6 +22,5 @@ Thumbs.db
 phpunit.phar
 # local phpunit config
 /phpunit.xml
-/vendor
 /web/upload/product
 /web/upload/avatar
