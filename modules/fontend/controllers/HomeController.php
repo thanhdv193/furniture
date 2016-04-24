@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function actionIndex()
     {    
         $client = new Client();
-        $crawler = $client->request('GET', 'http://lirik-dari.blogspot.com/2016/04/chord-inul-daratista-kopi-dangdut.html');
+        $crawler = $client->request('GET', 'http://www.wowkeren.com/lirik/lagu/got7/a.html');
         //$news = $crawler->filter('.fck_detail width_common')->each(function($node)
 //        {
 //            $link = $node;
@@ -41,7 +41,7 @@ class HomeController extends Controller
 //                'description' => trim($node->filter('.news_lead')->text()),
 //            ];
 //        });
-        $news = $crawler->filter('.post-body');
+        $news = $crawler->filter('#FC-container-mtop');
         
         echo'<pre>';var_dump($news->text());die;
 
