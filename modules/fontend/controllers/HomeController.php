@@ -14,11 +14,17 @@ use app\models\User;
 use app\models\LoginForm;
 use yii\data\Pagination;
 use Goutte\Client;
+use himiklab\thumbnail\EasyThumbnailImage;
+use yii\helpers\Url;
 
 class HomeController extends Controller
 {
     public function actionIndex()
     {    
+     $a =   EasyThumbnailImage::thumbnailImg(
+                Url::base('http').'/web/upload/avatar/1456116504_vet-thai', 50, 50, EasyThumbnailImage::THUMBNAIL_OUTBOUND, ['alt' => 'aaaaa']
+        );
+     var_dump($a); die;
         $client = new Client();
         $crawler = $client->request('GET', 'http://www.wowkeren.com/lirik/lagu/got7/a.html');
         //$news = $crawler->filter('.fck_detail width_common')->each(function($node)

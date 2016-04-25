@@ -25,13 +25,12 @@
         "kartik-v/yii2-widget-select2": "*",
         "yiisoft/yii2-authclient": "*",
         "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-jui": "*",
-        "iutbay/yii2-kcfinder": "*",
+        "yiisoft/yii2-jui": "*",        
         "iutbay/yii2-fontawesome": "*",
         "iutbay/yii2-imagecache": "*",
-        "kartik-v/yii2-widget-fileinput": "@dev",
-        "mihaildev/yii2-ckeditor": "*",
-        "fabpot/goutte": "^3.1@dev"
+        "kartik-v/yii2-widget-fileinput": "@dev",        
+        "fabpot/goutte": "^3.1@dev",
+        "himiklab/yii2-easy-thumbnail-image-helper": "*"
         
     },
     "require-dev": {

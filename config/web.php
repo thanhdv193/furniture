@@ -16,6 +16,10 @@ $config = [
    // 'defaultRoute' => 'index.php/site/login',
 //    ['catAll']=>['backend/user/index'],
     'components' => [
+        'thumbnail' => [
+        'class' => 'himiklab\thumbnail\EasyThumbnail',
+        'cacheAlias' => 'assets/gallery_thumbnails',
+        ],
 
         //login facebook and google.com
         'authClientCollection' => [

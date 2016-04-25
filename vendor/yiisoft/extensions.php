@@ -12,15 +12,6 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
-  'iutbay/yii2-kcfinder' => 
-  array (
-    'name' => 'iutbay/yii2-kcfinder',
-    'version' => '0.0.1.0',
-    'alias' => 
-    array (
-      '@iutbay/yii2kcfinder' => $vendorDir . '/iutbay/yii2-kcfinder',
-    ),
-  ),
   'iutbay/yii2-fontawesome' => 
   array (
     'name' => 'iutbay/yii2-fontawesome',
@@ -64,15 +55,6 @@ return array (
     'alias' => 
     array (
       '@yii/authclient' => $vendorDir . '/yiisoft/yii2-authclient',
-    ),
-  ),
-  'mihaildev/yii2-ckeditor' => 
-  array (
-    'name' => 'mihaildev/yii2-ckeditor',
-    'version' => '1.0.1.0',
-    'alias' => 
-    array (
-      '@mihaildev/ckeditor' => $vendorDir . '/mihaildev/yii2-ckeditor',
     ),
   ),
   'yiisoft/yii2-swiftmailer' => 
@@ -163,6 +145,15 @@ return array (
     'alias' => 
     array (
       '@mdm/admin' => $vendorDir . '/mdmsoft/yii2-admin',
+    ),
+  ),
+  'himiklab/yii2-easy-thumbnail-image-helper' => 
+  array (
+    'name' => 'himiklab/yii2-easy-thumbnail-image-helper',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@himiklab/thumbnail' => $vendorDir . '/himiklab/yii2-easy-thumbnail-image-helper',
     ),
   ),
 );
