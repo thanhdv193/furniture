@@ -48,10 +48,7 @@ AppAssetBackend::register($this);
                         <div class="header-right">
                             <ul class="headermenu">
                                 <li>
-                                    <div id="noticePanel" class="btn-group">
-                                        <button class="btn btn-notice alert-notice" data-toggle="dropdown">
-                                            <i class="fa fa-globe"></i>
-                                        </button>
+                                    <div id="noticePanel" class="btn-group">                                        
                                         <div id="noticeDropdown" class="dropdown-menu dm-notice pull-right">
                                             <div role="tabpanel">
                                                 <!-- Nav tabs -->
@@ -328,6 +325,11 @@ AppAssetBackend::register($this);
                                         <li class="premission_get_user_admin"><a href="<?php Url::base('http') ?>/backend/permission/get-user-admin">Phân quyền</a></li>  
                                     </ul>
                                 </li>
+                                                              
+                            </ul>
+
+                            <h5 class="sidebar-title">Main Menu</h5>
+                            <ul class="nav nav-pills nav-stacked nav-quirk">
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-shopping-cart"></i> <span>Đơn hàng</span></a>
                                     <ul class="children">
@@ -337,11 +339,7 @@ AppAssetBackend::register($this);
                                         <li class="order_index"><a href="<?php Url::base('http') ?>/backend/orders?id=<?php echo Orders::order_process_done ?>">Đơn hàng đã thanh toán</a></li>
                                         
                                     </ul>
-                                </li>                               
-                            </ul>
-
-                            <h5 class="sidebar-title">Main Menu</h5>
-                            <ul class="nav nav-pills nav-stacked nav-quirk">
+                                </li> 
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-suitcase"></i> <span>Quản lý sản phẩm</span></a>
                                     <ul class="children">
@@ -355,7 +353,14 @@ AppAssetBackend::register($this);
                                         <li class="product_type_index"><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-type">Danh mục sản phẩm</a></li>
                                         <li class="product_group_index"><a href="<?php Yii::$app->params['urlSite']['site'] ?>/backend/product-group">Nhóm sản phẩm</a></li>                                        
                                     </ul>
-                                </li>                               
+                                </li>
+                                <li class="nav-parent">
+                                    <a href="#"><i class="fa fa-pencil"></i> <span>Quản lý bài viết</span></a>
+                                    <ul class="children">
+                                        <li class="article_index"><a href="<?php echo Url::base('http') ?>/backend/about/index">Danh sách bài viết</a></li>   
+                                        <li class="article_index"><a href="<?php echo Url::base('http') ?>/backend/contact/index">Thêm mới bài viết</a></li>    
+                                    </ul>
+                                </li> 
                                 <li class="nav-parent">
                                     <a href="#"><i class="fa fa-info-circle"></i> <span>Quản lý thông tin</span></a>
                                     <ul class="children">
@@ -582,8 +587,12 @@ AppAssetBackend::register($this);
                 </div>-->
 
                 <div class="contentpanel">
-                    <?=
-                        Breadcrumbs::widget([
+                    
+                    <?=Breadcrumbs::widget([
+                            'homeLink' => [ 
+                                'label' => Yii::t('yii', 'Trang chủ'),
+                                'url' => Yii::$app->request->baseUrl.'/backend',
+                        ],
                         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                     ])
                     ?>

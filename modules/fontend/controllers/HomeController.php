@@ -19,31 +19,31 @@ class HomeController extends Controller
 {
     public function actionIndex()
     {    
-        $client = new Client();
-        $crawler = $client->request('GET', 'http://www.wowkeren.com/lirik/lagu/got7/a.html');
-        //$news = $crawler->filter('.fck_detail width_common')->each(function($node)
-//        {
-//            $link = $node;
-//            return [
-//                'title' => $link->text(),
-//                'link' => $link->link()->getUri(),
-//                'thumbnail' => $node->filter('.txt_link img')->attr('src'),
-//                'description' => trim($node->filter('.news_lead')->text()),
-//            ];
-//        });
-//        $news = $crawler->filter('.fck_detail width_common')->each(function($node)
-//        {
-//            $link = $node;
-//            return [
-//                'title' => $link->text(),
-//                'link' => $link->link()->getUri(),
-//                'thumbnail' => $node->filter('.txt_link img')->attr('src'),
-//                'description' => trim($node->filter('.news_lead')->text()),
-//            ];
-//        });
-        $news = $crawler->filter('#FC-container-mtop');
-        
-        echo'<pre>';var_dump($news->text());die;
+//        $client = new Client();
+//        $crawler = $client->request('GET', 'http://www.wowkeren.com/lirik/lagu/got7/a.html');
+//        //$news = $crawler->filter('.fck_detail width_common')->each(function($node)
+////        {
+////            $link = $node;
+////            return [
+////                'title' => $link->text(),
+////                'link' => $link->link()->getUri(),
+////                'thumbnail' => $node->filter('.txt_link img')->attr('src'),
+////                'description' => trim($node->filter('.news_lead')->text()),
+////            ];
+////        });
+////        $news = $crawler->filter('.fck_detail width_common')->each(function($node)
+////        {
+////            $link = $node;
+////            return [
+////                'title' => $link->text(),
+////                'link' => $link->link()->getUri(),
+////                'thumbnail' => $node->filter('.txt_link img')->attr('src'),
+////                'description' => trim($node->filter('.news_lead')->text()),
+////            ];
+////        });
+//        $news = $crawler->filter('#FC-container-mtop');
+//        
+//        echo'<pre>';var_dump($news->text());die;
 
         $listProduct = Product::find()
                 ->select(['product_photo.id as photo_id','product_photo.*','product.*'])
