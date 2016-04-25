@@ -12,42 +12,6 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
-  'iutbay/yii2-kcfinder' => 
-  array (
-    'name' => 'iutbay/yii2-kcfinder',
-    'version' => '0.0.1.0',
-    'alias' => 
-    array (
-      '@iutbay/yii2kcfinder' => $vendorDir . '/iutbay/yii2-kcfinder',
-    ),
-  ),
-  'iutbay/yii2-fontawesome' => 
-  array (
-    'name' => 'iutbay/yii2-fontawesome',
-    'version' => '0.0.1.0',
-    'alias' => 
-    array (
-      '@iutbay/yii2fontawesome' => $vendorDir . '/iutbay/yii2-fontawesome',
-    ),
-  ),
-  'yiisoft/yii2-imagine' => 
-  array (
-    'name' => 'yiisoft/yii2-imagine',
-    'version' => '2.0.3.0',
-    'alias' => 
-    array (
-      '@yii/imagine' => $vendorDir . '/yiisoft/yii2-imagine',
-    ),
-  ),
-  'iutbay/yii2-imagecache' => 
-  array (
-    'name' => 'iutbay/yii2-imagecache',
-    'version' => '0.2.0.0',
-    'alias' => 
-    array (
-      '@iutbay/yii2imagecache' => $vendorDir . '/iutbay/yii2-imagecache',
-    ),
-  ),
   '2amigos/yii2-date-picker-widget' => 
   array (
     'name' => '2amigos/yii2-date-picker-widget',
@@ -64,15 +28,6 @@ return array (
     'alias' => 
     array (
       '@yii/authclient' => $vendorDir . '/yiisoft/yii2-authclient',
-    ),
-  ),
-  'mihaildev/yii2-ckeditor' => 
-  array (
-    'name' => 'mihaildev/yii2-ckeditor',
-    'version' => '1.0.1.0',
-    'alias' => 
-    array (
-      '@mihaildev/ckeditor' => $vendorDir . '/mihaildev/yii2-ckeditor',
     ),
   ),
   'yiisoft/yii2-swiftmailer' => 
@@ -93,24 +48,6 @@ return array (
       '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap',
     ),
   ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '1.8.4.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
-    ),
-  ),
-  'kartik-v/yii2-widget-select2' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-select2',
-    'version' => '2.0.8.0',
-    'alias' => 
-    array (
-      '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2',
-    ),
-  ),
   'yiisoft/yii2-gii' => 
   array (
     'name' => 'yiisoft/yii2-gii',
@@ -127,15 +64,6 @@ return array (
     'alias' => 
     array (
       '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
-    ),
-  ),
-  'kartik-v/yii2-widget-fileinput' => 
-  array (
-    'name' => 'kartik-v/yii2-widget-fileinput',
-    'version' => '1.0.4.0',
-    'alias' => 
-    array (
-      '@kartik/file' => $vendorDir . '/kartik-v/yii2-widget-fileinput',
     ),
   ),
   'yiisoft/yii2-codeception' => 
