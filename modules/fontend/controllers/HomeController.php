@@ -41,6 +41,10 @@ class HomeController extends Controller
 //        $news = $crawler->filter('#FC-container-mtop');
 //        
 //        echo'<pre>';var_dump($news->text());die;
+        $user_id = array('1','2','3');
+        $cache = Yii::$app->cache->get('thanhdv193');
+        //Yii::$app->cache->set('thanhdv193', $user_id, 600);
+        echo'<pre>'; var_dump($cache); die;
         $listProduct = Product::find()
                 ->select(['product_photo.id as photo_id','product_photo.*','product.*'])
                 ->innerJoin('product_photo','product_photo.product_id = product.id')
