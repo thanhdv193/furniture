@@ -380,7 +380,7 @@ AppAssetBackend::register($this);
                                     <a href="#"><i class="fa fa-bar-chart"></i> <span>Báo cáo</span></a>
                                     <ul class="children">
                                         <li><a href="general-forms.html">Sản phẩm bán chạy</a></li>
-                                        <li><a href="form-validation.html">Form Validation</a></li>
+                                        <li><a href="general-forms.html">Đơn hàng</a></li>
                                         <li><a href="form-wizards.html">Form Wizards</a></li>
                                         <li><a href="wysiwyg.html">Text Editor</a></li>
                                     </ul>

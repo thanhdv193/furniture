@@ -2,17 +2,17 @@
 
 namespace app\modules\backend\controllers;
 
+use app\components\BaseController;
+use app\models\OrderDetail;
+use app\models\Orders;
+use app\models\Product;
 use app\models\ProductPhoto;
 use Yii;
 use yii\helpers\Url;
-use yii\web\Controller;
 use yii\web\UploadedFile;
-use app\models\Orders;
-use app\models\AuthGroup;
-use app\models\AuthItem;
-use app\models\User;
-use app\models\AuthAssignment;
-use app\components\BaseController;
+
+
+
 
 
 
@@ -26,9 +26,20 @@ class DefaultController extends BaseController
              
         }else{
             
+           $productTop = OrderDetail::find()
+                     ->select(['COUNT(order_detail.product_id) as count','order_detail.*','product.title'])   
+                     ->leftJoin('product', 'order_detail.product_id = product.id')
+                     ->innerJoin('orders', 'orders.id = order_detail.order_id')
+                     ->where(['orders.is_process'=>Orders::order_process_done])
+                     ->groupBy('order_detail.product_id')
+                     ->asArray()
+                     ->all();                              
+            $listProduct = Product::find()
+                         ->count();
             //get all order
             $listOrder = Orders::find()                        
                         ->count();
+            
             $listOrderWatting = Orders::find()
                         ->where(['is_process'=>  Orders::order_process_watting])
                         ->count();
@@ -39,12 +50,14 @@ class DefaultController extends BaseController
                         ->where(['is_process'=>  Orders::order_process_done])
                         ->count();
             $inforOrder = array(
-                'Watting'=>$listOrderWatting,
-                'OrderDone'=>$listOrderDone,
-                'OrderProcess'=>$listOrderProcess,
-                'all'=>$listOrder,
+                'orderWatting'=>$listOrderWatting,
+                'orderDone'=>$listOrderDone,
+                'orderProcess'=>$listOrderProcess,
+                'allOrder'=>$listOrder,
+                'productTop'=>$productTop,
+                'listProduct'=>$listProduct
             );  
-            return $this->render('index');
+            return $this->render('index',['data'=>$inforOrder]);
         }
         
     }    
