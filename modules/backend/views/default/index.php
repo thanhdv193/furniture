@@ -1,4 +1,6 @@
 <?php
+use yii\helpers\Url;
+
 $this->title = 'Trang quản trị';
 $this->params['breadcrumbs'][] = '';
 ?>
@@ -9,32 +11,39 @@ $this->params['breadcrumbs'][] = '';
         <div class="row panel-quick-page">
             <div class="col-xs-4 col-sm-5 col-md-4 page-user">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Quản lý người dùng</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="icon ion-person-stalker"></i></div>
-                    </div>
+                    <a href="<?php Url::base('http') ?>/backend/user/">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Quản lý người dùng</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="icon ion-person-stalker"></i></div>
+                        </div>
+                    </a>                    
                 </div>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 page-products">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Quản lý sản phẩm</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="fa fa-shopping-cart"></i></div>
-                    </div>
+                    <a href="<?php Url::base('http') ?>/backend/product/">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Quản lý sản phẩm</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="fa fa-shopping-cart"></i></div>
+                        </div>
+                    </a>                    
                 </div>
             </div>
             <div class="col-xs-4 col-sm-3 col-md-2 page-events">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Sự kiện</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="icon ion-ios-calendar-outline"></i></div>
-                    </div>
+                    <a href="#">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Sự kiện</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="icon ion-ios-calendar-outline"></i></div>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
             <div class="col-xs-4 col-sm-3 col-md-2 page-messages">
@@ -49,12 +58,15 @@ $this->params['breadcrumbs'][] = '';
             </div>
             <div class="col-xs-4 col-sm-5 col-md-2 page-reports">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Báo cáo</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="icon ion-arrow-graph-up-right"></i></div>
-                    </div>
+                    <a href="#">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Báo cáo</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="icon ion-arrow-graph-up-right"></i></div>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-2 page-statistics">
@@ -69,32 +81,41 @@ $this->params['breadcrumbs'][] = '';
             </div>
             <div class="col-xs-4 col-sm-4 col-md-4 page-support">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Sản phẩm được quan tâm</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="icon ion-help-buoy"></i></div>
-                    </div>
+                    <a href="#">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Sản phẩm được quan tâm</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="icon ion-help-buoy"></i></div>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-2 page-privacy">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Phân quyền</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="icon ion-android-lock"></i></div>
-                    </div>
+                    <a href="#">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Phân quyền</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="icon ion-android-lock"></i></div>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
             <div class="col-xs-4 col-sm-4 col-md-2 page-settings">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Cài đặt</h4>
-                    </div>
-                    <div class="panel-body">
-                        <div class="page-icon"><i class="icon ion-gear-a"></i></div>
-                    </div>
+                    <a href="#">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Cài đặt</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="page-icon"><i class="icon ion-gear-a"></i></div>
+                        </div>
+                    </a>
+                    
                 </div>
             </div>
         </div><!-- row -->
