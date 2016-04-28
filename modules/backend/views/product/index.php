@@ -2,37 +2,48 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\ProductSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+use yii\widgets\Pjax;
 
 $this->title = 'Danh sách sản phẩm';
 $this->params['breadcrumbs'][] = $this->title;
+
+function displayCheckbox($data)
+{
+    return '<label class="ckbox ckbox-primary">'
+            .'<input type="checkbox" name="customer_id[]" value="'.$data->id.'"><span></span>'
+            .'</label>';
+}
 ?>
 <div class="panel">
     <input type="hidden" value="product_index" name="index-nav-menu-left" />    
     <div class="panel-heading">
         <h1><?= Html::encode($this->title) ?></h1>
-        <p>
-            <?= Html::a('Thêm sản phẩm', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
+        <div class="col-md-12">
+                <p class="pull-right">
+                    <?= Html::a('Thêm sản phẩm', ['create'], ['class' => 'btn btn-primary']) ?>
+                </p>
+            </div>        
     </div>    
     <div class="panel-body">
+        <?= $this->render('_search', ['model' => $searchModel]); ?>
+        <?php Pjax::begin(['id' => 'product-index']) ?>
         <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
+        'tableOptions' =>['class' => 'table table-hover nomargin'],
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],                       
+            ['class' => 'yii\grid\SerialColumn'], 
             [
-                    'attribute' => 'title',         
-                    'format' => 'raw',                    
-                    'value' => function ($model)
-                    {        
-                       $url = Yii::$app->request->baseUrl; 
-                       return  Html::a($model['title'], [$url.'/backend/product/view?id='.$model['id']], ['class'=>'']);
-                    },
-            ],
+                    'class' => 'yii\grid\DataColumn',
+                    'attribute' => 'id',
+                    'headerOptions' => ['class' => 'text-center'],
+                    'format' => 'html',
+                    'content' => 'displayCheckbox',
+                    'contentOptions' => ['class' => 'vertical-middle','width' => '20', 'style' => 'text-align: center'],
+                    'header' => '<label class="ckbox ckbox-primary">
+                                <input type="checkbox" name="check_all" class="check_all" ><span></span>
+                                </label>',
+                ], 
             [
                 'attribute' => 'photo',
                  'headerOptions' => ['width' => '100', 'text-align' => 'center'],
@@ -48,12 +59,40 @@ $this->params['breadcrumbs'][] = $this->title;
                         }
                         
                     },
-            ],                            
-            'productGroup',            
-            'productType',                                                                
-                                 
+            ], 
             [
-                    'attribute' => 'create_date',                                        
+                    'attribute' => 'title',         
+                    'format' => 'raw',          
+                    'headerOptions' => ['class' => 'text-left'],  
+                    'contentOptions' => ['class' => 'vertical-middle','style' => 'text-align: left'],
+                    'value' => function ($model)
+                    {        
+                       $url = Yii::$app->request->baseUrl; 
+                       return  Html::a($model['title'], [$url.'/backend/product/view?id='.$model['id']], ['class'=>'']);
+                    },
+            ],
+            [
+                    'attribute' => 'productGroup',     
+                    'headerOptions' => ['class' => 'text-center'],            
+                    'contentOptions' => ['class' => 'vertical-middle','style' => 'text-align: center'],
+                    'value' => function ($model)
+                    {              
+                        return $model->productGroup;                                         
+                    },
+            ],  
+             [
+                    'attribute' => 'productType',     
+                    'headerOptions' => ['class' => 'text-center'],            
+                    'contentOptions' => ['class' => 'vertical-middle','style' => 'text-align: center'],
+                    'value' => function ($model)
+                    {              
+                        return $model->productType;                                         
+                    },
+            ],                              
+            [
+                    'attribute' => 'create_date',     
+                    'headerOptions' => ['class' => 'text-center'],            
+                    'contentOptions' => ['class' => 'vertical-middle','style' => 'text-align: center'],
                     'value' => function ($model)
                     {              
                         return Yii::$app->formatter->asDatetime($model['create_date'], 'php:h:i:s d/m/Y');                                             
@@ -93,7 +132,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         'template' => '{update} {delete}',
                         'headerOptions' => ['width' => '130', 'text-align' => 'center'],
                         'buttons' => [
-
                             //view button
                             'update' => function ($url, $model)
                             {
@@ -113,6 +151,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
           ],
         ]); ?>
+        <?php Pjax::end() ?>
     </div>
     
 

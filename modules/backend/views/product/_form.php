@@ -86,6 +86,7 @@ $this->registerJsFile(Url::base('') . '/js/backend/editor.js', ['depends' => [\y
                      <div class="col-md-6">
                          <?= $form->field($model, 'size')->textInput(['maxlength' => true]) ?>
                          <?= $form->field($model, 'quantity_current')->textInput() ?>
+                         
                      </div>                       
                  </div>
                  <div class="panel-body">

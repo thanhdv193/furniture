@@ -1,89 +1,63 @@
 <?php
 
+use app\models\ProductSearch;
+use app\models\ProductType;
+use app\models\ProductGroup;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\web\View;
 use yii\widgets\ActiveForm;
+use yii\widgets\Pjax;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\ProductSearch */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $this View */
+/* @var $model ProductSearch */
+/* @var $form ActiveForm */
 ?>
-
+<?php
+ 
+$this->registerJs(
+   '$("document").ready(function(){ 
+        $("#product-search").on("pjax:end", function() {
+            $.pjax.reload({container:"#product-index"});  //Reload GridView
+        });       
+    });'
+);
+?>
 <div class="product-search">
-
+<?php Pjax::begin(['id' => 'product-search']); ?>
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
+        'options' => ['data-pjax' => true ]
     ]); ?>
-
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'product_group_id') ?>
-
-    <?= $form->field($model, 'product_type_id') ?>
-
-    <?= $form->field($model, 'product_category_id') ?>
-
-    <?= $form->field($model, 'title') ?>
-
-    <?php // echo $form->field($model, 'link') ?>
-
-    <?php // echo $form->field($model, 'olink') ?>
-
-    <?php // echo $form->field($model, 'olink2') ?>
-
-    <?php // echo $form->field($model, 'description') ?>
-
-    <?php // echo $form->field($model, 'content') ?>
-
-    <?php // echo $form->field($model, 'photo') ?>
-
-    <?php // echo $form->field($model, 'seo_title') ?>
-
-    <?php // echo $form->field($model, 'seo_keyword') ?>
-
-    <?php // echo $form->field($model, 'seo_description') ?>
-
-    <?php // echo $form->field($model, 'seo_photo_alt') ?>
-
-    <?php // echo $form->field($model, 'is_hethang') ?>
-
-    <?php // echo $form->field($model, 'is_new') ?>
-
-    <?php // echo $form->field($model, 'is_top') ?>
-
-    <?php // echo $form->field($model, 'create_date') ?>
-
-    <?php // echo $form->field($model, 'is_active') ?>
-
-    <?php // echo $form->field($model, 'discount') ?>
-
-    <?php // echo $form->field($model, 'discount_bonus') ?>
-
-    <?php // echo $form->field($model, 'price') ?>
-
-    <?php // echo $form->field($model, 'time_left') ?>
-
-    <?php // echo $form->field($model, 'z_index') ?>
-
-    <?php // echo $form->field($model, 'code_product') ?>
-
-    <?php // echo $form->field($model, 'size') ?>
-
-    <?php // echo $form->field($model, 'origin') ?>
-
-    <?php // echo $form->field($model, 'tags') ?>
-
-    <?php // echo $form->field($model, 'old_price') ?>
-
-    <?php // echo $form->field($model, 'quantity_current') ?>
-
-    <?php // echo $form->field($model, 'view_count') ?>
-
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        <div class="col-lg-12">
+            <div class="col-md-3">
+                <?= $form->field($model, 'title') ?>            
+            </div>
+            <div class="col-md-2">
+                <?php
+            $productGroup = ProductGroup::find()->where(['active' => 1])->all();
+            $listData = ArrayHelper::map($productGroup, 'title', 'title');
+            echo $form->field($model, 'productGroup')->dropDownList(
+                    $listData, ['prompt' => 'Chọn nhóm sản phẩm',])->label('Nhóm sản phẩm');
+            ?>                 
+            </div>
+            <div class="col-md-2">
+                <?php
+            $productType = ProductType::find()->where(['active' => 1])->all();
+            $listData = ArrayHelper::map($productType, 'title', 'title');
+            echo $form->field($model, 'productType')->dropDownList(
+                    $listData, ['prompt' => 'Chọn chuyên mục',])->label('Chuyên mục');
+            ?>  
+             
+            </div>   
+            <div class="col-md-3" style="padding: 20px 10px;">
+                <?= Html::submitButton('Tìm kiếm', ['class' => 'btn btn-primary']) ?>
+            </div>        
+        </div>    
     </div>
-
+    
     <?php ActiveForm::end(); ?>
-
+<?php Pjax::end(); ?>
 </div>
