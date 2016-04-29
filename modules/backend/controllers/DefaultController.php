@@ -11,35 +11,30 @@ use Yii;
 use yii\helpers\Url;
 use yii\web\UploadedFile;
 
-
-
-
-
-
 class DefaultController extends BaseController
 {
     public function actionIndex()
-    {   
+    {
         if (Yii::$app->user->isGuest)
-        {      
-             return $this->redirect('dang-nhap-quan-tri.html');             
-             
+        {
+             return $this->redirect('dang-nhap-quan-tri.html');
+
         }else{
-            
+
            $productTop = OrderDetail::find()
-                     ->select(['COUNT(order_detail.product_id) as count','order_detail.*','product.title'])   
+                     ->select(['COUNT(order_detail.product_id) as count','order_detail.*','product.title'])
                      ->leftJoin('product', 'order_detail.product_id = product.id')
                      ->innerJoin('orders', 'orders.id = order_detail.order_id')
                      ->where(['orders.is_process'=>Orders::order_process_done])
                      ->groupBy('order_detail.product_id')
                      ->asArray()
-                     ->all();                              
+                     ->all();
             $listProduct = Product::find()
                          ->count();
             //get all order
-            $listOrder = Orders::find()                        
+            $listOrder = Orders::find()
                         ->count();
-            
+
             $listOrderWatting = Orders::find()
                         ->where(['is_process'=>  Orders::order_process_watting])
                         ->count();
@@ -56,11 +51,11 @@ class DefaultController extends BaseController
                 'allOrder'=>$listOrder,
                 'productTop'=>$productTop,
                 'listProduct'=>$listProduct
-            );  
+            );
             return $this->render('index',['data'=>$inforOrder]);
         }
-        
-    }    
+
+    }
     public function actionLogin(){
         return $this->render('login-admin');
     }
@@ -100,5 +95,5 @@ public function actionUpload()
             }
         }
     }
-    
+
 }

@@ -4,7 +4,7 @@ namespace app\modules\backend\controllers;
 
 use Yii;
 use app\models\Email;
-use app\models\EmailSearch;
+use app\models\EmailSearch;     
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

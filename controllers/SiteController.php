@@ -69,7 +69,7 @@ class SiteController extends Controller
             ],
         ];
     }
-    
+
     public function actionSearch()
     {
         Search::Search();
@@ -78,7 +78,7 @@ class SiteController extends Controller
 
     public function actionUploadImage()
     {
-        
+
         $url1 = Yii::$app->request->baseUrl . 'upload/photos/demo1.jpg';
         $url2 = Yii::$app->request->baseUrl . 'upload/photos/thumbs/demo1.jpg';
         ImageHelper::resizeImage($url1, $url2, '700', '700');
@@ -110,7 +110,7 @@ class SiteController extends Controller
     }
 
     public function actionLogin()
-    { 
+    {
         if (!\Yii::$app->user->isGuest)
         {
             return $this->goHome();
@@ -129,12 +129,12 @@ class SiteController extends Controller
     }
     public function actionNotPermission()
     {
-        $this->layout ='main_extend';    
+        $this->layout ='main_extend';
        // $url = $_SERVER['HTTP_REFERER'];
         $url = Url::base('http');
-        return $this->render('not-permission',['url'=>$url]);        
+        return $this->render('not-permission',['url'=>$url]);
     }
-    
+
     public function actionLoginAdmin()
     {
         $this->layout ='main_extend';
@@ -144,14 +144,14 @@ class SiteController extends Controller
         }
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()))
-        {            
-            
+        {
+
             if($model->login())
             {
                 return $this->redirect(Url::base('http').'/backend/');
             }
-            
-            
+
+
         } else
         {
             return $this->render('login_admin', [
@@ -191,10 +191,10 @@ class SiteController extends Controller
                 ->all();
 //        foreach($list as $key => $value)
 //            {
-//              
+//
 //            }
         //echo'<pre>'; var_dump($list); die;
-        
+
         return $this->render('about',['data'=>$list,'group'=>$group]);
     }
 
@@ -223,7 +223,7 @@ class SiteController extends Controller
        echo'<pre>';
         var_dump($a);
         die;
-        
+
     }
     protected function getMenus() {
         $menu = CategoriesItems::getAll();
@@ -323,7 +323,7 @@ class SiteController extends Controller
     }
 
     public function actionLoginAjax()
-    { 
+    {
         $post = Yii::$app->request->post();
         if ($post)
         {
@@ -366,7 +366,7 @@ class SiteController extends Controller
                     'error' => 'user_not_exist'
                 );
                 return json_encode($result);
-                
+
             } else
             {
                 if ($model->login())
@@ -375,14 +375,14 @@ class SiteController extends Controller
                         'status' => false,
                         'error' => 'successful'
                     );
-                    return json_encode($result);                    
+                    return json_encode($result);
                 } else
                 {
                     $result = array(
                         'status' => false,
                         'error' => 'password_exist'
                     );
-                    return json_encode($result);                    
+                    return json_encode($result);
                 }
             }
         }
@@ -683,10 +683,10 @@ class SiteController extends Controller
         $url = 'http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false';
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // return the output in string format
-        $output = curl_exec($ch); // execute  
+        $output = curl_exec($ch); // execute
         $output = json_decode($output);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        
+
         echo'<pre>'; var_dump($output->results[0]->geometry->location->lat); die;
         $geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $prepAddr . '&sensor=false');
         $output = json_decode($geocode);
@@ -696,11 +696,11 @@ class SiteController extends Controller
         //$sql = 'SELECT * FROM customer WHERE status=:status';
         $lat = 21.007792;
         $lng = 105.801147;
-        $sql = 'SELECT loc_id, 
+        $sql = 'SELECT loc_id,
                 ( 6371 * acos( cos( radians('.$lat.') ) * cos(radians(lat) ) * cos(radians(lng)
-                 - radians('.$lng.') ) + sin(radians('.$lat.')) * sin( radians(lat) ) ) ) 
+                 - radians('.$lng.') ) + sin(radians('.$lat.')) * sin( radians(lat) ) ) )
                  AS distance FROM location HAVING distance < 50 ORDER BY distance LIMIT 0 , 20;';
-        $customers = Location::findBySql($sql)->asArray()->all();       
+        $customers = Location::findBySql($sql)->asArray()->all();
         echo'<pre>'; var_dump($customers); die;
         //SELECT id, ( 3959 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < 25 ORDER BY distance LIMIT 0 , 20;
 //        $address = 'han,VietNam'; // Your address
@@ -711,6 +711,10 @@ class SiteController extends Controller
 //        $long = $output->results[0]->geometry->location->lng;
 //
 //        echo $address . '<br>Lat: ' . $lat . '<br>Long: ' . $long;
+    }
+    public function actionGetAll()
+    {
+
     }
 
 }
