@@ -15,6 +15,7 @@ class DefaultController extends BaseController
 {
     public function actionIndex()
     {
+        return $this->render('index2',['data'=>null]);
         if (Yii::$app->user->isGuest)
         {
              return $this->redirect('dang-nhap-quan-tri.html');
